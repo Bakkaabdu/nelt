@@ -1,0 +1,97 @@
+@inject IPlatformSettingsService SettingsService
+@{
+    var site = await SettingsService.GetAsync();
+    var title = ViewData["Title"] is string t ? $"{t} · {site.SiteName}" : $"{site.SiteName} — {Tx(site.Tagline)}";
+    var signedIn = User.Identity?.IsAuthenticated == true;
+}
+<!DOCTYPE html>
+<html lang="@Lang" dir="@(IsRtl ? "rtl" : "ltr")">
+<head>
+    <partial name="_Head" model="title" />
+    <meta name="description" content="@(ViewData["Description"] as string ?? Tx(site.HeroSubtitle))" />
+    @await RenderSectionAsync("Head", required: false)
+</head>
+<body>
+    <a class="skip-link" href="#main">@L["Skip to content"]</a>
+    <div class="tricolor tricolor--thin tricolor--draw" aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="brand" asp-area="" asp-controller="Home" asp-action="Index" aria-label="@site.SiteName — @L["Home"]">
+                <partial name="_Brand" model="site.SiteName" />
+            </a>
+            <button type="button" class="btn btn--ghost btn--sm nav-toggle" aria-expanded="false" aria-controls="site-nav">
+                <icon name="menu" /><span class="visually-hidden">@L["Menu"]</span>
+            </button>
+            <nav class="nav" id="site-nav" aria-label="@L["Main"]">
+                <a class="nav__link @(IsActive("", "Courses") ? "is-active" : null)" asp-area="" asp-controller="Courses" asp-action="Index">@L["Courses"]</a>
+                <a class="nav__link @(IsActive("", "Events") ? "is-active" : null)" asp-area="" asp-controller="Events" asp-action="Index">@L["Events"]</a>
+                <a class="nav__link" href="@Url.Action("Index", "Home", new { area = "" })#about">@L["About"]</a>
+                <partial name="_LangSwitch" />
+                <div class="nav__actions">
+                    @if (signedIn)
+                    {
+                        <a class="btn btn--primary btn--sm" href="@DashboardUrl()">@L["My dashboard"]</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn--ghost btn--sm" asp-area="" asp-controller="Account" asp-action="Login">@L["Sign in"]</a>
+                        <a class="btn btn--primary btn--sm" asp-area="" asp-controller="Account" asp-action="Register">@L["Create account"]</a>
+                    }
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="site-main">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="container site-footer__grid">
+            <div>
+                <a class="brand" asp-area="" asp-controller="Home" asp-action="Index"><partial name="_Brand" model="site.SiteName" /></a>
+                <p style="margin-top:14px; max-width:36ch">@Tx(site.Tagline)</p>
+            </div>
+            <div>
+                <h3>@L["Learn"]</h3>
+                <ul>
+                    <li><a asp-area="" asp-controller="Courses" asp-action="Index" asp-route-language="German">@L["German courses"]</a></li>
+                    <li><a asp-area="" asp-controller="Courses" asp-action="Index" asp-route-language="Chinese">@L["Chinese courses"]</a></li>
+                    <li><a asp-area="" asp-controller="Events" asp-action="Index">@L["Events"]</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>@L["Platform"]</h3>
+                <ul>
+                    <li><a asp-area="" asp-controller="Certificates" asp-action="Verify">@L["Verify a certificate"]</a></li>
+                    @if (signedIn)
+                    {
+                        <li><a href="@DashboardUrl()">@L["My dashboard"]</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-area="" asp-controller="Account" asp-action="Login">@L["Sign in"]</a></li>
+                    }
+                </ul>
+            </div>
+            <div>
+                <h3>@L["Contact"]</h3>
+                <ul>
+                    @if (!string.IsNullOrEmpty(site.ContactEmail)) { <li><a href="mailto:@site.ContactEmail">@site.ContactEmail</a></li> }
+                    @if (!string.IsNullOrEmpty(site.ContactPhone)) { <li><a href="tel:@site.ContactPhone" dir="ltr">@site.ContactPhone</a></li> }
+                    @if (!site.Address.IsNullOrEmpty()) { <li>@Tx(site.Address)</li> }
+                </ul>
+            </div>
+        </div>
+        <div class="container site-footer__bottom">
+            <span>© @DateTime.UtcNow.Year @site.SiteName</span>
+            @{ ViewData["LangUp"] = true; }
+            <partial name="_LangSwitch" view-data="ViewData" />
+        </div>
+    </footer>
+
+    <partial name="_Flash" />
+</body>
+</html>

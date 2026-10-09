@@ -1,0 +1,29 @@
+@model MaterialEditPage
+@{
+    ViewData["Title"] = Model.Input.Title;
+    var courses = Model.Library.Courses.Select(c => new SelectListItem(Tx(c.Title), c.Id.ToString())).ToList();
+    var levelItems = Model.Library.Levels.Select(l => new SelectListItem($"{Label(l.Language)} · {l.Code}", l.Id.ToString())).ToList();
+}
+<header class="topbar">
+    <div>
+        <nav class="crumbs"><a asp-action="Index" asp-route-level="@Model.Input.LevelId">@L["Materials library"]</a><icon name="chevron-right" class="icon--flip" /><span>@Model.Input.Title</span></nav>
+        <h1 class="topbar__title">@L["Edit file details"]</h1>
+    </div>
+</header>
+<form method="post" class="form" style="max-width:720px" asp-action="Edit" asp-route-id="@Model.Id">
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+    <section class="form-section">
+        <div class="form-grid">
+            <field asp-for="Input.Title" wide="true" />
+            <field asp-for="Input.LevelId" asp-items="levelItems" />
+            <field asp-for="Input.Type" />
+            <field asp-for="Input.CourseId" asp-items="courses" empty="All courses of this level" wide="true" hint="Changing the level resets this choice if the course belongs to another level." />
+            <field asp-for="Input.Description" rows="3" wide="true" />
+            <field asp-for="Input.IsPublished" />
+        </div>
+    </section>
+    <div class="form-actions"><div class="form-actions__main">
+        <a class="btn" asp-action="Index" asp-route-level="@Model.Input.LevelId">@L["Cancel"]</a>
+        <button type="submit" class="btn btn--primary">@L["Save"]</button>
+    </div></div>
+</form>

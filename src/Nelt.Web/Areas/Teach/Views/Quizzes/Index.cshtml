@@ -1,0 +1,43 @@
+@model QuizList
+@{ ViewData["Title"] = L["Quizzes & exam"]; var id = Model.Course.Id; }
+<partial name="_CourseTabs" model="Model.Course" />
+<div class="topbar" style="margin-bottom:16px">
+    <p class="muted">@L["Create quizzes for online students, in-person students or both — plus one final exam that decides course completion."]</p>
+    <a class="btn btn--primary" asp-action="Create" asp-route-courseId="@id"><icon name="plus" />@L["New quiz"]</a>
+</div>
+@if (Model.Quizzes.Count == 0)
+{
+    <div class="card empty"><icon name="quiz" /><p class="empty__title">@L["No quizzes yet."]</p></div>
+}
+else
+{
+    <div class="table-wrap">
+        <table class="table">
+            <thead><tr><th>@L["Quiz"]</th><th class="hide-sm">@L["For"]</th><th class="num">@L["Questions"]</th><th class="num hide-sm">@L["Attempts"]</th><th class="num hide-sm">@L["Average"]</th><th></th></tr></thead>
+            <tbody>
+                @foreach (var q in Model.Quizzes)
+                {
+                    <tr>
+                        <td>
+                            <a class="cell-title" asp-action="Questions" asp-route-courseId="@id" asp-route-quizId="@q.Id">@q.Title</a>
+                            <div class="cell-sub">
+                                @if (q.Kind == QuizKind.FinalExam) { <span class="badge badge--danger">@L["Final exam"]</span> }
+                                <span class="badge @(q.IsPublished ? "badge--success" : "badge--warn")">@(q.IsPublished ? L["Published"] : L["Draft"])</span>
+                                @if (q.AvailableUntil is { } until) { <span>@L["Closes {0}", DateTimeText(until)]</span> }
+                            </div>
+                        </td>
+                        <td class="hide-sm small">@Label(q.Audience)</td>
+                        <td class="num">@q.QuestionCount <span class="muted small">(@q.TotalPoints @L["pts"])</span></td>
+                        <td class="num hide-sm">@q.Attempts</td>
+                        <td class="num hide-sm">@Percent(q.AverageScore)</td>
+                        <td class="actions">
+                            <a class="btn btn--sm" asp-action="Results" asp-route-courseId="@id" asp-route-quizId="@q.Id"><icon name="chart" />@L["Results"]</a>
+                            <a class="btn btn--sm" asp-action="Questions" asp-route-courseId="@id" asp-route-quizId="@q.Id">@L["Questions"]</a>
+                            <a class="btn btn--quiet btn--sm" asp-action="Edit" asp-route-courseId="@id" asp-route-quizId="@q.Id" title="@L["Settings"]"><icon name="settings" /></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

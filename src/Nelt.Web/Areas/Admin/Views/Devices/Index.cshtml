@@ -1,0 +1,68 @@
+@model DevicesPage
+@{ ViewData["Title"] = L["Fingerprint devices"]; }
+<header class="topbar">
+    <div>
+        <h1 class="topbar__title">@L["Fingerprint devices"]</h1>
+        <p class="topbar__sub">@L["Terminals at the course entrance send check-ins to the platform, where they are matched to class sessions."]</p>
+    </div>
+    <div class="btn-row">
+        <a class="btn" asp-action="Punches"><icon name="clock" />@L["Check-in log"]</a>
+        <a class="btn btn--primary" asp-action="Create"><icon name="plus" />@L["Register device"]</a>
+    </div>
+</header>
+
+@if (Model.NewCredentials is { } cred)
+{
+    <section class="card card__body stack" style="margin-bottom:20px; border-color:var(--gold)">
+        <h2 class="card__title">@L["API key for device #{0}", cred.DeviceId]</h2>
+        <p class="small muted">@L["Copy it now — for security it is shown only once. It is needed only for the JSON API; ZKTeco terminals authenticate by serial number."]</p>
+        <div class="keybox"><code id="device-key">@cred.ApiKey</code><button type="button" class="btn btn--sm" data-copy="device-key" data-copied="@L["Copied"]"><icon name="copy" />@L["Copy"]</button></div>
+    </section>
+}
+
+<div class="grid grid-main">
+    <div class="table-wrap">
+        <table class="table">
+            <thead><tr><th>@L["Device"]</th><th class="hide-sm">@L["Serial number"]</th><th>@L["Status"]</th><th class="num hide-sm">@L["Today"]</th><th></th></tr></thead>
+            <tbody>
+                @foreach (var d in Model.Devices)
+                {
+                    var online = d.LastSeenAt is { } seen && Time.UtcNow - seen < TimeSpan.FromMinutes(15);
+                    <tr>
+                        <td><div class="cell-title">@d.Name</div><div class="cell-sub">@d.Location</div></td>
+                        <td class="hide-sm mono small">@d.SerialNumber</td>
+                        <td>
+                            <span class="badge @(!d.IsActive ? "badge--plain" : online ? "badge--success" : "badge--warn")">@(!d.IsActive ? L["Inactive"] : online ? L["Online"] : L["Offline"])</span>
+                            <div class="cell-sub">@(d.LastSeenAt is { } s ? L["Last seen {0}", DateTimeText(s)] : L["Never connected"])</div>
+                        </td>
+                        <td class="num hide-sm">@d.PunchesToday</td>
+                        <td class="actions">
+                            <a class="btn btn--sm" asp-action="Punches" asp-route-device="@d.Id">@L["Log"]</a>
+                            <form method="post" class="inline-form" asp-action="RotateKey" asp-route-id="@d.Id" data-confirm="@L["Generate a new API key? The old key stops working immediately."]"><button class="btn btn--quiet btn--sm" title="@L["New API key"]"><icon name="refresh" /></button></form>
+                            <a class="btn btn--quiet btn--sm" asp-action="Edit" asp-route-id="@d.Id" title="@L["Edit"]"><icon name="edit" /></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @if (Model.Devices.Count == 0) { <div class="empty"><icon name="fingerprint" /><p class="empty__title">@L["No device registered yet."]</p></div> }
+    </div>
+
+    <aside class="card">
+        <div class="card__head"><h2 class="card__title">@L["Connecting a terminal"]</h2><icon name="wifi" /></div>
+        <div class="card__body stack small">
+            <p><strong>@L["ZKTeco and compatible terminals (ADMS)"]</strong></p>
+            <ol style="margin:0; padding-inline-start:18px; display:grid; gap:6px">
+                <li>@L["Register the terminal here with its serial number (Menu → System Info)."]</li>
+                <li>@L["On the terminal, open Comm. → Cloud Server Setting and enter this server:"] <span class="mono" dir="ltr">@Model.ServerUrl</span></li>
+                <li>@L["Enroll each student's finger and enter the same user ID in their account."]</li>
+            </ol>
+            <p style="margin-top:8px"><strong>@L["Any other device or bridge (JSON API)"]</strong></p>
+            <div class="code-block" dir="ltr">POST @Model.ServerUrl/api/biometric/punches
+X-Device-Key: nelt_…
+{ "punches": [
+  { "userId": "1024", "time": "2026-10-04T17:58:12" } ] }</div>
+            <p class="muted">@L["Times without an offset are read in the platform time zone. Resending the same punches is safe."]</p>
+        </div>
+    </aside>
+</div>

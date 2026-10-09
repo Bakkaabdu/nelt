@@ -1,0 +1,94 @@
+@model StudentProgress
+@{ ViewData["Title"] = Model.StudentName; var id = Model.Course.Id; var p = Model.Performance; var e = Model.Evaluation; }
+<partial name="_CourseTabs" model="Model.Course" />
+<div class="topbar" style="margin-bottom:20px">
+    <div>
+        <nav class="crumbs"><a asp-action="Index" asp-route-courseId="@id">@L["Students & progress"]</a><icon name="chevron-right" class="icon--flip" /><span>@Model.StudentName</span></nav>
+        <h2 style="font-size:1.6rem">@Model.StudentName</h2>
+        <p class="muted small">@Model.Email @(Model.Phone is null ? null : "· " + Model.Phone) · @Label(Model.Mode) @(Model.BiometricId is null ? null : "· " + L["Fingerprint ID"] + " " + Model.BiometricId)</p>
+    </div>
+    <span class="badge @(Model.Status == EnrollmentStatus.Completed ? "badge--success" : "badge--info")">@Label(Model.Status)</span>
+</div>
+
+<div class="grid grid-4" style="margin-bottom:24px">
+    <div class="kpi"><div class="kpi__label"><icon name="video" />@L["Lessons"]</div><div class="kpi__value">@p.LessonsCompleted<span class="muted" style="font-size:1rem">/@p.LessonsTotal</span></div></div>
+    <div class="kpi"><div class="kpi__label"><icon name="quiz" />@L["Quiz average"]</div><div class="kpi__value">@Percent(p.QuizAverage)</div></div>
+    <div class="kpi"><div class="kpi__label"><icon name="clipboard" />@L["Assignments"]</div><div class="kpi__value">@Percent(p.AssignmentAverage)</div></div>
+    <div class="kpi"><div class="kpi__label"><icon name="award" />@L["Overall"]</div><div class="kpi__value">@Percent(e.OverallScore)</div></div>
+</div>
+
+<div class="grid grid-main">
+    <div class="grid">
+        <section class="card">
+            <div class="card__head"><h3 class="card__title">@L["Lesson progress"]</h3></div>
+            <ol class="list">
+                @foreach (var l in Model.Lessons)
+                {
+                    <li>
+                        <span class="tick @(l.CompletedAt is null ? null : "is-done")"><icon name="check" /></span>
+                        <div class="list__main"><div class="list__title">@l.Title @if (l.IsCurrent) { <span class="badge badge--gold">@L["Current"]</span> }</div></div>
+                        <span class="muted small">@(l.CompletedAt is { } at ? Date(at) : null)</span>
+                    </li>
+                }
+            </ol>
+        </section>
+
+        <section class="card">
+            <div class="card__head"><h3 class="card__title">@L["Quiz attempts"]</h3></div>
+            @if (Model.Attempts.Count == 0) { <p class="card__body muted small">@L["No attempts yet."]</p> }
+            else
+            {
+                <ul class="list">
+                    @foreach (var a in Model.Attempts)
+                    {
+                        <li>
+                            <div class="list__main"><div class="list__title">@a.QuizTitle @if (a.Kind == QuizKind.FinalExam) { <span class="badge badge--danger">@L["Final exam"]</span> }</div><div class="list__sub">@(a.SubmittedAt is { } at ? DateTimeText(at) : L["In progress"]) · @Label(a.Source)</div></div>
+                            <strong class="num">@Percent(a.Score)</strong>
+                        </li>
+                    }
+                </ul>
+            }
+        </section>
+
+        <section class="card">
+            <div class="card__head"><h3 class="card__title">@L["Assignments"]</h3></div>
+            <ul class="list">
+                @foreach (var s in Model.Submissions)
+                {
+                    <li>
+                        <div class="list__main"><div class="list__title">@s.Title</div><div class="list__sub">@(s.SubmittedAt is { } at ? L["Handed in {0}", DateTimeText(at)] : L["Not handed in"])@(s.IsLate ? " · " + L["late"] : null)</div></div>
+                        <strong class="num">@(s.Score is { } sc ? $"{sc:0.##}/{s.MaxScore}" : "—")</strong>
+                    </li>
+                }
+            </ul>
+        </section>
+
+        @if (Model.Mode == StudyMode.InPerson)
+        {
+            <section class="card">
+                <div class="card__head"><h3 class="card__title">@L["Attendance history"]</h3><span class="badge">@Percent(p.AttendanceRate)</span></div>
+                <ul class="list">
+                    @foreach (var a in Model.Attendance)
+                    {
+                        var css = a.Status switch { AttendanceStatus.Present => "badge--success", AttendanceStatus.Late => "badge--gold", AttendanceStatus.Absent => "badge--danger", _ => "badge--info" };
+                        <li>
+                            <div class="list__main"><div class="list__title">@Weekday(a.StartsAt), @Date(a.StartsAt)</div><div class="list__sub">@a.Topic @(a.CheckInAt is { } at ? "· " + L["checked in {0}", Clock(at)] : null) · @Label(a.Source)</div></div>
+                            <span class="badge @css">@Label(a.Status)</span>
+                        </li>
+                    }
+                </ul>
+            </section>
+        }
+    </div>
+
+    <aside class="card">
+        <div class="card__head"><h3 class="card__title">@L["Completion check"]</h3></div>
+        <div class="card__body stack">
+            <partial name="/Areas/Learn/Views/Shared/_Criteria.cshtml" model="e.Criteria" />
+            <p class="note @(e.IsNextLevelEligible ? "note--success" : e.IsCertificateEligible ? "note--info" : null)">
+                @(e.IsNextLevelEligible ? L["Eligible for the certificate and the next level."] : e.IsCertificateEligible ? L["Eligible for the certificate, but below the score for the next level."] : e.IsProvisional ? L["Evaluation pending: some results are still missing."] : L["Not eligible yet."])
+            </p>
+            @if (Model.CertificateStatus is { } cs) { <p class="small">@L["Certificate request"]: <span class="badge">@Label(cs)</span></p> }
+        </div>
+    </aside>
+</div>

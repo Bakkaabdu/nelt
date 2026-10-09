@@ -1,0 +1,96 @@
+@model LessonPlayer
+@{
+    ViewData["Title"] = Model.Title;
+    if (Model.IsPreviewMode) { Layout = "/Views/Shared/_Layout.cshtml"; }
+    var completeUrl = Model.IsPreviewMode ? null : Url.Action("Complete", "Course", new { area = "Learn", courseId = Model.Course.Id, lessonId = Model.LessonId });
+}
+@if (Model.IsPreviewMode)
+{
+    @:<div class="container" style="padding-block:32px 64px">
+    <nav class="crumbs" aria-label="@L["Breadcrumb"]">
+        <a asp-area="" asp-controller="Courses" asp-action="Details" asp-route-slug="@Model.Course.Slug">@Tx(Model.Course.Title)</a><icon name="chevron-right" class="icon--flip" /><span>@L["Free preview"]</span>
+    </nav>
+    <h1 class="topbar__title" style="margin-bottom:24px">@Model.Title</h1>
+}
+else
+{
+    <partial name="_LearnTabs" model="Model.Course" />
+}
+
+<div class="player" data-lesson-player data-lesson-id="@Model.LessonId" data-complete-url="@completeUrl" data-completed="@(Model.Completed ? "true" : "false")">
+    <div>
+        <div class="player__stage">
+            @if (Model.HasUploadedVideo)
+            {
+                <video controls playsinline preload="metadata" controlsList="nodownload" src="@Url.Action("Video", "Files", new { area = "", lessonId = Model.LessonId })"></video>
+            }
+            else if (Model.EmbedUrl is not null)
+            {
+                <iframe src="@Model.EmbedUrl" title="@Model.Title" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            }
+            else
+            {
+                <div class="player__noVideo"><div><icon name="book" style="width:32px;height:32px;margin:0 auto 12px" /><p>@L["This lesson has no video. Read the notes below."]</p></div></div>
+            }
+        </div>
+
+        <div class="player__bar">
+            <div>
+                @if (!Model.IsPreviewMode)
+                {
+                    <h2 style="font-size:1.35rem">@Model.Title</h2>
+                }
+                <div class="meta" style="margin-top:6px">
+                    @if (Model.DurationMinutes is { } m) { <span><icon name="clock" />@L["{0} min", m]</span> }
+                    <span class="badge badge--success" data-lesson-done hidden="@(Model.Completed ? null : "hidden")">@L["Completed"]</span>
+                </div>
+            </div>
+            @if (!Model.IsPreviewMode)
+            {
+                <div class="btn-row">
+                    @if (Model.PreviousLessonId is { } prev)
+                    {
+                        <a class="btn" asp-action="Lesson" asp-route-courseId="@Model.Course.Id" asp-route-lessonId="@prev"><icon name="chevron-left" class="icon--flip" />@L["Previous"]</a>
+                    }
+                    <form method="post" asp-action="Complete" asp-route-courseId="@Model.Course.Id" asp-route-lessonId="@Model.LessonId" asp-route-next="@Model.NextLessonId">
+                        <button type="submit" class="btn btn--primary">
+                            @(Model.NextLessonId is null ? L["Finish"] : Model.Completed ? L["Next lesson"] : L["Mark as done & continue"])
+                            <icon name="arrow-right" class="icon--flip" />
+                        </button>
+                    </form>
+                </div>
+            }
+        </div>
+
+        @if (!string.IsNullOrWhiteSpace(Model.Summary))
+        {
+            <div class="card card__body prose" style="margin-top:20px; max-width:none">@Model.Summary</div>
+        }
+    </div>
+
+    <aside class="card">
+        <div class="card__head"><h2 class="card__title">@(Model.IsPreviewMode ? L["Preview lessons"] : L["Lessons"])</h2></div>
+        <ol class="lesson-list">
+            @foreach (var item in Model.Outline)
+            {
+                <li>
+                    <a class="@(item.Id == Model.LessonId ? "is-current" : null)"
+                       href="@(Model.IsPreviewMode ? Url.Action("Preview", "Courses", new { area = "", slug = Model.Course.Slug, lessonId = item.Id }) : Url.Action("Lesson", "Course", new { area = "Learn", courseId = Model.Course.Id, lessonId = item.Id }))">
+                        <span class="tick @(item.Completed ? "is-done" : null)" data-lesson-tick="@item.Id"><icon name="check" /></span>
+                        <span>@item.Title</span>
+                    </a>
+                </li>
+            }
+        </ol>
+        @if (Model.IsPreviewMode)
+        {
+            <div class="card__body" style="border-top:1px solid var(--line-soft)">
+                <a class="btn btn--primary btn--block" asp-area="" asp-controller="Courses" asp-action="Details" asp-route-slug="@Model.Course.Slug">@L["Enroll to unlock all lessons"]</a>
+            </div>
+        }
+    </aside>
+</div>
+@if (Model.IsPreviewMode)
+{
+    @:</div>
+}

@@ -1,0 +1,9 @@
+bin/
+obj/
+.vs/
+.idea/
+*.user
+App_Data/
+src/Nelt.Web/App_Data/
+appsettings.*.local.json
+TestResults/

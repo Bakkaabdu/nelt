@@ -1,0 +1,43 @@
+@model MyAttendance
+@{ ViewData["Title"] = L["Attendance"]; }
+<partial name="_LearnTabs" model="Model.Course" />
+
+@if (Model.Mode != StudyMode.InPerson)
+{
+    <div class="note note--info">@L["You study this course online, so no class attendance is recorded for you."]</div>
+}
+else
+{
+    <div class="grid grid-3" style="margin-bottom:24px">
+        <div class="kpi"><div class="kpi__label"><icon name="fingerprint" />@L["Attendance rate"]</div><div class="kpi__value">@Percent(Model.Rate)</div></div>
+        <div class="kpi"><div class="kpi__label"><icon name="flag" />@L["Required"]</div><div class="kpi__value">@Model.MinimumRate%</div></div>
+        <div class="kpi"><div class="kpi__label"><icon name="calendar" />@L["Sessions"]</div><div class="kpi__value">@Model.Entries.Count</div></div>
+    </div>
+    <p class="muted small" style="margin-bottom:16px">@L["Check in with your fingerprint at the entrance before each class. Arriving more than a few minutes late is recorded as late."]</p>
+    <div class="table-wrap">
+        <table class="table">
+            <thead><tr><th>@L["Date"]</th><th>@L["Time"]</th><th class="hide-sm">@L["Topic"]</th><th>@L["Status"]</th><th class="hide-sm">@L["Checked in"]</th></tr></thead>
+            <tbody>
+                @foreach (var e in Model.Entries)
+                {
+                    var upcoming = e.StartsAt > Time.UtcNow;
+                    <tr>
+                        <td>@Weekday(e.StartsAt), @Date(e.StartsAt)</td>
+                        <td class="mono small">@Range(e.StartsAt, e.EndsAt)</td>
+                        <td class="hide-sm">@e.Topic</td>
+                        <td>
+                            @if (e.Status is { } s)
+                            {
+                                var css = s switch { AttendanceStatus.Present => "badge--success", AttendanceStatus.Late => "badge--gold", AttendanceStatus.Absent => "badge--danger", _ => "badge--info" };
+                                <span class="badge @css">@Label(s)</span>
+                            }
+                            else if (upcoming) { <span class="muted small">@L["Upcoming"]</span> }
+                            else { <span class="muted small">—</span> }
+                        </td>
+                        <td class="hide-sm small">@(e.CheckInAt is { } at ? Clock(at) : null) @(e.Source is { } src ? "· " + Label(src) : null)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

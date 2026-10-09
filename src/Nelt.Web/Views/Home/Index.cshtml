@@ -1,0 +1,244 @@
+@model LandingPage
+@{
+    var site = Model.Settings;
+    ViewData["Currency"] = site.Currency;
+    string[] quoteWords = ["Wer", "zu", "spät", "kommt,", "den", "bestraft", "das", "Leben."];
+    const double Rh = 184, Rm = 170, Rs = 156;
+    string Len(double r) => (2 * Math.PI * r).ToString("0.0", System.Globalization.CultureInfo.InvariantCulture);
+    string F(double v) => v.ToString("0.##", System.Globalization.CultureInfo.InvariantCulture);
+}
+
+<section class="hero">
+    <div class="container hero__grid">
+        <div class="hero__copy">
+            <div class="hero__kicker">
+                <span class="tricolor tricolor--short tricolor--draw" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span class="scripts"><span lang="de">Deutsch</span><span lang="zh">中文</span></span>
+            </div>
+            <h1 class="hero__title">@Tx(site.HeroTitle)</h1>
+            @if (!site.HeroSubtitle.IsNullOrEmpty())
+            {
+                <p class="hero__lead">@Tx(site.HeroSubtitle)</p>
+            }
+            <div class="hero__actions">
+                <a class="btn btn--primary btn--lg" asp-controller="Courses" asp-action="Index">@L["Browse courses"]<icon name="arrow-right" class="icon--flip" /></a>
+                <a class="btn btn--ghost btn--lg" href="#tracks">@L["Find your level"]</a>
+            </div>
+            <dl class="stats">
+                <div class="stat"><dt class="stat__label">@L["Courses"]</dt><dd class="stat__value" style="margin:0">@Model.Stats.Courses</dd></div>
+                <div class="stat"><dt class="stat__label">@L["Levels"]</dt><dd class="stat__value" style="margin:0">@Model.Stats.Levels</dd></div>
+                <div class="stat"><dt class="stat__label">@(Model.Stats.Students > 0 ? L["Students"] : L["Upcoming events"])</dt><dd class="stat__value" style="margin:0">@(Model.Stats.Students > 0 ? Model.Stats.Students : Model.Stats.UpcomingEvents)</dd></div>
+            </dl>
+        </div>
+
+        @* Zeitring — live Berlin time drawn as three rings in Schwarz, Rot and Gold. *@
+        <div class="zeitring" data-zeitring data-zone="Europe/Berlin" role="img" aria-label="@L["Current time in Berlin"]">
+            <svg viewBox="0 0 440 440" aria-hidden="true">
+                <circle class="zeitring__face" cx="220" cy="220" r="142" />
+                <g class="zeitring__ticks">
+                    @for (var i = 0; i < 60; i++)
+                    {
+                        var hour = i % 5 == 0;
+                        var a = i * Math.PI / 30;
+                        var r1 = hour ? 118 : 126;
+                        const double r2 = 134;
+                        <line class="@(hour ? "is-hour" : null)" x1="@F(220 + r1 * Math.Sin(a))" y1="@F(220 - r1 * Math.Cos(a))" x2="@F(220 + r2 * Math.Sin(a))" y2="@F(220 - r2 * Math.Cos(a))" />
+                    }
+                </g>
+                <circle class="zeitring__track" cx="220" cy="220" r="@Rh" />
+                <circle class="zeitring__track" cx="220" cy="220" r="@Rm" />
+                <circle class="zeitring__track" cx="220" cy="220" r="@Rs" />
+                <circle class="zeitring__ring zeitring__ring--h zeitring__draw" data-ring="h" data-len="@Len(Rh)" cx="220" cy="220" r="@Rh" style="--len:@Len(Rh);stroke-dasharray:@Len(Rh);stroke-dashoffset:@Len(Rh)" />
+                <circle class="zeitring__ring zeitring__ring--m zeitring__draw" data-ring="m" data-len="@Len(Rm)" cx="220" cy="220" r="@Rm" style="--len:@Len(Rm);stroke-dasharray:@Len(Rm);stroke-dashoffset:@Len(Rm)" />
+                <circle class="zeitring__ring zeitring__ring--s zeitring__draw" data-ring="s" data-len="@Len(Rs)" cx="220" cy="220" r="@Rs" style="--len:@Len(Rs);stroke-dasharray:@Len(Rs);stroke-dashoffset:@Len(Rs)" />
+                <text x="220" y="282" text-anchor="middle" style="font: 500 11px var(--font-mono); letter-spacing: .3em; fill: var(--muted)">BERLIN</text>
+                <line class="zeitring__hand zeitring__hand--h" data-hand="h" x1="220" y1="232" x2="220" y2="160" />
+                <line class="zeitring__hand zeitring__hand--m" data-hand="m" x1="220" y1="236" x2="220" y2="118" />
+                <line class="zeitring__hand zeitring__hand--s" data-hand="s" x1="220" y1="246" x2="220" y2="102" />
+                <circle class="zeitring__pin" cx="220" cy="220" r="7" />
+            </svg>
+            <div class="zeitring__caption">
+                <span class="zeitring__city"><span class="live" aria-hidden="true"></span>Berlin <span data-zeitring-time>--:--</span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="quote" aria-labelledby="quote-title">
+    <svg class="quote__clock" viewBox="0 0 460 460" aria-hidden="true">
+        <circle cx="230" cy="230" r="220" stroke-width="2" />
+        <circle cx="230" cy="230" r="170" stroke-width="1" />
+        <line x1="230" y1="230" x2="230" y2="70" stroke-width="6" style="transform: rotate(-40deg)" />
+        <line class="quote__sweep" x1="230" y1="250" x2="230" y2="30" stroke-width="2" />
+    </svg>
+    <div class="container quote__inner">
+        <div class="quote__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+        <figure style="margin:0">
+            <div class="quote__label" id="quote-title">@L["A German saying"]</div>
+            <blockquote class="quote__de" lang="de" dir="ltr">
+                @for (var i = 0; i < quoteWords.Length; i++)
+                {
+                    <span class="w @(i is 1 or 2 ? "w--accent" : null)" style="--i:@i">@quoteWords[i]</span>
+                }
+            </blockquote>
+            <figcaption>
+                <p class="quote__tr" lang="@(Lang == "de" ? "en" : Lang)">@(Lang == "de" ? "He who comes late is punished by life." : L["He who comes late is punished by life."])</p>
+                <p class="quote__meta">@L["Be on time — for class, and for your next level."]</p>
+            </figcaption>
+        </figure>
+    </div>
+</section>
+
+<section class="section" id="tracks">
+    <div class="container">
+        <header class="section__head">
+            <div>
+                <div class="eyebrow"><span class="eyebrow__num">01</span>@L["Languages & levels"]</div>
+                <h2 class="section__title">@L["Two languages. Every level."]</h2>
+            </div>
+            <p class="section__lead">@L["Courses follow the international CEFR scale for German and the HSK scale for Chinese, so you always know where you stand and what comes next."]</p>
+        </header>
+
+        <div class="tracks">
+            @foreach (var track in Model.Tracks)
+            {
+                var isGerman = track.Language == TargetLanguage.German;
+                var count = track.Levels.Count;
+                <article class="track reveal">
+                    <div class="track__head">
+                        <div>
+                            <div class="track__script" lang="@(isGerman ? "de" : "zh")">@(isGerman ? "Deutsch" : "中文")</div>
+                            <p class="track__sub">
+                                @Label(track.Language)
+                                @if (count > 0) { <span class="mono">· @track.Levels[0].Code–@track.Levels[^1].Code</span> }
+                            </p>
+                        </div>
+                        <span class="track__count">@L["{0} courses", track.CourseCount]</span>
+                    </div>
+                    <div class="steps">
+                        @for (var i = 0; i < count; i++)
+                        {
+                            var level = track.Levels[i];
+                            var height = 28 + (int)Math.Round(72.0 * (i + 1) / count);
+                            <a class="step @BandForRank(i + 1) @(level.CourseCount == 0 ? "step--empty" : null)" style="--h:@height%;--i:@i"
+                               asp-controller="Courses" asp-action="Index" asp-route-language="@track.Language" asp-route-level="@level.LevelId"
+                               title="@level.Code — @Tx(level.Name)">
+                                <span class="step__code">@level.Code</span>
+                                <span class="step__count">@level.CourseCount</span>
+                            </a>
+                        }
+                    </div>
+                    <div class="track__legend">
+                        <span class="band-1"><i></i>@L["Foundation"]</span>
+                        <span class="band-2"><i></i>@L["Intermediate"]</span>
+                        <span class="band-3"><i></i>@L["Advanced"]</span>
+                    </div>
+                </article>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="section section--line">
+    <div class="container">
+        <header class="section__head">
+            <div>
+                <div class="eyebrow"><span class="eyebrow__num">02</span>@L["Courses"]</div>
+                <h2 class="section__title">@L["Open for enrollment"]</h2>
+            </div>
+            <a class="link-arrow" asp-controller="Courses" asp-action="Index">@L["All courses"]<icon name="arrow-right" class="icon--flip" /></a>
+        </header>
+        @if (Model.FeaturedCourses.Count == 0)
+        {
+            <div class="card empty"><icon name="book" /><p class="empty__title">@L["New courses are being prepared."]</p><p>@L["Check back soon, or contact us to reserve a place."]</p></div>
+        }
+        else
+        {
+            <div class="course-grid">
+                @foreach (var course in Model.FeaturedCourses)
+                {
+                    <partial name="_CourseTicket" model="course" view-data="ViewData" />
+                }
+            </div>
+        }
+    </div>
+</section>
+
+<section class="section section--line">
+    <div class="container">
+        <header class="section__head">
+            <div>
+                <div class="eyebrow"><span class="eyebrow__num">03</span>@L["How Nelt works"]</div>
+                <h2 class="section__title">@L["Everything a language course needs, in one place."]</h2>
+            </div>
+        </header>
+        <div class="features">
+            @{
+                (string Icon, string Title, string Text)[] features =
+                [
+                    ("video", "Video lessons", "Every course has its own video lessons — watch before class, catch up after, at your own pace."),
+                    ("book", "Materials by level", "Books, documents and audio recordings, organised separately for each proficiency level."),
+                    ("quiz", "Quizzes & final exam", "Regular quizzes for online and in-class students, and a final exam at the end of every course."),
+                    ("clipboard", "Assignments", "Hand in homework directly on the platform and get graded feedback from your instructor."),
+                    ("fingerprint", "Fingerprint attendance", "In-class attendance is recorded automatically by the fingerprint terminal at the entrance."),
+                    ("award", "Certificate & next level", "Pass the course, request your certificate and see whether you are ready for the next level."),
+                ];
+            }
+            @for (var i = 0; i < features.Length; i++)
+            {
+                <div class="feature reveal-up">
+                    <span class="feature__num">@((i + 1).ToString("00"))</span>
+                    <icon name="@features[i].Icon" class="feature__icon" />
+                    <h3 class="feature__title">@L[features[i].Title]</h3>
+                    <p class="feature__text">@L[features[i].Text]</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@if (Model.UpcomingEvents.Count > 0)
+{
+    <section class="section section--line">
+        <div class="container">
+            <header class="section__head">
+                <div>
+                    <div class="eyebrow"><span class="eyebrow__num">04</span>@L["Events"]</div>
+                    <h2 class="section__title">@L["Visits, conversation sessions and guests"]</h2>
+                </div>
+                <a class="link-arrow" asp-controller="Events" asp-action="Index">@L["All events"]<icon name="arrow-right" class="icon--flip" /></a>
+            </header>
+            <div class="events">
+                @foreach (var item in Model.UpcomingEvents)
+                {
+                    <partial name="_EventItem" model="item" />
+                }
+            </div>
+        </div>
+    </section>
+}
+
+<section class="section section--line" id="about">
+    <div class="container about">
+        <div>
+            <div class="eyebrow"><span class="eyebrow__num">@(Model.UpcomingEvents.Count > 0 ? "05" : "04")</span>@L["About"]</div>
+            <h2 class="section__title">@(site.AboutTitle.IsNullOrEmpty() ? site.SiteName : Tx(site.AboutTitle))</h2>
+            @if (!site.AboutBody.IsNullOrEmpty())
+            {
+                <p class="about__body" style="margin-top:20px">@Tx(site.AboutBody)</p>
+            }
+        </div>
+        <aside class="contact-card">
+            <h3 style="font-size:1.2rem">@L["Visit or contact us"]</h3>
+            <ul class="contact-list">
+                @if (!site.Address.IsNullOrEmpty()) { <li><icon name="map-pin" /><span>@Tx(site.Address)</span></li> }
+                @if (!string.IsNullOrEmpty(site.ContactPhone)) { <li><icon name="phone" /><a href="tel:@site.ContactPhone" dir="ltr">@site.ContactPhone</a></li> }
+                @if (!string.IsNullOrEmpty(site.WhatsAppNumber)) { <li><icon name="message" /><a href="https://wa.me/@(new string(site.WhatsAppNumber.Where(char.IsDigit).ToArray()))" rel="noopener" target="_blank" dir="ltr">WhatsApp @site.WhatsAppNumber</a></li> }
+                @if (!string.IsNullOrEmpty(site.ContactEmail)) { <li><icon name="mail" /><a href="mailto:@site.ContactEmail">@site.ContactEmail</a></li> }
+                @if (!string.IsNullOrEmpty(site.FacebookUrl)) { <li><icon name="external" /><a href="@site.FacebookUrl" rel="noopener" target="_blank">Facebook</a></li> }
+                @if (!string.IsNullOrEmpty(site.InstagramUrl)) { <li><icon name="external" /><a href="@site.InstagramUrl" rel="noopener" target="_blank">Instagram</a></li> }
+            </ul>
+            <a class="btn btn--primary btn--block" style="margin-top:22px" asp-controller="Account" asp-action="Register">@L["Create your account"]</a>
+        </aside>
+    </div>
+</section>

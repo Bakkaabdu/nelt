@@ -1,0 +1,37 @@
+@model UserEditModel
+@{
+    var isNew = Model.Id is null;
+    ViewData["Title"] = isNew ? L["New account"] : Model.Input.FullName;
+    var roles = Roles.All.Select(r => new SelectListItem(L[r], r)).ToList();
+}
+<header class="topbar">
+    <div>
+        <nav class="crumbs"><a asp-action="Index">@L["Users"]</a><icon name="chevron-right" class="icon--flip" /><span>@(isNew ? L["New account"] : Model.Input.FullName)</span></nav>
+        <h1 class="topbar__title">@(isNew ? L["New account"] : Model.Input.FullName)</h1>
+    </div>
+</header>
+<form method="post" class="form" style="max-width:820px" asp-action="@(isNew ? "Create" : "Edit")" asp-route-id="@Model.Id">
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+    <section class="form-section">
+        <h2 class="form-section__title">@L["Account"]</h2>
+        <div class="form-grid" style="margin-top:16px">
+            <field asp-for="Input.FullName" />
+            <field asp-for="Input.Email" />
+            <field asp-for="Input.PhoneNumber" />
+            <field asp-for="Input.Role" asp-items="roles" />
+            <field asp-for="Input.Password" type="password" autocomplete="new-password" hint="@(isNew ? "At least 8 characters, including a number." : "Leave empty to keep the current password.")" />
+            <field asp-for="Input.IsActive" hint="Inactive accounts cannot sign in." />
+        </div>
+    </section>
+    <section class="form-section">
+        <h2 class="form-section__title">@L["Fingerprint attendance"]</h2>
+        <p class="form-section__lead">@L["Enroll the student's finger on the terminal at the entrance, then enter the user ID the terminal assigned. Check-ins are matched to class sessions automatically."]</p>
+        <div class="form-grid">
+            <field asp-for="Input.BiometricId" placeholder="1024" />
+        </div>
+    </section>
+    <div class="form-actions"><div class="form-actions__main">
+        <a class="btn" asp-action="Index">@L["Cancel"]</a>
+        <button type="submit" class="btn btn--primary">@L["Save account"]</button>
+    </div></div>
+</form>

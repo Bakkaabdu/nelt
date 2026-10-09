@@ -1,0 +1,44 @@
+@model EventEditModel
+@{
+    var isNew = Model.EventId is null;
+    ViewData["Title"] = isNew ? L["New event"] : Tx(Model.Input.Title);
+    var courses = Model.Courses.Select(c => new SelectListItem(Tx(c.Title), c.Id.ToString())).ToList();
+}
+<header class="topbar">
+    <div>
+        <nav class="crumbs"><a asp-action="Index">@L["Events"]</a><icon name="chevron-right" class="icon--flip" /><span>@(isNew ? L["New event"] : L["Edit event"])</span></nav>
+        <h1 class="topbar__title">@(isNew ? L["New event"] : L["Edit event"])</h1>
+    </div>
+</header>
+<form method="post" class="form" style="max-width:880px" asp-action="@(isNew ? "Create" : "Edit")" asp-route-id="@Model.EventId">
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+    <section class="form-section">
+        <h2 class="form-section__title">@L["What & when"]</h2>
+        <p class="form-section__lead">@L["Title and description are shown to students and — if public — on the website, in every language you fill in."]</p>
+        <div class="form-grid">
+            <field asp-for="Input.Type" />
+            <field asp-for="Input.CourseId" asp-items="courses" empty="@(Model.CourseRequired ? "Choose a course" : "All students (platform-wide)")" />
+            <localized-field asp-for="Input.Title" wide="true" />
+            <localized-field asp-for="Input.Description" rows="4" wide="true" />
+            <field asp-for="Input.StartsAt" />
+            <field asp-for="Input.EndsAt" />
+            <field asp-for="Input.Location" wide="true" />
+            <field asp-for="Input.IsPublic" />
+            <field asp-for="Input.IsPublished" />
+        </div>
+    </section>
+    <div class="form-actions">
+        @if (!isNew)
+        {
+            <button type="submit" form="delete-event" class="btn btn--danger"><icon name="trash" />@L["Delete"]</button>
+        }
+        <div class="form-actions__main">
+            <a class="btn" asp-action="Index">@L["Cancel"]</a>
+            <button type="submit" class="btn btn--primary">@L["Save event"]</button>
+        </div>
+    </div>
+</form>
+@if (!isNew)
+{
+    <form id="delete-event" method="post" asp-action="Delete" asp-route-id="@Model.EventId" data-confirm="@L["Delete this event?"]"></form>
+}

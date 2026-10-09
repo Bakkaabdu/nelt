@@ -1,0 +1,66 @@
+@model StudentAssignmentDetail
+@{ ViewData["Title"] = Model.Title; }
+<partial name="_LearnTabs" model="Model.Course" />
+
+<div class="grid grid-main">
+    <div class="grid">
+        <section class="card card__body stack">
+            <h2 style="font-size:1.6rem">@Model.Title</h2>
+            <div class="meta">
+                @if (Model.DueAt is { } due) { <span><icon name="calendar" />@L["Due {0}", DateTimeText(due)]</span> }
+                <span><icon name="flag" />@L["Maximum score"]: @Model.MaxScore</span>
+            </div>
+            <div class="prose">@Model.Instructions</div>
+            @if (Model.AttachmentName is not null)
+            {
+                <a class="current-file" style="text-decoration:none" href="@Url.Action("Assignment", "Files", new { area = "", id = Model.AssignmentId })"><icon name="download" />@Model.AttachmentName</a>
+            }
+        </section>
+
+        @if (Model.CanSubmit)
+        {
+            <form method="post" enctype="multipart/form-data" asp-action="Submit" asp-route-courseId="@Model.Course.Id" asp-route-assignmentId="@Model.AssignmentId" class="form-section form">
+                <div>
+                    <h3 class="form-section__title">@(Model.Submission is null ? L["Your submission"] : L["Update your submission"])</h3>
+                    <p class="form-section__lead">@L["Write your answer, attach a file, or both. You can update it until it is graded."]</p>
+                </div>
+                <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+                <div class="field">
+                    <label class="field__label" for="Input_Text">@L["Your answer"]</label>
+                    <textarea id="Input_Text" name="Input.Text" class="input input--area" rows="8" maxlength="20000">@Model.Submission?.Text</textarea>
+                </div>
+                <div class="field">
+                    <label class="field__label" for="file">@L["Attach a file"]</label>
+                    <input id="file" name="file" type="file" class="input" accept="@string.Join(",", FilePolicy.AllowedExtensions(FileCategory.Submission))" />
+                    <p class="field__hint">@L["PDF, Word, images, audio or ZIP — up to 50 MB."]</p>
+                    <span class="field__error">@(ViewData.ModelState["file"]?.Errors.FirstOrDefault()?.ErrorMessage)</span>
+                </div>
+                <div class="form-actions"><div class="form-actions__main"><button type="submit" class="btn btn--primary"><icon name="upload" />@L["Hand in"]</button></div></div>
+            </form>
+        }
+    </div>
+
+    <aside class="card">
+        <div class="card__head"><h3 class="card__title">@L["Status"]</h3></div>
+        <div class="card__body stack">
+            @if (Model.Submission is { } s)
+            {
+                <p><span class="badge @(s.Score is null ? "badge--info" : "badge--success")">@(s.Score is null ? L["Submitted"] : L["Graded"])</span></p>
+                <p class="small muted">@L["Handed in {0}", DateTimeText(s.SubmittedAt)]@(s.IsLate ? " · " + L["late"] : null)</p>
+                @if (s.FileName is not null) { <p class="small"><icon name="file" style="display:inline" /> @s.FileName</p> }
+                @if (s.Score is { } score)
+                {
+                    <div class="kpi" style="padding:14px"><div class="kpi__label">@L["Score"]</div><div class="kpi__value">@score.ToString("0.##") <span class="muted" style="font-size:1rem">/ @Model.MaxScore</span></div></div>
+                }
+                @if (!string.IsNullOrWhiteSpace(s.Feedback))
+                {
+                    <div><div class="field__label">@L["Feedback from your instructor"]</div><p class="prose small" style="margin-top:6px">@s.Feedback</p></div>
+                }
+            }
+            else
+            {
+                <p class="muted small">@(Model.State == StudentAssignmentState.Closed ? L["The deadline has passed."] : L["Not handed in yet."])</p>
+            }
+        </div>
+    </aside>
+</div>

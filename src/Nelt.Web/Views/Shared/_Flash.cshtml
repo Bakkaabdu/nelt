@@ -1,0 +1,14 @@
+@{
+    var message = TempData[FlashMessages.MessageKey] as string;
+    var kind = TempData[FlashMessages.KindKey] as string ?? "success";
+}
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="flash-stack" role="status" aria-live="polite">
+        <div class="flash @(kind == "error" ? "flash--error" : null)">
+            <icon name="@(kind == "error" ? "alert" : kind == "info" ? "info" : "check")" />
+            <p>@message</p>
+            <button type="button" class="flash__close" aria-label="@L["Close"]"><icon name="x" /></button>
+        </div>
+    </div>
+}

@@ -1,0 +1,57 @@
+@model LessonEditModel
+@{
+    var isNew = Model.LessonId is null;
+    ViewData["Title"] = isNew ? L["New lesson"] : Model.Input.Title;
+    var id = Model.Course.Id;
+}
+<partial name="_CourseTabs" model="Model.Course" />
+<form method="post" enctype="multipart/form-data" class="form" style="max-width:880px"
+      asp-action="@(isNew ? "Create" : "Edit")" asp-route-courseId="@id" asp-route-lessonId="@Model.LessonId">
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+    <section class="form-section">
+        <h2 class="form-section__title">@(isNew ? L["New lesson"] : L["Edit lesson"])</h2>
+        <p class="form-section__lead">@L["Lessons are taught in the course language; the title and notes are shown to students as written."]</p>
+        <div class="form-grid">
+            <field asp-for="Input.Title" wide="true" />
+            <field asp-for="Input.Summary" rows="6" wide="true" hint="Notes, vocabulary or instructions shown under the video." />
+            <field asp-for="Input.DurationMinutes" />
+            <div></div>
+            <field asp-for="Input.IsPublished" />
+            <field asp-for="Input.IsPreview" hint="Anyone can watch preview lessons from the course page." />
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h2 class="form-section__title">@L["Video"]</h2>
+        <p class="form-section__lead">@L["Upload a video file (MP4 or WebM, streamed securely to enrolled students) or link a YouTube/Vimeo video."]</p>
+        <div class="form-grid">
+            <div class="field field--wide">
+                <label class="field__label" for="video">@L["Upload video"]</label>
+                @if (Model.HasUploadedVideo)
+                {
+                    <div class="current-file"><icon name="video" />@L["A video is uploaded."] <a class="link" href="@Url.Action("Video", "Files", new { area = "", lessonId = Model.LessonId })" target="_blank">@L["Watch"]</a>
+                        <label class="check" style="margin-inline-start:auto"><input class="check__box" type="checkbox" name="removeVideo" value="true" /><span class="check__ui"></span><span class="check__label">@L["Remove"]</span></label>
+                    </div>
+                }
+                <input class="input" type="file" id="video" name="video" accept=".mp4,.webm,.m4v,video/mp4,video/webm" />
+                <span class="field__error" data-valmsg-for="video">@(ViewData.ModelState["Input.video"]?.Errors.FirstOrDefault()?.ErrorMessage)</span>
+            </div>
+            <field asp-for="Input.VideoUrl" wide="true" placeholder="https://www.youtube.com/watch?v=…" hint="Used only when no video file is uploaded." />
+        </div>
+    </section>
+
+    <div class="form-actions">
+        @if (!isNew)
+        {
+            <button type="submit" form="delete-lesson" class="btn btn--danger"><icon name="trash" />@L["Delete lesson"]</button>
+        }
+        <div class="form-actions__main">
+            <a class="btn" asp-action="Index" asp-route-courseId="@id">@L["Cancel"]</a>
+            <button type="submit" class="btn btn--primary">@L["Save lesson"]</button>
+        </div>
+    </div>
+</form>
+@if (!isNew)
+{
+    <form id="delete-lesson" method="post" asp-action="Delete" asp-route-courseId="@id" asp-route-lessonId="@Model.LessonId" data-confirm="@L["Delete this lesson? Students' progress for it will be removed."]"></form>
+}

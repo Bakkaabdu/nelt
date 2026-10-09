@@ -1,0 +1,45 @@
+@model CourseCard
+<a class="ticket @Band(Model.LevelCode)" asp-area="" asp-controller="Courses" asp-action="Details" asp-route-slug="@Model.Slug">
+    <div class="ticket__level" aria-hidden="true">
+        <span class="ticket__lang">@LanguageCode(Model.Language)</span>
+        <span class="ticket__code">@Model.LevelCode</span>
+    </div>
+    <div class="ticket__body">
+        @if (Model.CoverImageKey is not null)
+        {
+            <img class="ticket__cover" src="@Url.Action("Cover", "Media", new { area = "", courseId = Model.Id, v = Model.CoverImageKey[^12..^4] })" alt="" loading="lazy" decoding="async" />
+        }
+        <span class="muted small">@Label(Model.Language) · <span class="mono">@Model.LevelCode</span> · @Tx(Model.LevelName)</span>
+        <h3 class="ticket__title">@Tx(Model.Title)</h3>
+        @if (!Model.Summary.IsNullOrEmpty())
+        {
+            <p class="ticket__summary">@Tx(Model.Summary)</p>
+        }
+        <div class="meta">
+            <span><icon name="@(Model.DeliveryMode == DeliveryMode.Online ? "video" : Model.DeliveryMode == DeliveryMode.InPerson ? "building" : "layers")" />@Label(Model.DeliveryMode)</span>
+            @if (Model.StartDate is { } start)
+            {
+                <span><icon name="calendar" />@Date(start)</span>
+            }
+            @if (Model.TotalHours is { } hours)
+            {
+                <span><icon name="clock" />@L["{0} hours", hours]</span>
+            }
+        </div>
+        <div class="ticket__foot">
+            <span class="price">@Money(Model.Price, ViewData["Currency"] as string ?? string.Empty)</span>
+            @if (Model.SeatsLeft is <= 0)
+            {
+                <span class="seats">@L["Fully booked"]</span>
+            }
+            else if (Model.SeatsLeft is <= 5 and > 0)
+            {
+                <span class="seats">@L["Only {0} seats left", Model.SeatsLeft]</span>
+            }
+            else
+            {
+                <span class="link-arrow small">@L["Details"]<icon name="arrow-right" class="icon--flip" /></span>
+            }
+        </div>
+    </div>
+</a>

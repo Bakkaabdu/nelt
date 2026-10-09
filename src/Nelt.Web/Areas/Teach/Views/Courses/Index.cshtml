@@ -1,0 +1,38 @@
+@model IReadOnlyList<TeachCourseRow>
+@{ ViewData["Title"] = L["My courses"]; }
+<header class="topbar">
+    <div>
+        <h1 class="topbar__title">@L["My courses"]</h1>
+        <p class="topbar__sub">@L["Manage lessons, quizzes, assignments and attendance, and follow every student's progress."]</p>
+    </div>
+    <div class="btn-row">
+        <a class="btn" asp-controller="Materials" asp-action="Index"><icon name="book" />@L["Materials library"]</a>
+        <a class="btn" asp-controller="Events" asp-action="Create"><icon name="plus" />@L["New event"]</a>
+    </div>
+</header>
+@if (Model.Count == 0)
+{
+    <div class="card empty"><icon name="presentation" /><p class="empty__title">@L["No courses are assigned to you yet."]</p><p>@L["An administrator assigns instructors to courses."]</p></div>
+}
+<div class="grid grid-2">
+    @foreach (var c in Model)
+    {
+        <a class="card card--link card__body stack @Band(c.LevelCode)" style="--stack:14px" asp-action="Overview" asp-route-courseId="@c.Id">
+            <div class="btn-row" style="justify-content:space-between">
+                <span class="level-code" style="color:var(--band-ink)">@c.LevelCode</span>
+                <span class="muted small">@Label(c.Language) · @Label(c.DeliveryMode)</span>
+            </div>
+            <h2 style="font-size:1.3rem">@Tx(c.Title)</h2>
+            <div class="meta">
+                <span><icon name="users" />@L["{0} students", c.ActiveStudents]</span>
+                <span><icon name="video" />@L["{0} lessons", c.Lessons]</span>
+                @if (c.NextSession is { } next) { <span><icon name="calendar" />@Date(next), @Clock(next)</span> }
+            </div>
+            <div class="btn-row">
+                @if (!c.IsPublished) { <span class="badge badge--warn">@L["Not published"]</span> }
+                @if (c.SubmissionsToGrade > 0) { <span class="badge badge--danger">@L["{0} to grade", c.SubmissionsToGrade]</span> }
+                @if (c.PendingCertificates > 0) { <span class="badge badge--gold">@L["{0} certificate requests", c.PendingCertificates]</span> }
+            </div>
+        </a>
+    }
+</div>

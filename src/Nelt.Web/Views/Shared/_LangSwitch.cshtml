@@ -1,0 +1,22 @@
+@* Language switcher. Posts to /culture so the choice is stored in a cookie (and on the account when signed in). *@
+@{
+    var current = Cultures.Current;
+    var returnUrl = Context.Request.Path + Context.Request.QueryString;
+    var up = ViewData["LangUp"] as bool? == true;
+}
+<details class="lang @(up ? "lang--up" : null)">
+    <summary aria-label="@L["Language"]">
+        <icon name="globe" />
+        <span>@current.NativeName</span>
+        <icon name="chevron-down" />
+    </summary>
+    <form class="lang__menu" method="post" asp-area="" asp-controller="Culture" asp-action="Set">
+        <input type="hidden" name="returnUrl" value="@returnUrl" />
+        @foreach (var culture in Cultures.Supported)
+        {
+            <button type="submit" name="culture" value="@culture.Code" lang="@culture.Code" aria-current="@(culture.Code == current.Code ? "true" : "false")">
+                <span>@culture.NativeName</span>
+            </button>
+        }
+    </form>
+</details>

@@ -1,0 +1,24 @@
+@model DeviceFormModel
+@{ var isNew = Model.Id is null; ViewData["Title"] = isNew ? L["Register device"] : Model.Input.Name; }
+<header class="topbar">
+    <div>
+        <nav class="crumbs"><a asp-action="Index">@L["Fingerprint devices"]</a><icon name="chevron-right" class="icon--flip" /><span>@(isNew ? L["Register device"] : Model.Input.Name)</span></nav>
+        <h1 class="topbar__title">@(isNew ? L["Register device"] : L["Edit device"])</h1>
+    </div>
+</header>
+<form method="post" class="form" style="max-width:720px" asp-action="@(isNew ? "Create" : "Edit")" asp-route-id="@Model.Id">
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+    <section class="form-section">
+        <div class="form-grid">
+            <field asp-for="Input.Name" placeholder="Main entrance" />
+            <field asp-for="Input.SerialNumber" placeholder="CKJX2020001234" />
+            <field asp-for="Input.Location" wide="true" />
+            <field asp-for="Input.IsActive" hint="Inactive devices are rejected." />
+        </div>
+    </section>
+    <div class="form-actions">
+        @if (!isNew) { <button type="submit" form="delete-device" class="btn btn--danger"><icon name="trash" />@L["Delete"]</button> }
+        <div class="form-actions__main"><a class="btn" asp-action="Index">@L["Cancel"]</a><button type="submit" class="btn btn--primary">@L["Save"]</button></div>
+    </div>
+</form>
+@if (!isNew) { <form id="delete-device" method="post" asp-action="Delete" asp-route-id="@Model.Id" data-confirm="@L["Delete this device?"]"></form> }

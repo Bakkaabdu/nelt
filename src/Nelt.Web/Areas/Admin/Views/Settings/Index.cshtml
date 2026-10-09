@@ -1,0 +1,55 @@
+@model SettingsInput
+@{
+    ViewData["Title"] = L["Platform information"];
+    var zones = new[] { "Africa/Tripoli", "Europe/Berlin", "Africa/Cairo", "Africa/Tunis", "Asia/Riyadh", "Asia/Dubai", "Asia/Shanghai", "Europe/London", "UTC" }
+        .Append(Model.TimeZoneId).Distinct().Select(z => new SelectListItem(z, z)).ToList();
+}
+<header class="topbar">
+    <div>
+        <h1 class="topbar__title">@L["Platform information"]</h1>
+        <p class="topbar__sub">@L["Everything shown on the public website. Fill in each language; empty languages fall back to English."]</p>
+    </div>
+    <a class="btn" asp-area="" asp-controller="Home" asp-action="Index" target="_blank"><icon name="external" />@L["View website"]</a>
+</header>
+<form method="post" class="form" style="max-width:960px">
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+    <section class="form-section">
+        <h2 class="form-section__title">@L["Home page"]</h2>
+        <p class="form-section__lead">@L["The headline and introduction at the top of the home page."]</p>
+        <div class="form-grid">
+            <field asp-for="SiteName" />
+            <localized-field asp-for="Tagline" />
+            <localized-field asp-for="HeroTitle" wide="true" />
+            <localized-field asp-for="HeroSubtitle" rows="3" wide="true" />
+        </div>
+    </section>
+    <section class="form-section">
+        <h2 class="form-section__title">@L["About"]</h2>
+        <div class="form-grid" style="margin-top:16px">
+            <localized-field asp-for="AboutTitle" wide="true" />
+            <localized-field asp-for="AboutBody" rows="7" wide="true" />
+        </div>
+    </section>
+    <section class="form-section">
+        <h2 class="form-section__title">@L["Enrollment & payment"]</h2>
+        <p class="form-section__lead">@L["Shown to students after they reserve a seat."]</p>
+        <div class="form-grid">
+            <localized-field asp-for="PaymentInstructions" rows="3" wide="true" />
+            <field asp-for="Currency" hint="ISO code, e.g. LYD, EUR, USD." />
+            <field asp-for="TimeZoneId" asp-items="zones" hint="Used for schedules, attendance and the fingerprint device clock." />
+        </div>
+    </section>
+    <section class="form-section">
+        <h2 class="form-section__title">@L["Contact"]</h2>
+        <div class="form-grid" style="margin-top:16px">
+            <field asp-for="ContactEmail" />
+            <field asp-for="ContactPhone" />
+            <field asp-for="WhatsAppNumber" />
+            <div></div>
+            <field asp-for="FacebookUrl" />
+            <field asp-for="InstagramUrl" />
+            <localized-field asp-for="Address" wide="true" />
+        </div>
+    </section>
+    <div class="form-actions"><div class="form-actions__main"><button type="submit" class="btn btn--primary btn--lg">@L["Save changes"]</button></div></div>
+</form>

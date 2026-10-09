@@ -1,0 +1,38 @@
+@model AssignmentList
+@{ ViewData["Title"] = L["Assignments"]; var id = Model.Course.Id; }
+<partial name="_CourseTabs" model="Model.Course" />
+<div class="topbar" style="margin-bottom:16px">
+    <p class="muted">@L["Students hand in text answers or files here; you grade them with a score and feedback."]</p>
+    <a class="btn btn--primary" asp-action="Create" asp-route-courseId="@id"><icon name="plus" />@L["New assignment"]</a>
+</div>
+@if (Model.Assignments.Count == 0)
+{
+    <div class="card empty"><icon name="clipboard" /><p class="empty__title">@L["No assignments yet."]</p></div>
+}
+else
+{
+    <div class="table-wrap">
+        <table class="table">
+            <thead><tr><th>@L["Assignment"]</th><th>@L["Due"]</th><th class="num">@L["Handed in"]</th><th class="num">@L["To grade"]</th><th></th></tr></thead>
+            <tbody>
+                @foreach (var a in Model.Assignments)
+                {
+                    var toGrade = a.Submitted - a.Graded;
+                    <tr>
+                        <td>
+                            <a class="cell-title" asp-action="Submissions" asp-route-courseId="@id" asp-route-assignmentId="@a.Id">@a.Title</a>
+                            <div class="cell-sub">@if (!a.IsPublished) { <span class="badge badge--warn">@L["Hidden"]</span> } @L["Maximum score"]: @a.MaxScore</div>
+                        </td>
+                        <td class="small">@(a.DueAt is { } due ? DateTimeText(due) : "—")</td>
+                        <td class="num">@a.Submitted / @Model.ActiveStudents</td>
+                        <td class="num">@if (toGrade > 0) { <span class="badge badge--danger">@toGrade</span> } else { <span class="muted">0</span> }</td>
+                        <td class="actions">
+                            <a class="btn btn--sm @(toGrade > 0 ? "btn--primary" : null)" asp-action="Submissions" asp-route-courseId="@id" asp-route-assignmentId="@a.Id">@L["Submissions"]</a>
+                            <a class="btn btn--quiet btn--sm" asp-action="Edit" asp-route-courseId="@id" asp-route-assignmentId="@a.Id" title="@L["Edit"]"><icon name="edit" /></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

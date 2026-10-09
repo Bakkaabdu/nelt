@@ -1,0 +1,12 @@
+@model string
+@* Shared <head> content. Fonts are self-hosted; unicode-range makes browsers fetch only the subsets a page uses. *@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#16171b" />
+<title>@Model</title>
+<link rel="icon" href="~/img/favicon.svg" type="image/svg+xml" />
+<link rel="preload" href="~/fonts/jost-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="~/fonts/@(Lang == "ar" ? "ibm-plex-sans-arabic-arabic-400-normal" : "ibm-plex-sans-latin-400-normal").woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="~/css/fonts.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<script src="~/js/site.js" asp-append-version="true" defer></script>

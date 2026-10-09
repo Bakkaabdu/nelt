@@ -1,0 +1,25 @@
+@model (int Page, int TotalPages, int TotalCount)
+@{
+    string UrlFor(int page)
+    {
+        var query = Context.Request.Query.ToDictionary(q => q.Key, q => q.Value.ToString());
+        query["page"] = page.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        return Context.Request.Path + Microsoft.AspNetCore.Http.QueryString.Create(query!);
+    }
+}
+@if (Model.TotalPages > 1 || Model.TotalCount > 0)
+{
+    <nav class="pager" aria-label="@L["Pages"]">
+        <span>@L["{0} results", Model.TotalCount] · @L["Page {0} of {1}", Model.Page, Model.TotalPages]</span>
+        <div class="btn-row">
+            @if (Model.Page > 1)
+            {
+                <a class="btn btn--sm" href="@UrlFor(Model.Page - 1)"><icon name="chevron-left" class="icon--flip" />@L["Previous"]</a>
+            }
+            @if (Model.Page < Model.TotalPages)
+            {
+                <a class="btn btn--sm" href="@UrlFor(Model.Page + 1)">@L["Next"]<icon name="chevron-right" class="icon--flip" /></a>
+            }
+        </div>
+    </nav>
+}

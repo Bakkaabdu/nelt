@@ -1,0 +1,50 @@
+@model SubmissionsModel
+@{ ViewData["Title"] = Model.Title; var id = Model.Course.Id; }
+<partial name="_CourseTabs" model="Model.Course" />
+<div class="topbar" style="margin-bottom:16px">
+    <div>
+        <nav class="crumbs"><a asp-action="Index" asp-route-courseId="@id">@L["Assignments"]</a><icon name="chevron-right" class="icon--flip" /><span>@Model.Title</span></nav>
+        <h2 style="font-size:1.4rem">@L["Submissions"]</h2>
+        <p class="muted small">@(Model.DueAt is { } due ? L["Due {0}", DateTimeText(due)] : L["No deadline"]) · @L["Maximum score"] @Model.MaxScore</p>
+    </div>
+    <a class="btn" asp-action="Edit" asp-route-courseId="@id" asp-route-assignmentId="@Model.AssignmentId"><icon name="edit" />@L["Edit assignment"]</a>
+</div>
+<div class="grid">
+    @foreach (var r in Model.Rows)
+    {
+        <article class="card">
+            <div class="card__head">
+                <div>
+                    <div class="card__title">@r.StudentName</div>
+                    <div class="muted small">
+                        @Label(r.Mode)
+                        @if (r.SubmittedAt is { } at) { <span>· @L["Handed in {0}", DateTimeText(at)]</span> @if (r.IsLate) { <span class="badge badge--danger">@L["late"]</span> } }
+                    </div>
+                </div>
+                @if (r.SubmissionId is null) { <span class="badge badge--plain">@L["Not handed in"]</span> }
+                else if (r.Score is null) { <span class="badge badge--warn">@L["To grade"]</span> }
+                else { <span class="badge badge--success">@r.Score?.ToString("0.##") / @Model.MaxScore</span> }
+            </div>
+            @if (r.SubmissionId is { } submissionId)
+            {
+                <div class="card__body grid grid-2" style="gap:20px">
+                    <div class="stack" style="--stack:10px">
+                        @if (!string.IsNullOrWhiteSpace(r.Text)) { <div class="prose small" style="max-height:260px; overflow:auto; padding:12px; background:var(--paper); border-radius:8px">@r.Text</div> }
+                        @if (r.FileName is not null) { <a class="current-file" style="text-decoration:none" href="@Url.Action("Submission", "Files", new { area = "", id = submissionId })"><icon name="download" />@r.FileName</a> }
+                    </div>
+                    <form method="post" class="form" style="gap:12px" asp-action="Grade" asp-route-courseId="@id" asp-route-assignmentId="@Model.AssignmentId" asp-route-submissionId="@submissionId">
+                        <div class="field">
+                            <label class="field__label" for="score-@submissionId">@L["Score"] (0–@Model.MaxScore)</label>
+                            <input class="input" id="score-@submissionId" name="Score" type="number" min="0" max="@Model.MaxScore" step="0.5" value="@r.Score?.ToString("0.##", System.Globalization.CultureInfo.InvariantCulture)" required />
+                        </div>
+                        <div class="field">
+                            <label class="field__label" for="feedback-@submissionId">@L["Feedback"]</label>
+                            <textarea class="input input--area" id="feedback-@submissionId" name="Feedback" rows="3" maxlength="4000">@r.Feedback</textarea>
+                        </div>
+                        <button class="btn btn--primary" type="submit">@(r.Score is null ? L["Save grade"] : L["Update grade"])</button>
+                    </form>
+                </div>
+            }
+        </article>
+    }
+</div>

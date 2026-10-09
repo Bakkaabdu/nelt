@@ -1,0 +1,91 @@
+@model MaterialsPage
+@{
+    ViewData["Title"] = L["Materials library"];
+    var lib = Model.Library;
+    var level = lib.Selected;
+    var courses = lib.Courses.Select(c => new SelectListItem(Tx(c.Title), c.Id.ToString())).ToList();
+    var levelItems = lib.Levels.Select(l => new SelectListItem($"{Label(l.Language)} · {l.Code}", l.Id.ToString())).ToList();
+}
+<header class="topbar">
+    <div>
+        <h1 class="topbar__title">@L["Materials library"]</h1>
+        <p class="topbar__sub">@L["Books, documents and audio recordings, organised by proficiency level. Students of a level see its materials in every course of that level."]</p>
+    </div>
+</header>
+
+@if (lib.Levels.Count == 0)
+{
+    <div class="card empty"><icon name="layers" /><p class="empty__title">@L["You can manage materials for the levels you teach."]</p></div>
+}
+else
+{
+    <nav class="course-tabs" aria-label="@L["Levels"]">
+        @foreach (var l in lib.Levels)
+        {
+            <a class="@(l.Id == level?.Id ? "is-active" : null)" asp-action="Index" asp-route-level="@l.Id"><span class="mono">@l.Code</span> <span class="muted small">@l.MaterialCount</span></a>
+        }
+    </nav>
+
+    <div class="grid grid-main">
+        <div class="grid" style="gap:28px">
+            <h2 style="font-size:1.4rem">@Label(level!.Language) · <span class="mono">@level.Code</span> — @Tx(level.Name)</h2>
+            @foreach (var (type, items) in lib.Groups)
+            {
+                <section>
+                    <h3 class="eyebrow">@Label(type) · @items.Count</h3>
+                    @if (items.Count == 0)
+                    {
+                        <p class="muted small">@L["Nothing here yet."]</p>
+                    }
+                    else
+                    {
+                        <div class="card">
+                            <ul class="list">
+                                @for (var i = 0; i < items.Count; i++)
+                                {
+                                    var m = items[i];
+                                    <li>
+                                        <icon name="@(m.ContentType.StartsWith("audio/") ? "audio" : type == MaterialType.Book ? "book" : "file")" />
+                                        <div class="list__main">
+                                            <div class="list__title">@m.Title @if (!m.IsPublished) { <span class="badge badge--warn">@L["Hidden"]</span> }</div>
+                                            <div class="list__sub">@m.FileName · @FileSize(m.SizeBytes)@(m.CourseTitle is null ? null : " · " + Tx(m.CourseTitle))</div>
+                                        </div>
+                                        <form method="post" class="inline-form" asp-action="Move" asp-route-id="@m.Id" asp-route-level="@level.Id">
+                                            <button class="btn btn--quiet btn--sm" name="direction" value="-1" disabled="@(i == 0 ? "disabled" : null)" title="@L["Move up"]"><icon name="arrow-up" /></button>
+                                            <button class="btn btn--quiet btn--sm" name="direction" value="1" disabled="@(i == items.Count - 1 ? "disabled" : null)" title="@L["Move down"]"><icon name="arrow-down" /></button>
+                                        </form>
+                                        <a class="btn btn--quiet btn--sm" href="@Url.Action("Material", "Files", new { area = "", id = m.Id, download = true })" title="@L["Download"]"><icon name="download" /></a>
+                                        <a class="btn btn--quiet btn--sm" asp-action="Edit" asp-route-id="@m.Id" title="@L["Edit"]"><icon name="edit" /></a>
+                                        <form method="post" class="inline-form" asp-action="Delete" asp-route-id="@m.Id" asp-route-level="@level.Id" data-confirm="@L["Remove this file from the library?"]">
+                                            <button class="btn btn--quiet btn--sm" title="@L["Delete"]"><icon name="trash" /></button>
+                                        </form>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </section>
+            }
+        </div>
+
+        <form method="post" enctype="multipart/form-data" class="card" asp-action="Upload">
+            <div class="card__head"><h2 class="card__title">@L["Add a file"]</h2><icon name="upload" /></div>
+            <div class="card__body form" style="gap:16px">
+                <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+                <field asp-for="Upload.LevelId" asp-items="levelItems" />
+                <field asp-for="Upload.Type" />
+                <field asp-for="Upload.CourseId" asp-items="courses" empty="All courses of this level" />
+                <field asp-for="Upload.Title" />
+                <field asp-for="Upload.Description" rows="3" />
+                <div class="field">
+                    <label class="field__label" for="file">@L["File"]<span class="req">*</span></label>
+                    <input class="input" type="file" id="file" name="file" required accept="@string.Join(",", FilePolicy.AllowedExtensions(FileCategory.Material))" />
+                    <p class="field__hint">@L["PDF, Word, PowerPoint, Excel, EPUB, images or audio (MP3, M4A, WAV, OGG)."]</p>
+                    <span class="field__error">@(ViewData.ModelState["file"]?.Errors.FirstOrDefault()?.ErrorMessage ?? ViewData.ModelState["Upload.file"]?.Errors.FirstOrDefault()?.ErrorMessage)</span>
+                </div>
+                <field asp-for="Upload.IsPublished" />
+                <button type="submit" class="btn btn--primary"><icon name="upload" />@L["Upload"]</button>
+            </div>
+        </form>
+    </div>
+}

@@ -1,0 +1,53 @@
+@model AttendanceMatrix
+@{
+    ViewData["Title"] = L["Attendance overview"];
+    var id = Model.Course.Id;
+    string Cell(AttendanceStatus? s) => s switch
+    {
+        AttendanceStatus.Present => "att--present", AttendanceStatus.Late => "att--late", AttendanceStatus.Absent => "att--absent",
+        AttendanceStatus.Excused => "att--excused", _ => "att--none",
+    };
+    string Letter(AttendanceStatus? s) => s switch { AttendanceStatus.Present => "P", AttendanceStatus.Late => "L", AttendanceStatus.Absent => "A", AttendanceStatus.Excused => "E", _ => "·" };
+}
+<partial name="_CourseTabs" model="Model.Course" />
+<div class="topbar" style="margin-bottom:16px">
+    <div>
+        <nav class="crumbs"><a asp-action="Index" asp-route-courseId="@id">@L["Classes & attendance"]</a><icon name="chevron-right" class="icon--flip" /><span>@L["Attendance overview"]</span></nav>
+        <p class="muted small">@L["Required attendance: {0}%", Model.MinimumRate] · <span class="att att--present">P</span> @L["Present"] · <span class="att att--late">L</span> @L["Late"] · <span class="att att--absent">A</span> @L["Absent"] · <span class="att att--excused">E</span> @L["Excused"]</p>
+    </div>
+</div>
+@if (Model.Rows.Count == 0 || Model.Sessions.Count == 0)
+{
+    <div class="card empty"><icon name="grid" /><p class="empty__title">@L["Attendance appears here once classes have taken place."]</p></div>
+}
+else
+{
+    <div class="table-wrap">
+        <table class="table matrix">
+            <thead>
+                <tr>
+                    <th>@L["Student"]</th>
+                    <th class="num">%</th>
+                    @foreach (var s in Model.Sessions)
+                    {
+                        var local = Time.ToLocal(s.StartsAt);
+                        <th><a asp-action="Attendance" asp-route-courseId="@id" asp-route-sessionId="@s.Id" title="@Date(s.StartsAt)">@local.ToString("dd.MM")</a></th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var r in Model.Rows)
+                {
+                    <tr>
+                        <td class="cell-title nowrap">@r.StudentName</td>
+                        <td class="num"><span class="badge @(r.Rate is null ? "badge--plain" : r.Rate >= Model.MinimumRate ? "badge--success" : "badge--danger")">@Percent(r.Rate)</span></td>
+                        @foreach (var c in r.Cells)
+                        {
+                            <td><span class="att @Cell(c.Status)">@Letter(c.Status)</span></td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

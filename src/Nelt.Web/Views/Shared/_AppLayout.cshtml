@@ -1,0 +1,98 @@
+@using Microsoft.AspNetCore.Antiforgery
+@inject IPlatformSettingsService SettingsService
+@inject IAntiforgery Antiforgery
+@{
+    var site = await SettingsService.GetAsync();
+    var title = ViewData["Title"] is string t ? $"{t} · {site.SiteName}" : site.SiteName;
+    var fullName = User.FindFirst("nelt:full_name")?.Value ?? User.Identity?.Name ?? string.Empty;
+    var initials = string.Concat(fullName.Split(' ', StringSplitOptions.RemoveEmptyEntries).Take(2).Select(p => char.ToUpperInvariant(p[0])));
+    var isAdmin = User.IsInRole(Roles.Admin);
+    var isStaff = isAdmin || User.IsInRole(Roles.Instructor);
+    var area = ViewContext.RouteData.Values["area"] as string ?? string.Empty;
+    var roleLabel = area switch { "Admin" => L["Administration"], "Teach" => L["Teaching"], _ => L["Student"] };
+}
+<!DOCTYPE html>
+<html lang="@Lang" dir="@(IsRtl ? "rtl" : "ltr")">
+<head>
+    <partial name="_Head" model="title" />
+    <meta name="csrf-token" content="@Antiforgery.GetAndStoreTokens(Context).RequestToken" />
+    <meta name="robots" content="noindex" />
+</head>
+<body>
+    <a class="skip-link" href="#main">@L["Skip to content"]</a>
+    <div class="app">
+        <aside class="app__side" aria-label="@L["Navigation"]">
+            <a class="brand" asp-area="" asp-controller="Home" asp-action="Index"><partial name="_Brand" model="site.SiteName" /></a>
+            <div class="app__role">@roleLabel</div>
+            <div class="tricolor tricolor--thin" aria-hidden="true" style="margin: 0 22px 8px; width: auto;"><span></span><span></span><span></span></div>
+
+            <nav class="side-nav">
+                @if (area == "Admin")
+                {
+                    <a class="side-nav__link @Active("Admin", "Dashboard")" asp-area="Admin" asp-controller="Dashboard" asp-action="Index"><icon name="grid" />@L["Overview"]</a>
+                    <a class="side-nav__link @Active("Admin", "Enrollments")" asp-area="Admin" asp-controller="Enrollments" asp-action="Index"><icon name="wallet" />@L["Enrollments"]</a>
+                    <div class="side-nav__label">@L["Catalogue"]</div>
+                    <a class="side-nav__link @Active("Admin", "Courses")" asp-area="Admin" asp-controller="Courses" asp-action="Index"><icon name="book" />@L["Courses"]</a>
+                    <a class="side-nav__link @Active("Admin", "Levels")" asp-area="Admin" asp-controller="Levels" asp-action="Index"><icon name="layers" />@L["Levels"]</a>
+                    <a class="side-nav__link @Active("Admin", "Settings")" asp-area="Admin" asp-controller="Settings" asp-action="Index"><icon name="settings" />@L["Platform information"]</a>
+                    <div class="side-nav__label">@L["People & access"]</div>
+                    <a class="side-nav__link @Active("Admin", "Users")" asp-area="Admin" asp-controller="Users" asp-action="Index"><icon name="users" />@L["Users"]</a>
+                    <a class="side-nav__link @Active("Admin", "Devices")" asp-area="Admin" asp-controller="Devices" asp-action="Index"><icon name="fingerprint" />@L["Fingerprint devices"]</a>
+                    <div class="side-nav__label">@L["Teaching"]</div>
+                    <a class="side-nav__link" asp-area="Teach" asp-controller="Courses" asp-action="Index"><icon name="presentation" />@L["Course workspace"]</a>
+                    <a class="side-nav__link" asp-area="Teach" asp-controller="Events" asp-action="Index"><icon name="calendar" />@L["Events"]</a>
+                    <a class="side-nav__link" asp-area="Teach" asp-controller="Certificates" asp-action="Index"><icon name="award" />@L["Certificates"]</a>
+                }
+                else if (area == "Teach")
+                {
+                    <a class="side-nav__link @Active("Teach", "Courses", "Lessons", "Quizzes", "Assignments", "Sessions", "Students")" asp-area="Teach" asp-controller="Courses" asp-action="Index"><icon name="presentation" />@L["My courses"]</a>
+                    <a class="side-nav__link @Active("Teach", "Materials")" asp-area="Teach" asp-controller="Materials" asp-action="Index"><icon name="book" />@L["Materials library"]</a>
+                    <a class="side-nav__link @Active("Teach", "Events")" asp-area="Teach" asp-controller="Events" asp-action="Index"><icon name="calendar" />@L["Events"]</a>
+                    <a class="side-nav__link @Active("Teach", "Certificates")" asp-area="Teach" asp-controller="Certificates" asp-action="Index"><icon name="award" />@L["Certificate requests"]</a>
+                    @if (isAdmin)
+                    {
+                        <div class="side-nav__label">@L["Administration"]</div>
+                        <a class="side-nav__link" asp-area="Admin" asp-controller="Dashboard" asp-action="Index"><icon name="grid" />@L["Admin panel"]</a>
+                    }
+                }
+                else
+                {
+                    <a class="side-nav__link @(IsActive("Learn", "Dashboard") && ViewContext.RouteData.Values["action"] as string == "Index" ? "is-active" : null)" asp-area="Learn" asp-controller="Dashboard" asp-action="Index"><icon name="home" />@L["My learning"]</a>
+                    <a class="side-nav__link @(ViewContext.RouteData.Values["action"] as string == "Schedule" ? "is-active" : null)" asp-area="Learn" asp-controller="Dashboard" asp-action="Schedule"><icon name="calendar" />@L["Schedule & events"]</a>
+                    <a class="side-nav__link" asp-area="" asp-controller="Courses" asp-action="Index"><icon name="search" />@L["Find a course"]</a>
+                    @await RenderSectionAsync("SideNav", required: false)
+                }
+                <div class="side-nav__label">@L["Account"]</div>
+                <a class="side-nav__link" asp-area="" asp-controller="Account" asp-action="Password"><icon name="lock" />@L["Change password"]</a>
+                <a class="side-nav__link" asp-area="" asp-controller="Home" asp-action="Index"><icon name="external" />@L["Public website"]</a>
+            </nav>
+
+            <div class="side-foot">
+                @{ ViewData["LangUp"] = true; }
+                <partial name="_LangSwitch" view-data="ViewData" />
+            </div>
+            <div class="side-user">
+                <span class="avatar" aria-hidden="true">@initials</span>
+                <div style="min-width:0">
+                    <div class="side-user__name">@fullName</div>
+                    <div class="side-user__meta">@(isAdmin ? L["Administrator"] : isStaff ? L["Instructor"] : L["Student"])</div>
+                </div>
+                <form method="post" asp-area="" asp-controller="Account" asp-action="Logout">
+                    <button type="submit" class="btn btn--quiet btn--sm" title="@L["Sign out"]"><icon name="logout" class="icon--flip" /><span class="visually-hidden">@L["Sign out"]</span></button>
+                </form>
+            </div>
+        </aside>
+
+        <div class="app__main">
+            <div class="app__mobilebar">
+                <a class="brand" asp-area="" asp-controller="Home" asp-action="Index"><partial name="_Brand" model="site.SiteName" /></a>
+                <button type="button" class="btn btn--sm" data-app-toggle aria-label="@L["Menu"]"><icon name="menu" /></button>
+            </div>
+            <main id="main" class="app__content">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+    <partial name="_Flash" />
+</body>
+</html>

@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Nelt.Domain/Nelt.Domain.csproj" />
+    <Project Path="src/Nelt.Application/Nelt.Application.csproj" />
+    <Project Path="src/Nelt.Infrastructure/Nelt.Infrastructure.csproj" />
+    <Project Path="src/Nelt.Web/Nelt.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Nelt.UnitTests/Nelt.UnitTests.csproj" />
+  </Folder>
+</Solution>

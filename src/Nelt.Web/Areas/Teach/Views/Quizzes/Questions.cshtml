@@ -1,0 +1,108 @@
+@model QuizQuestionsModel
+@{
+    ViewData["Title"] = Model.QuizTitle;
+    var id = Model.Course.Id;
+    var types = Enum.GetValues<QuestionType>();
+}
+<partial name="_CourseTabs" model="Model.Course" />
+<div class="topbar" style="margin-bottom:16px">
+    <div>
+        <nav class="crumbs"><a asp-action="Index" asp-route-courseId="@id">@L["Quizzes & exam"]</a><icon name="chevron-right" class="icon--flip" /><span>@Model.QuizTitle</span></nav>
+        <h2 style="font-size:1.4rem">@L["{0} questions · {1} points", Model.Questions.Count, Model.TotalPoints]</h2>
+    </div>
+    <div class="btn-row">
+        <a class="btn" asp-action="Edit" asp-route-courseId="@id" asp-route-quizId="@Model.QuizId"><icon name="settings" />@L["Settings & publishing"]</a>
+        <a class="btn" asp-action="Results" asp-route-courseId="@id" asp-route-quizId="@Model.QuizId"><icon name="chart" />@L["Results"]</a>
+    </div>
+</div>
+
+@if (Model.IsLocked)
+{
+    <div class="note" style="margin-bottom:20px">@L["Students already took this quiz, so its questions are locked to keep results fair."]</div>
+}
+
+<div class="grid grid-main">
+    <div class="qa-list">
+        @if (Model.Questions.Count == 0)
+        {
+            <div class="card empty"><icon name="quiz" /><p class="empty__title">@L["Add the first question."]</p></div>
+        }
+        @for (var i = 0; i < Model.Questions.Count; i++)
+        {
+            var q = Model.Questions[i];
+            <article class="qa">
+                <div class="question__head" style="margin-bottom:0">
+                    <span class="question__num">@(i + 1)</span>
+                    <div style="flex:1">
+                        <p class="question__prompt">@q.Prompt</p>
+                        <p class="muted small">@Label(q.Type) · @L["{0} points", q.Points]</p>
+                    </div>
+                    @if (!Model.IsLocked)
+                    {
+                        <form method="post" asp-action="DeleteQuestion" asp-route-courseId="@id" asp-route-quizId="@Model.QuizId" asp-route-questionId="@q.Id" data-confirm="@L["Delete this question?"]">
+                            <button class="btn btn--quiet btn--sm" title="@L["Delete"]"><icon name="trash" /></button>
+                        </form>
+                    }
+                </div>
+                <ul class="qa__opts">
+                    @foreach (var o in q.Options)
+                    {
+                        <li class="@(o.IsCorrect ? "is-correct" : null)"><icon name="@(o.IsCorrect ? "check" : "x")" />@(q.Type == QuestionType.TrueFalse ? L[o.Text] : o.Text)</li>
+                    }
+                </ul>
+            </article>
+        }
+    </div>
+
+    @if (!Model.IsLocked)
+    {
+        <form method="post" class="card" asp-action="SaveQuestion" asp-route-courseId="@id" asp-route-quizId="@Model.QuizId" data-question-editor>
+            <div class="card__head"><h3 class="card__title">@L["Add a question"]</h3></div>
+            <div class="card__body form" style="gap:16px">
+                <div class="field">
+                    <label class="field__label" for="Question_Type">@L["Question type"]</label>
+                    <select class="input input--select" id="Question_Type" name="Question.Type" data-question-type>
+                        @foreach (var t in types) { <option value="@t">@Label(t)</option> }
+                    </select>
+                </div>
+                <div class="field">
+                    <label class="field__label" for="Question_Prompt">@L["Question"]<span class="req">*</span></label>
+                    <textarea class="input input--area" id="Question_Prompt" name="Question.Prompt" rows="3" required maxlength="2000"></textarea>
+                </div>
+                <div class="field">
+                    <label class="field__label" for="Question_Points">@L["Points"]</label>
+                    <input class="input" id="Question_Points" name="Question.Points" type="number" min="1" max="100" value="1" />
+                </div>
+                <div class="field" data-choice-options>
+                    <span class="field__label">@L["Answers — tick the correct ones"]</span>
+                    <div class="opt-rows" data-option-rows>
+                        @for (var o = 0; o < 4; o++)
+                        {
+                            <div class="opt-row">
+                                <input type="checkbox" name="Question.Options[@o].IsCorrect" value="true" data-correct aria-label="@L["Correct"]" />
+                                <input type="text" class="input" name="Question.Options[@o].Text" maxlength="500" placeholder="@L["Answer {0}", o + 1]" />
+                                <button type="button" class="btn btn--quiet btn--sm" data-remove-option aria-label="@L["Remove"]"><icon name="x" /></button>
+                            </div>
+                        }
+                    </div>
+                    <template data-option-template>
+                        <div class="opt-row">
+                            <input type="checkbox" name="Question.Options[__i__].IsCorrect" value="true" data-correct aria-label="@L["Correct"]" />
+                            <input type="text" class="input" name="Question.Options[__i__].Text" maxlength="500" />
+                            <button type="button" class="btn btn--quiet btn--sm" data-remove-option aria-label="@L["Remove"]"><icon name="x" /></button>
+                        </div>
+                    </template>
+                    <button type="button" class="btn btn--sm btn--ghost" data-add-option style="justify-self:start"><icon name="plus" />@L["Add answer"]</button>
+                </div>
+                <div class="field" data-truefalse hidden>
+                    <span class="field__label">@L["Correct answer"]</span>
+                    <div class="segmented">
+                        <label><input type="radio" name="Question.TrueIsCorrect" value="true" checked /><span>@L["True"]</span></label>
+                        <label><input type="radio" name="Question.TrueIsCorrect" value="false" /><span>@L["False"]</span></label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn--primary"><icon name="plus" />@L["Add question"]</button>
+            </div>
+        </form>
+    }
+</div>

@@ -1,0 +1,50 @@
+@model IReadOnlyList<CourseAdminRow>
+@inject IPlatformSettingsService SettingsService
+@{ ViewData["Title"] = L["Courses"]; var currency = (await SettingsService.GetAsync()).Currency; }
+<header class="topbar">
+    <div>
+        <h1 class="topbar__title">@L["Courses"]</h1>
+        <p class="topbar__sub">@L["The course catalogue shown on the website. Instructors manage lessons, quizzes and attendance in the course workspace."]</p>
+    </div>
+    <a class="btn btn--primary" asp-action="Create"><icon name="plus" />@L["New course"]</a>
+</header>
+@if (Model.Count == 0)
+{
+    <div class="card empty"><icon name="book" /><p class="empty__title">@L["No courses yet."]</p><a class="btn btn--primary btn--sm" asp-action="Create">@L["Create the first course"]</a></div>
+}
+else
+{
+    <div class="table-wrap">
+        <table class="table">
+            <thead><tr><th>@L["Course"]</th><th class="hide-sm">@L["Instructor"]</th><th class="hide-sm">@L["Starts"]</th><th class="num">@L["Price"]</th><th class="num">@L["Students"]</th><th></th></tr></thead>
+            <tbody>
+                @foreach (var c in Model)
+                {
+                    <tr>
+                        <td>
+                            <div class="btn-row" style="gap:10px; flex-wrap:nowrap">
+                                <span class="level-code @Band(c.LevelCode)" style="color:var(--band-ink)">@c.LevelCode</span>
+                                <div>
+                                    <a class="cell-title" asp-action="Edit" asp-route-id="@c.Id">@Tx(c.Title)</a>
+                                    <div class="cell-sub">
+                                        @Label(c.Language) · @Label(c.DeliveryMode)
+                                        @if (!c.IsPublished) { <span class="badge badge--warn">@L["Draft"]</span> }
+                                        @if (c.IsFeatured) { <span class="badge badge--gold">@L["Featured"]</span> }
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="hide-sm small">@(c.InstructorName ?? "—")</td>
+                        <td class="hide-sm small">@(c.StartDate is { } s ? Date(s) : "—")</td>
+                        <td class="num">@Money(c.Price, currency)</td>
+                        <td class="num">@c.ActiveStudents @if (c.PendingStudents > 0) { <span class="badge badge--warn">+@c.PendingStudents</span> }</td>
+                        <td class="actions">
+                            <a class="btn btn--sm" asp-area="Teach" asp-controller="Courses" asp-action="Overview" asp-route-courseId="@c.Id">@L["Workspace"]</a>
+                            <a class="btn btn--quiet btn--sm" asp-action="Edit" asp-route-id="@c.Id" title="@L["Edit"]"><icon name="edit" /></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

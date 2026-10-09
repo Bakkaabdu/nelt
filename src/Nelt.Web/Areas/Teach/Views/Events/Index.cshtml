@@ -1,0 +1,41 @@
+@model EventsPage
+@{ ViewData["Title"] = L["Events"]; }
+<header class="topbar">
+    <div>
+        <h1 class="topbar__title">@L["Events & activities"]</h1>
+        <p class="topbar__sub">@L["Scheduled visits, conversation sessions, delegations, guests and cultural events. Students of the course see them in their schedule."]</p>
+    </div>
+    <a class="btn btn--primary" asp-action="Create"><icon name="plus" />@L["New event"]</a>
+</header>
+<nav class="course-tabs">
+    <a class="@(Model.Past ? null : "is-active")" asp-action="Index">@L["Upcoming"]</a>
+    <a class="@(Model.Past ? "is-active" : null)" asp-action="Index" asp-route-past="true">@L["Past"]</a>
+</nav>
+@if (Model.Events.Count == 0)
+{
+    <div class="card empty"><icon name="calendar" /><p class="empty__title">@L["No events here."]</p></div>
+}
+else
+{
+    <div class="table-wrap">
+        <table class="table">
+            <thead><tr><th>@L["Event"]</th><th>@L["When"]</th><th class="hide-sm">@L["Course"]</th><th class="hide-sm">@L["Visibility"]</th><th></th></tr></thead>
+            <tbody>
+                @foreach (var e in Model.Events)
+                {
+                    <tr>
+                        <td><a class="cell-title" asp-action="Edit" asp-route-id="@e.Id">@Tx(e.Title)</a><div class="cell-sub">@Label(e.Type)@(e.Location is null ? null : " · " + e.Location)</div></td>
+                        <td class="small">@DateTimeText(e.StartsAt)</td>
+                        <td class="hide-sm small">@(e.CourseTitle is null ? L["All students"] : Tx(e.CourseTitle))</td>
+                        <td class="hide-sm">
+                            @if (!e.IsPublished) { <span class="badge badge--warn">@L["Draft"]</span> }
+                            else if (e.IsPublic) { <span class="badge badge--success">@L["Public website"]</span> }
+                            else { <span class="badge badge--plain">@L["Students only"]</span> }
+                        </td>
+                        <td class="actions"><a class="btn btn--sm" asp-action="Edit" asp-route-id="@e.Id"><icon name="edit" />@L["Edit"]</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

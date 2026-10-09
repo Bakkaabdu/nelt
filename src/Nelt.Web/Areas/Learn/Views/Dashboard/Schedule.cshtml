@@ -1,0 +1,48 @@
+@model IReadOnlyList<ScheduleItem>
+@{
+    ViewData["Title"] = L["Schedule & events"];
+    var days = Model.GroupBy(i => DateOnly.FromDateTime(Time.ToLocal(i.StartsAt)));
+}
+<header class="topbar">
+    <div>
+        <h1 class="topbar__title">@L["Schedule & events"]</h1>
+        <p class="topbar__sub">@L["Your in-person classes and course events for the next 90 days."]</p>
+    </div>
+</header>
+@if (Model.Count == 0)
+{
+    <div class="card empty"><icon name="calendar" /><p class="empty__title">@L["Nothing scheduled yet."]</p></div>
+}
+<div class="grid" style="gap:28px">
+    @foreach (var day in days)
+    {
+        <section>
+            <h2 class="eyebrow">@day.Key.ToString("dddd", System.Globalization.CultureInfo.CurrentCulture) · @Date(day.Key)</h2>
+            <div class="card">
+                <ul class="list">
+                    @foreach (var item in day)
+                    {
+                        <li>
+                            <span class="mono small" style="width:96px; flex:none">@(item.EndsAt is { } end ? Range(item.StartsAt, end) : Clock(item.StartsAt))</span>
+                            <div class="list__main">
+                                <div class="list__title">@Tx(item.Title)</div>
+                                <div class="list__sub">
+                                    @(item.CourseTitle is null ? null : Tx(item.CourseTitle))
+                                    @if (!string.IsNullOrEmpty(item.Location)) { <span> · @item.Location</span> }
+                                </div>
+                            </div>
+                            @if (item.IsClass)
+                            {
+                                <span class="badge">@L["Class"]</span>
+                            }
+                            else if (item.EventType is { } type)
+                            {
+                                <span class="badge badge--gold">@Label(type)</span>
+                            }
+                        </li>
+                    }
+                </ul>
+            </div>
+        </section>
+    }
+</div>

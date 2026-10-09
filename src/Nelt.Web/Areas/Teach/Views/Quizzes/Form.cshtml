@@ -1,0 +1,47 @@
+@model QuizEditModel
+@{
+    var isNew = Model.QuizId is null;
+    ViewData["Title"] = isNew ? L["New quiz"] : Model.Input.Title;
+    var id = Model.Course.Id;
+    var lessons = Model.Lessons.Select(l => new SelectListItem(l.Title, l.Id.ToString())).ToList();
+}
+<partial name="_CourseTabs" model="Model.Course" />
+<form method="post" class="form" style="max-width:880px" asp-action="@(isNew ? "Create" : "Edit")" asp-route-courseId="@id" asp-route-quizId="@Model.QuizId">
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+    <section class="form-section">
+        <h2 class="form-section__title">@(isNew ? L["New quiz"] : L["Quiz settings"])</h2>
+        <p class="form-section__lead">@L["Quizzes are graded automatically. For paper quizzes taken in class you can record scores by hand on the results page."]</p>
+        <div class="form-grid">
+            <field asp-for="Input.Title" wide="true" />
+            <field asp-for="Input.Kind" />
+            <field asp-for="Input.Audience" />
+            <field asp-for="Input.LessonId" asp-items="lessons" empty="Not linked to a lesson" wide="true" />
+            <field asp-for="Input.Instructions" rows="4" wide="true" />
+        </div>
+    </section>
+    <section class="form-section">
+        <h2 class="form-section__title">@L["Rules"]</h2>
+        <div class="form-grid form-grid--3">
+            <field asp-for="Input.TimeLimitMinutes" hint="Leave empty for no limit." />
+            <field asp-for="Input.PassingScore" />
+            <field asp-for="Input.MaxAttempts" />
+            <field asp-for="Input.AvailableFrom" />
+            <field asp-for="Input.AvailableUntil" />
+            <field asp-for="Input.IsPublished" hint="Students see published quizzes only." />
+        </div>
+    </section>
+    <div class="form-actions">
+        @if (!isNew && !Model.HasAttempts)
+        {
+            <button type="submit" form="delete-quiz" class="btn btn--danger"><icon name="trash" />@L["Delete quiz"]</button>
+        }
+        <div class="form-actions__main">
+            <a class="btn" asp-action="Index" asp-route-courseId="@id">@L["Cancel"]</a>
+            <button type="submit" class="btn btn--primary">@(isNew ? L["Create & add questions"] : L["Save"])</button>
+        </div>
+    </div>
+</form>
+@if (!isNew)
+{
+    <form id="delete-quiz" method="post" asp-action="Delete" asp-route-courseId="@id" asp-route-quizId="@Model.QuizId" data-confirm="@L["Delete this quiz and its questions?"]"></form>
+}

@@ -1,0 +1,27 @@
+@model ErrorViewModel
+@{
+    ViewData["Title"] = Model.StatusCode.ToString();
+    var (title, text) = Model.StatusCode switch
+    {
+        404 => (L["This page doesn't exist."], L["The link may be outdated, or the page was moved."]),
+        403 => (L["You don't have access to this page."], L["If you think this is a mistake, contact the administration."]),
+        429 => (L["Too many requests."], L["Please wait a moment and try again."]),
+        >= 500 => (L["Something went wrong on our side."], L["The problem was logged. Please try again in a moment."]),
+        _ => (L["The request could not be processed."], L["Please go back and try again."]),
+    };
+}
+<section class="status-page container">
+    <div class="stack">
+        <div class="status-page__code">@Model.StatusCode</div>
+        <div class="tricolor tricolor--short" style="margin-inline:auto" aria-hidden="true"><span></span><span></span><span></span></div>
+        <h1 style="font-size:1.6rem">@title</h1>
+        <p class="muted">@text</p>
+        @if (Model.StatusCode >= 500 && Model.RequestId is not null)
+        {
+            <p class="muted small mono">@L["Reference"]: @Model.RequestId</p>
+        }
+        <div class="btn-row" style="justify-content:center">
+            <a class="btn btn--primary" asp-controller="Home" asp-action="Index" asp-area="">@L["Go to the home page"]</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,35 @@
+@model StudentAssignmentList
+@{ ViewData["Title"] = L["Assignments"]; }
+<partial name="_LearnTabs" model="Model.Course" />
+@if (Model.Assignments.Count == 0)
+{
+    <div class="card empty"><icon name="clipboard" /><p class="empty__title">@L["No assignments yet."]</p></div>
+}
+else
+{
+    <div class="table-wrap">
+        <table class="table">
+            <thead><tr><th>@L["Assignment"]</th><th>@L["Due"]</th><th>@L["Status"]</th><th class="num">@L["Score"]</th><th></th></tr></thead>
+            <tbody>
+                @foreach (var a in Model.Assignments)
+                {
+                    var (css, text) = a.State switch
+                    {
+                        StudentAssignmentState.Graded => ("badge--success", L["Graded"]),
+                        StudentAssignmentState.Submitted => ("badge--info", L["Submitted"]),
+                        StudentAssignmentState.Overdue => ("badge--danger", L["Overdue"]),
+                        StudentAssignmentState.Closed => ("badge--plain", L["Closed"]),
+                        _ => ("badge--warn", L["To do"]),
+                    };
+                    <tr>
+                        <td class="cell-title"><a asp-action="Show" asp-route-courseId="@Model.Course.Id" asp-route-assignmentId="@a.Id">@a.Title</a></td>
+                        <td class="small">@(a.DueAt is { } due ? DateTimeText(due) : "—")</td>
+                        <td><span class="badge @css">@text</span></td>
+                        <td class="num">@(a.Score is { } s ? $"{s:0.##} / {a.MaxScore}" : "—")</td>
+                        <td class="actions"><a class="btn btn--sm" asp-action="Show" asp-route-courseId="@Model.Course.Id" asp-route-assignmentId="@a.Id">@L["Open"]</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

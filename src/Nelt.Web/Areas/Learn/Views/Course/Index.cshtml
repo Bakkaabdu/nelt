@@ -1,0 +1,148 @@
+@model LearnCourseHome
+@{
+    ViewData["Title"] = Tx(Model.Course.Title);
+    var ringColor = Model.Evaluation.IsCertificateEligible ? "var(--success)" : "var(--ink)";
+}
+<partial name="_LearnTabs" model="Model.Course" />
+
+<div class="grid grid-main">
+    <div class="grid" style="gap:28px">
+        <section class="course-banner">
+            <span class="course-banner__ring" aria-hidden="true"></span>
+            <div class="btn-row">
+                <span class="small" style="opacity:.75">@Label(Model.Mode)</span>
+                @if (Model.Status == EnrollmentStatus.Completed) { <span class="badge badge--success">@L["Completed"]</span> }
+            </div>
+            <h2 class="course-banner__title">@L["{0}% of lessons done", Model.ProgressPercent]</h2>
+            <div class="progress" style="--p:@(Model.ProgressPercent)%" role="progressbar" aria-valuenow="@Model.ProgressPercent" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="course-banner__meta">
+                <span>@L["{0} of {1} lessons", Model.LessonsCompleted, Model.Lessons.Count]</span>
+                <span>@L["{0} of {1} assignments handed in", Model.AssignmentsSubmitted, Model.AssignmentsTotal]</span>
+            </div>
+            @if (Model.ContinueLessonId is { } next)
+            {
+                <div class="course-banner__actions">
+                    <a class="btn btn--primary" asp-action="Lesson" asp-route-courseId="@Model.Course.Id" asp-route-lessonId="@next"><icon name="play" />@(Model.LessonsCompleted == 0 ? L["Start the first lesson"] : L["Continue where you left off"])</a>
+                </div>
+            }
+        </section>
+
+        <section>
+            <h2 class="eyebrow">@L["Lessons"]</h2>
+            @if (Model.Lessons.Count == 0)
+            {
+                <div class="card empty"><icon name="video" /><p class="empty__title">@L["Lessons will appear here soon."]</p></div>
+            }
+            else
+            {
+                <ol class="outline">
+                    @for (var i = 0; i < Model.Lessons.Count; i++)
+                    {
+                        var lesson = Model.Lessons[i];
+                        <li>
+                            <span class="tick @(lesson.Completed ? "is-done" : null)" aria-label="@(lesson.Completed ? L["Completed"] : L["Not completed"])"><icon name="check" /></span>
+                            <span class="outline__n">@((i + 1).ToString("00"))</span>
+                            <a class="outline__title" asp-action="Lesson" asp-route-courseId="@Model.Course.Id" asp-route-lessonId="@lesson.Id">@lesson.Title</a>
+                            @if (lesson.HasVideo) { <icon name="video" class="muted" /> }
+                            @if (lesson.DurationMinutes is { } m) { <span class="muted small nowrap">@L["{0} min", m]</span> }
+                        </li>
+                    }
+                </ol>
+            }
+        </section>
+
+        <section id="quizzes">
+            <h2 class="eyebrow">@L["Quizzes & final exam"]</h2>
+            @if (Model.Quizzes.Count == 0)
+            {
+                <div class="card empty"><icon name="quiz" /><p class="empty__title">@L["No quizzes yet."]</p></div>
+            }
+            else
+            {
+                <div class="table-wrap">
+                    <table class="table">
+                        <thead><tr><th>@L["Quiz"]</th><th class="hide-sm">@L["Attempts"]</th><th class="num">@L["Best score"]</th><th></th></tr></thead>
+                        <tbody>
+                            @foreach (var q in Model.Quizzes)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="cell-title">@q.Title</div>
+                                        <div class="cell-sub">
+                                            @if (q.Kind == QuizKind.FinalExam) { <span class="badge badge--danger">@L["Final exam"]</span> }
+                                            @L["{0} questions", q.QuestionCount]@(q.TimeLimitMinutes is { } t ? " · " + L["{0} min", t] : null)
+                                        </div>
+                                    </td>
+                                    <td class="hide-sm num"><bdi dir="ltr">@q.AttemptsUsed / @q.MaxAttempts</bdi></td>
+                                    <td class="num">
+                                        @if (q.BestScore is { } best)
+                                        {
+                                            <span class="badge @(best >= q.PassingScore ? "badge--success" : "badge--danger")">@Percent(best)</span>
+                                        }
+                                        else { <span class="muted">—</span> }
+                                    </td>
+                                    <td class="actions">
+                                        <a class="btn btn--sm @(q.IsOpen && q.AttemptsUsed < q.MaxAttempts ? "btn--primary" : null)" asp-controller="Quizzes" asp-action="Show" asp-route-courseId="@Model.Course.Id" asp-route-quizId="@q.Id">
+                                            @(q.IsOpen && q.AttemptsUsed < q.MaxAttempts ? L["Open"] : L["View"])
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </section>
+    </div>
+
+    <div class="grid">
+        <section class="card">
+            <div class="card__head"><h2 class="card__title">@L["Your standing"]</h2><icon name="chart" /></div>
+            <div class="card__body stack">
+                <div style="display:flex; align-items:center; gap:20px">
+                    <div class="score-ring" style="--v:@((int)Model.Evaluation.OverallScore); --c:@ringColor"><span>@((int)Model.Evaluation.OverallScore)</span></div>
+                    <div class="small">
+                        <div class="muted">@L["Overall score"]</div>
+                        <div>@L["Pass: {0}%", Model.Policy.PassingScore]</div>
+                        <div>@L["Next level: {0}%", Model.Policy.ProgressionScore]</div>
+                    </div>
+                </div>
+                <partial name="_Criteria" model="Model.Evaluation.Criteria" />
+                <a class="btn btn--block @(Model.Evaluation.IsCertificateEligible ? "btn--primary" : null)" asp-controller="Certificate" asp-action="Index" asp-route-courseId="@Model.Course.Id"><icon name="award" />@L["Certificate & next level"]</a>
+            </div>
+        </section>
+
+        @if (Model.Mode == StudyMode.InPerson)
+        {
+            <section class="card">
+                <div class="card__head"><h2 class="card__title">@L["Next classes"]</h2><a class="small link" asp-action="Attendance" asp-route-courseId="@Model.Course.Id">@L["Attendance"]</a></div>
+                @if (Model.Sessions.Count == 0)
+                {
+                    <p class="card__body muted small">@L["No in-person classes scheduled."]</p>
+                }
+                else
+                {
+                    <ul class="list">
+                        @foreach (var s in Model.Sessions)
+                        {
+                            <li><div class="list__main"><div class="list__title">@Weekday(s.StartsAt), @Date(s.StartsAt)</div><div class="list__sub">@Range(s.StartsAt, s.EndsAt)@(s.Room is null ? null : " · " + s.Room)@(s.Topic is null ? null : " · " + s.Topic)</div></div></li>
+                        }
+                    </ul>
+                }
+            </section>
+        }
+
+        @if (Model.Events.Count > 0)
+        {
+            <section class="card">
+                <div class="card__head"><h2 class="card__title">@L["Course events"]</h2><icon name="calendar" /></div>
+                <ul class="list">
+                    @foreach (var e in Model.Events)
+                    {
+                        <li><div class="list__main"><div class="list__title">@Tx(e.Title)</div><div class="list__sub">@Label(e.Type) · @Date(e.StartsAt), @Clock(e.StartsAt)@(e.Location is null ? null : " · " + e.Location)</div></div></li>
+                    }
+                </ul>
+            </section>
+        }
+    </div>
+</div>

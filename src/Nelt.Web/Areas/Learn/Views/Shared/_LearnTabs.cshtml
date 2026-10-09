@@ -1,0 +1,23 @@
+@model CourseHeader
+@{
+    var action = ViewContext.RouteData.Values["action"] as string;
+    var controller = ViewContext.RouteData.Values["controller"] as string;
+    string On(string c, params string[] actions) => controller == c && (actions.Length == 0 || actions.Contains(action)) ? "is-active" : string.Empty;
+}
+<header class="topbar">
+    <div>
+        <nav class="crumbs" aria-label="@L["Breadcrumb"]">
+            <a asp-controller="Dashboard" asp-action="Index">@L["My learning"]</a><icon name="chevron-right" class="icon--flip" />
+            <span><span class="mono">@Model.LevelCode</span> · @Label(Model.Language)</span>
+        </nav>
+        <h1 class="topbar__title">@Tx(Model.Title)</h1>
+    </div>
+</header>
+<nav class="course-tabs" aria-label="@L["Course sections"]">
+    <a class="@On("Course", "Index", "Lesson")" asp-controller="Course" asp-action="Index" asp-route-courseId="@Model.Id"><icon name="play" />@L["Lessons"]</a>
+    <a class="@On("Quizzes")" asp-controller="Course" asp-action="Index" asp-route-courseId="@Model.Id" asp-fragment="quizzes"><icon name="quiz" />@L["Quizzes"]</a>
+    <a class="@On("Assignments")" asp-controller="Assignments" asp-action="Index" asp-route-courseId="@Model.Id"><icon name="clipboard" />@L["Assignments"]</a>
+    <a class="@On("Course", "Materials")" asp-controller="Course" asp-action="Materials" asp-route-courseId="@Model.Id"><icon name="book" />@L["Materials"]</a>
+    <a class="@On("Course", "Attendance")" asp-controller="Course" asp-action="Attendance" asp-route-courseId="@Model.Id"><icon name="fingerprint" />@L["Attendance"]</a>
+    <a class="@On("Certificate")" asp-controller="Certificate" asp-action="Index" asp-route-courseId="@Model.Id"><icon name="award" />@L["Certificate"]</a>
+</nav>

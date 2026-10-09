@@ -1,0 +1,80 @@
+@model CertificateOverview
+@inject IPlatformSettingsService SettingsService
+@{
+    ViewData["Title"] = L["Certificate"];
+    ViewData["Currency"] = (await SettingsService.GetAsync()).Currency;
+    var e = Model.Evaluation;
+}
+<partial name="_LearnTabs" model="Model.Course" />
+
+<div class="grid grid-main">
+    <div class="grid">
+        <section class="card card__body stack">
+            <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:center">
+                <div class="score-ring" style="--v:@((int)e.OverallScore); --c:@(e.IsCertificateEligible ? "var(--success)" : "var(--ink)")"><span>@((int)e.OverallScore)</span></div>
+                <div class="stack" style="--stack:6px; flex:1; min-width:220px">
+                    <h2 style="font-size:1.5rem">
+                        @if (Model.RequestStatus == CertificateStatus.Approved) { @L["Congratulations — you passed!"] }
+                        else if (e.IsCertificateEligible) { @L["You meet all requirements."] }
+                        else if (e.IsProvisional) { @L["Your evaluation is not complete yet."] }
+                        else { @L["Some requirements are not met yet."] }
+                    </h2>
+                    <p class="muted">@L["Your overall score combines quizzes ({0}%), assignments ({1}%) and the final exam ({2}%).", Model.Policy.QuizWeight, Model.Policy.AssignmentWeight, Model.Policy.FinalExamWeight]</p>
+                </div>
+            </div>
+            <partial name="_Criteria" model="e.Criteria" />
+            <div class="grid grid-3" style="gap:12px">
+                <div class="kpi" style="padding:14px"><div class="kpi__label">@L["Quizzes"]</div><div class="kpi__value" style="font-size:1.5rem">@Percent(Model.Performance.QuizAverage)</div></div>
+                <div class="kpi" style="padding:14px"><div class="kpi__label">@L["Assignments"]</div><div class="kpi__value" style="font-size:1.5rem">@Percent(Model.Performance.AssignmentAverage)</div></div>
+                <div class="kpi" style="padding:14px"><div class="kpi__label">@L["Final exam"]</div><div class="kpi__value" style="font-size:1.5rem">@Percent(Model.Performance.FinalExamScore)</div></div>
+            </div>
+        </section>
+
+        @if (Model.NextLevelCourses.Count > 0)
+        {
+            <section>
+                <h2 class="eyebrow">@L["Ready for the next level"]</h2>
+                <div class="course-grid">
+                    @foreach (var course in Model.NextLevelCourses)
+                    {
+                        <partial name="/Views/Shared/_CourseTicket.cshtml" model="course" view-data="ViewData" />
+                    }
+                </div>
+            </section>
+        }
+    </div>
+
+    <aside class="card">
+        <div class="card__head"><h3 class="card__title">@L["Completion certificate"]</h3><icon name="award" /></div>
+        <div class="card__body stack">
+            @switch (Model.RequestStatus)
+            {
+                case CertificateStatus.Approved:
+                    <p class="note note--success">@L["Your certificate has been issued."]</p>
+                    <p class="small muted">@L["Certificate number"]: <span class="mono">@Model.SerialNumber</span></p>
+                    <a class="btn btn--primary btn--block" asp-action="Print" asp-route-courseId="@Model.Course.Id" target="_blank"><icon name="printer" />@L["View & print"]</a>
+                    break;
+                case CertificateStatus.Pending:
+                    <p class="note">@L["Your request is being reviewed by your instructor."]</p>
+                    break;
+                default:
+                    if (Model.RequestStatus == CertificateStatus.Rejected)
+                    {
+                        <div class="note note--danger">
+                            <strong>@L["Your last request was declined."]</strong>
+                            @if (!string.IsNullOrEmpty(Model.ReviewNote)) { <p style="margin-top:6px">@Model.ReviewNote</p> }
+                        </div>
+                    }
+                    <p class="small muted">@L["When you meet every requirement, you can request your certificate here."]</p>
+                    <form method="post" asp-action="RequestCertificate" asp-route-courseId="@Model.Course.Id">
+                        <button type="submit" class="btn btn--primary btn--block" disabled="@(e.IsCertificateEligible ? null : "disabled")"><icon name="award" />@L["Request certificate"]</button>
+                    </form>
+                    break;
+            }
+            @if (e.IsNextLevelEligible)
+            {
+                <p class="note note--success">@L["Your results qualify you for the next level."]</p>
+            }
+        </div>
+    </aside>
+</div>

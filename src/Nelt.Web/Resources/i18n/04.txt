@@ -1,0 +1,141 @@
+PDF, Word, PowerPoint, Excel, EPUB, images or audio (MP3, M4A, WAV, OGG).|PDF, Word, PowerPoint, Excel, EPUB, Bilder oder Audio (MP3, M4A, WAV, OGG).|PDF أو Word أو PowerPoint أو Excel أو EPUB أو صور أو صوت (MP3، M4A، WAV، OGG).|PDF、Word、PowerPoint、Excel、EPUB、图片或音频（MP3、M4A、WAV、OGG）。
+PDF, Word, images, audio or ZIP — up to 50 MB.|PDF, Word, Bilder, Audio oder ZIP – bis 50 MB.|PDF أو Word أو صور أو صوت أو ZIP — حتى 50 ميغابايت.|PDF、Word、图片、音频或 ZIP，最大 50 MB。
+Page {0} of {1}|Seite {0} von {1}|الصفحة {0} من {1}|第 {0} / {1} 页
+Pages|Seiten|الصفحات|分页
+Pass the course, request your certificate and see whether you are ready for the next level.|Bestehen Sie den Kurs, beantragen Sie Ihr Zertifikat und sehen Sie, ob Sie bereit für das nächste Niveau sind.|انجح في الدورة، واطلب شهادتك، واعرف إن كنت مستعدًا للمستوى التالي.|通过课程、申请证书，并了解自己是否可以升入下一级别。
+Pass: {0}%|Bestehen: {0} %|النجاح: {0}%|及格：{0}%
+Passed|Bestanden|ناجح|已通过
+Passing|Bestehend|ناجح حاليًا|达标
+Passing score|Bestehensgrenze|درجة النجاح|及格分
+Password|Passwort|كلمة المرور|密码
+Past|Vergangen|السابقة|已结束
+Past sessions|Vergangene Termine|الحصص السابقة|已结束的课次
+Payment|Zahlung|الدفع|付款
+Payment confirmed — the student now has access.|Zahlung bestätigt – die Person hat jetzt Zugang.|تم تأكيد الدفع — أصبح بإمكان الطالب الوصول.|付款已确认——学员现在可以访问课程。
+Payment details|Zahlungsinformationen|تفاصيل الدفع|付款说明
+Payment instructions|Zahlungshinweise|تعليمات الدفع|付款说明
+Payment received|Zahlung erhalten|تم استلام الدفع|已收款
+Payments this month|Zahlungen diesen Monat|مدفوعات هذا الشهر|本月收款
+People & access|Personen & Zugang|الأشخاص والصلاحيات|人员与权限
+Phone|Telefon|الهاتف|电话
+Plan the schedule|Stundenplan planen|خطّط الجدول|制定课表
+Platform|Plattform|المنصة|平台
+Platform information|Plattform-Informationen|معلومات المنصة|平台信息
+Platform name|Name der Plattform|اسم المنصة|平台名称
+Please check the question.|Bitte prüfen Sie die Frage.|يرجى التحقق من السؤال.|请检查题目。
+Please choose a course.|Bitte wählen Sie einen Kurs.|يرجى اختيار دورة.|请选择课程。
+Please choose a file.|Bitte wählen Sie eine Datei.|يرجى اختيار ملف.|请选择文件。
+Please choose a level.|Bitte wählen Sie ein Niveau.|يرجى اختيار مستوى.|请选择级别。
+Please choose one of your courses.|Bitte wählen Sie einen Ihrer Kurse.|يرجى اختيار إحدى دوراتك.|请选择你负责的课程。
+Please enter a number.|Bitte geben Sie eine Zahl ein.|يرجى إدخال رقم.|请输入数字。
+Please enter a score between 0 and 100.|Bitte geben Sie eine Punktzahl zwischen 0 und 100 ein.|يرجى إدخال درجة بين 0 و100.|请输入 0 到 100 之间的分数。
+Please enter a valid amount.|Bitte geben Sie einen gültigen Betrag ein.|يرجى إدخال مبلغ صحيح.|请输入有效金额。
+Please enter a valid email address.|Bitte geben Sie eine gültige E-Mail-Adresse ein.|يرجى إدخال بريد إلكتروني صحيح.|请输入有效的邮箱地址。
+Please enter a valid phone number.|Bitte geben Sie eine gültige Telefonnummer ein.|يرجى إدخال رقم هاتف صحيح.|请输入有效的电话号码。
+Please enter a valid score.|Bitte geben Sie eine gültige Punktzahl ein.|يرجى إدخال درجة صحيحة.|请输入有效分数。
+Please enter a valid web address.|Bitte geben Sie eine gültige Webadresse ein.|يرجى إدخال رابط صحيح.|请输入有效的网址。
+Please go back and try again.|Bitte gehen Sie zurück und versuchen Sie es erneut.|يرجى العودة والمحاولة مرة أخرى.|请返回后重试。
+Please wait a moment and try again.|Bitte warten Sie einen Moment und versuchen Sie es erneut.|يرجى الانتظار قليلًا والمحاولة مرة أخرى.|请稍候再试。
+Points|Punkte|النقاط|分值
+Present|Anwesend|حاضر|出勤
+Preview lessons|Vorschaulektionen|الدروس التجريبية|试看课时
+Previous|Zurück|السابق|上一页
+Price|Preis|السعر|价格
+Print or save as PDF|Drucken oder als PDF speichern|اطبع أو احفظ كملف PDF|打印或保存为 PDF
+Proficiency levels per language. The order decides which level comes next when a student progresses.|Sprachniveaus pro Sprache. Die Reihenfolge bestimmt, welches Niveau als Nächstes folgt.|مستويات الإتقان لكل لغة. يحدد الترتيب المستوى التالي عند تقدّم الطالب.|各语言的级别。顺序决定学员升级时的下一个级别。
+Progress|Fortschritt|التقدّم|进度
+Public page|Öffentliche Seite|الصفحة العامة|公开页面
+Public website|Öffentliche Website|الموقع العام|公开网站
+Published|Veröffentlicht|منشور|已发布
+Published courses|Veröffentlichte Kurse|الدورات المنشورة|已发布课程
+Question|Frage|السؤال|题目
+Question type|Fragetyp|نوع السؤال|题型
+Question {0}|Frage {0}|السؤال {0}|第 {0} 题
+Questions|Fragen|الأسئلة|题目
+Quiz|Test|الاختبار|测验
+Quiz attempts|Testversuche|محاولات الاختبارات|测验记录
+Quiz average|Testdurchschnitt|متوسط الاختبارات|测验平均分
+Quiz settings|Testeinstellungen|إعدادات الاختبار|测验设置
+Quizzes|Tests|الاختبارات|测验
+Quizzes & exam|Tests & Prüfung|الاختبارات والامتحان|测验与考试
+Quizzes & final exam|Tests & Abschlussprüfung|الاختبارات والاختبار النهائي|测验与结业考试
+Quizzes are graded automatically. For paper quizzes taken in class you can record scores by hand on the results page.|Tests werden automatisch bewertet. Für Papiertests im Unterricht können Sie die Ergebnisse auf der Ergebnisseite manuell eintragen.|تُصحَّح الاختبارات تلقائيًا. للاختبارات الورقية في الصف يمكنك إدخال الدرجات يدويًا في صفحة النتائج.|测验自动评分。课堂纸质测验可在成绩页面手动录入分数。
+Quizzes weight|Gewichtung Tests|وزن الاختبارات|测验权重
+Ready for the next level|Bereit für das nächste Niveau|جاهز للمستوى التالي|可以升入下一级别
+Reason (optional)|Grund (optional)|السبب (اختياري)|原因（可选）
+Receipt / reference|Beleg / Referenz|الإيصال / المرجع|收据 / 参考号
+Receipt no.|Beleg-Nr.|رقم الإيصال|收据编号
+Record a score|Ergebnis eintragen|تسجيل درجة|录入分数
+Recorded|Erfasst|مُسجَّل|已记录
+Recorded by instructor|Von der Lehrkraft eingetragen|سجّله المدرّس|教师录入
+Reference|Referenz|المرجع|参考编号
+Register a device|Gerät registrieren|تسجيل جهاز|注册设备
+Register device|Gerät registrieren|تسجيل الجهاز|注册设备
+Register the terminal here with its serial number (Menu → System Info).|Registrieren Sie das Terminal hier mit seiner Seriennummer (Menü → System Info).|سجّل الجهاز هنا برقمه التسلسلي (القائمة ← System Info).|在此用终端序列号注册（菜单 → System Info）。
+Regular quizzes for online and in-class students, and a final exam at the end of every course.|Regelmäßige Tests für Online- und Präsenz-Teilnehmende und eine Abschlussprüfung am Ende jedes Kurses.|اختبارات دورية لطلاب الإنترنت والحضور، واختبار نهائي في ختام كل دورة.|为线上和线下学员提供常规测验，每门课程结束时进行结业考试。
+Remove|Entfernen|إزالة|移除
+Remove this file from the library?|Diese Datei aus der Bibliothek entfernen?|إزالة هذا الملف من المكتبة؟|从资料库移除该文件？
+Remove this session?|Diesen Termin entfernen?|إزالة هذه الحصة؟|移除该课次？
+Request certificate|Zertifikat beantragen|طلب الشهادة|申请证书
+Requested|Beantragt|تاريخ الطلب|申请时间
+Required|Erforderlich|المطلوب|要求
+Required attendance: {0}%|Erforderliche Anwesenheit: {0} %|الحضور المطلوب: {0}%|最低出勤率：{0}%
+Reserve my seat|Platz reservieren|احجز مقعدي|预留名额
+Result|Ergebnis|النتيجة|结果
+Results|Ergebnisse|النتائج|成绩
+Resume attempt|Versuch fortsetzen|متابعة المحاولة|继续作答
+Role|Rolle|الدور|角色
+Room|Raum|القاعة|教室
+Rules|Regeln|القواعد|规则
+Save|Speichern|حفظ|保存
+Save account|Konto speichern|حفظ الحساب|保存账户
+Save assignment|Aufgabe speichern|حفظ الواجب|保存作业
+Save attendance|Anwesenheit speichern|حفظ الحضور|保存出勤
+Save changes|Änderungen speichern|حفظ التغييرات|保存更改
+Save course|Kurs speichern|حفظ الدورة|保存课程
+Save event|Veranstaltung speichern|حفظ الفعالية|保存活动
+Save grade|Bewertung speichern|حفظ التقييم|保存评分
+Save lesson|Lektion speichern|حفظ الدرس|保存课时
+Save new password|Neues Passwort speichern|حفظ كلمة المرور الجديدة|保存新密码
+Schedule|Zeitplan|الجدول|课表
+Schedule & events|Stundenplan & Veranstaltungen|الجدول والفعاليات|课表与活动
+Schedule planner|Stundenplaner|مخطط الجدول|排课工具
+Scheduled visit|Geplanter Besuch|زيارة مجدولة|参观访问
+Scheduled visits, conversation sessions, delegations, guests and cultural events. Students of the course see them in their schedule.|Geplante Besuche, Gesprächsrunden, Delegationen, Gäste und Kulturveranstaltungen. Die Teilnehmenden des Kurses sehen sie in ihrem Zeitplan.|زيارات مجدولة وجلسات محادثة ووفود وضيوف وفعاليات ثقافية. يراها طلاب الدورة في جدولهم.|参观、会话练习、代表团、嘉宾及文化活动。课程学员可在课表中看到。
+Scheduled visits, speaking gatherings, delegations and cultural events organised around our courses.|Geplante Besuche, Gesprächstreffen, Delegationen und Kulturveranstaltungen rund um unsere Kurse.|زيارات مجدولة ولقاءات محادثة ووفود وفعاليات ثقافية تُنظَّم حول دوراتنا.|围绕课程组织的参观、口语交流会、代表团来访及文化活动。
+Score|Punktzahl|الدرجة|分数
+Score (%)|Punktzahl (%)|الدرجة (%)|分数（%）
+Score for next level|Punktzahl für nächstes Niveau|درجة المستوى التالي|升级分数线
+Search|Suchen|بحث|搜索
+Seats|Plätze|المقاعد|名额
+Seats left|Freie Plätze|المقاعد المتبقية|剩余名额
+See last result|Letztes Ergebnis ansehen|عرض آخر نتيجة|查看上次成绩
+Select all correct answers.|Wählen Sie alle richtigen Antworten.|اختر جميع الإجابات الصحيحة.|请选出所有正确答案。
+Serial number|Seriennummer|الرقم التسلسلي|序列号
+Session|Termin|الحصة|课次
+Sessions|Termine|الحصص|课次
+Settings|Einstellungen|الإعدادات|设置
+Settings & publishing|Einstellungen & Veröffentlichung|الإعدادات والنشر|设置与发布
+Show all courses|Alle Kurse anzeigen|عرض جميع الدورات|显示全部课程
+Show on the public website|Auf der öffentlichen Website zeigen|عرض على الموقع العام|在公开网站显示
+Shown to students after they reserve a seat.|Wird nach der Platzreservierung angezeigt.|تُعرض للطلاب بعد حجز المقعد.|学员预留名额后显示。
+Sign in|Anmelden|تسجيل الدخول|登录
+Sign in to continue learning.|Melden Sie sich an, um weiterzulernen.|سجّل الدخول لمتابعة التعلّم.|登录以继续学习。
+Sign out|Abmelden|تسجيل الخروج|退出登录
+Single choice|Einfachauswahl|اختيار واحد|单选题
+Single session|Einzeltermin|حصة واحدة|单个课次
+Skip to content|Zum Inhalt springen|انتقل إلى المحتوى|跳到正文
+Some requirements are not met yet.|Einige Anforderungen sind noch nicht erfüllt.|بعض المتطلبات لم تتحقق بعد.|部分要求尚未达到。
+Something went wrong on our side.|Bei uns ist etwas schiefgelaufen.|حدث خطأ من جهتنا.|我们这边出了点问题。
+Special guest|Besonderer Gast|ضيف خاص|特邀嘉宾
+Staff accounts cannot enroll in courses.|Mitarbeiterkonten können sich nicht in Kurse einschreiben.|لا يمكن لحسابات الموظفين التسجيل في الدورات.|员工账户不能报名课程。
+Start|Starten|ابدأ|开始
+Start date|Startdatum|تاريخ البدء|开始日期
+Start the course|Kurs beginnen|ابدأ الدورة|开始课程
+Start the first lesson|Erste Lektion starten|ابدأ الدرس الأول|开始第一课
+Starts|Beginnt|يبدأ|开始
+Status|Status|الحالة|状态
+Student|Teilnehmer/in|طالب|学员
+Student name, email or phone|Name, E-Mail oder Telefon|اسم الطالب أو بريده أو هاتفه|学员姓名、邮箱或电话
+Students|Teilnehmende|الطلاب|学员
+Students & progress|Teilnehmende & Fortschritt|الطلاب والتقدّم|学员与进度

@@ -1,0 +1,23 @@
+@model SessionEditModel
+@{
+    var isNew = Model.SessionId is null;
+    ViewData["Title"] = isNew ? L["New session"] : L["Edit session"];
+    var id = Model.Course.Id;
+}
+<partial name="_CourseTabs" model="Model.Course" />
+<form method="post" class="form" style="max-width:720px" asp-action="@(isNew ? "Create" : "Edit")" asp-route-courseId="@id" asp-route-sessionId="@Model.SessionId">
+    <section class="form-section">
+        <h2 class="form-section__title">@(isNew ? L["New session"] : L["Edit session"])</h2>
+        <div class="form-grid form-grid--3" style="margin-top:16px">
+            <field asp-for="Input.Date" />
+            <field asp-for="Input.StartTime" />
+            <field asp-for="Input.EndTime" />
+            <field asp-for="Input.Topic" wide="true" />
+            <field asp-for="Input.Room" />
+        </div>
+    </section>
+    <div class="form-actions"><div class="form-actions__main">
+        <a class="btn" asp-action="Index" asp-route-courseId="@id">@L["Cancel"]</a>
+        <button type="submit" class="btn btn--primary">@L["Save"]</button>
+    </div></div>
+</form>

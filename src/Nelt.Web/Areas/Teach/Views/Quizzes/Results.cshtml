@@ -1,0 +1,46 @@
+@model QuizResultsModel
+@{ ViewData["Title"] = Model.QuizTitle; var id = Model.Course.Id; }
+<partial name="_CourseTabs" model="Model.Course" />
+<div class="topbar" style="margin-bottom:16px">
+    <div>
+        <nav class="crumbs"><a asp-action="Index" asp-route-courseId="@id">@L["Quizzes & exam"]</a><icon name="chevron-right" class="icon--flip" /><span>@Model.QuizTitle</span></nav>
+        <h2 style="font-size:1.4rem">@L["Results"]</h2>
+        <p class="muted small">@Label(Model.Audience) · @L["Passing score"] @Model.PassingScore%</p>
+    </div>
+</div>
+@if (Model.Rows.Count == 0)
+{
+    <div class="card empty"><icon name="users" /><p class="empty__title">@L["No students for this quiz yet."]</p></div>
+}
+else
+{
+    <div class="table-wrap">
+        <table class="table">
+            <thead><tr><th>@L["Student"]</th><th class="hide-sm">@L["Mode"]</th><th class="num">@L["Attempts"]</th><th class="num">@L["Best score"]</th><th>@L["Record a score"]</th></tr></thead>
+            <tbody>
+                @foreach (var r in Model.Rows)
+                {
+                    <tr>
+                        <td><div class="cell-title">@r.StudentName</div>@if (r.LastSubmittedAt is { } last) { <div class="cell-sub">@DateTimeText(last)</div> }</td>
+                        <td class="hide-sm small">@Label(r.Mode)</td>
+                        <td class="num">@r.Attempts</td>
+                        <td class="num">
+                            @if (r.BestScore is { } best) { <span class="badge @(best >= Model.PassingScore ? "badge--success" : "badge--danger")">@Percent(best)</span> }
+                            else { <span class="muted">—</span> }
+                            @if (r.HasRecordedScore) { <div class="cell-sub">@L["recorded"]</div> }
+                        </td>
+                        <td>
+                            <form method="post" class="inline-form" asp-action="RecordScore" asp-route-courseId="@id" asp-route-quizId="@Model.QuizId">
+                                <input type="hidden" name="EnrollmentId" value="@r.EnrollmentId" />
+                                <input class="input input--compact" type="number" name="Score" min="0" max="100" step="0.5" placeholder="%" style="width:80px" required aria-label="@L["Score (%)"]" />
+                                <input class="input input--compact hide-sm" type="text" name="Note" maxlength="300" placeholder="@L["Note"]" style="width:140px" />
+                                <button class="btn btn--sm">@L["Save"]</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <p class="muted small" style="margin-top:12px">@L["Use “Record a score” for quizzes taken on paper in class. The best score counts."]</p>
+}

@@ -1,0 +1,44 @@
+@model UsersPage
+@{ ViewData["Title"] = L["Users"]; var f = Model.Filter; }
+<header class="topbar">
+    <div>
+        <h1 class="topbar__title">@L["Users"]</h1>
+        <p class="topbar__sub">@L["Students, instructors and administrators. Assign fingerprint IDs to in-person students here."]</p>
+    </div>
+    <div class="btn-row">
+        <a class="btn" asp-action="Create" asp-route-role="Instructor"><icon name="plus" />@L["Instructor"]</a>
+        <a class="btn btn--primary" asp-action="Create" asp-route-role="Student"><icon name="plus" />@L["Student"]</a>
+    </div>
+</header>
+<form method="get" class="btn-row" style="margin-bottom:16px">
+    <div class="filters">
+        <a class="chip @(f.Role is null ? "is-active" : null)" asp-action="Index" asp-route-q="@f.Search">@L["Everyone"]</a>
+        @foreach (var role in Roles.All)
+        {
+            <a class="chip @(f.Role == role ? "is-active" : null)" asp-action="Index" asp-route-role="@role" asp-route-q="@f.Search">@L[role]</a>
+        }
+    </div>
+    <input type="hidden" name="role" value="@f.Role" />
+    <input class="input" style="max-width:280px; margin-inline-start:auto" type="search" name="q" value="@f.Search" placeholder="@L["Name, email, phone or fingerprint ID"]" aria-label="@L["Search"]" />
+    <button class="btn" type="submit"><icon name="search" /></button>
+</form>
+<div class="table-wrap">
+    <table class="table">
+        <thead><tr><th>@L["Name"]</th><th>@L["Role"]</th><th class="hide-sm">@L["Fingerprint ID"]</th><th class="num hide-sm">@L["Enrollments"]</th><th class="hide-sm">@L["Joined"]</th><th></th></tr></thead>
+        <tbody>
+            @foreach (var u in Model.Users.Items)
+            {
+                <tr>
+                    <td><div class="cell-title">@u.FullName @if (!u.IsActive) { <span class="badge badge--danger">@L["Inactive"]</span> }</div><div class="cell-sub">@u.Email @(u.Phone is null ? null : "· " + u.Phone)</div></td>
+                    <td><span class="badge @(u.Role == Roles.Admin ? "badge--danger" : u.Role == Roles.Instructor ? "badge--info" : "badge--plain")">@L[u.Role]</span></td>
+                    <td class="hide-sm mono small">@(u.BiometricId ?? "—")</td>
+                    <td class="num hide-sm">@u.Enrollments</td>
+                    <td class="hide-sm small">@Date(u.CreatedAt)</td>
+                    <td class="actions"><a class="btn btn--sm" asp-action="Edit" asp-route-id="@u.Id"><icon name="edit" />@L["Edit"]</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @if (Model.Users.Items.Count == 0) { <div class="empty"><icon name="users" /><p>@L["No users found."]</p></div> }
+</div>
+<partial name="_Pager" model="(Model.Users.Page, Model.Users.TotalPages, Model.Users.TotalCount)" />

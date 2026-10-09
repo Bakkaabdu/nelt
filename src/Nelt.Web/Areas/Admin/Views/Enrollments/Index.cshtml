@@ -1,0 +1,71 @@
+@model EnrollmentsPage
+@{
+    ViewData["Title"] = L["Enrollments"];
+    var f = Model.Filter;
+    var returnUrl = Context.Request.Path + Context.Request.QueryString;
+    var statuses = Enum.GetValues<EnrollmentStatus>();
+}
+<header class="topbar">
+    <div>
+        <h1 class="topbar__title">@L["Enrollments"]</h1>
+        <p class="topbar__sub">@L["Confirm payments to give students access. Walk-in students can be enrolled directly."]</p>
+    </div>
+    <a class="btn btn--primary" asp-action="Create"><icon name="plus" />@L["Enroll a student"]</a>
+</header>
+<form method="get" class="btn-row" style="margin-bottom:16px">
+    <select class="input input--select" name="status" style="width:auto" data-autosubmit aria-label="@L["Status"]">
+        <option value="">@L["All statuses"]</option>
+        @foreach (var s in statuses) { <option value="@s" selected="@(f.Status == s)">@Label(s)</option> }
+    </select>
+    <select class="input input--select" name="course" style="width:auto; max-width:320px" data-autosubmit aria-label="@L["Course"]">
+        <option value="">@L["All courses"]</option>
+        @foreach (var c in Model.Courses) { <option value="@c.Id" selected="@(f.CourseId == c.Id)">@c.LevelCode · @Tx(c.Title)</option> }
+    </select>
+    <input class="input" style="max-width:260px; margin-inline-start:auto" type="search" name="q" value="@f.Search" placeholder="@L["Student name, email or phone"]" aria-label="@L["Search"]" />
+    <button class="btn" type="submit"><icon name="search" /></button>
+</form>
+<div class="table-wrap">
+    <table class="table">
+        <thead><tr><th>@L["Student"]</th><th>@L["Course"]</th><th class="hide-sm">@L["Mode"]</th><th>@L["Status"]</th><th class="hide-sm">@L["Payment"]</th><th></th></tr></thead>
+        <tbody>
+            @foreach (var e in Model.Enrollments.Items)
+            {
+                var css = e.Status switch { EnrollmentStatus.Pending => "badge--warn", EnrollmentStatus.Active => "badge--success", EnrollmentStatus.Completed => "badge--info", _ => "badge--plain" };
+                <tr>
+                    <td><div class="cell-title">@e.StudentName</div><div class="cell-sub">@e.StudentEmail @(e.StudentPhone is null ? null : "· " + e.StudentPhone)</div></td>
+                    <td class="small"><span class="mono">@e.LevelCode</span> · @Tx(e.CourseTitle)<div class="cell-sub">@Date(e.CreatedAt)</div></td>
+                    <td class="hide-sm">
+                        <form method="post" class="inline-form" asp-action="ChangeMode" asp-route-id="@e.Id">
+                            <input type="hidden" name="returnUrl" value="@returnUrl" />
+                            <select class="input input--select input--compact" name="mode" data-autosubmit aria-label="@L["Mode"]">
+                                @foreach (var m in Enum.GetValues<StudyMode>()) { <option value="@m" selected="@(e.Mode == m)">@Label(m)</option> }
+                            </select>
+                        </form>
+                    </td>
+                    <td><span class="badge @css">@Label(e.Status)</span></td>
+                    <td class="hide-sm small">@(e.AmountPaid is { } paid ? $"{paid:0.##}" : null) @e.PaymentReference</td>
+                    <td class="actions">
+                        @if (e.Status is EnrollmentStatus.Pending or EnrollmentStatus.Cancelled)
+                        {
+                            <form method="post" class="inline-form" asp-action="Confirm" asp-route-id="@e.Id">
+                                <input type="hidden" name="returnUrl" value="@returnUrl" />
+                                <input class="input input--compact" type="number" name="AmountPaid" min="0" step="0.01" value="@e.CoursePrice.ToString("0.##", System.Globalization.CultureInfo.InvariantCulture)" style="width:96px" aria-label="@L["Amount paid"]" />
+                                <input class="input input--compact hide-sm" type="text" name="PaymentReference" maxlength="120" placeholder="@L["Receipt no."]" style="width:120px" />
+                                <button class="btn btn--primary btn--sm"><icon name="check" />@L["Confirm"]</button>
+                            </form>
+                        }
+                        @if (e.Status is EnrollmentStatus.Pending or EnrollmentStatus.Active)
+                        {
+                            <form method="post" class="inline-form" asp-action="Cancel" asp-route-id="@e.Id" data-confirm="@L["Cancel this enrollment? The student loses access."]">
+                                <input type="hidden" name="returnUrl" value="@returnUrl" />
+                                <button class="btn btn--danger btn--sm">@L["Cancel"]</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @if (Model.Enrollments.Items.Count == 0) { <div class="empty"><icon name="wallet" /><p>@L["No enrollments found."]</p></div> }
+</div>
+<partial name="_Pager" model="(Model.Enrollments.Page, Model.Enrollments.TotalPages, Model.Enrollments.TotalCount)" />

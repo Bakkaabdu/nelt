@@ -1,0 +1,119 @@
+URL slug|URL-Kürzel|الرابط المختصر|URL 标识
+Under review|In Prüfung|قيد المراجعة|审核中
+Unknown fingerprint ID|Unbekannte Fingerabdruck-ID|رقم بصمة غير معروف|未知指纹编号
+Unknown role.|Unbekannte Rolle.|دور غير معروف.|未知角色。
+Unknown time zone.|Unbekannte Zeitzone.|منطقة زمنية غير معروفة.|未知时区。
+Unticked: the seat stays reserved until payment is confirmed.|Nicht angehakt: Der Platz bleibt reserviert, bis die Zahlung bestätigt ist.|بدون تحديد: يبقى المقعد محجوزًا حتى تأكيد الدفع.|不勾选：名额将保留至确认付款。
+Until|Bis|حتى|至
+Upcoming|Anstehend|القادمة|即将开始
+Upcoming events|Anstehende Veranstaltungen|الفعاليات القادمة|近期活动
+Update grade|Bewertung aktualisieren|تحديث التقييم|更新评分
+Update your submission|Abgabe aktualisieren|تحديث تسليمك|更新你的提交
+Upload|Hochladen|رفع|上传
+Upload a video file (MP4 or WebM, streamed securely to enrolled students) or link a YouTube/Vimeo video.|Laden Sie eine Videodatei hoch (MP4 oder WebM, sicher an eingeschriebene Teilnehmende gestreamt) oder verlinken Sie ein YouTube-/Vimeo-Video.|ارفع ملف فيديو (MP4 أو WebM، يُبث بأمان للطلاب المسجلين) أو اربط فيديو من YouTube/Vimeo.|上传视频文件（MP4 或 WebM，仅向报名学员安全播放），或链接 YouTube/Vimeo 视频。
+Upload video|Video hochladen|رفع فيديو|上传视频
+Uploaded video|Hochgeladenes Video|فيديو مرفوع|已上传视频
+Use a three-letter currency code, e.g. EUR.|Verwenden Sie einen dreistelligen Währungscode, z. B. EUR.|استخدم رمز عملة من ثلاثة أحرف، مثل EUR.|请使用三位字母的货币代码，例如 EUR。
+Use letters, digits, dashes and underscores only.|Nur Buchstaben, Ziffern, Binde- und Unterstriche verwenden.|استخدم الحروف والأرقام والشرطات والشرطات السفلية فقط.|仅可使用字母、数字、连字符和下划线。
+Use lowercase letters, digits and dashes only.|Nur Kleinbuchstaben, Ziffern und Bindestriche verwenden.|استخدم الأحرف الصغيرة والأرقام والشرطات فقط.|仅可使用小写字母、数字和连字符。
+Use the numeric ID shown on the fingerprint device.|Verwenden Sie die ID, die das Fingerabdruck-Gerät anzeigt.|استخدم الرقم الظاهر على جهاز البصمة.|请使用指纹设备上显示的编号。
+Use “Record a score” for quizzes taken on paper in class. The best score counts.|Nutzen Sie „Ergebnis eintragen“ für Papiertests im Unterricht. Das beste Ergebnis zählt.|استخدم «تسجيل درجة» للاختبارات الورقية في الصف. تُحتسب أفضل نتيجة.|课堂纸质测验请使用“录入分数”。以最高分为准。
+Used for schedules, attendance and the fingerprint device clock.|Wird für Stundenpläne, Anwesenheit und die Uhr des Fingerabdruck-Geräts verwendet.|تُستخدم للجداول والحضور وساعة جهاز البصمة.|用于课表、出勤及指纹设备时钟。
+Used only when no video file is uploaded.|Wird nur verwendet, wenn keine Videodatei hochgeladen ist.|يُستخدم فقط عند عدم رفع ملف فيديو.|仅在未上传视频文件时使用。
+Users|Benutzer|المستخدمون|用户
+Verify|Prüfen|تحقّق|验证
+Verify a certificate|Zertifikat prüfen|التحقق من شهادة|验证证书
+Video|Video|الفيديو|视频
+Video lessons|Videolektionen|دروس مرئية|视频课
+View|Ansehen|عرض|查看
+View & print|Ansehen & drucken|عرض وطباعة|查看与打印
+View website|Website ansehen|عرض الموقع|查看网站
+Visibility|Sichtbarkeit|الظهور|可见性
+Visible to students|Für Teilnehmende sichtbar|مرئي للطلاب|学员可见
+Visit or contact us|Besuchen oder kontaktieren Sie uns|زورونا أو تواصلوا معنا|到访或联系我们
+Visits, conversation sessions and guests|Besuche, Gesprächsrunden und Gäste|زيارات وجلسات محادثة وضيوف|参观、会话练习与嘉宾
+Waiting|Wartend|بالانتظار|待处理
+Watch|Ansehen|مشاهدة|观看
+Weekdays|Wochentage|أيام الأسبوع|星期
+Welcome back|Willkommen zurück|مرحبًا بعودتك|欢迎回来
+Welcome to Nelt! Choose a course to get started.|Willkommen bei Nelt! Wählen Sie einen Kurs, um loszulegen.|مرحبًا بك في نِلت! اختر دورة للبدء.|欢迎来到 Nelt！选择一门课程开始学习吧。
+What & when|Was & wann|ماذا ومتى|内容与时间
+WhatsApp number|WhatsApp-Nummer|رقم واتساب|WhatsApp 号码
+When|Wann|متى|时间
+When you meet every requirement, you can request your certificate here.|Wenn Sie alle Anforderungen erfüllen, können Sie hier Ihr Zertifikat beantragen.|عندما تستوفي جميع المتطلبات، يمكنك طلب شهادتك من هنا.|满足全部要求后，可在此申请证书。
+Where every student is in the course, how they perform, and whether they are on track for the certificate and the next level.|Wo jede Person im Kurs steht, wie sie abschneidet und ob sie auf Kurs für Zertifikat und nächstes Niveau ist.|أين وصل كل طالب في الدورة، وكيف أداؤه، وهل هو في طريقه للشهادة والمستوى التالي.|每位学员的学习进度、表现，以及是否有望获得证书并升入下一级别。
+Worksheet or file for students|Arbeitsblatt oder Datei für Teilnehmende|ورقة عمل أو ملف للطلاب|给学员的练习单或文件
+Worksheets|Arbeitsblätter|أوراق عمل|练习单
+Workspace|Arbeitsbereich|مساحة العمل|工作台
+Write an answer or attach a file.|Schreiben Sie eine Antwort oder hängen Sie eine Datei an.|اكتب إجابة أو أرفق ملفًا.|请填写答案或附加文件。
+Write your answer, attach a file, or both. You can update it until it is graded.|Schreiben Sie Ihre Antwort, hängen Sie eine Datei an oder beides. Bis zur Bewertung können Sie sie aktualisieren.|اكتب إجابتك أو أرفق ملفًا أو كليهما. يمكنك تحديثها حتى يتم تقييمها.|填写答案、附加文件，或两者兼有。评分前可随时更新。
+Yes|Ja|نعم|是
+You are all caught up.|Sie sind auf dem neuesten Stand.|لا يوجد ما يجب تسليمه.|全部完成了。
+You are not enrolled in a course yet.|Sie sind noch in keinem Kurs eingeschrieben.|لم تسجل في أي دورة بعد.|你还没有报名任何课程。
+You are not enrolled in this course.|Sie sind nicht in diesen Kurs eingeschrieben.|أنت غير مسجل في هذه الدورة.|你未报名本课程。
+You can manage materials for the levels you teach.|Sie können Materialien für die Niveaus verwalten, die Sie unterrichten.|يمكنك إدارة مواد المستويات التي تدرّسها.|你可以管理自己所教级别的资料。
+You cannot manage materials for this level.|Sie können Materialien für dieses Niveau nicht verwalten.|لا يمكنك إدارة مواد هذا المستوى.|你无法管理该级别的资料。
+You cannot remove your own administrator access.|Sie können Ihre eigenen Administratorrechte nicht entfernen.|لا يمكنك إزالة صلاحيات المسؤول الخاصة بك.|你不能移除自己的管理员权限。
+You do not have access to this item.|Sie haben keinen Zugriff auf dieses Element.|ليست لديك صلاحية الوصول إلى هذا العنصر.|你无权访问该内容。
+You do not meet the completion requirements yet.|Sie erfüllen die Abschlussanforderungen noch nicht.|لم تستوفِ متطلبات الإتمام بعد.|你尚未满足结业要求。
+You don't have access to this page.|Sie haben keinen Zugriff auf diese Seite.|ليست لديك صلاحية الوصول إلى هذه الصفحة.|你无权访问此页面。
+You have used all attempts for this quiz.|Sie haben alle Versuche für diesen Test genutzt.|لقد استنفدت جميع محاولات هذا الاختبار.|你已用完该测验的所有尝试次数。
+You meet all requirements.|Sie erfüllen alle Anforderungen.|لقد استوفيت جميع المتطلبات.|你已满足全部要求。
+You study this course online, so no class attendance is recorded for you.|Sie lernen diesen Kurs online, daher wird für Sie keine Anwesenheit erfasst.|تدرس هذه الدورة عبر الإنترنت، لذا لا يُسجَّل لك حضور صفي.|你以线上方式学习本课程，因此不记录课堂出勤。
+YouTube / Vimeo|YouTube / Vimeo|YouTube / Vimeo|YouTube / Vimeo
+YouTube or Vimeo link|YouTube- oder Vimeo-Link|رابط YouTube أو Vimeo|YouTube 或 Vimeo 链接
+Your answer|Ihre Antwort|إجابتك|你的答案
+Your certificate has been issued.|Ihr Zertifikat wurde ausgestellt.|تم إصدار شهادتك.|你的证书已颁发。
+Your certificate request was sent to your instructor.|Ihr Zertifikatsantrag wurde an Ihre Lehrkraft gesendet.|أُرسل طلب شهادتك إلى مدرّسك.|证书申请已发送给你的教师。
+Your enrollment is not active yet.|Ihre Einschreibung ist noch nicht aktiv.|تسجيلك غير نشط بعد.|你的报名尚未生效。
+Your enrollment is not active.|Ihre Einschreibung ist nicht aktiv.|تسجيلك غير نشط.|你的报名未生效。
+Your evaluation is not complete yet.|Ihre Bewertung ist noch nicht vollständig.|تقييمك لم يكتمل بعد.|你的评估尚未完成。
+Your in-person classes and course events for the next 90 days.|Ihr Präsenzunterricht und Kursveranstaltungen der nächsten 90 Tage.|حصصك الحضورية وفعاليات دوراتك خلال الأيام التسعين القادمة.|未来 90 天的线下课程和课程活动。
+Your last request was declined.|Ihr letzter Antrag wurde abgelehnt.|رُفض طلبك الأخير.|你上次的申请被驳回。
+Your overall score combines quizzes ({0}%), assignments ({1}%) and the final exam ({2}%).|Ihre Gesamtpunktzahl setzt sich aus Tests ({0} %), Aufgaben ({1} %) und der Abschlussprüfung ({2} %) zusammen.|تجمع درجتك الإجمالية بين الاختبارات ({0}%) والواجبات ({1}%) والاختبار النهائي ({2}%).|总成绩由测验（{0}%）、作业（{1}%）和结业考试（{2}%）构成。
+Your password was changed.|Ihr Passwort wurde geändert.|تم تغيير كلمة المرور.|密码已修改。
+Your request is being reviewed by your instructor.|Ihr Antrag wird von Ihrer Lehrkraft geprüft.|يراجع مدرّسك طلبك الآن.|你的申请正在由教师审核。
+Your results qualify you for the next level.|Ihre Ergebnisse qualifizieren Sie für das nächste Niveau.|نتائجك تؤهلك للمستوى التالي.|你的成绩达到了升级要求。
+Your seat is reserved.|Ihr Platz ist reserviert.|تم حجز مقعدك.|已为你保留名额。
+Your seat is reserved. Access opens as soon as your payment is confirmed.|Ihr Platz ist reserviert. Der Zugang wird freigeschaltet, sobald Ihre Zahlung bestätigt ist.|تم حجز مقعدك. يُفتح الوصول بمجرد تأكيد الدفع.|已为你保留名额。确认付款后即可开始学习。
+Your seat is reserved. It will be activated as soon as your payment is confirmed.|Ihr Platz ist reserviert. Er wird aktiviert, sobald Ihre Zahlung bestätigt ist.|تم حجز مقعدك. سيُفعَّل فور تأكيد الدفع.|已为你保留名额。确认付款后即会激活。
+Your standing|Ihr Stand|وضعك الحالي|你的成绩概况
+Your submission|Ihre Abgabe|تسليمك|你的提交
+Your work was already graded and can no longer be changed.|Ihre Arbeit wurde bereits bewertet und kann nicht mehr geändert werden.|تم تقييم عملك ولا يمكن تغييره بعد الآن.|你的作业已评分，无法再修改。
+Your work was already submitted. Refresh the page to see it.|Ihre Arbeit wurde bereits abgegeben. Laden Sie die Seite neu, um sie zu sehen.|تم تسليم عملك بالفعل. حدّث الصفحة لرؤيته.|作业已提交，请刷新页面查看。
+Your work was submitted.|Ihre Arbeit wurde abgegeben.|تم تسليم عملك.|作业已提交。
+ZKTeco and compatible terminals (ADMS)|ZKTeco und kompatible Terminals (ADMS)|أجهزة ZKTeco والأجهزة المتوافقة (ADMS)|ZKTeco 及兼容终端（ADMS）
+active {0}|aktiv {0}|نشط {0}|{0} 活跃
+checked in {0}|eingecheckt {0}|سجّل الحضور {0}|{0} 签到
+e.g. Sun · Tue · Thu, 18:00–20:00|z. B. So · Di · Do, 18:00–20:00|مثال: الأحد · الثلاثاء · الخميس، 18:00–20:00|例如：周日·周二·周四 18:00–20:00
+has successfully completed the course “{0}” at level {1} ({2}) with a final score of {3}%.|hat den Kurs „{0}“ auf Niveau {1} ({2}) mit einer Gesamtpunktzahl von {3} % erfolgreich abgeschlossen.|أتمّ بنجاح دورة «{0}» في المستوى {1} ({2}) بدرجة نهائية قدرها {3}%.|已成功完成 {1}（{2}）级别课程“{0}”，总成绩 {3}%。
+late|verspätet|متأخر|逾期
+pts|Pkt.|نقطة|分
+recorded|eingetragen|مسجّل يدويًا|手动录入
+{0} and {1} do not match.|{0} und {1} stimmen nicht überein.|{0} و{1} غير متطابقين.|{0}与{1}不一致。
+{0} assignments|{0} Aufgaben|{0} واجبات|{0} 份作业
+{0} can be at most {1} characters long.|{0} darf höchstens {1} Zeichen lang sein.|يجب ألا يتجاوز {0} {1} حرفًا.|{0}最多 {1} 个字符。
+{0} certificate requests|{0} Zertifikatsanträge|{0} طلبات شهادة|{0} 个证书申请
+{0} courses|{0} Kurse|{0} دورات|{0} 门课程
+{0} hours|{0} Stunden|{0} ساعة|{0} 小时
+{0} in-person students · {1} upcoming sessions|{0} Teilnehmende vor Ort · {1} anstehende Termine|{0} طلاب حضور · {1} حصص قادمة|{0} 名线下学员 · {1} 个即将开始的课次
+{0} in-person students. Fingerprint check-ins are matched to these sessions automatically; absences are recorded when a session ends.|{0} Teilnehmende vor Ort. Check-ins per Fingerabdruck werden diesen Terminen automatisch zugeordnet; Abwesenheiten werden nach Ende eines Termins erfasst.|{0} طلاب حضور. تُطابق عمليات الحضور بالبصمة مع هذه الحصص تلقائيًا، ويُسجَّل الغياب عند انتهاء الحصة.|{0} 名线下学员。指纹签到将自动匹配到这些课次；课次结束后自动记录缺勤。
+{0} lessons|{0} Lektionen|{0} دروس|{0} 节课
+{0} levels|{0} Niveaus|{0} مستويات|{0} 个级别
+{0} materials|{0} Materialien|{0} مواد|{0} 份资料
+{0} min|{0} Min.|{0} د|{0} 分钟
+{0} must be between {1} and {2}.|{0} muss zwischen {1} und {2} liegen.|يجب أن يكون {0} بين {1} و{2}.|{0}必须介于 {1} 和 {2} 之间。
+{0} must be between {2} and {1} characters long.|{0} muss zwischen {2} und {1} Zeichen lang sein.|يجب أن يكون طول {0} بين {2} و{1} حرفًا.|{0}长度必须介于 {2} 到 {1} 个字符之间。
+{0} of {1} assignments handed in|{0} von {1} Aufgaben abgegeben|سُلّم {0} من {1} واجبات|已提交 {0} / {1} 份作业
+{0} of {1} lessons|{0} von {1} Lektionen|{0} من {1} دروس|{0} / {1} 节课
+{0} of {1} points|{0} von {1} Punkten|{0} من {1} نقطة|{0} / {1} 分
+{0} points|{0} Punkte|{0} نقاط|{0} 分
+{0} questions|{0} Fragen|{0} أسئلة|{0} 道题
+{0} questions · {1} points|{0} Fragen · {1} Punkte|{0} أسئلة · {1} نقاط|{0} 道题 · {1} 分
+{0} quizzes|{0} Tests|{0} اختبارات|{0} 个测验
+{0} results|{0} Ergebnisse|{0} نتيجة|{0} 条结果
+{0} sessions were added to the schedule.|{0} Termine wurden zum Stundenplan hinzugefügt.|تمت إضافة {0} حصة إلى الجدول.|已向课表添加 {0} 个课次。
+{0} students|{0} Teilnehmende|{0} طلاب|{0} 名学员
+{0} to grade|{0} zu bewerten|{0} للتقييم|{0} 份待批改
+{0} video lessons|{0} Videolektionen|{0} دروس مرئية|{0} 节视频课
+{0}% of lessons done|{0} % der Lektionen erledigt|أُنجز {0}% من الدروس|已完成 {0}% 的课时

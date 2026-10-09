@@ -1,0 +1,143 @@
+@model StudentDashboard
+@{
+    ViewData["Title"] = L["My learning"];
+    var firstName = Model.StudentName.Split(' ', StringSplitOptions.RemoveEmptyEntries).FirstOrDefault() ?? Model.StudentName;
+}
+<header class="topbar">
+    <div>
+        <h1 class="topbar__title">@L["Hello, {0}", firstName]</h1>
+        <p class="topbar__sub">@L["Here is where you are in your courses."]</p>
+    </div>
+    <a class="btn" asp-area="" asp-controller="Courses" asp-action="Index"><icon name="plus" />@L["Find a course"]</a>
+</header>
+
+@if (Model.Courses.Count == 0)
+{
+    <div class="card empty">
+        <icon name="book" />
+        <p class="empty__title">@L["You are not enrolled in a course yet."]</p>
+        <p>@L["Choose a German or Chinese course for your level to get started."]</p>
+        <a class="btn btn--primary" asp-area="" asp-controller="Courses" asp-action="Index">@L["Browse courses"]</a>
+    </div>
+}
+else
+{
+    <div class="grid grid-main">
+        <div class="grid">
+            @foreach (var course in Model.Courses)
+            {
+                if (course.Status == EnrollmentStatus.Pending)
+                {
+                    <article class="card card__body">
+                        <div class="btn-row" style="justify-content:space-between">
+                            <span class="badge badge--warn">@Label(course.Status)</span>
+                            <span class="level-code @Band(course.LevelCode)" style="color:var(--band-ink)">@course.LevelCode</span>
+                        </div>
+                        <h2 style="font-size:1.25rem; margin-top:12px">@Tx(course.Title)</h2>
+                        <p class="muted small" style="margin-top:8px">@L["Your seat is reserved. Access opens as soon as your payment is confirmed."]</p>
+                        <a class="link small" style="display:inline-block; margin-top:12px" asp-area="" asp-controller="Courses" asp-action="Details" asp-route-slug="@course.Slug">@L["Payment details"]</a>
+                    </article>
+                }
+                else
+                {
+                    <article class="course-banner">
+                        <span class="course-banner__ring" aria-hidden="true"></span>
+                        <div class="btn-row">
+                            <span class="level-code" style="color:var(--gold)">@course.LevelCode</span>
+                            <span class="small" style="opacity:.7">@Label(course.Language) · @Label(course.Mode)</span>
+                            @if (course.Status == EnrollmentStatus.Completed)
+                            {
+                                <span class="badge badge--success">@L["Completed"]</span>
+                            }
+                        </div>
+                        <h2 class="course-banner__title">@Tx(course.Title)</h2>
+                        <div class="progress" style="--p:@(course.ProgressPercent)%" role="progressbar" aria-valuenow="@course.ProgressPercent" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="course-banner__meta">
+                            <span>@L["{0} of {1} lessons", course.LessonsCompleted, course.LessonsTotal]</span>
+                            @if (course.CurrentLessonTitle is not null)
+                            {
+                                <span>@L["Last opened: {0}", course.CurrentLessonTitle]</span>
+                            }
+                        </div>
+                        <div class="course-banner__actions">
+                            <a class="btn btn--primary" asp-controller="Course" asp-action="Index" asp-route-courseId="@course.CourseId">@(course.LessonsCompleted == 0 ? L["Start the course"] : L["Continue"])<icon name="arrow-right" class="icon--flip" /></a>
+                            <a class="btn btn--ghost" asp-controller="Assignments" asp-action="Index" asp-route-courseId="@course.CourseId">@L["Assignments"]</a>
+                            @if (course.Certificate == CertificateStatus.Approved)
+                            {
+                                <a class="btn btn--ghost" asp-controller="Certificate" asp-action="Print" asp-route-courseId="@course.CourseId"><icon name="award" />@L["Certificate"]</a>
+                            }
+                        </div>
+                    </article>
+                }
+            }
+        </div>
+
+        <div class="grid">
+            <section class="card">
+                <div class="card__head"><h2 class="card__title">@L["Next classes"]</h2><icon name="building" /></div>
+                @if (Model.Sessions.Count == 0)
+                {
+                    <p class="card__body muted small">@L["No in-person classes scheduled."]</p>
+                }
+                else
+                {
+                    <ul class="list">
+                        @foreach (var s in Model.Sessions)
+                        {
+                            <li>
+                                <div class="list__main">
+                                    <div class="list__title">@Weekday(s.StartsAt), @Date(s.StartsAt)</div>
+                                    <div class="list__sub">@Range(s.StartsAt, s.EndsAt) · @Tx(s.CourseTitle)@(s.Room is null ? null : $" · {s.Room}")</div>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                }
+            </section>
+
+            <section class="card">
+                <div class="card__head"><h2 class="card__title">@L["To hand in"]</h2><icon name="clipboard" /></div>
+                @if (Model.DueAssignments.Count == 0)
+                {
+                    <p class="card__body muted small">@L["You are all caught up."]</p>
+                }
+                else
+                {
+                    <ul class="list">
+                        @foreach (var a in Model.DueAssignments)
+                        {
+                            <li>
+                                <div class="list__main">
+                                    <a class="list__title" asp-controller="Assignments" asp-action="Show" asp-route-courseId="@a.CourseId" asp-route-assignmentId="@a.AssignmentId">@a.Title</a>
+                                    <div class="list__sub">@Tx(a.CourseTitle)@(a.DueAt is { } due ? " · " + L["Due {0}", DateTimeText(due)] : null)</div>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                }
+            </section>
+
+            <section class="card">
+                <div class="card__head"><h2 class="card__title">@L["Upcoming events"]</h2><a class="small link" asp-action="Schedule">@L["All"]</a></div>
+                @if (Model.Events.Count == 0)
+                {
+                    <p class="card__body muted small">@L["No upcoming events right now."]</p>
+                }
+                else
+                {
+                    <ul class="list">
+                        @foreach (var e in Model.Events)
+                        {
+                            <li>
+                                <div class="list__main">
+                                    <div class="list__title">@Tx(e.Title)</div>
+                                    <div class="list__sub">@Label(e.Type) · @Date(e.StartsAt), @Clock(e.StartsAt)</div>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                }
+            </section>
+        </div>
+    </div>
+}

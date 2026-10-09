@@ -1,0 +1,65 @@
+@model CourseListPage
+@inject IPlatformSettingsService SettingsService
+@{
+    ViewData["Title"] = L["Courses"];
+    ViewData["Currency"] = (await SettingsService.GetAsync()).Currency;
+    var filter = Model.Filter;
+    var levels = filter.Language is { } lang ? Model.Tracks.Where(t => t.Language == lang).SelectMany(t => t.Levels).ToList() : [];
+}
+
+<section class="page-head">
+    <div class="container">
+        <div class="eyebrow">@L["Courses"]</div>
+        <h1 class="page-head__title">@L["Find the right course for your level"]</h1>
+        <p class="page-head__lead">@L["Every course has its own video lessons, materials, quizzes and a final exam. Study online, in class, or both."]</p>
+
+        <div class="filters" style="margin-top:28px">
+            <div class="filters__group">
+                <a class="chip @(filter.Language is null ? "is-active" : null)" asp-action="Index" asp-route-mode="@filter.Mode">@L["All languages"]</a>
+                @foreach (var track in Model.Tracks)
+                {
+                    <a class="chip @(filter.Language == track.Language ? "is-active" : null)" asp-action="Index" asp-route-language="@track.Language" asp-route-mode="@filter.Mode">@Label(track.Language)</a>
+                }
+            </div>
+            <div class="filters__group">
+                <a class="chip @(filter.Mode is null ? "is-active" : null)" asp-action="Index" asp-route-language="@filter.Language" asp-route-level="@filter.LevelId">@L["Any format"]</a>
+                <a class="chip @(filter.Mode == DeliveryMode.Online ? "is-active" : null)" asp-action="Index" asp-route-language="@filter.Language" asp-route-level="@filter.LevelId" asp-route-mode="Online"><icon name="video" />@L["Online"]</a>
+                <a class="chip @(filter.Mode == DeliveryMode.InPerson ? "is-active" : null)" asp-action="Index" asp-route-language="@filter.Language" asp-route-level="@filter.LevelId" asp-route-mode="InPerson"><icon name="building" />@L["In person"]</a>
+            </div>
+        </div>
+        @if (levels.Count > 0)
+        {
+            <div class="filters" style="margin-top:10px">
+                <a class="chip @(filter.LevelId is null ? "is-active" : null)" asp-action="Index" asp-route-language="@filter.Language" asp-route-mode="@filter.Mode">@L["All levels"]</a>
+                @foreach (var level in levels)
+                {
+                    <a class="chip @(filter.LevelId == level.LevelId ? "is-active" : null)" asp-action="Index" asp-route-language="@filter.Language" asp-route-level="@level.LevelId" asp-route-mode="@filter.Mode">
+                        <span class="mono">@level.Code</span> @Tx(level.Name)
+                    </a>
+                }
+            </div>
+        }
+    </div>
+</section>
+
+<section class="section--tight" style="padding-top:0">
+    <div class="container">
+        @if (Model.Courses.Count == 0)
+        {
+            <div class="card empty">
+                <icon name="search" />
+                <p class="empty__title">@L["No courses match these filters yet."]</p>
+                <a class="btn btn--sm" asp-action="Index">@L["Show all courses"]</a>
+            </div>
+        }
+        else
+        {
+            <div class="course-grid">
+                @foreach (var course in Model.Courses)
+                {
+                    <partial name="_CourseTicket" model="course" view-data="ViewData" />
+                }
+            </div>
+        }
+    </div>
+</section>

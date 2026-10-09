@@ -1,0 +1,30 @@
+@model IReadOnlyList<EventCard>
+@{
+    ViewData["Title"] = L["Events"];
+    var byMonth = Model.GroupBy(e => { var local = Time.ToLocal(e.StartsAt); return new DateTime(local.Year, local.Month, 1); });
+}
+<section class="page-head">
+    <div class="container">
+        <div class="eyebrow">@L["Events"]</div>
+        <h1 class="page-head__title">@L["Visits, conversation sessions and guests"]</h1>
+        <p class="page-head__lead">@L["Scheduled visits, speaking gatherings, delegations and cultural events organised around our courses."]</p>
+    </div>
+</section>
+<section class="section--tight" style="padding-top:0">
+    <div class="container">
+        @if (Model.Count == 0)
+        {
+            <div class="card empty"><icon name="calendar" /><p class="empty__title">@L["No upcoming events right now."]</p><p>@L["New events are announced here first."]</p></div>
+        }
+        @foreach (var month in byMonth)
+        {
+            <h2 class="eyebrow" style="margin:32px 0 14px">@month.Key.ToString("MMMM yyyy", System.Globalization.CultureInfo.CurrentCulture)</h2>
+            <div class="events">
+                @foreach (var item in month)
+                {
+                    <partial name="_EventItem" model="item" />
+                }
+            </div>
+        }
+    </div>
+</section>

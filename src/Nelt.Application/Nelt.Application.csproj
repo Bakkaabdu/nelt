@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\Nelt.Domain\Nelt.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Nelt.UnitTests" />
+  </ItemGroup>
+</Project>

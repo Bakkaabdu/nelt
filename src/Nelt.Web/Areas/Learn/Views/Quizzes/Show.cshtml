@@ -1,0 +1,62 @@
+@model QuizIntro
+@{
+    ViewData["Title"] = Model.Title;
+    var reason = Model.BlockReason switch
+    {
+        QuizBlockReason.NotOpen => L["This quiz is not open right now."],
+        QuizBlockReason.NoAttemptsLeft => L["You have used all attempts for this quiz."],
+        QuizBlockReason.LessonsIncomplete => L["Finish all lessons to unlock the final exam."],
+        QuizBlockReason.NotForYourMode => L["This quiz is not intended for your study mode."],
+        QuizBlockReason.NoQuestions => L["This quiz has no questions yet."],
+        _ => null,
+    };
+}
+<partial name="_LearnTabs" model="Model.Course" />
+
+<div class="grid grid-main">
+    <section class="card card__body stack">
+        <div class="btn-row">
+            <span class="badge @(Model.Kind == QuizKind.FinalExam ? "badge--danger" : "badge--info")">@Label(Model.Kind)</span>
+        </div>
+        <h2 style="font-size:1.8rem">@Model.Title</h2>
+        @if (!string.IsNullOrWhiteSpace(Model.Instructions))
+        {
+            <p class="prose">@Model.Instructions</p>
+        }
+        <ul class="facts" style="margin:8px 0 0">
+            <li><span><icon name="quiz" />@L["Questions"]</span><span>@Model.QuestionCount (@L["{0} points", Model.TotalPoints])</span></li>
+            <li><span><icon name="clock" />@L["Time limit"]</span><span>@(Model.TimeLimitMinutes is { } t ? L["{0} min", t] : L["No limit"])</span></li>
+            <li><span><icon name="flag" />@L["Passing score"]</span><span>@Model.PassingScore%</span></li>
+            <li><span><icon name="refresh" />@L["Attempts"]</span><span><bdi dir="ltr">@Model.AttemptsUsed / @Model.MaxAttempts</bdi></span></li>
+            @if (Model.AvailableUntil is { } until) { <li><span><icon name="calendar" />@L["Closes"]</span><span>@DateTimeText(until)</span></li> }
+        </ul>
+        @if (Model.TimeLimitMinutes is not null && Model.OpenAttemptId is null && reason is null)
+        {
+            <div class="note">@L["The timer starts when you begin and does not stop if you leave the page. Your answers are submitted automatically when time runs out."]</div>
+        }
+        <div class="btn-row" style="margin-top:8px">
+            @if (Model.OpenAttemptId is { } open)
+            {
+                <a class="btn btn--primary btn--lg" asp-action="Take" asp-route-courseId="@Model.Course.Id" asp-route-attemptId="@open">@L["Resume attempt"]</a>
+            }
+            else if (reason is null)
+            {
+                <form method="post" asp-action="Start" asp-route-courseId="@Model.Course.Id" asp-route-quizId="@Model.QuizId">
+                    <button type="submit" class="btn btn--primary btn--lg">@(Model.AttemptsUsed == 0 ? L["Start"] : L["Try again"])<icon name="arrow-right" class="icon--flip" /></button>
+                </form>
+            }
+            else
+            {
+                <div class="note note--info">@reason</div>
+            }
+            @if (Model.LastAttemptId is { } last)
+            {
+                <a class="btn" asp-action="Review" asp-route-courseId="@Model.Course.Id" asp-route-attemptId="@last">@L["See last result"]</a>
+            }
+        </div>
+    </section>
+    <aside class="card card__body" style="display:grid; justify-items:center; gap:12px; text-align:center">
+        <div class="muted small">@L["Best score"]</div>
+        <div class="score-ring" style="--v:@((int)(Model.BestScore ?? 0)); --c:@(Model.BestScore >= Model.PassingScore ? "var(--success)" : "var(--ink)")"><span>@(Model.BestScore is { } b ? ((int)b).ToString() : "—")</span></div>
+    </aside>
+</div>

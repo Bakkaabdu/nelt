@@ -1,0 +1,98 @@
+@model SessionsPage
+@{
+    ViewData["Title"] = L["Classes & attendance"];
+    var list = Model.List;
+    var id = list.Course.Id;
+    DayOfWeek[] week = [DayOfWeek.Saturday, DayOfWeek.Sunday, DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday];
+    var culture = System.Globalization.CultureInfo.CurrentCulture;
+}
+<partial name="_CourseTabs" model="list.Course" />
+
+<div class="grid grid-main">
+    <div class="grid" style="gap:28px">
+        <div class="topbar" style="margin:0">
+            <p class="muted">@L["{0} in-person students. Fingerprint check-ins are matched to these sessions automatically; absences are recorded when a session ends.", list.InPersonStudents]</p>
+            <div class="btn-row">
+                <a class="btn" asp-action="Matrix" asp-route-courseId="@id"><icon name="grid" />@L["Attendance overview"]</a>
+                <a class="btn btn--primary" asp-action="Create" asp-route-courseId="@id"><icon name="plus" />@L["Single session"]</a>
+            </div>
+        </div>
+
+        <section>
+            <h2 class="eyebrow">@L["Upcoming"] · @list.Upcoming.Count</h2>
+            @if (list.Upcoming.Count == 0)
+            {
+                <div class="card empty"><icon name="calendar" /><p>@L["No upcoming sessions. Use the planner to create the schedule."]</p></div>
+            }
+            else
+            {
+                <div class="table-wrap">
+                    <table class="table">
+                        <tbody>
+                            @foreach (var s in list.Upcoming.Take(40))
+                            {
+                                <tr>
+                                    <td><div class="cell-title">@Weekday(s.StartsAt), @Date(s.StartsAt)</div><div class="cell-sub">@s.Topic</div></td>
+                                    <td class="mono small">@Range(s.StartsAt, s.EndsAt)</td>
+                                    <td class="hide-sm small">@s.Room</td>
+                                    <td class="actions">
+                                        <a class="btn btn--sm" asp-action="Attendance" asp-route-courseId="@id" asp-route-sessionId="@s.Id"><icon name="fingerprint" />@L["Attendance"]</a>
+                                        <a class="btn btn--quiet btn--sm" asp-action="Edit" asp-route-courseId="@id" asp-route-sessionId="@s.Id" title="@L["Edit"]"><icon name="edit" /></a>
+                                        <form method="post" class="inline-form" asp-action="Delete" asp-route-courseId="@id" asp-route-sessionId="@s.Id" data-confirm="@L["Remove this session?"]"><button class="btn btn--quiet btn--sm" title="@L["Delete"]"><icon name="trash" /></button></form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </section>
+
+        @if (list.Past.Count > 0)
+        {
+            <section>
+                <h2 class="eyebrow">@L["Past sessions"] · @list.Past.Count</h2>
+                <div class="table-wrap">
+                    <table class="table">
+                        <thead><tr><th>@L["Session"]</th><th class="num" title="@L["Present"]"><span class="att att--present">P</span></th><th class="num"><span class="att att--late">L</span></th><th class="num"><span class="att att--absent">A</span></th><th class="num hide-sm"><span class="att att--excused">E</span></th><th></th></tr></thead>
+                        <tbody>
+                            @foreach (var s in list.Past)
+                            {
+                                <tr>
+                                    <td><div class="cell-title">@Weekday(s.StartsAt), @Date(s.StartsAt)</div><div class="cell-sub">@Range(s.StartsAt, s.EndsAt) @s.Topic</div></td>
+                                    <td class="num">@s.Present</td><td class="num">@s.Late</td><td class="num">@s.Absent</td><td class="num hide-sm">@s.Excused</td>
+                                    <td class="actions"><a class="btn btn--sm" asp-action="Attendance" asp-route-courseId="@id" asp-route-sessionId="@s.Id">@L["Open"]</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        }
+    </div>
+
+    <form method="post" class="card" asp-action="CreateSeries" asp-route-courseId="@id">
+        <div class="card__head"><h2 class="card__title">@L["Schedule planner"]</h2><icon name="calendar" /></div>
+        <div class="card__body form" style="gap:16px">
+            <p class="muted small">@L["Create all sessions at once, e.g. every Sunday, Tuesday and Thursday from 18:00 to 20:00."]</p>
+            <div asp-validation-summary="All" class="validation-summary"></div>
+            <div class="form-grid">
+                <field asp-for="Series.FirstDate" />
+                <field asp-for="Series.LastDate" />
+                <field asp-for="Series.StartTime" />
+                <field asp-for="Series.EndTime" />
+            </div>
+            <div class="field">
+                <span class="field__label">@L["Weekdays"]</span>
+                <div class="daypicker">
+                    @foreach (var day in week)
+                    {
+                        <label><input type="checkbox" name="Series.Days" value="@day" checked="@Model.Series.Days.Contains(day)" /><span>@culture.DateTimeFormat.GetAbbreviatedDayName(day)</span></label>
+                    }
+                </div>
+            </div>
+            <field asp-for="Series.Room" />
+            <button type="submit" class="btn btn--primary"><icon name="plus" />@L["Create sessions"]</button>
+        </div>
+    </form>
+</div>

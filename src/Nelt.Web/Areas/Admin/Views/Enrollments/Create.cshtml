@@ -1,0 +1,31 @@
+@model ManualEnrollmentPage
+@{
+    ViewData["Title"] = L["Enroll a student"];
+    var students = Model.Students.Select(s => new SelectListItem($"{s.Name} ({s.Email})", s.Id.ToString())).ToList();
+    var courses = Model.Courses.Select(c => new SelectListItem($"{c.LevelCode} · {Tx(c.Title)}", c.Id.ToString())).ToList();
+}
+<header class="topbar">
+    <div>
+        <nav class="crumbs"><a asp-action="Index">@L["Enrollments"]</a><icon name="chevron-right" class="icon--flip" /><span>@L["Enroll a student"]</span></nav>
+        <h1 class="topbar__title">@L["Enroll a student"]</h1>
+        <p class="topbar__sub">@L["For students who register at the front desk. New student? Create the account first."]</p>
+    </div>
+    <a class="btn" asp-controller="Users" asp-action="Create" asp-route-role="Student"><icon name="plus" />@L["New student account"]</a>
+</header>
+<form method="post" class="form" style="max-width:820px">
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+    <section class="form-section">
+        <div class="form-grid">
+            <field asp-for="Input.StudentId" asp-items="students" empty="Choose a student" wide="true" />
+            <field asp-for="Input.CourseId" asp-items="courses" empty="Choose a course" wide="true" />
+            <field asp-for="Input.Mode" />
+            <field asp-for="Input.Activate" hint="Unticked: the seat stays reserved until payment is confirmed." />
+            <field asp-for="Input.AmountPaid" />
+            <field asp-for="Input.PaymentReference" />
+        </div>
+    </section>
+    <div class="form-actions"><div class="form-actions__main">
+        <a class="btn" asp-action="Index">@L["Cancel"]</a>
+        <button type="submit" class="btn btn--primary">@L["Enroll"]</button>
+    </div></div>
+</form>

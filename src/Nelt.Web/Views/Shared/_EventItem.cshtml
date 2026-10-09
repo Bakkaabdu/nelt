@@ -1,0 +1,32 @@
+@model EventCard
+@{
+    var local = Time.ToLocal(Model.StartsAt);
+}
+<article class="event">
+    <div class="event__date" aria-hidden="true">
+        <span class="event__day">@local.Day</span>
+        <span class="event__month">@local.ToString("MMM", System.Globalization.CultureInfo.CurrentCulture)</span>
+    </div>
+    <div class="event__body">
+        <div class="btn-row" style="gap:8px">
+            <span class="badge badge--gold">@Label(Model.Type)</span>
+            @if (Model.CourseTitle is not null)
+            {
+                <span class="badge badge--plain">@Tx(Model.CourseTitle)</span>
+            }
+        </div>
+        <h3 class="event__title">@Tx(Model.Title)</h3>
+        @if (!Model.Description.IsNullOrEmpty())
+        {
+            <p class="event__desc">@Tx(Model.Description)</p>
+        }
+        <div class="meta">
+            <span><icon name="clock" /><time datetime="@Model.StartsAt.ToString("O")">@Weekday(Model.StartsAt), @Date(Model.StartsAt) · @(Model.EndsAt is { } end ? Range(Model.StartsAt, end) : Clock(Model.StartsAt))</time></span>
+            @if (!string.IsNullOrEmpty(Model.Location))
+            {
+                <span><icon name="map-pin" />@Model.Location</span>
+            }
+        </div>
+    </div>
+    <div></div>
+</article>

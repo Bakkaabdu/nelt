@@ -1,0 +1,56 @@
+@model AttendanceSheet
+@{
+    ViewData["Title"] = L["Attendance"];
+    var id = Model.Course.Id;
+    AttendanceStatus[] statuses = [AttendanceStatus.Present, AttendanceStatus.Late, AttendanceStatus.Absent, AttendanceStatus.Excused];
+    string Css(AttendanceStatus s) => s switch { AttendanceStatus.Present => "s-present", AttendanceStatus.Late => "s-late", AttendanceStatus.Absent => "s-absent", _ => "s-excused" };
+}
+<partial name="_CourseTabs" model="Model.Course" />
+<div class="topbar" style="margin-bottom:16px">
+    <div>
+        <nav class="crumbs"><a asp-action="Index" asp-route-courseId="@id">@L["Classes & attendance"]</a><icon name="chevron-right" class="icon--flip" /><span>@Date(Model.StartsAt)</span></nav>
+        <h2 style="font-size:1.4rem">@Weekday(Model.StartsAt), @Date(Model.StartsAt) · @Range(Model.StartsAt, Model.EndsAt)</h2>
+        <p class="muted small">@Model.Topic @(Model.Room is null ? null : "· " + Model.Room)</p>
+    </div>
+</div>
+
+@if (Model.Rows.Count == 0)
+{
+    <div class="card empty"><icon name="users" /><p class="empty__title">@L["No in-person students are enrolled in this course."]</p></div>
+}
+else
+{
+    <form method="post" asp-action="Attendance" asp-route-courseId="@id" asp-route-sessionId="@Model.SessionId">
+        <div class="btn-row" style="justify-content:space-between; margin-bottom:12px">
+            <p class="muted small">@L["Fingerprint check-ins appear automatically. Changes you make here override them."]</p>
+            <button type="button" class="btn btn--sm" data-mark-all="Present"><icon name="check" />@L["Mark the rest present"]</button>
+        </div>
+        <div class="table-wrap">
+            <table class="table">
+                <thead><tr><th>@L["Student"]</th><th class="hide-sm">@L["Fingerprint ID"]</th><th>@L["Status"]</th><th class="hide-sm">@L["Check-in"]</th><th class="hide-sm">@L["Note"]</th></tr></thead>
+                <tbody>
+                    @for (var i = 0; i < Model.Rows.Count; i++)
+                    {
+                        var r = Model.Rows[i];
+                        <tr>
+                            <td class="cell-title">@r.StudentName<input type="hidden" name="marks[@i].EnrollmentId" value="@r.EnrollmentId" /></td>
+                            <td class="hide-sm mono small">@(r.BiometricId ?? "—")</td>
+                            <td>
+                                <div class="segmented" role="radiogroup" aria-label="@r.StudentName">
+                                    <label><input type="radio" name="marks[@i].Status" value="" checked="@(r.Status is null)" /><span>—</span></label>
+                                    @foreach (var s in statuses)
+                                    {
+                                        <label><input type="radio" name="marks[@i].Status" value="@s" checked="@(r.Status == s)" /><span class="@Css(s)">@Label(s)</span></label>
+                                    }
+                                </div>
+                            </td>
+                            <td class="hide-sm small">@(r.CheckInAt is { } at ? Clock(at) : null) @(r.Source is { } src ? "· " + Label(src) : null)</td>
+                            <td class="hide-sm"><input class="input input--compact" name="marks[@i].Note" value="@r.Note" maxlength="200" style="width:100%" /></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="form-actions" style="margin-top:16px"><div class="form-actions__main"><button type="submit" class="btn btn--primary">@L["Save attendance"]</button></div></div>
+    </form>
+}

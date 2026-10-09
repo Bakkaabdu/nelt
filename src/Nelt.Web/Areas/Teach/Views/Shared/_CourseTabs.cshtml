@@ -1,0 +1,30 @@
+@model CourseHeader
+@{
+    var controller = ViewContext.RouteData.Values["controller"] as string;
+    var action = ViewContext.RouteData.Values["action"] as string;
+    string On(string c, params string[] actions) => controller == c && (actions.Length == 0 || actions.Contains(action)) ? "is-active" : string.Empty;
+}
+<header class="topbar">
+    <div>
+        <nav class="crumbs" aria-label="@L["Breadcrumb"]">
+            <a asp-controller="Courses" asp-action="Index">@L["My courses"]</a><icon name="chevron-right" class="icon--flip" />
+            <span><span class="mono">@Model.LevelCode</span> · @Label(Model.Language)</span>
+        </nav>
+        <h1 class="topbar__title">@Tx(Model.Title)</h1>
+    </div>
+    <div class="btn-row">
+        @if (!Model.IsPublished) { <span class="badge badge--warn">@L["Not published"]</span> }
+        <a class="btn btn--sm" asp-area="" asp-controller="Courses" asp-action="Details" asp-route-slug="@Model.Slug" target="_blank"><icon name="external" />@L["Public page"]</a>
+    </div>
+</header>
+<nav class="course-tabs" aria-label="@L["Course sections"]">
+    <a class="@On("Courses", "Overview")" asp-controller="Courses" asp-action="Overview" asp-route-courseId="@Model.Id"><icon name="grid" />@L["Overview"]</a>
+    <a class="@On("Students")" asp-controller="Students" asp-action="Index" asp-route-courseId="@Model.Id"><icon name="users" />@L["Students & progress"]</a>
+    <a class="@On("Lessons")" asp-controller="Lessons" asp-action="Index" asp-route-courseId="@Model.Id"><icon name="video" />@L["Lessons"]</a>
+    <a class="@On("Quizzes")" asp-controller="Quizzes" asp-action="Index" asp-route-courseId="@Model.Id"><icon name="quiz" />@L["Quizzes & exam"]</a>
+    <a class="@On("Assignments")" asp-controller="Assignments" asp-action="Index" asp-route-courseId="@Model.Id"><icon name="clipboard" />@L["Assignments"]</a>
+    @if (Model.DeliveryMode != DeliveryMode.Online)
+    {
+        <a class="@On("Sessions")" asp-controller="Sessions" asp-action="Index" asp-route-courseId="@Model.Id"><icon name="fingerprint" />@L["Classes & attendance"]</a>
+    }
+</nav>

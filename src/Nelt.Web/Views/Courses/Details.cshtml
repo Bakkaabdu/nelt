@@ -1,0 +1,151 @@
+@model CourseDetails
+@{
+    var card = Model.Card;
+    ViewData["Title"] = Tx(card.Title);
+    ViewData["Description"] = Tx(card.Summary);
+    ViewData["Currency"] = Model.Currency;
+    var isStudent = User.IsInRole(Roles.Student);
+    var signedIn = User.Identity?.IsAuthenticated == true;
+    var defaultMode = card.DeliveryMode == DeliveryMode.Online ? StudyMode.Online : StudyMode.InPerson;
+}
+
+<section class="page-head">
+    <div class="container course-hero">
+        <div>
+            <nav class="crumbs" aria-label="@L["Breadcrumb"]">
+                <a asp-action="Index">@L["Courses"]</a><icon name="chevron-right" class="icon--flip" />
+                <a asp-action="Index" asp-route-language="@card.Language">@Label(card.Language)</a>
+            </nav>
+            <div class="btn-row">
+                <span class="level-code @Band(card.LevelCode)" style="color:var(--band-ink)">@card.LevelCode</span>
+                <span class="muted">@Tx(card.LevelName)</span>
+            </div>
+            <h1 class="course-hero__title">@Tx(card.Title)</h1>
+            @if (!card.Summary.IsNullOrEmpty())
+            {
+                <p class="course-hero__summary">@Tx(card.Summary)</p>
+            }
+            <div class="meta" style="margin-top:22px; font-size:.95rem">
+                <span><icon name="@(card.DeliveryMode == DeliveryMode.Online ? "video" : "building")" />@Label(card.DeliveryMode)</span>
+                @if (Model.Lessons.Count > 0) { <span><icon name="play" />@L["{0} video lessons", Model.Lessons.Count]</span> }
+                @if (Model.QuizCount > 0) { <span><icon name="quiz" />@L["{0} quizzes", Model.QuizCount]</span> }
+                @if (Model.HasFinalExam) { <span><icon name="award" />@L["Final exam & certificate"]</span> }
+                @if (Model.InstructorName is not null) { <span><icon name="user" />@Model.InstructorName</span> }
+            </div>
+
+            @if (!Model.Description.IsNullOrEmpty())
+            {
+                <h2 style="font-size:1.4rem; margin-top:48px">@L["About this course"]</h2>
+                <div class="prose" style="margin-top:14px">@Tx(Model.Description)</div>
+            }
+
+            @if (Model.Lessons.Count > 0)
+            {
+                <h2 style="font-size:1.4rem; margin:48px 0 16px">@L["Lessons"]</h2>
+                <ol class="outline">
+                    @for (var i = 0; i < Model.Lessons.Count; i++)
+                    {
+                        var lesson = Model.Lessons[i];
+                        <li>
+                            <span class="outline__n">@((i + 1).ToString("00"))</span>
+                            @if (lesson.IsPreview)
+                            {
+                                <a class="outline__title link-arrow" asp-action="Preview" asp-route-slug="@card.Slug" asp-route-lessonId="@lesson.Id"><icon name="play" />@lesson.Title</a>
+                                <span class="badge badge--gold">@L["Free preview"]</span>
+                            }
+                            else
+                            {
+                                <span class="outline__title">@lesson.Title</span>
+                            }
+                            @if (lesson.DurationMinutes is { } minutes)
+                            {
+                                <span class="muted small nowrap">@L["{0} min", minutes]</span>
+                            }
+                        </li>
+                    }
+                </ol>
+            }
+
+            @if (Model.Events.Count > 0)
+            {
+                <h2 style="font-size:1.4rem; margin:48px 0 16px">@L["Course events"]</h2>
+                <div class="events">
+                    @foreach (var item in Model.Events)
+                    {
+                        <partial name="_EventItem" model="item" />
+                    }
+                </div>
+            }
+
+            @if (Model.NextLevelCourse is { } next)
+            {
+                <h2 style="font-size:1.4rem; margin:48px 0 16px">@L["Next level"]</h2>
+                <div class="course-grid" style="max-width:520px">
+                    <partial name="_CourseTicket" model="next" view-data="ViewData" />
+                </div>
+            }
+        </div>
+
+        <aside class="aside-card">
+            <div class="price">@Money(card.Price, Model.Currency)</div>
+            <ul class="facts">
+                @if (card.StartDate is { } start) { <li><span><icon name="calendar" />@L["Starts"]</span><span>@Date(start)</span></li> }
+                @if (card.EndDate is { } end) { <li><span><icon name="flag" />@L["Ends"]</span><span>@Date(end)</span></li> }
+                @if (card.TotalHours is { } hours) { <li><span><icon name="clock" />@L["Duration"]</span><span>@L["{0} hours", hours]</span></li> }
+                @if (!card.ScheduleNote.IsNullOrEmpty()) { <li><span><icon name="calendar" />@L["Schedule"]</span><span>@Tx(card.ScheduleNote)</span></li> }
+                @if (card.SeatsLeft is { } seats) { <li><span><icon name="users" />@L["Seats left"]</span><span class="num">@Math.Max(0, seats)</span></li> }
+            </ul>
+
+            @if (Model.Viewer is { } viewer && viewer.Status != EnrollmentStatus.Cancelled)
+            {
+                if (viewer.Status == EnrollmentStatus.Pending)
+                {
+                    <div class="note">
+                        <strong>@L["Your seat is reserved."]</strong>
+                        <p style="margin-top:6px">@Tx(Model.PaymentInstructions)</p>
+                    </div>
+                }
+                else
+                {
+                    <a class="btn btn--primary btn--block btn--lg" asp-area="Learn" asp-controller="Course" asp-action="Index" asp-route-courseId="@card.Id">@L["Go to course"]<icon name="arrow-right" class="icon--flip" /></a>
+                }
+            }
+            else if (Model.IsFull)
+            {
+                <div class="note note--danger">@L["This course is fully booked."]</div>
+            }
+            else if (!signedIn)
+            {
+                <a class="btn btn--primary btn--block btn--lg" asp-controller="Account" asp-action="Register" asp-route-returnUrl="@Context.Request.Path">@L["Enroll now"]</a>
+                <p class="muted small" style="margin-top:10px; text-align:center">@L["Already have an account?"] <a class="link" asp-controller="Account" asp-action="Login" asp-route-returnUrl="@Context.Request.Path">@L["Sign in"]</a></p>
+            }
+            else if (isStudent)
+            {
+                <form method="post" asp-action="Enroll" asp-route-slug="@card.Slug">
+                    @if (card.DeliveryMode == DeliveryMode.Hybrid)
+                    {
+                        <fieldset class="mode-picker" style="border:0; padding:0; margin:0 0 14px">
+                            <legend class="field__label" style="margin-bottom:8px">@L["How will you attend?"]</legend>
+                            <label class="mode-option"><input type="radio" name="mode" value="InPerson" checked /><icon name="building" />@L["In person"]</label>
+                            <label class="mode-option"><input type="radio" name="mode" value="Online" /><icon name="video" />@L["Online"]</label>
+                        </fieldset>
+                    }
+                    else
+                    {
+                        <input type="hidden" name="mode" value="@defaultMode" />
+                    }
+                    <button type="submit" class="btn btn--primary btn--block btn--lg">@L["Reserve my seat"]</button>
+                </form>
+                @if (!Model.PaymentInstructions.IsNullOrEmpty())
+                {
+                    <p class="muted small" style="margin-top:12px">@Tx(Model.PaymentInstructions)</p>
+                }
+            }
+            else
+            {
+                <div class="note note--info">@L["Staff accounts cannot enroll in courses."]</div>
+            }
+
+        </aside>
+    </div>
+</section>

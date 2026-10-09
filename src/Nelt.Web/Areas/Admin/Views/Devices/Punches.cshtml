@@ -1,0 +1,39 @@
+@model PunchesPage
+@{ ViewData["Title"] = L["Check-in log"]; }
+<header class="topbar">
+    <div>
+        <nav class="crumbs"><a asp-action="Index">@L["Fingerprint devices"]</a><icon name="chevron-right" class="icon--flip" /><span>@L["Check-in log"]</span></nav>
+        <h1 class="topbar__title">@L["Check-in log"]</h1>
+        <p class="topbar__sub">@L["Every fingerprint received, and what the platform did with it."]</p>
+    </div>
+</header>
+<form method="get" class="btn-row" style="margin-bottom:16px">
+    <select class="input input--select" name="device" style="width:auto" data-autosubmit aria-label="@L["Device"]">
+        <option value="">@L["All devices"]</option>
+        @foreach (var d in Model.Devices) { <option value="@d.Id" selected="@(Model.DeviceId == d.Id)">@d.Name</option> }
+    </select>
+    <select class="input input--select" name="outcome" style="width:auto" data-autosubmit aria-label="@L["Result"]">
+        <option value="">@L["All results"]</option>
+        @foreach (var o in Enum.GetValues<PunchOutcome>()) { <option value="@o" selected="@(Model.Outcome == o)">@Label(o)</option> }
+    </select>
+</form>
+<div class="table-wrap">
+    <table class="table">
+        <thead><tr><th>@L["Time"]</th><th>@L["Fingerprint ID"]</th><th>@L["Student"]</th><th class="hide-sm">@L["Device"]</th><th>@L["Result"]</th></tr></thead>
+        <tbody>
+            @foreach (var p in Model.Punches.Items)
+            {
+                var css = p.Outcome switch { PunchOutcome.Recorded => "badge--success", PunchOutcome.AlreadyRecorded => "badge--plain", PunchOutcome.UnknownUser => "badge--danger", _ => "badge--warn" };
+                <tr>
+                    <td class="small">@DateTimeText(p.PunchedAt)</td>
+                    <td class="mono small">@p.DeviceUserId</td>
+                    <td>@(p.StudentName ?? "—")</td>
+                    <td class="hide-sm small">@p.DeviceName</td>
+                    <td><span class="badge @css">@Label(p.Outcome)</span></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @if (Model.Punches.Items.Count == 0) { <div class="empty"><icon name="fingerprint" /><p>@L["No check-ins received yet."]</p></div> }
+</div>
+<partial name="_Pager" model="(Model.Punches.Page, Model.Punches.TotalPages, Model.Punches.TotalCount)" />

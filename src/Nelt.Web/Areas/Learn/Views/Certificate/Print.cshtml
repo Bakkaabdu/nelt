@@ -1,0 +1,37 @@
+@model PrintableCertificate
+@{
+    Layout = null;
+    var d = Model.Document;
+}
+<!DOCTYPE html>
+<html lang="@Lang" dir="@(IsRtl ? "rtl" : "ltr")">
+<head>
+    <partial name="/Views/Shared/_Head.cshtml" model="@($"{L["Certificate"]} · {d.StudentName}")" />
+    <meta name="robots" content="noindex" />
+</head>
+<body class="cert-page">
+    <div class="cert-tools no-print">
+        <a class="btn" asp-controller="Certificate" asp-action="Index">@L["Back"]</a>
+        <button class="btn btn--primary" type="button" data-print><icon name="printer" />@L["Print or save as PDF"]</button>
+    </div>
+    <article class="cert">
+        <div class="cert__stripe" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="cert__top">
+            <span class="brand"><partial name="/Views/Shared/_Brand.cshtml" model="Model.Site.SiteName" /></span>
+            <span class="cert__label">@L["Certificate of completion"]</span>
+        </div>
+        <h1 class="cert__title">@L["Certificate"]</h1>
+        <div class="cert__name">@d.StudentName</div>
+        <p class="cert__text">
+            @L["has successfully completed the course “{0}” at level {1} ({2}) with a final score of {3}%.", Tx(d.CourseTitle), d.LevelCode, Tx(d.LevelName), d.FinalScore.ToString("0.#")]
+            @if (d.EligibleForNextLevel) { <span>@L["The student is eligible to progress to the next level."]</span> }
+        </p>
+        <div class="cert__bottom">
+            <div class="cert__field">@L["Date of issue"]<strong>@Date(d.IssuedAt)</strong></div>
+            @if (d.InstructorName is not null) { <div class="cert__field">@L["Instructor"]<strong>@d.InstructorName</strong></div> }
+            <div class="cert__field">@L["Certificate number"]<strong class="mono">@d.SerialNumber</strong><span class="small">@Model.VerifyUrl</span></div>
+            <div class="cert__seal"><span>@Model.Site.SiteName<br />@d.LevelCode<br />@d.IssuedAt.Year</span></div>
+        </div>
+    </article>
+</body>
+</html>

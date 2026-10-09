@@ -1,0 +1,131 @@
+Students already submitted work for this assignment. Unpublish it instead of deleting it.|Für diese Aufgabe wurden bereits Arbeiten abgegeben. Nehmen Sie sie offline, statt sie zu löschen.|سلّم الطلاب أعمالًا لهذا الواجب بالفعل. ألغِ نشره بدلًا من حذفه.|已有学员提交该作业，请取消发布而不是删除。
+Students already took this quiz, so its questions are locked to keep results fair.|Dieser Test wurde bereits absolviert, daher sind die Fragen gesperrt, damit die Ergebnisse fair bleiben.|أجرى الطلاب هذا الاختبار بالفعل، لذا أُقفلت أسئلته حفاظًا على عدالة النتائج.|已有学员参加该测验，为保证成绩公平，题目已锁定。
+Students already took this quiz. Unpublish it instead of deleting it.|Dieser Test wurde bereits absolviert. Nehmen Sie ihn offline, statt ihn zu löschen.|أجرى الطلاب هذا الاختبار بالفعل. ألغِ نشره بدلًا من حذفه.|已有学员参加该测验，请取消发布而不是删除。
+Students hand in text answers or files here; you grade them with a score and feedback.|Teilnehmende geben hier Textantworten oder Dateien ab; Sie bewerten sie mit Punktzahl und Rückmeldung.|يسلّم الطلاب إجابات نصية أو ملفات هنا؛ وتقيّمها أنت بدرجة وملاحظات.|学员在此提交文字答案或文件，由你评分并给出评语。
+Students only|Nur Teilnehmende|للطلاب فقط|仅学员可见
+Students request a certificate once they meet all requirements. Approving re-checks their results and issues a numbered certificate.|Teilnehmende beantragen ein Zertifikat, sobald sie alle Anforderungen erfüllen. Beim Genehmigen werden die Ergebnisse erneut geprüft und ein nummeriertes Zertifikat ausgestellt.|يطلب الطلاب الشهادة عند استيفاء جميع المتطلبات. تعيد الموافقة التحقق من نتائجهم وتصدر شهادة مرقّمة.|学员满足全部要求后可申请证书。批准时系统会重新核验成绩并颁发带编号的证书。
+Students see published quizzes only.|Teilnehmende sehen nur veröffentlichte Tests.|يرى الطلاب الاختبارات المنشورة فقط.|学员只能看到已发布的测验。
+Students, instructors and administrators. Assign fingerprint IDs to in-person students here.|Teilnehmende, Lehrkräfte und Administration. Weisen Sie Präsenz-Teilnehmenden hier Fingerabdruck-IDs zu.|الطلاب والمدرّسون والمسؤولون. عيّن أرقام البصمة لطلاب الحضور هنا.|学员、教师和管理员。在此为线下学员分配指纹编号。
+Study mode|Lernform|نمط الدراسة|学习方式
+Submissions|Abgaben|التسليمات|提交记录
+Submissions to grade|Zu bewertende Abgaben|تسليمات بانتظار التقييم|待批改提交
+Submit|Abgeben|إرسال|提交
+Submit answers|Antworten abgeben|إرسال الإجابات|提交答案
+Submit your answers? You cannot change them afterwards.|Antworten abgeben? Danach können Sie sie nicht mehr ändern.|إرسال إجاباتك؟ لن تتمكن من تغييرها بعد ذلك.|确定提交答案？提交后将无法修改。
+Submitted|Abgegeben|تم التسليم|已提交
+Summary|Zusammenfassung|الملخص|摘要
+Tagline|Slogan|الشعار|标语
+Teaching|Unterricht|التدريس|教学
+Terminals at the course entrance send check-ins to the platform, where they are matched to class sessions.|Terminals am Kurseingang senden Check-ins an die Plattform, wo sie den Unterrichtsterminen zugeordnet werden.|ترسل الأجهزة عند مدخل الدورة عمليات الحضور إلى المنصة لتُطابق مع الحصص.|课程入口的终端将签到发送到平台，并自动匹配到课次。
+The English text is required.|Der englische Text ist erforderlich.|النص الإنجليزي مطلوب.|英文内容为必填项。
+The account was created.|Das Konto wurde angelegt.|تم إنشاء الحساب.|账户已创建。
+The account was saved.|Das Konto wurde gespeichert.|تم حفظ الحساب.|账户已保存。
+The assignment was created.|Die Aufgabe wurde erstellt.|تم إنشاء الواجب.|作业已创建。
+The assignment was deleted.|Die Aufgabe wurde gelöscht.|تم حذف الواجب.|作业已删除。
+The assignment was saved.|Die Aufgabe wurde gespeichert.|تم حفظ الواجب.|作业已保存。
+The certificate was issued.|Das Zertifikat wurde ausgestellt.|تم إصدار الشهادة.|证书已颁发。
+The closing time must be after the opening time.|Der Endzeitpunkt muss nach dem Startzeitpunkt liegen.|يجب أن يكون وقت الإغلاق بعد وقت الفتح.|截止时间必须晚于开始时间。
+The course catalogue shown on the website. Instructors manage lessons, quizzes and attendance in the course workspace.|Der Kurskatalog der Website. Lehrkräfte verwalten Lektionen, Tests und Anwesenheit im Kurs-Arbeitsbereich.|كتالوج الدورات المعروض على الموقع. يدير المدرّسون الدروس والاختبارات والحضور في مساحة عمل الدورة.|网站上展示的课程目录。教师在课程工作台中管理课时、测验和出勤。
+The course must belong to the selected level.|Der Kurs muss zum gewählten Niveau gehören.|يجب أن تنتمي الدورة إلى المستوى المختار.|课程必须属于所选级别。
+The course was created.|Der Kurs wurde erstellt.|تم إنشاء الدورة.|课程已创建。
+The course was deleted.|Der Kurs wurde gelöscht.|تم حذف الدورة.|课程已删除。
+The course was saved.|Der Kurs wurde gespeichert.|تم حفظ الدورة.|课程已保存。
+The current password is incorrect.|Das aktuelle Passwort ist falsch.|كلمة المرور الحالية غير صحيحة.|当前密码不正确。
+The deadline has passed and late submissions are not accepted.|Die Frist ist abgelaufen und verspätete Abgaben werden nicht angenommen.|انتهى الموعد ولا يُقبل التسليم المتأخر.|已过截止时间，且不接受逾期提交。
+The deadline has passed.|Die Frist ist abgelaufen.|انتهى الموعد النهائي.|已过截止时间。
+The device was registered.|Das Gerät wurde registriert.|تم تسجيل الجهاز.|设备已注册。
+The device was removed.|Das Gerät wurde entfernt.|تمت إزالة الجهاز.|设备已移除。
+The device was saved.|Das Gerät wurde gespeichert.|تم حفظ الجهاز.|设备已保存。
+The email or password is incorrect.|E-Mail oder Passwort ist falsch.|البريد الإلكتروني أو كلمة المرور غير صحيحة.|邮箱或密码不正确。
+The end date must be after the start date.|Das Enddatum muss nach dem Startdatum liegen.|يجب أن يكون تاريخ الانتهاء بعد تاريخ البدء.|结束日期必须晚于开始日期。
+The end must be after the start.|Das Ende muss nach dem Beginn liegen.|يجب أن تكون النهاية بعد البداية.|结束时间必须晚于开始时间。
+The enrollment was cancelled.|Die Einschreibung wurde storniert.|تم إلغاء التسجيل.|报名已取消。
+The event was deleted.|Die Veranstaltung wurde gelöscht.|تم حذف الفعالية.|活动已删除。
+The event was published.|Die Veranstaltung wurde veröffentlicht.|تم نشر الفعالية.|活动已发布。
+The event was saved.|Die Veranstaltung wurde gespeichert.|تم حفظ الفعالية.|活动已保存。
+The file details were saved.|Die Dateidetails wurden gespeichert.|تم حفظ تفاصيل الملف.|文件信息已保存。
+The file is too large.|Die Datei ist zu groß.|الملف كبير جدًا.|文件过大。
+The file was added to the library.|Die Datei wurde der Bibliothek hinzugefügt.|تمت إضافة الملف إلى المكتبة.|文件已加入资料库。
+The file was removed.|Die Datei wurde entfernt.|تمت إزالة الملف.|文件已移除。
+The grade was saved.|Die Bewertung wurde gespeichert.|تم حفظ التقييم.|评分已保存。
+The headline and introduction at the top of the home page.|Überschrift und Einleitung oben auf der Startseite.|العنوان والمقدمة أعلى الصفحة الرئيسية.|首页顶部的主标题和简介。
+The lesson was created.|Die Lektion wurde erstellt.|تم إنشاء الدرس.|课时已创建。
+The lesson was deleted.|Die Lektion wurde gelöscht.|تم حذف الدرس.|课时已删除。
+The lesson was saved.|Die Lektion wurde gespeichert.|تم حفظ الدرس.|课时已保存。
+The level was created.|Das Niveau wurde erstellt.|تم إنشاء المستوى.|级别已创建。
+The level was deleted.|Das Niveau wurde gelöscht.|تم حذف المستوى.|级别已删除。
+The level was saved.|Das Niveau wurde gespeichert.|تم حفظ المستوى.|级别已保存。
+The link may be outdated, or the page was moved.|Der Link ist möglicherweise veraltet oder die Seite wurde verschoben.|قد يكون الرابط قديمًا، أو نُقلت الصفحة.|链接可能已过期，或页面已移动。
+The password must be at least 8 characters long.|Das Passwort muss mindestens 8 Zeichen lang sein.|يجب ألا تقل كلمة المرور عن 8 أحرف.|密码至少需要 8 个字符。
+The password must contain at least one digit.|Das Passwort muss mindestens eine Ziffer enthalten.|يجب أن تحتوي كلمة المرور على رقم واحد على الأقل.|密码必须至少包含一个数字。
+The password must contain at least one lowercase letter.|Das Passwort muss mindestens einen Kleinbuchstaben enthalten.|يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل.|密码必须至少包含一个小写字母。
+The platform information was saved.|Die Plattform-Informationen wurden gespeichert.|تم حفظ معلومات المنصة.|平台信息已保存。
+The problem was logged. Please try again in a moment.|Das Problem wurde protokolliert. Bitte versuchen Sie es gleich noch einmal.|تم تسجيل المشكلة. يرجى المحاولة بعد قليل.|问题已记录，请稍后重试。
+The question was deleted.|Die Frage wurde gelöscht.|تم حذف السؤال.|题目已删除。
+The question was saved.|Die Frage wurde gespeichert.|تم حفظ السؤال.|题目已保存。
+The quiz was created. Now add its questions.|Der Test wurde erstellt. Fügen Sie jetzt die Fragen hinzu.|تم إنشاء الاختبار. أضف أسئلته الآن.|测验已创建，现在添加题目吧。
+The quiz was deleted.|Der Test wurde gelöscht.|تم حذف الاختبار.|测验已删除。
+The quiz was saved.|Der Test wurde gespeichert.|تم حفظ الاختبار.|测验已保存。
+The request could not be processed.|Die Anfrage konnte nicht verarbeitet werden.|تعذّرت معالجة الطلب.|无法处理该请求。
+The request was declined.|Der Antrag wurde abgelehnt.|تم رفض الطلب.|申请已驳回。
+The requested item was not found.|Das angeforderte Element wurde nicht gefunden.|لم يُعثر على العنصر المطلوب.|未找到所请求的内容。
+The score cannot exceed the maximum score.|Die Punktzahl darf die Höchstpunktzahl nicht überschreiten.|لا يمكن أن تتجاوز الدرجة الحد الأقصى.|分数不能超过满分。
+The score for the next level cannot be lower than the passing score.|Die Punktzahl für das nächste Niveau darf nicht unter der Bestehensgrenze liegen.|لا يمكن أن تكون درجة المستوى التالي أقل من درجة النجاح.|升级分数线不能低于及格分。
+The score was recorded.|Das Ergebnis wurde eingetragen.|تم تسجيل الدرجة.|分数已录入。
+The selected instructor is not available.|Die gewählte Lehrkraft ist nicht verfügbar.|المدرّس المختار غير متاح.|所选教师不可用。
+The selected lesson does not belong to this course.|Die gewählte Lektion gehört nicht zu diesem Kurs.|الدرس المختار لا ينتمي إلى هذه الدورة.|所选课时不属于本课程。
+The selected student was not found.|Die gewählte Person wurde nicht gefunden.|لم يُعثر على الطالب المختار.|未找到所选学员。
+The session was added.|Der Termin wurde hinzugefügt.|تمت إضافة الحصة.|课次已添加。
+The session was removed.|Der Termin wurde entfernt.|تمت إزالة الحصة.|课次已移除。
+The session was saved.|Der Termin wurde gespeichert.|تم حفظ الحصة.|课次已保存。
+The student is eligible to progress to the next level.|Die Person ist berechtigt, in das nächste Niveau aufzusteigen.|الطالب مؤهل للانتقال إلى المستوى التالي.|该学员有资格升入下一级别。
+The student no longer meets the completion requirements.|Die Person erfüllt die Abschlussanforderungen nicht mehr.|لم يعد الطالب مستوفيًا لمتطلبات الإتمام.|该学员已不再满足结业要求。
+The student was enrolled.|Die Person wurde eingeschrieben.|تم تسجيل الطالب.|学员已报名。
+The study mode was changed.|Die Lernform wurde geändert.|تم تغيير نمط الدراسة.|学习方式已更改。
+The text is too long.|Der Text ist zu lang.|النص طويل جدًا.|内容过长。
+The three weights must add up to 100.|Die drei Gewichtungen müssen zusammen 100 ergeben.|يجب أن يكون مجموع الأوزان الثلاثة 100.|三项权重之和必须为 100。
+The timer starts when you begin and does not stop if you leave the page. Your answers are submitted automatically when time runs out.|Der Timer startet mit dem Beginn und läuft weiter, auch wenn Sie die Seite verlassen. Ihre Antworten werden bei Zeitablauf automatisch abgegeben.|يبدأ المؤقت عند البدء ولا يتوقف إذا غادرت الصفحة. تُرسل إجاباتك تلقائيًا عند انتهاء الوقت.|计时从开始作答时启动，离开页面也不会停止。时间用完时将自动提交答案。
+The uploaded file is empty.|Die hochgeladene Datei ist leer.|الملف المرفوع فارغ.|上传的文件为空。
+The value '{0}' is not valid.|Der Wert „{0}“ ist ungültig.|القيمة «{0}» غير صالحة.|值“{0}”无效。
+The value is not valid.|Der Wert ist ungültig.|القيمة غير صالحة.|该值无效。
+The {0} field is required.|Das Feld „{0}“ ist erforderlich.|الحقل «{0}» مطلوب.|“{0}”为必填项。
+This attempt is still in progress.|Dieser Versuch läuft noch.|هذه المحاولة ما زالت جارية.|本次作答尚未完成。
+This attempt was already submitted.|Dieser Versuch wurde bereits abgegeben.|تم إرسال هذه المحاولة بالفعل.|本次作答已提交。
+This certificate is valid.|Dieses Zertifikat ist gültig.|هذه الشهادة صحيحة.|该证书有效。
+This course already has a final exam for these students.|Dieser Kurs hat für diese Teilnehmenden bereits eine Abschlussprüfung.|لهذه الدورة اختبار نهائي لهؤلاء الطلاب بالفعل.|本课程已为这些学员设置结业考试。
+This course is fully booked.|Dieser Kurs ist ausgebucht.|هذه الدورة مكتملة العدد.|本课程名额已满。
+This course is not offered in the selected mode.|Dieser Kurs wird in dieser Form nicht angeboten.|لا تُقدَّم هذه الدورة بالنمط المختار.|本课程不提供所选的学习方式。
+This device already sent fingerprints. Deactivate it instead to keep the attendance history.|Dieses Gerät hat bereits Fingerabdrücke gesendet. Deaktivieren Sie es stattdessen, um den Anwesenheitsverlauf zu erhalten.|أرسل هذا الجهاز بصمات بالفعل. عطّله بدلًا من ذلك للحفاظ على سجل الحضور.|该设备已发送过指纹记录，请改为停用以保留出勤历史。
+This enrollment is already completed.|Diese Einschreibung ist bereits abgeschlossen.|هذا التسجيل مكتمل بالفعل.|该报名已结业。
+This field is required.|Dieses Feld ist erforderlich.|هذا الحقل مطلوب.|此项为必填项。
+This file type is not allowed.|Dieser Dateityp ist nicht erlaubt.|نوع الملف هذا غير مسموح.|不支持该文件类型。
+This fingerprint ID is already assigned to another person.|Diese Fingerabdruck-ID ist bereits einer anderen Person zugewiesen.|رقم البصمة هذا مخصص لشخص آخر بالفعل.|该指纹编号已分配给其他人。
+This lesson has no video. Read the notes below.|Diese Lektion hat kein Video. Lesen Sie die Notizen unten.|هذا الدرس بلا فيديو. اقرأ الملاحظات أدناه.|本课时没有视频，请阅读下方讲义。
+This level still has courses or materials.|Dieses Niveau hat noch Kurse oder Materialien.|ما زالت لهذا المستوى دورات أو مواد.|该级别下仍有课程或资料。
+This page doesn't exist.|Diese Seite existiert nicht.|هذه الصفحة غير موجودة.|该页面不存在。
+This quiz has no questions yet.|Dieser Test hat noch keine Fragen.|هذا الاختبار لا يحتوي على أسئلة بعد.|该测验暂无题目。
+This quiz is not intended for your study mode.|Dieser Test ist nicht für Ihre Lernform vorgesehen.|هذا الاختبار غير مخصص لنمط دراستك.|该测验不适用于你的学习方式。
+This quiz is not open right now.|Dieser Test ist derzeit nicht geöffnet.|هذا الاختبار غير متاح حاليًا.|该测验当前未开放。
+This student is already enrolled in the course.|Diese Person ist bereits in den Kurs eingeschrieben.|هذا الطالب مسجّل في الدورة بالفعل.|该学员已报名本课程。
+Time|Uhrzeit|الوقت|时间
+Time is up. Your attempt was closed.|Die Zeit ist abgelaufen. Ihr Versuch wurde beendet.|انتهى الوقت. تم إغلاق محاولتك.|时间到，本次作答已结束。
+Time limit|Zeitlimit|المدة المحددة|限时
+Time limit (minutes)|Zeitlimit (Minuten)|المدة المحددة (بالدقائق)|限时（分钟）
+Time zone|Zeitzone|المنطقة الزمنية|时区
+Times without an offset are read in the platform time zone. Resending the same punches is safe.|Zeiten ohne Offset werden in der Zeitzone der Plattform gelesen. Das erneute Senden derselben Buchungen ist unbedenklich.|تُقرأ الأوقات بدون فارق توقيت بتوقيت المنصة. إعادة إرسال البصمات نفسها آمنة.|未带时区偏移的时间按平台时区解析。重复发送相同的打卡记录是安全的。
+Title|Titel|العنوان|标题
+Title and description are shown to students and — if public — on the website, in every language you fill in.|Titel und Beschreibung werden den Teilnehmenden und – wenn öffentlich – auf der Website in jeder ausgefüllten Sprache angezeigt.|يُعرض العنوان والوصف للطلاب — وعلى الموقع إن كانت عامة — بكل لغة تملؤها.|标题和描述将以你填写的各语言向学员展示；若设为公开，也会显示在网站上。
+Title, summary and description appear on the website in the visitor's language.|Titel, Zusammenfassung und Beschreibung erscheinen auf der Website in der Sprache der Besucher.|يظهر العنوان والملخص والوصف على الموقع بلغة الزائر.|标题、摘要和描述将以访客的语言显示在网站上。
+To do|Offen|مطلوب|待完成
+To grade|Zu bewerten|للتقييم|待批改
+To hand in|Abzugeben|للتسليم|待提交
+Today|Heute|اليوم|今日
+Too many failed attempts. Please try again in a few minutes.|Zu viele fehlgeschlagene Versuche. Bitte versuchen Sie es in ein paar Minuten erneut.|محاولات فاشلة كثيرة. يرجى المحاولة بعد بضع دقائق.|失败次数过多，请几分钟后再试。
+Too many requests.|Zu viele Anfragen.|طلبات كثيرة جدًا.|请求过多。
+Topic|Thema|الموضوع|主题
+Total hours|Stunden gesamt|إجمالي الساعات|总课时
+True|Richtig|صح|正确
+True / false|Richtig / falsch|صح / خطأ|判断题
+Try again|Erneut versuchen|حاول مرة أخرى|再试一次
+Two languages. Every level.|Zwei Sprachen. Jedes Niveau.|لغتان. كل المستويات.|两种语言，所有级别。
+Type|Art|النوع|类型

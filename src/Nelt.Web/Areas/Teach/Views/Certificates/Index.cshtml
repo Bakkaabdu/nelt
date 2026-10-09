@@ -1,0 +1,53 @@
+@model CertificateRequestsPage
+@{ ViewData["Title"] = L["Certificate requests"]; }
+<header class="topbar">
+    <div>
+        <h1 class="topbar__title">@L["Certificate requests"]</h1>
+        <p class="topbar__sub">@L["Students request a certificate once they meet all requirements. Approving re-checks their results and issues a numbered certificate."]</p>
+    </div>
+</header>
+<nav class="course-tabs">
+    <a class="@(Model.Status == CertificateStatus.Pending ? "is-active" : null)" asp-action="Index" asp-route-status="Pending">@L["Waiting"]</a>
+    <a class="@(Model.Status == CertificateStatus.Approved ? "is-active" : null)" asp-action="Index" asp-route-status="Approved">@L["Issued"]</a>
+    <a class="@(Model.Status == CertificateStatus.Rejected ? "is-active" : null)" asp-action="Index" asp-route-status="Rejected">@L["Declined"]</a>
+</nav>
+@if (Model.Requests.Count == 0)
+{
+    <div class="card empty"><icon name="award" /><p class="empty__title">@L["Nothing here."]</p></div>
+}
+else
+{
+    <div class="table-wrap">
+        <table class="table">
+            <thead><tr><th>@L["Student"]</th><th>@L["Course"]</th><th class="num">@L["Score"]</th><th class="hide-sm">@L["Next level"]</th><th class="hide-sm">@L["Requested"]</th><th></th></tr></thead>
+            <tbody>
+                @foreach (var r in Model.Requests)
+                {
+                    <tr>
+                        <td><a class="cell-title" asp-controller="Students" asp-action="Show" asp-route-courseId="@r.CourseId" asp-route-enrollmentId="@r.EnrollmentId">@r.StudentName</a></td>
+                        <td class="small"><span class="mono">@r.LevelCode</span> · @Tx(r.CourseTitle)</td>
+                        <td class="num">@Percent(r.FinalScore)</td>
+                        <td class="hide-sm">@(r.EligibleForNextLevel ? L["Yes"] : L["No"])</td>
+                        <td class="hide-sm small">@Date(r.RequestedAt)</td>
+                        <td class="actions">
+                            @if (r.Status == CertificateStatus.Pending)
+                            {
+                                <form method="post" class="inline-form" asp-action="Approve" asp-route-id="@r.Id" asp-route-status="@Model.Status">
+                                    <button class="btn btn--primary btn--sm"><icon name="check" />@L["Issue"]</button>
+                                </form>
+                                <form method="post" class="inline-form" asp-action="Reject" asp-route-id="@r.Id" asp-route-status="@Model.Status">
+                                    <input class="input input--compact hide-sm" name="Note" maxlength="500" placeholder="@L["Reason (optional)"]" />
+                                    <button class="btn btn--danger btn--sm">@L["Decline"]</button>
+                                </form>
+                            }
+                            else if (r.SerialNumber is not null)
+                            {
+                                <a class="mono small link" asp-area="" asp-controller="Certificates" asp-action="Verify" asp-route-serial="@r.SerialNumber" target="_blank">@r.SerialNumber</a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

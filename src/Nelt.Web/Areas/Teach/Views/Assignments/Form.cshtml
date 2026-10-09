@@ -1,0 +1,49 @@
+@model AssignmentEditModel
+@{
+    var isNew = Model.AssignmentId is null;
+    ViewData["Title"] = isNew ? L["New assignment"] : Model.Input.Title;
+    var id = Model.Course.Id;
+    var lessons = Model.Lessons.Select(l => new SelectListItem(l.Title, l.Id.ToString())).ToList();
+}
+<partial name="_CourseTabs" model="Model.Course" />
+<form method="post" enctype="multipart/form-data" class="form" style="max-width:880px" asp-action="@(isNew ? "Create" : "Edit")" asp-route-courseId="@id" asp-route-assignmentId="@Model.AssignmentId">
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+    <section class="form-section">
+        <h2 class="form-section__title">@(isNew ? L["New assignment"] : L["Edit assignment"])</h2>
+        <div class="form-grid" style="margin-top:16px">
+            <field asp-for="Input.Title" wide="true" />
+            <field asp-for="Input.Instructions" rows="8" wide="true" />
+            <field asp-for="Input.LessonId" asp-items="lessons" empty="Not linked to a lesson" />
+            <field asp-for="Input.DueAt" />
+            <field asp-for="Input.MaxScore" />
+            <div></div>
+            <field asp-for="Input.AllowLateSubmissions" />
+            <field asp-for="Input.IsPublished" />
+            <div class="field field--wide">
+                <label class="field__label" for="attachment">@L["Worksheet or file for students"]</label>
+                @if (Model.AttachmentName is not null)
+                {
+                    <div class="current-file"><icon name="file" />@Model.AttachmentName
+                        <label class="check" style="margin-inline-start:auto"><input class="check__box" type="checkbox" name="removeAttachment" value="true" /><span class="check__ui"></span><span class="check__label">@L["Remove"]</span></label>
+                    </div>
+                }
+                <input class="input" type="file" id="attachment" name="attachment" />
+                <span class="field__error">@(ViewData.ModelState["Input.attachment"]?.Errors.FirstOrDefault()?.ErrorMessage)</span>
+            </div>
+        </div>
+    </section>
+    <div class="form-actions">
+        @if (!isNew)
+        {
+            <button type="submit" form="delete-assignment" class="btn btn--danger"><icon name="trash" />@L["Delete"]</button>
+        }
+        <div class="form-actions__main">
+            <a class="btn" asp-action="Index" asp-route-courseId="@id">@L["Cancel"]</a>
+            <button type="submit" class="btn btn--primary">@L["Save assignment"]</button>
+        </div>
+    </div>
+</form>
+@if (!isNew)
+{
+    <form id="delete-assignment" method="post" asp-action="Delete" asp-route-courseId="@id" asp-route-assignmentId="@Model.AssignmentId" data-confirm="@L["Delete this assignment?"]"></form>
+}

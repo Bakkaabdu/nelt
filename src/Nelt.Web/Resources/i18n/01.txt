@@ -1,0 +1,143 @@
+1 = first level of the language.|1 = erstes Niveau der Sprache.|1 = المستوى الأول في اللغة.|1 = 该语言的第一个级别。
+A German saying|Ein deutsches Sprichwort|مثل ألماني|一句德国谚语
+A device with this serial number is already registered.|Ein Gerät mit dieser Seriennummer ist bereits registriert.|يوجد جهاز مسجّل بهذا الرقم التسلسلي بالفعل.|已有使用该序列号的设备注册。
+A level with this code already exists.|Ein Niveau mit diesem Code existiert bereits.|يوجد مستوى بهذا الرمز بالفعل.|该代码的级别已存在。
+A new key was generated. The old key no longer works.|Ein neuer Schlüssel wurde erzeugt. Der alte Schlüssel funktioniert nicht mehr.|تم إنشاء مفتاح جديد. المفتاح القديم لم يعد يعمل.|已生成新密钥，旧密钥已失效。
+A password is required for new accounts.|Für neue Konten ist ein Passwort erforderlich.|كلمة المرور مطلوبة للحسابات الجديدة.|新账户需要设置密码。
+A video is uploaded.|Ein Video ist hochgeladen.|تم رفع فيديو.|已上传视频。
+API key for device #{0}|API-Schlüssel für Gerät #{0}|مفتاح API للجهاز رقم {0}|设备 #{0} 的 API 密钥
+About|Über uns|من نحن|关于我们
+About heading|Überschrift „Über uns“|عنوان قسم «من نحن»|“关于我们”标题
+About text|Text „Über uns“|نص قسم «من نحن»|“关于我们”正文
+About this course|Über diesen Kurs|عن هذه الدورة|课程介绍
+Absent|Abwesend|غائب|缺勤
+Accept late submissions|Verspätete Abgaben annehmen|قبول التسليم المتأخر|接受逾期提交
+Access denied|Zugriff verweigert|تم رفض الوصول|拒绝访问
+Account|Konto|الحساب|账户
+Account active|Konto aktiv|الحساب نشط|账户已启用
+Active|Aktiv|نشط|进行中
+Active enrollments|Aktive Einschreibungen|التسجيلات النشطة|有效报名
+Active students|Aktive Teilnehmende|الطلاب النشطون|在读学员
+Add|Hinzufügen|إضافة|添加
+Add a file|Datei hinzufügen|إضافة ملف|添加文件
+Add a question|Frage hinzufügen|إضافة سؤال|添加题目
+Add answer|Antwort hinzufügen|إضافة إجابة|添加选项
+Add at least two answer options.|Fügen Sie mindestens zwei Antwortmöglichkeiten hinzu.|أضف خيارين للإجابة على الأقل.|请至少添加两个选项。
+Add question|Frage hinzufügen|إضافة السؤال|添加题目
+Add questions before publishing the quiz.|Fügen Sie Fragen hinzu, bevor Sie den Test veröffentlichen.|أضف أسئلة قبل نشر الاختبار.|发布测验前请先添加题目。
+Add the first question.|Fügen Sie die erste Frage hinzu.|أضف السؤال الأول.|添加第一道题目。
+Address|Adresse|العنوان|地址
+Admin|Administration|مسؤول|管理员
+Admin panel|Adminbereich|لوحة الإدارة|管理后台
+Administration|Verwaltung|الإدارة|管理
+Administrator|Administrator|مسؤول النظام|管理员
+Advanced|Fortgeschritten|متقدم|高级
+All|Alle|الكل|全部
+All courses|Alle Kurse|جميع الدورات|全部课程
+All courses of this level|Alle Kurse dieses Niveaus|جميع دورات هذا المستوى|该级别的全部课程
+All devices|Alle Geräte|جميع الأجهزة|全部设备
+All events|Alle Veranstaltungen|جميع الفعاليات|全部活动
+All languages|Alle Sprachen|جميع اللغات|全部语言
+All levels|Alle Niveaus|جميع المستويات|全部级别
+All results|Alle Ergebnisse|جميع النتائج|全部结果
+All sessions|Alle Termine|جميع الحصص|全部课次
+All statuses|Alle Status|جميع الحالات|全部状态
+All students|Alle Teilnehmenden|جميع الطلاب|全体学员
+All students (platform-wide)|Alle Teilnehmenden (plattformweit)|جميع الطلاب (على مستوى المنصة)|全体学员（全平台）
+Already checked in|Bereits eingecheckt|تم تسجيل الحضور مسبقًا|已签到
+Already have an account?|Sie haben bereits ein Konto?|لديك حساب بالفعل؟|已有账户？
+Amount paid|Gezahlter Betrag|المبلغ المدفوع|已付金额
+An account with this email already exists.|Ein Konto mit dieser E-Mail-Adresse existiert bereits.|يوجد حساب بهذا البريد الإلكتروني بالفعل.|该邮箱已注册账户。
+An administrator assigns instructors to courses.|Lehrkräfte werden Kursen von der Administration zugewiesen.|يقوم المسؤول بتعيين المدرّسين للدورات.|由管理员为课程分配教师。
+An issued certificate cannot be declined.|Ein ausgestelltes Zertifikat kann nicht abgelehnt werden.|لا يمكن رفض شهادة صادرة.|已颁发的证书无法驳回。
+Another level of this language already uses this order.|Ein anderes Niveau dieser Sprache hat bereits diese Reihenfolge.|يستخدم مستوى آخر لهذه اللغة هذا الترتيب بالفعل.|该语言的另一个级别已使用此顺序。
+Answer {0}|Antwort {0}|الإجابة {0}|选项 {0}
+Answers — tick the correct ones|Antworten – markieren Sie die richtigen|الإجابات — حدّد الصحيحة منها|选项——勾选正确答案
+Any format|Jedes Format|أي صيغة|任意形式
+Any other device or bridge (JSON API)|Andere Geräte oder Schnittstellen (JSON-API)|أي جهاز أو وسيط آخر (واجهة JSON)|其他设备或中转程序（JSON API）
+Anyone can watch preview lessons from the course page.|Vorschaulektionen kann jeder auf der Kursseite ansehen.|يمكن لأي شخص مشاهدة الدروس التجريبية من صفحة الدورة.|任何人都可以在课程页面观看试看课。
+Applies to in-person students.|Gilt für Teilnehmende vor Ort.|ينطبق على طلاب الحضور.|适用于线下学员。
+Assignment|Aufgabe|الواجب|作业
+Assignments|Aufgaben|الواجبات|作业
+Assignments awaiting grading|Aufgaben, die noch bewertet werden|واجبات بانتظار التقييم|待批改作业
+Assignments weight|Gewichtung Aufgaben|وزن الواجبات|作业权重
+At least 8 characters, including a number.|Mindestens 8 Zeichen, darunter eine Zahl.|8 أحرف على الأقل، منها رقم واحد.|至少 8 个字符，包含一个数字。
+At risk|Gefährdet|معرّض للخطر|有风险
+Attach a file|Datei anhängen|إرفاق ملف|附加文件
+Attempts|Versuche|المحاولات|尝试次数
+Attempts allowed|Erlaubte Versuche|عدد المحاولات المسموحة|允许尝试次数
+Attendance|Anwesenheit|الحضور|出勤
+Attendance appears here once classes have taken place.|Die Anwesenheit erscheint hier, sobald Unterricht stattgefunden hat.|يظهر الحضور هنا بعد انعقاد الحصص.|上课后，出勤记录将显示在此处。
+Attendance history|Anwesenheitsverlauf|سجل الحضور|出勤记录
+Attendance overview|Anwesenheitsübersicht|نظرة عامة على الحضور|出勤总览
+Attendance rate|Anwesenheitsquote|نسبة الحضور|出勤率
+Attendance was saved.|Die Anwesenheit wurde gespeichert.|تم حفظ الحضور.|出勤已保存。
+Audio recordings|Audioaufnahmen|تسجيلات صوتية|音频
+Automatic|Automatisch|تلقائي|自动
+Average|Durchschnitt|المتوسط|平均分
+Awaiting payment|Zahlung ausstehend|بانتظار الدفع|待付款
+Back|Zurück|رجوع|返回
+Back to course|Zurück zum Kurs|العودة إلى الدورة|返回课程
+Back to my dashboard|Zurück zu meiner Übersicht|العودة إلى لوحتي|返回我的主页
+Be on time — for class, and for your next level.|Seien Sie pünktlich – für den Unterricht und für Ihr nächstes Niveau.|كن في الموعد — للدرس، ولمستواك التالي.|准时——为了每一堂课，也为了下一个级别。
+Beginner|Anfänger|مبتدئ|入门
+Best score|Bestes Ergebnis|أفضل نتيجة|最高分
+Books|Bücher|كتب|教材
+Books, documents and audio for level {0}|Bücher, Dokumente und Audio für Niveau {0}|كتب ومستندات وتسجيلات صوتية للمستوى {0}|{0} 级别的教材、文档和音频
+Books, documents and audio recordings, organised by proficiency level. Students of a level see its materials in every course of that level.|Bücher, Dokumente und Audioaufnahmen, geordnet nach Sprachniveau. Teilnehmende eines Niveaus sehen die Materialien in jedem Kurs dieses Niveaus.|كتب ومستندات وتسجيلات صوتية مرتبة حسب مستوى الإتقان. يرى طلاب كل مستوى موادّه في جميع دورات ذلك المستوى.|按语言级别整理的教材、文档和音频。某一级别的学员可在该级别的所有课程中看到这些资料。
+Books, documents and audio recordings, organised separately for each proficiency level.|Bücher, Dokumente und Audioaufnahmen – getrennt nach Sprachniveau organisiert.|كتب ومستندات وتسجيلات صوتية، منظمة بشكل منفصل لكل مستوى.|教材、文档和音频，按每个级别分别整理。
+Books, documents and recordings for level {0} — {1}.|Bücher, Dokumente und Aufnahmen für Niveau {0} – {1}.|كتب ومستندات وتسجيلات للمستوى {0} — {1}.|{0} 级别（{1}）的教材、文档和录音。
+Breadcrumb|Navigationspfad|مسار التنقل|导航路径
+Browse courses|Kurse ansehen|تصفح الدورات|浏览课程
+Build the course|Kurs aufbauen|بناء الدورة|建设课程
+Cancel|Abbrechen|إلغاء|取消
+Cancel this enrollment? The student loses access.|Diese Einschreibung stornieren? Die Person verliert den Zugang.|إلغاء هذا التسجيل؟ سيفقد الطالب إمكانية الوصول.|取消该报名？学员将失去访问权限。
+Cancelled|Storniert|ملغى|已取消
+Catalogue|Katalog|الكتالوج|课程目录
+Category|Kategorie|الفئة|类别
+Certificate|Zertifikat|الشهادة|证书
+Certificate & next level|Zertifikat & nächstes Niveau|الشهادة والمستوى التالي|证书与下一级别
+Certificate number|Zertifikatsnummer|رقم الشهادة|证书编号
+Certificate of completion|Abschlusszertifikat|شهادة إتمام|结业证书
+Certificate request|Zertifikatsantrag|طلب الشهادة|证书申请
+Certificate requests|Zertifikatsanträge|طلبات الشهادات|证书申请
+Certificates|Zertifikate|الشهادات|证书
+Change password|Passwort ändern|تغيير كلمة المرور|修改密码
+Changing the level resets this choice if the course belongs to another level.|Beim Wechsel des Niveaus wird diese Auswahl zurückgesetzt, wenn der Kurs zu einem anderen Niveau gehört.|عند تغيير المستوى يُعاد ضبط هذا الاختيار إذا كانت الدورة تابعة لمستوى آخر.|如果课程属于其他级别，更改级别将重置此选项。
+Check back soon, or contact us to reserve a place.|Schauen Sie bald wieder vorbei oder kontaktieren Sie uns, um einen Platz zu reservieren.|عد قريبًا، أو تواصل معنا لحجز مقعد.|请稍后再来，或联系我们预留名额。
+Check in with your fingerprint at the entrance before each class. Arriving more than a few minutes late is recorded as late.|Checken Sie vor jedem Unterricht am Eingang mit Ihrem Fingerabdruck ein. Wer mehr als ein paar Minuten zu spät kommt, wird als verspätet erfasst.|سجّل حضورك ببصمة إصبعك عند المدخل قبل كل حصة. يُسجَّل الوصول بعد بضع دقائق من البداية كتأخير.|每次上课前请在入口处用指纹签到。迟到超过几分钟将记为迟到。
+Check the number and try again.|Prüfen Sie die Nummer und versuchen Sie es erneut.|تحقق من الرقم وحاول مرة أخرى.|请核对编号后重试。
+Check-in|Check-in|تسجيل الدخول|签到
+Check-in log|Check-in-Protokoll|سجل البصمات|签到日志
+Checked in|Eingecheckt|وقت الحضور|签到时间
+Chinese|Chinesisch|الصينية|中文
+Chinese courses|Chinesischkurse|دورات اللغة الصينية|中文课程
+Choose a German or Chinese course for your level to get started.|Wählen Sie einen Deutsch- oder Chinesischkurs für Ihr Niveau, um loszulegen.|اختر دورة ألمانية أو صينية تناسب مستواك للبدء.|选择适合你级别的德语或中文课程开始学习。
+Choose a course|Kurs wählen|اختر دورة|选择课程
+Choose a date range of up to 400 days.|Wählen Sie einen Zeitraum von höchstens 400 Tagen.|اختر فترة لا تتجاوز 400 يوم.|请选择不超过 400 天的日期范围。
+Choose a level|Niveau wählen|اختر مستوى|选择级别
+Choose a student|Teilnehmende Person wählen|اختر طالبًا|选择学员
+Choose at least one weekday.|Wählen Sie mindestens einen Wochentag.|اختر يومًا واحدًا على الأقل من الأسبوع.|请至少选择一个星期几。
+Class|Unterricht|حصة|课堂
+Classes & attendance|Unterricht & Anwesenheit|الحصص والحضور|课次与出勤
+Classes today|Unterricht heute|حصص اليوم|今日课程
+Close|Schließen|إغلاق|关闭
+Closed|Geschlossen|مغلق|已截止
+Closes|Schließt|يُغلق|截止
+Closes {0}|Schließt am {0}|يُغلق في {0}|{0} 截止
+Code|Code|الرمز|代码
+Completed|Abgeschlossen|مكتمل|已完成
+Completed by|Abgeschlossen von|أكمله|完成人数
+Completion & next level|Abschluss & nächstes Niveau|الإتمام والمستوى التالي|结业与升级
+Completion certificate|Abschlusszertifikat|شهادة الإتمام|结业证书
+Completion check|Abschlussprüfung der Kriterien|التحقق من الإتمام|结业审核
+Confirm|Bestätigen|تأكيد|确认
+Confirm password|Passwort bestätigen|تأكيد كلمة المرور|确认密码
+Confirm payments to give students access. Walk-in students can be enrolled directly.|Bestätigen Sie Zahlungen, um Teilnehmenden Zugang zu geben. Personen vor Ort können direkt eingeschrieben werden.|أكّد المدفوعات لمنح الطلاب إمكانية الوصول. يمكن تسجيل الطلاب الحاضرين مباشرةً.|确认付款后学员即可访问课程。到校报名的学员可直接登记。
+Congratulations — you passed!|Herzlichen Glückwunsch – bestanden!|تهانينا — لقد نجحت!|恭喜你——通过了！
+Connecting a terminal|Terminal verbinden|توصيل جهاز البصمة|连接考勤终端
+Contact|Kontakt|اتصل بنا|联系方式
+Contact email|Kontakt-E-Mail|البريد الإلكتروني للتواصل|联系邮箱
+Contact phone|Kontakttelefon|هاتف التواصل|联系电话
+Continue|Weiter|متابعة|继续
+Continue where you left off|Dort weitermachen, wo Sie aufgehört haben|تابع من حيث توقفت|从上次停下的地方继续

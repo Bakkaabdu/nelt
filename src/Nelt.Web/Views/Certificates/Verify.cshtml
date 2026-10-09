@@ -1,0 +1,44 @@
+@model VerifyCertificateModel
+@{
+    ViewData["Title"] = L["Verify a certificate"];
+}
+<section class="page-head">
+    <div class="container" style="max-width:760px">
+        <div class="eyebrow">@L["Certificates"]</div>
+        <h1 class="page-head__title">@L["Verify a certificate"]</h1>
+        <p class="page-head__lead">@L["Enter the certificate number printed at the bottom of the certificate."]</p>
+
+        <form method="get" class="btn-row" style="margin-top:24px">
+            <label for="serial" class="visually-hidden">@L["Certificate number"]</label>
+            <input id="serial" name="serial" class="input mono" style="flex:1; min-width:240px; text-transform:uppercase" placeholder="NELT-2026-XXXX-XXXX" value="@Model.Serial" required maxlength="40" />
+            <button class="btn btn--primary" type="submit"><icon name="search" />@L["Verify"]</button>
+        </form>
+
+        @if (!string.IsNullOrEmpty(Model.Serial))
+        {
+            <div style="margin-top:28px">
+                @if (Model.Certificate is { } c)
+                {
+                    <div class="verify-result">
+                        <span class="verify-result__icon"><icon name="shield" /></span>
+                        <div class="stack" style="--stack:8px">
+                            <h2 style="font-size:1.3rem">@L["This certificate is valid."]</h2>
+                            <p><strong>@c.StudentName</strong> — @Tx(c.CourseTitle) (<span class="mono">@c.LevelCode</span>, @Label(c.Language))</p>
+                            <p class="muted small">@L["Issued on {0}", Date(c.IssuedAt)] · <span class="mono">@c.SerialNumber</span></p>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="verify-result verify-result--bad">
+                        <span class="verify-result__icon"><icon name="x" /></span>
+                        <div>
+                            <h2 style="font-size:1.3rem">@L["No certificate was found with this number."]</h2>
+                            <p class="muted" style="margin-top:6px">@L["Check the number and try again."]</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</section>

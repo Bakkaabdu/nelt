@@ -1,0 +1,11 @@
+@{ ViewData["Title"] = L["Access denied"]; }
+<section class="status-page container">
+    <div class="stack">
+        <div class="status-page__code">403</div>
+        <h1 style="font-size:1.6rem">@L["You don't have access to this page."]</h1>
+        <p class="muted">@L["If you think this is a mistake, contact the administration."]</p>
+        <div class="btn-row" style="justify-content:center">
+            <a class="btn btn--primary" asp-controller="Home" asp-action="Index">@L["Go to the home page"]</a>
+        </div>
+    </div>
+</section>

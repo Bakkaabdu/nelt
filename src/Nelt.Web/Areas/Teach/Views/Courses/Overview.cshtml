@@ -1,0 +1,49 @@
+@model CourseOverview
+@{ ViewData["Title"] = Tx(Model.Course.Title); var id = Model.Course.Id; }
+<partial name="_CourseTabs" model="Model.Course" />
+
+<div class="grid grid-4" style="margin-bottom:24px">
+    <a class="kpi" asp-controller="Students" asp-action="Index" asp-route-courseId="@id"><div class="kpi__label"><icon name="users" />@L["Active students"]</div><div class="kpi__value">@Model.ActiveStudents</div></a>
+    <a class="kpi" asp-controller="Lessons" asp-action="Index" asp-route-courseId="@id"><div class="kpi__label"><icon name="video" />@L["Lessons"]</div><div class="kpi__value">@Model.Lessons</div></a>
+    <a class="kpi @(Model.SubmissionsToGrade > 0 ? "kpi--alert" : null)" asp-controller="Assignments" asp-action="Index" asp-route-courseId="@id"><div class="kpi__label"><icon name="clipboard" />@L["Submissions to grade"]</div><div class="kpi__value">@Model.SubmissionsToGrade</div></a>
+    <a class="kpi @(Model.PendingCertificates > 0 ? "kpi--alert" : null)" asp-controller="Certificates" asp-action="Index"><div class="kpi__label"><icon name="award" />@L["Certificate requests"]</div><div class="kpi__value">@Model.PendingCertificates</div></a>
+</div>
+
+<div class="grid grid-2">
+    <section class="card">
+        <div class="card__head"><h2 class="card__title">@L["Build the course"]</h2></div>
+        <ul class="list">
+            <li><icon name="video" /><div class="list__main"><div class="list__title">@L["Lessons"]</div><div class="list__sub">@L["{0} lessons", Model.Lessons]</div></div><a class="btn btn--sm" asp-controller="Lessons" asp-action="Create" asp-route-courseId="@id"><icon name="plus" />@L["Add"]</a></li>
+            <li><icon name="quiz" /><div class="list__main"><div class="list__title">@L["Quizzes & final exam"]</div><div class="list__sub">@L["{0} quizzes", Model.Quizzes]</div></div><a class="btn btn--sm" asp-controller="Quizzes" asp-action="Create" asp-route-courseId="@id"><icon name="plus" />@L["Add"]</a></li>
+            <li><icon name="clipboard" /><div class="list__main"><div class="list__title">@L["Assignments"]</div><div class="list__sub">@L["{0} assignments", Model.Assignments]</div></div><a class="btn btn--sm" asp-controller="Assignments" asp-action="Create" asp-route-courseId="@id"><icon name="plus" />@L["Add"]</a></li>
+            <li><icon name="book" /><div class="list__main"><div class="list__title">@L["Materials library"]</div><div class="list__sub">@L["Books, documents and audio for level {0}", Model.Course.LevelCode]</div></div><a class="btn btn--sm" asp-controller="Materials" asp-action="Index">@L["Open"]</a></li>
+        </ul>
+    </section>
+
+    @if (Model.Course.DeliveryMode != DeliveryMode.Online)
+    {
+        <section class="card">
+            <div class="card__head">
+                <h2 class="card__title">@L["Next classes"]</h2>
+                <a class="small link" asp-controller="Sessions" asp-action="Index" asp-route-courseId="@id">@L["All sessions"]</a>
+            </div>
+            @if (Model.NextSessions.Count == 0)
+            {
+                <div class="empty"><icon name="calendar" /><p>@L["No upcoming classes are scheduled."]</p><a class="btn btn--sm" asp-controller="Sessions" asp-action="Index" asp-route-courseId="@id">@L["Plan the schedule"]</a></div>
+            }
+            else
+            {
+                <ul class="list">
+                    @foreach (var s in Model.NextSessions)
+                    {
+                        <li>
+                            <div class="list__main"><div class="list__title">@Weekday(s.StartsAt), @Date(s.StartsAt)</div><div class="list__sub">@Range(s.StartsAt, s.EndsAt)@(s.Topic is null ? null : " · " + s.Topic)</div></div>
+                            <a class="btn btn--sm" asp-controller="Sessions" asp-action="Attendance" asp-route-courseId="@id" asp-route-sessionId="@s.Id"><icon name="fingerprint" />@L["Attendance"]</a>
+                        </li>
+                    }
+                </ul>
+                <p class="card__body small muted" style="border-top:1px solid var(--line-soft)">@L["{0} in-person students · {1} upcoming sessions", Model.InPersonStudents, Model.UpcomingSessions]</p>
+            }
+        </section>
+    }
+</div>

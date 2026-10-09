@@ -1,0 +1,51 @@
+@model AttemptSheet
+@{
+    ViewData["Title"] = Model.Title;
+    var deadline = Model.DeadlineAt is { } d ? new DateTimeOffset(DateTime.SpecifyKind(d, DateTimeKind.Utc)).ToUnixTimeMilliseconds() : 0;
+}
+<form method="post" asp-action="Submit" asp-route-courseId="@Model.Course.Id" asp-route-attemptId="@Model.AttemptId" data-quiz data-deadline="@deadline"
+      data-confirm="@L["Submit your answers? You cannot change them afterwards."]">
+    <div class="quiz-head">
+        <div>
+            <div class="muted small">@Tx(Model.Course.Title)</div>
+            <strong>@Model.Title</strong>
+        </div>
+        <div class="btn-row">
+            @if (Model.DeadlineAt is not null)
+            {
+                <span class="timer" data-timer><icon name="clock" /><span>--:--</span></span>
+            }
+            <button type="submit" class="btn btn--primary">@L["Submit"]</button>
+        </div>
+    </div>
+
+    @foreach (var q in Model.Questions)
+    {
+        var multiple = q.Type == QuestionType.MultipleChoice;
+        <fieldset class="question" style="margin-inline:0">
+            <legend class="visually-hidden">@L["Question {0}", q.Number]</legend>
+            <div class="question__head">
+                <span class="question__num">@q.Number</span>
+                <p class="question__prompt">@q.Prompt</p>
+                <span class="question__points">@L["{0} points", q.Points]</span>
+            </div>
+            @if (multiple)
+            {
+                <p class="muted small" style="margin:-6px 0 12px">@L["Select all correct answers."]</p>
+            }
+            <div class="options">
+                @foreach (var o in q.Options)
+                {
+                    <label class="option">
+                        <input type="@(multiple ? "checkbox" : "radio")" name="q@(q.Id)" value="@o.Id" />
+                        <span>@(q.Type == QuestionType.TrueFalse ? L[o.Text] : o.Text)</span>
+                    </label>
+                }
+            </div>
+        </fieldset>
+    }
+
+    <div class="btn-row" style="justify-content:flex-end; margin-top:20px">
+        <button type="submit" class="btn btn--primary btn--lg">@L["Submit answers"]</button>
+    </div>
+</form>

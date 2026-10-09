@@ -1,0 +1,142 @@
+Conversation session|Gesprächsrunde|جلسة محادثة|会话练习
+Copied|Kopiert|تم النسخ|已复制
+Copy|Kopieren|نسخ|复制
+Copy it now — for security it is shown only once. It is needed only for the JSON API; ZKTeco terminals authenticate by serial number.|Kopieren Sie ihn jetzt – aus Sicherheitsgründen wird er nur einmal angezeigt. Er wird nur für die JSON-API benötigt; ZKTeco-Terminals authentifizieren sich über die Seriennummer.|انسخه الآن — لأسباب أمنية يُعرض مرة واحدة فقط. يلزم فقط لواجهة JSON؛ أجهزة ZKTeco تُصادَق بالرقم التسلسلي.|请立即复制——出于安全考虑只显示一次。仅 JSON API 需要此密钥；ZKTeco 终端通过序列号认证。
+Correct|Richtig|صحيح|正确
+Correct answer|Richtige Antwort|الإجابة الصحيحة|正确答案
+Correct answers are shown once you have used all your attempts.|Die richtigen Antworten werden angezeigt, wenn Sie alle Versuche genutzt haben.|تُعرض الإجابات الصحيحة بعد استنفاد جميع محاولاتك.|用完所有尝试次数后将显示正确答案。
+Correct answers of the final exam are not shown.|Die richtigen Antworten der Abschlussprüfung werden nicht angezeigt.|لا تُعرض الإجابات الصحيحة للاختبار النهائي.|结业考试不显示正确答案。
+Course|Kurs|الدورة|课程
+Course events|Kursveranstaltungen|فعاليات الدورة|课程活动
+Course sections|Kursbereiche|أقسام الدورة|课程栏目
+Course workspace|Kurs-Arbeitsbereich|مساحة عمل الدورة|课程工作台
+Courses|Kurse|الدورات|课程
+Courses follow the international CEFR scale for German and the HSK scale for Chinese, so you always know where you stand and what comes next.|Die Kurse folgen dem Gemeinsamen Europäischen Referenzrahmen für Deutsch und der HSK-Skala für Chinesisch – so wissen Sie immer, wo Sie stehen und was als Nächstes kommt.|تتبع الدورات الإطار الأوروبي المرجعي للألمانية ومقياس HSK للصينية، لتعرف دائمًا أين تقف وما الخطوة التالية.|德语课程遵循欧洲语言共同参考框架（CEFR），中文课程遵循 HSK 等级，让你随时清楚自己的水平和下一步。
+Courses with enrollments cannot be deleted. Unpublish the course instead.|Kurse mit Einschreibungen können nicht gelöscht werden. Nehmen Sie den Kurs stattdessen offline.|لا يمكن حذف دورات فيها تسجيلات. ألغِ نشر الدورة بدلًا من ذلك.|已有报名的课程无法删除，请改为取消发布。
+Cover & visibility|Titelbild & Sichtbarkeit|صورة الغلاف والظهور|封面与可见性
+Cover image|Titelbild|صورة الغلاف|封面图片
+Create & add questions|Erstellen & Fragen hinzufügen|إنشاء وإضافة الأسئلة|创建并添加题目
+Create account|Konto erstellen|إنشاء حساب|创建账户
+Create all sessions at once, e.g. every Sunday, Tuesday and Thursday from 18:00 to 20:00.|Alle Termine auf einmal anlegen, z. B. jeden Sonntag, Dienstag und Donnerstag von 18:00 bis 20:00 Uhr.|أنشئ جميع الحصص دفعة واحدة، مثلًا كل أحد وثلاثاء وخميس من 18:00 إلى 20:00.|一次性创建所有课次，例如每周日、周二和周四 18:00–20:00。
+Create an account|Konto erstellen|أنشئ حسابًا|创建账户
+Create quizzes for online students, in-person students or both — plus one final exam that decides course completion.|Erstellen Sie Tests für Online-Teilnehmende, Präsenz-Teilnehmende oder beide – plus eine Abschlussprüfung, die über den Kursabschluss entscheidet.|أنشئ اختبارات لطلاب الإنترنت أو الحضور أو كليهما — بالإضافة إلى اختبار نهائي يحدد إتمام الدورة.|为线上学员、线下学员或两者创建测验，另设一场决定结业的结业考试。
+Create sessions|Termine anlegen|إنشاء الحصص|创建课次
+Create the first course|Ersten Kurs erstellen|أنشئ الدورة الأولى|创建第一门课程
+Create the first lesson|Erste Lektion erstellen|أنشئ الدرس الأول|创建第一节课
+Create your account|Konto erstellen|أنشئ حسابك|创建你的账户
+Cultural event|Kulturveranstaltung|فعالية ثقافية|文化活动
+Currency|Währung|العملة|货币
+Current|Aktuell|الحالي|当前
+Current lesson|Aktuelle Lektion|الدرس الحالي|当前课时
+Current password|Aktuelles Passwort|كلمة المرور الحالية|当前密码
+Current time in Berlin|Aktuelle Uhrzeit in Berlin|الوقت الحالي في برلين|柏林当前时间
+Date|Datum|التاريخ|日期
+Date of issue|Ausstellungsdatum|تاريخ الإصدار|颁发日期
+Decline|Ablehnen|رفض|驳回
+Declined|Abgelehnt|مرفوض|已驳回
+Delegation visit|Delegationsbesuch|زيارة وفد|代表团来访
+Delete|Löschen|حذف|删除
+Delete course|Kurs löschen|حذف الدورة|删除课程
+Delete lesson|Lektion löschen|حذف الدرس|删除课时
+Delete quiz|Test löschen|حذف الاختبار|删除测验
+Delete this assignment?|Diese Aufgabe löschen?|حذف هذا الواجب؟|删除该作业？
+Delete this course with all its lessons, quizzes and assignments?|Diesen Kurs mit allen Lektionen, Tests und Aufgaben löschen?|حذف هذه الدورة مع جميع دروسها واختباراتها وواجباتها؟|删除该课程及其全部课时、测验和作业？
+Delete this device?|Dieses Gerät löschen?|حذف هذا الجهاز؟|删除该设备？
+Delete this event?|Diese Veranstaltung löschen?|حذف هذه الفعالية؟|删除该活动？
+Delete this lesson? Students' progress for it will be removed.|Diese Lektion löschen? Der Fortschritt der Teilnehmenden dazu wird entfernt.|حذف هذا الدرس؟ سيُحذف تقدّم الطلاب فيه.|删除该课时？学员在此课时的进度将被移除。
+Delete this level?|Dieses Niveau löschen?|حذف هذا المستوى؟|删除该级别？
+Delete this question?|Diese Frage löschen?|حذف هذا السؤال؟|删除该题目？
+Delete this quiz and its questions?|Diesen Test mit allen Fragen löschen?|حذف هذا الاختبار وأسئلته؟|删除该测验及其题目？
+Delivery|Format|نمط الدراسة|授课方式
+Description|Beschreibung|الوصف|描述
+Details|Details|التفاصيل|详情
+Device|Gerät|الجهاز|设备
+Display order|Reihenfolge|ترتيب العرض|显示顺序
+Documents|Dokumente|مستندات|文档
+Download|Herunterladen|تنزيل|下载
+Draft|Entwurf|مسودة|草稿
+Due|Fällig|موعد التسليم|截止
+Due {0}|Fällig am {0}|التسليم في {0}|{0} 截止
+Duration|Dauer|المدة|时长
+Duration (minutes)|Dauer (Minuten)|المدة (بالدقائق)|时长（分钟）
+Each lesson has its own video (uploaded or YouTube/Vimeo) and notes. Students see them in this order.|Jede Lektion hat ein eigenes Video (hochgeladen oder YouTube/Vimeo) und Notizen. Die Teilnehmenden sehen sie in dieser Reihenfolge.|لكل درس فيديو خاص به (مرفوع أو من YouTube/Vimeo) وملاحظات. يراها الطلاب بهذا الترتيب.|每节课都有自己的视频（上传或 YouTube/Vimeo）和讲义，学员按此顺序学习。
+Edit|Bearbeiten|تعديل|编辑
+Edit assignment|Aufgabe bearbeiten|تعديل الواجب|编辑作业
+Edit course|Kurs bearbeiten|تعديل الدورة|编辑课程
+Edit device|Gerät bearbeiten|تعديل الجهاز|编辑设备
+Edit event|Veranstaltung bearbeiten|تعديل الفعالية|编辑活动
+Edit file details|Dateidetails bearbeiten|تعديل تفاصيل الملف|编辑文件信息
+Edit lesson|Lektion bearbeiten|تعديل الدرس|编辑课时
+Edit level|Niveau bearbeiten|تعديل المستوى|编辑级别
+Edit session|Termin bearbeiten|تعديل الحصة|编辑课次
+Educational event|Bildungsveranstaltung|فعالية تعليمية|教育活动
+Eligible for the certificate and the next level.|Berechtigt für Zertifikat und nächstes Niveau.|مؤهل للشهادة وللمستوى التالي.|符合结业证书及升级条件。
+Eligible for the certificate, but below the score for the next level.|Berechtigt für das Zertifikat, aber unter der Punktzahl für das nächste Niveau.|مؤهل للشهادة، لكن دون الدرجة المطلوبة للمستوى التالي.|符合证书条件，但未达到升级分数。
+Email|E-Mail|البريد الإلكتروني|邮箱
+End date|Enddatum|تاريخ الانتهاء|结束日期
+Ends|Endet|ينتهي|结束
+Enroll|Einschreiben|تسجيل|报名
+Enroll a student|Person einschreiben|تسجيل طالب|为学员报名
+Enroll each student's finger and enter the same user ID in their account.|Registrieren Sie den Finger jeder Person und tragen Sie dieselbe Benutzer-ID in ihr Konto ein.|سجّل بصمة كل طالب وأدخل رقم المستخدم نفسه في حسابه.|为每位学员录入指纹，并在其账户中填写相同的用户编号。
+Enroll now|Jetzt anmelden|سجّل الآن|立即报名
+Enroll the student's finger on the terminal at the entrance, then enter the user ID the terminal assigned. Check-ins are matched to class sessions automatically.|Registrieren Sie den Finger am Terminal am Eingang und tragen Sie dann die vom Terminal vergebene Benutzer-ID ein. Check-ins werden automatisch den Terminen zugeordnet.|سجّل بصمة الطالب على الجهاز عند المدخل، ثم أدخل رقم المستخدم الذي خصصه الجهاز. تُطابق عمليات الحضور مع الحصص تلقائيًا.|在入口终端录入学员指纹，然后填写终端分配的用户编号。签到将自动匹配到课次。
+Enroll to unlock all lessons|Anmelden, um alle Lektionen freizuschalten|سجّل لفتح جميع الدروس|报名解锁全部课时
+Enrollment & payment|Anmeldung & Zahlung|التسجيل والدفع|报名与付款
+Enrollments|Einschreibungen|التسجيلات|报名
+Enter the certificate number printed at the bottom of the certificate.|Geben Sie die Nummer ein, die unten auf dem Zertifikat steht.|أدخل رقم الشهادة المطبوع أسفلها.|请输入印在证书底部的编号。
+Evaluation pending: some results are still missing.|Bewertung ausstehend: Einige Ergebnisse fehlen noch.|التقييم معلّق: بعض النتائج ما زالت ناقصة.|评估待定：部分成绩尚未产生。
+Event|Veranstaltung|الفعالية|活动
+Events|Veranstaltungen|الفعاليات|活动
+Events & activities|Veranstaltungen & Aktivitäten|الفعاليات والأنشطة|活动与课外项目
+Every course has its own video lessons — watch before class, catch up after, at your own pace.|Jeder Kurs hat eigene Videolektionen – vor dem Unterricht ansehen, danach nachholen, in Ihrem Tempo.|لكل دورة دروسها المرئية الخاصة — شاهدها قبل الحصة، وتدارك ما فاتك بعدها، بالسرعة التي تناسبك.|每门课程都有专属视频课——课前预习、课后补课，按自己的节奏学习。
+Every course has its own video lessons, materials, quizzes and a final exam. Study online, in class, or both.|Jeder Kurs hat eigene Videolektionen, Materialien, Tests und eine Abschlussprüfung. Lernen Sie online, vor Ort oder beides.|لكل دورة دروس مرئية ومواد واختبارات واختبار نهائي خاص بها. ادرس عبر الإنترنت أو حضوريًا أو كليهما.|每门课程都有专属视频课、学习资料、测验和结业考试。可线上、线下或混合学习。
+Every fingerprint received, and what the platform did with it.|Jeder empfangene Fingerabdruck und was die Plattform damit gemacht hat.|كل بصمة وصلت، وما الذي فعلته المنصة بها.|收到的每一次指纹记录及平台的处理结果。
+Everyone|Alle|الجميع|所有人
+Everything a language course needs, in one place.|Alles, was ein Sprachkurs braucht – an einem Ort.|كل ما تحتاجه دورة اللغة، في مكان واحد.|语言课程所需的一切，尽在一处。
+Everything shown on the public website. Fill in each language; empty languages fall back to English.|Alles, was auf der öffentlichen Website erscheint. Füllen Sie jede Sprache aus; leere Sprachen fallen auf Englisch zurück.|كل ما يظهر على الموقع العام. املأ كل لغة؛ اللغات الفارغة تُعرض بالإنجليزية.|公开网站上显示的全部内容。请填写每种语言；未填写的语言将显示英文。
+Excused|Entschuldigt|بعذر|请假
+Facebook page|Facebook-Seite|صفحة فيسبوك|Facebook 主页
+False|Falsch|خطأ|错误
+Featured|Hervorgehoben|مميّز|推荐
+Featured on the home page|Auf der Startseite hervorheben|عرض مميّز في الصفحة الرئيسية|在首页推荐
+Feedback|Rückmeldung|الملاحظات|评语
+Feedback from your instructor|Rückmeldung Ihrer Lehrkraft|ملاحظات مدرّسك|教师评语
+File|Datei|الملف|文件
+Final exam|Abschlussprüfung|الاختبار النهائي|结业考试
+Final exam & certificate|Abschlussprüfung & Zertifikat|اختبار نهائي وشهادة|结业考试与证书
+Final exam weight|Gewichtung Abschlussprüfung|وزن الاختبار النهائي|结业考试权重
+Find a course|Kurs finden|ابحث عن دورة|查找课程
+Find the right course for your level|Finden Sie den richtigen Kurs für Ihr Niveau|اعثر على الدورة المناسبة لمستواك|找到适合你水平的课程
+Find your level|Ihr Niveau finden|اعرف مستواك|找到你的级别
+Fingerprint|Fingerabdruck|البصمة|指纹
+Fingerprint ID|Fingerabdruck-ID|رقم البصمة|指纹编号
+Fingerprint attendance|Anwesenheit per Fingerabdruck|الحضور بالبصمة|指纹考勤
+Fingerprint check-ins appear automatically. Changes you make here override them.|Check-ins per Fingerabdruck erscheinen automatisch. Ihre Änderungen hier haben Vorrang.|تظهر عمليات الحضور بالبصمة تلقائيًا. التغييرات التي تجريها هنا تتقدم عليها.|指纹签到会自动显示，你在此处的修改将覆盖它们。
+Fingerprint devices|Fingerabdruck-Geräte|أجهزة البصمة|指纹设备
+Finish|Abschließen|إنهاء|完成
+Finish all lessons to unlock the final exam.|Schließen Sie alle Lektionen ab, um die Abschlussprüfung freizuschalten.|أكمل جميع الدروس لفتح الاختبار النهائي.|完成所有课时后即可解锁结业考试。
+For|Für|لـ|适用对象
+For students who register at the front desk. New student? Create the account first.|Für Personen, die sich am Empfang anmelden. Neu? Legen Sie zuerst das Konto an.|للطلاب الذين يسجلون في مكتب الاستقبال. طالب جديد؟ أنشئ الحساب أولًا.|适用于在前台报名的学员。新学员？请先创建账户。
+For this course|Für diesen Kurs|لهذه الدورة|本课程专用
+Format, dates & price|Format, Termine & Preis|الصيغة والمواعيد والسعر|形式、日期与价格
+Foundation|Grundstufe|تأسيسي|基础
+Free|Kostenlos|مجاني|免费
+Free preview|Kostenlose Vorschau|معاينة مجانية|免费试看
+From|Von|من|从
+Full name|Vollständiger Name|الاسم الكامل|姓名
+Fully booked|Ausgebucht|مكتمل العدد|名额已满
+Generate a new API key? The old key stops working immediately.|Neuen API-Schlüssel erzeugen? Der alte Schlüssel funktioniert sofort nicht mehr.|إنشاء مفتاح API جديد؟ سيتوقف المفتاح القديم فورًا.|生成新的 API 密钥？旧密钥将立即失效。
+German|Deutsch|الألمانية|德语
+German courses|Deutschkurse|دورات اللغة الألمانية|德语课程
+Go to course|Zum Kurs|الذهاب إلى الدورة|进入课程
+Go to the home page|Zur Startseite|الذهاب إلى الصفحة الرئيسية|返回首页
+Graded|Bewertet|تم التقييم|已评分
+Hand in|Abgeben|تسليم|提交
+Hand in homework directly on the platform and get graded feedback from your instructor.|Hausaufgaben direkt auf der Plattform abgeben und bewertete Rückmeldung der Lehrkraft erhalten.|سلّم واجباتك مباشرة عبر المنصة واحصل على تقييم وملاحظات من مدرّسك.|直接在平台上提交作业，并获得教师的评分与评语。
+Handed in|Abgegeben|تم التسليم|已提交
+Handed in {0}|Abgegeben am {0}|سُلّم في {0}|提交于 {0}
+He who comes late is punished by life.|Wer zu spät kommt, den bestraft das Leben.|من يأتي متأخرًا تعاقبه الحياة.|迟到的人，会受到生活的惩罚。
+Headline|Überschrift|العنوان الرئيسي|主标题
+Hello, {0}|Hallo, {0}|مرحبًا، {0}|你好，{0}
+Here is where you are in your courses.|Hier sehen Sie, wo Sie in Ihren Kursen stehen.|هنا ترى أين وصلت في دوراتك.|这里是你在各门课程中的进度。
+Hidden|Verborgen|مخفي|已隐藏

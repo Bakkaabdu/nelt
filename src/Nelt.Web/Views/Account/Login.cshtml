@@ -1,0 +1,17 @@
+@model AccountFormModel<LoginInput>
+@{ ViewData["Title"] = L["Sign in"]; }
+<section class="auth container">
+    <div class="auth__card">
+        <span class="tricolor tricolor--short" aria-hidden="true"><span></span><span></span><span></span></span>
+        <h1>@L["Welcome back"]</h1>
+        <p class="muted">@L["Sign in to continue learning."]</p>
+        <form method="post" asp-action="Login" asp-route-returnUrl="@Model.ReturnUrl" class="form" style="margin-top:24px">
+            <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+            <field asp-for="Input.Email" autocomplete="email" />
+            <field asp-for="Input.Password" autocomplete="current-password" />
+            <field asp-for="Input.RememberMe" />
+            <button type="submit" class="btn btn--primary btn--lg btn--block">@L["Sign in"]</button>
+        </form>
+        <p class="auth__alt">@L["New here?"] <a class="link" asp-action="Register" asp-route-returnUrl="@Model.ReturnUrl">@L["Create an account"]</a></p>
+    </div>
+</section>

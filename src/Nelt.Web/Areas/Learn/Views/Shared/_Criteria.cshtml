@@ -1,0 +1,31 @@
+@model IReadOnlyList<CriterionResult>
+@{
+    string Name(CriterionKind kind) => kind switch
+    {
+        CriterionKind.FinalExam => L["Final exam"],
+        CriterionKind.OverallScore => L["Overall score"],
+        CriterionKind.Attendance => L["Attendance"],
+        CriterionKind.Lessons => L["Lessons completed"],
+        _ => L["Assignments awaiting grading"],
+    };
+}
+<ul class="criteria">
+    @foreach (var c in Model)
+    {
+        var css = c.State switch { CriterionState.Met => "is-met", CriterionState.NotMet => "is-notmet", _ => "is-pending" };
+        <li>
+            <span class="criteria__state @css"><icon name="@(c.State == CriterionState.Met ? "check" : c.State == CriterionState.NotMet ? "x" : "clock")" /></span>
+            <span class="criteria__label">@Name(c.Kind)</span>
+            <span class="criteria__value" dir="ltr">
+                @if (c.Kind == CriterionKind.Grading)
+                {
+                    @c.Actual?.ToString("0")
+                }
+                else
+                {
+                    @Percent(c.Actual) <span class="muted">/ @Percent(c.Required)</span>
+                }
+            </span>
+        </li>
+    }
+</ul>

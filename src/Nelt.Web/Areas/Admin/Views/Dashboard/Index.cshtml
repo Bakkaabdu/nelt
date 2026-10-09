@@ -1,0 +1,68 @@
+@model AdminDashboard
+@{ ViewData["Title"] = L["Overview"]; }
+<header class="topbar">
+    <div>
+        <h1 class="topbar__title">@L["Overview"]</h1>
+        <p class="topbar__sub">@Date(Time.UtcNow) · @Time.Zone.Id</p>
+    </div>
+    <div class="btn-row">
+        <a class="btn" asp-controller="Enrollments" asp-action="Create"><icon name="plus" />@L["Enroll a student"]</a>
+        <a class="btn btn--primary" asp-controller="Courses" asp-action="Create"><icon name="plus" />@L["New course"]</a>
+    </div>
+</header>
+
+<div class="grid grid-4" style="margin-bottom:20px">
+    <a class="kpi @(Model.PendingEnrollments > 0 ? "kpi--alert" : null)" asp-controller="Enrollments" asp-action="Index" asp-route-status="Pending"><div class="kpi__label"><icon name="wallet" />@L["Awaiting payment"]</div><div class="kpi__value">@Model.PendingEnrollments</div></a>
+    <a class="kpi" asp-controller="Enrollments" asp-action="Index" asp-route-status="Active"><div class="kpi__label"><icon name="users" />@L["Active enrollments"]</div><div class="kpi__value">@Model.ActiveEnrollments</div></a>
+    <div class="kpi"><div class="kpi__label"><icon name="chart" />@L["Payments this month"]</div><div class="kpi__value">@Money(Model.RevenueThisMonth, Model.Currency)</div></div>
+    <a class="kpi @(Model.PendingCertificates > 0 ? "kpi--alert" : null)" asp-area="Teach" asp-controller="Certificates" asp-action="Index"><div class="kpi__label"><icon name="award" />@L["Certificate requests"]</div><div class="kpi__value">@Model.PendingCertificates</div></a>
+    <a class="kpi" asp-controller="Users" asp-action="Index" asp-route-role="Student"><div class="kpi__label"><icon name="user" />@L["Students"]</div><div class="kpi__value">@Model.Students</div></a>
+    <a class="kpi" asp-controller="Users" asp-action="Index" asp-route-role="Instructor"><div class="kpi__label"><icon name="presentation" />@L["Instructors"]</div><div class="kpi__value">@Model.Instructors</div></a>
+    <a class="kpi" asp-controller="Courses" asp-action="Index"><div class="kpi__label"><icon name="book" />@L["Published courses"]</div><div class="kpi__value">@Model.PublishedCourses</div></a>
+    <div class="kpi"><div class="kpi__label"><icon name="calendar" />@L["Classes today"]</div><div class="kpi__value">@Model.SessionsToday</div></div>
+</div>
+
+<div class="grid grid-main">
+    <section class="card">
+        <div class="card__head"><h2 class="card__title">@L["Latest enrollments"]</h2><a class="small link" asp-controller="Enrollments" asp-action="Index">@L["All"]</a></div>
+        @if (Model.RecentEnrollments.Count == 0)
+        {
+            <p class="card__body muted small">@L["No enrollments yet."]</p>
+        }
+        else
+        {
+            <ul class="list">
+                @foreach (var e in Model.RecentEnrollments)
+                {
+                    var css = e.Status switch { EnrollmentStatus.Pending => "badge--warn", EnrollmentStatus.Active => "badge--success", EnrollmentStatus.Completed => "badge--info", _ => "badge--plain" };
+                    <li>
+                        <span class="avatar" aria-hidden="true">@(e.StudentName.Length > 0 ? e.StudentName[0] : '?')</span>
+                        <div class="list__main"><div class="list__title">@e.StudentName</div><div class="list__sub"><span class="mono">@e.LevelCode</span> · @Tx(e.CourseTitle) · @Label(e.Mode)</div></div>
+                        <span class="badge @css">@Label(e.Status)</span>
+                    </li>
+                }
+            </ul>
+        }
+    </section>
+    <section class="card">
+        <div class="card__head"><h2 class="card__title">@L["Fingerprint devices"]</h2><a class="small link" asp-controller="Devices" asp-action="Index">@L["Manage"]</a></div>
+        @if (Model.Devices.Count == 0)
+        {
+            <div class="empty"><icon name="fingerprint" /><p>@L["No device registered yet."]</p><a class="btn btn--sm" asp-controller="Devices" asp-action="Create">@L["Register a device"]</a></div>
+        }
+        else
+        {
+            <ul class="list">
+                @foreach (var d in Model.Devices)
+                {
+                    var online = d.LastSeenAt is { } seen && Time.UtcNow - seen < TimeSpan.FromMinutes(15);
+                    <li>
+                        <icon name="fingerprint" />
+                        <div class="list__main"><div class="list__title">@d.Name</div><div class="list__sub">@(d.LastSeenAt is { } s ? L["Last seen {0}", DateTimeText(s)] : L["Never connected"])</div></div>
+                        <span class="badge @(!d.IsActive ? "badge--plain" : online ? "badge--success" : "badge--warn")">@(!d.IsActive ? L["Inactive"] : online ? L["Online"] : L["Offline"])</span>
+                    </li>
+                }
+            </ul>
+        }
+    </section>
+</div>

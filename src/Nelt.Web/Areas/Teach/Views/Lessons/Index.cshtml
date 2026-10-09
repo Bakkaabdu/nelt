@@ -1,0 +1,45 @@
+@model LessonList
+@{ ViewData["Title"] = L["Lessons"]; var id = Model.Course.Id; }
+<partial name="_CourseTabs" model="Model.Course" />
+<div class="topbar" style="margin-bottom:16px">
+    <p class="muted">@L["Each lesson has its own video (uploaded or YouTube/Vimeo) and notes. Students see them in this order."]</p>
+    <a class="btn btn--primary" asp-action="Create" asp-route-courseId="@id"><icon name="plus" />@L["New lesson"]</a>
+</div>
+@if (Model.Lessons.Count == 0)
+{
+    <div class="card empty"><icon name="video" /><p class="empty__title">@L["No lessons yet."]</p><a class="btn btn--primary btn--sm" asp-action="Create" asp-route-courseId="@id">@L["Create the first lesson"]</a></div>
+}
+else
+{
+    <div class="table-wrap">
+        <table class="table">
+            <thead><tr><th style="width:1%">#</th><th>@L["Lesson"]</th><th class="hide-sm">@L["Video"]</th><th class="num hide-sm">@L["Completed by"]</th><th></th></tr></thead>
+            <tbody>
+                @for (var i = 0; i < Model.Lessons.Count; i++)
+                {
+                    var l = Model.Lessons[i];
+                    <tr>
+                        <td class="mono muted">@((i + 1).ToString("00"))</td>
+                        <td>
+                            <a class="cell-title" asp-action="Edit" asp-route-courseId="@id" asp-route-lessonId="@l.Id">@l.Title</a>
+                            <div class="cell-sub">
+                                @if (!l.IsPublished) { <span class="badge badge--warn">@L["Hidden"]</span> }
+                                @if (l.IsPreview) { <span class="badge badge--gold">@L["Free preview"]</span> }
+                                @if (l.DurationMinutes is { } m) { <span>@L["{0} min", m]</span> }
+                            </div>
+                        </td>
+                        <td class="hide-sm small">@(l.HasUploadedVideo ? L["Uploaded video"] : l.HasExternalVideo ? L["YouTube / Vimeo"] : L["No video"])</td>
+                        <td class="num hide-sm">@l.CompletedBy / @Model.ActiveStudents</td>
+                        <td class="actions">
+                            <form method="post" class="inline-form" asp-action="Move" asp-route-courseId="@id" asp-route-lessonId="@l.Id">
+                                <button class="btn btn--quiet btn--sm" name="direction" value="-1" title="@L["Move up"]" disabled="@(i == 0 ? "disabled" : null)"><icon name="arrow-up" /></button>
+                                <button class="btn btn--quiet btn--sm" name="direction" value="1" title="@L["Move down"]" disabled="@(i == Model.Lessons.Count - 1 ? "disabled" : null)"><icon name="arrow-down" /></button>
+                            </form>
+                            <a class="btn btn--sm" asp-action="Edit" asp-route-courseId="@id" asp-route-lessonId="@l.Id"><icon name="edit" />@L["Edit"]</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

@@ -1,0 +1,155 @@
+Home|Startseite|الرئيسية|首页
+Home page|Startseite|الصفحة الرئيسية|首页
+How Nelt works|So funktioniert Nelt|كيف تعمل نِلت|Nelt 如何运作
+How the overall score is weighted, and what a student needs for the certificate and to move to the next level.|Wie die Gesamtpunktzahl gewichtet wird und was für das Zertifikat und den Aufstieg ins nächste Niveau nötig ist.|كيف تُوزَّن الدرجة الإجمالية، وما يحتاجه الطالب للحصول على الشهادة والانتقال إلى المستوى التالي.|总分的权重构成，以及获得证书和升入下一级别的要求。
+How will you attend?|Wie möchten Sie teilnehmen?|كيف ستحضر؟|你将如何上课？
+ISO code, e.g. LYD, EUR, USD.|ISO-Code, z. B. LYD, EUR, USD.|رمز ISO، مثل LYD وEUR وUSD.|ISO 代码，例如 LYD、EUR、USD。
+If you think this is a mistake, contact the administration.|Wenn Sie glauben, dass dies ein Fehler ist, wenden Sie sich an die Verwaltung.|إذا كنت تعتقد أن هذا خطأ، فتواصل مع الإدارة.|如果你认为有误，请联系管理人员。
+In person|Vor Ort|حضوري|线下
+In progress|In Bearbeitung|قيد التقدم|进行中
+In-class attendance is recorded automatically by the fingerprint terminal at the entrance.|Die Anwesenheit im Unterricht wird automatisch vom Fingerabdruck-Terminal am Eingang erfasst.|يُسجَّل الحضور في الصف تلقائيًا بواسطة جهاز البصمة عند المدخل.|课堂出勤由入口处的指纹终端自动记录。
+In-person students|Teilnehmende vor Ort|طلاب الحضور|线下学员
+Inactive|Inaktiv|غير نشط|已停用
+Inactive accounts cannot sign in.|Inaktive Konten können sich nicht anmelden.|لا يمكن للحسابات غير النشطة تسجيل الدخول.|停用的账户无法登录。
+Inactive devices are rejected.|Inaktive Geräte werden abgewiesen.|تُرفض الأجهزة غير النشطة.|停用的设备将被拒绝。
+Instagram page|Instagram-Seite|صفحة إنستغرام|Instagram 主页
+Instructions|Anleitung|التعليمات|说明
+Instructor|Lehrkraft|المدرّس|教师
+Instructors|Lehrkräfte|المدرّسون|教师
+Intermediate|Mittelstufe|متوسط|中级
+Introduction|Einleitung|المقدمة|简介
+Issue|Ausstellen|إصدار|颁发
+Issued|Ausgestellt|صادرة|已颁发
+Issued on {0}|Ausgestellt am {0}|صدرت في {0}|颁发于 {0}
+JPG, PNG or WebP, up to 5 MB. A wide image (16:7) looks best.|JPG, PNG oder WebP, bis 5 MB. Ein breites Bild (16:7) wirkt am besten.|JPG أو PNG أو WebP، حتى 5 ميغابايت. الصورة العريضة (16:7) تبدو أفضل.|JPG、PNG 或 WebP，最大 5 MB。宽幅图片（16:7）效果最佳。
+Joined|Beigetreten|تاريخ الانضمام|注册时间
+Keep me signed in|Angemeldet bleiben|ابقني مسجلًا الدخول|保持登录
+Language|Sprache|اللغة|语言
+Languages & levels|Sprachen & Niveaus|اللغات والمستويات|语言与级别
+Last opened: {0}|Zuletzt geöffnet: {0}|آخر درس فُتح: {0}|上次学习：{0}
+Last seen {0}|Zuletzt aktiv {0}|آخر اتصال {0}|最后在线 {0}
+Late|Verspätet|متأخر|迟到
+Latest enrollments|Neueste Einschreibungen|أحدث التسجيلات|最新报名
+Learn|Lernen|تعلّم|学习
+Leave empty for no limit.|Leer lassen für kein Limit.|اتركه فارغًا لعدم التقييد.|留空表示不限时。
+Leave empty for unlimited seats.|Leer lassen für unbegrenzte Plätze.|اتركه فارغًا لعدد غير محدود من المقاعد.|留空表示名额不限。
+Leave empty to generate it from the English title.|Leer lassen, um sie aus dem englischen Titel zu erzeugen.|اتركه فارغًا لتوليده من العنوان الإنجليزي.|留空将根据英文标题自动生成。
+Lesson|Lektion|الدرس|课时
+Lesson progress|Lernfortschritt|تقدّم الدروس|课时进度
+Lessons|Lektionen|الدروس|课时
+Lessons are taught in the course language; the title and notes are shown to students as written.|Lektionen werden in der Kurssprache unterrichtet; Titel und Notizen erscheinen so, wie sie geschrieben sind.|تُدرَّس الدروس بلغة الدورة؛ يُعرض العنوان والملاحظات للطلاب كما كُتبت.|课时以课程语言授课，标题和讲义将按原文显示给学员。
+Lessons completed|Abgeschlossene Lektionen|الدروس المكتملة|已完成课时
+Lessons will appear here soon.|Die Lektionen erscheinen hier in Kürze.|ستظهر الدروس هنا قريبًا.|课时即将在此发布。
+Level|Niveau|المستوى|级别
+Levels|Niveaus|المستويات|级别
+Location|Ort|المكان|地点
+Log|Protokoll|السجل|日志
+Main|Hauptnavigation|القائمة الرئيسية|主导航
+Main entrance|Haupteingang|المدخل الرئيسي|正门
+Manage|Verwalten|إدارة|管理
+Manage lessons, quizzes, assignments and attendance, and follow every student's progress.|Verwalten Sie Lektionen, Tests, Aufgaben und Anwesenheit und verfolgen Sie den Fortschritt jeder Person.|أدِر الدروس والاختبارات والواجبات والحضور، وتابع تقدّم كل طالب.|管理课时、测验、作业和出勤，并跟踪每位学员的进度。
+Manual|Manuell|يدوي|手动
+Mark as done & continue|Als erledigt markieren & weiter|وضع علامة مكتمل والمتابعة|标记完成并继续
+Mark at least one correct answer.|Markieren Sie mindestens eine richtige Antwort.|حدّد إجابة صحيحة واحدة على الأقل.|请至少标记一个正确答案。
+Mark exactly one correct answer.|Markieren Sie genau eine richtige Antwort.|حدّد إجابة صحيحة واحدة فقط.|请只标记一个正确答案。
+Mark the rest present|Übrige als anwesend markieren|تسجيل الباقين حاضرين|其余标记为出勤
+Materials|Materialien|المواد|学习资料
+Materials by level|Materialien nach Niveau|مواد حسب المستوى|分级学习资料
+Materials library|Materialbibliothek|مكتبة المواد|资料库
+Maximum score|Höchstpunktzahl|الدرجة القصوى|满分
+Menu|Menü|القائمة|菜单
+Minimum attendance|Mindestanwesenheit|الحد الأدنى للحضور|最低出勤率
+Minimum final exam score|Mindestergebnis Abschlussprüfung|الحد الأدنى لدرجة الاختبار النهائي|结业考试最低分
+Mode|Format|النمط|方式
+Move down|Nach unten|تحريك لأسفل|下移
+Move up|Nach oben|تحريك لأعلى|上移
+Multiple choice|Mehrfachauswahl|اختيار متعدد|多选题
+My courses|Meine Kurse|دوراتي|我的课程
+My dashboard|Meine Übersicht|لوحتي|我的主页
+My learning|Mein Lernen|تعلّمي|我的学习
+Name|Name|الاسم|名称
+Name, email, phone or fingerprint ID|Name, E-Mail, Telefon oder Fingerabdruck-ID|الاسم أو البريد أو الهاتف أو رقم البصمة|姓名、邮箱、电话或指纹编号
+Navigation|Navigation|التنقل|导航
+Never connected|Nie verbunden|لم يتصل قط|从未连接
+New API key|Neuer API-Schlüssel|مفتاح API جديد|新 API 密钥
+New account|Neues Konto|حساب جديد|新账户
+New assignment|Neue Aufgabe|واجب جديد|新作业
+New course|Neuer Kurs|دورة جديدة|新课程
+New courses are being prepared.|Neue Kurse werden vorbereitet.|يجري إعداد دورات جديدة.|新课程正在筹备中。
+New event|Neue Veranstaltung|فعالية جديدة|新活动
+New events are announced here first.|Neue Veranstaltungen werden hier zuerst angekündigt.|تُعلن الفعاليات الجديدة هنا أولًا.|新活动将首先在此发布。
+New here?|Neu hier?|جديد هنا؟|第一次来？
+New lesson|Neue Lektion|درس جديد|新课时
+New level|Neues Niveau|مستوى جديد|新级别
+New password|Neues Passwort|كلمة المرور الجديدة|新密码
+New quiz|Neuer Test|اختبار جديد|新测验
+New session|Neuer Termin|حصة جديدة|新课次
+New student account|Neues Teilnehmerkonto|حساب طالب جديد|新学员账户
+Next|Weiter|التالي|下一页
+Next classes|Nächster Unterricht|الحصص القادمة|近期课程
+Next lesson|Nächste Lektion|الدرس التالي|下一课
+Next level|Nächstes Niveau|المستوى التالي|下一级别
+Next level: {0}%|Nächstes Niveau: {0} %|المستوى التالي: {0}%|下一级别：{0}%
+No|Nein|لا|否
+No active students yet.|Noch keine aktiven Teilnehmenden.|لا يوجد طلاب نشطون بعد.|暂无在读学员。
+No assignments yet.|Noch keine Aufgaben.|لا توجد واجبات بعد.|暂无作业。
+No attempts yet.|Noch keine Versuche.|لا توجد محاولات بعد.|暂无尝试记录。
+No certificate has been issued yet.|Es wurde noch kein Zertifikat ausgestellt.|لم تصدر أي شهادة بعد.|尚未颁发证书。
+No certificate was found with this number.|Zu dieser Nummer wurde kein Zertifikat gefunden.|لم يُعثر على شهادة بهذا الرقم.|未找到该编号的证书。
+No check-ins received yet.|Noch keine Check-ins empfangen.|لم تصل أي بصمات بعد.|尚未收到签到记录。
+No class at this time|Kein Unterricht zu dieser Zeit|لا توجد حصة في هذا الوقت|该时间段无课程
+No courses are assigned to you yet.|Ihnen sind noch keine Kurse zugewiesen.|لم تُسند إليك أي دورات بعد.|尚未为你分配课程。
+No courses match these filters yet.|Noch keine Kurse passen zu diesen Filtern.|لا توجد دورات تطابق هذه الفلاتر بعد.|暂无符合筛选条件的课程。
+No courses yet.|Noch keine Kurse.|لا توجد دورات بعد.|暂无课程。
+No deadline|Keine Frist|بدون موعد نهائي|无截止时间
+No device registered yet.|Noch kein Gerät registriert.|لم يُسجَّل أي جهاز بعد.|尚未注册设备。
+No enrollments found.|Keine Einschreibungen gefunden.|لم يُعثر على تسجيلات.|未找到报名记录。
+No enrollments yet.|Noch keine Einschreibungen.|لا توجد تسجيلات بعد.|暂无报名。
+No events here.|Hier gibt es keine Veranstaltungen.|لا توجد فعاليات هنا.|暂无活动。
+No in-person classes scheduled.|Kein Präsenzunterricht geplant.|لا توجد حصص حضورية مجدولة.|暂无线下课程安排。
+No in-person students are enrolled in this course.|In diesem Kurs sind keine Präsenz-Teilnehmenden eingeschrieben.|لا يوجد طلاب حضور مسجلون في هذه الدورة.|本课程暂无线下学员。
+No lessons yet.|Noch keine Lektionen.|لا توجد دروس بعد.|暂无课时。
+No limit|Kein Limit|بدون حد|不限
+No materials have been shared for this level yet.|Für dieses Niveau wurden noch keine Materialien geteilt.|لم تُشارك أي مواد لهذا المستوى بعد.|该级别暂无学习资料。
+No quizzes yet.|Noch keine Tests.|لا توجد اختبارات بعد.|暂无测验。
+No students for this quiz yet.|Noch keine Teilnehmenden für diesen Test.|لا يوجد طلاب لهذا الاختبار بعد.|该测验暂无学员。
+No upcoming classes are scheduled.|Kein kommender Unterricht geplant.|لا توجد حصص قادمة مجدولة.|暂无即将开始的课程。
+No upcoming events right now.|Derzeit keine anstehenden Veranstaltungen.|لا توجد فعاليات قادمة حاليًا.|目前暂无即将举行的活动。
+No upcoming sessions. Use the planner to create the schedule.|Keine kommenden Termine. Legen Sie den Stundenplan mit dem Planer an.|لا توجد حصص قادمة. استخدم المخطط لإنشاء الجدول.|暂无即将开始的课次。请使用排课工具创建课表。
+No users found.|Keine Benutzer gefunden.|لم يُعثر على مستخدمين.|未找到用户。
+No video|Kein Video|بدون فيديو|无视频
+Not assigned yet|Noch nicht zugewiesen|لم يُعيَّن بعد|尚未分配
+Not completed|Nicht abgeschlossen|غير مكتمل|未完成
+Not eligible yet.|Noch nicht berechtigt.|غير مؤهل بعد.|暂不符合条件。
+Not handed in|Nicht abgegeben|لم يُسلَّم|未提交
+Not handed in yet.|Noch nicht abgegeben.|لم يُسلَّم بعد.|尚未提交。
+Not linked to a lesson|Keiner Lektion zugeordnet|غير مرتبط بدرس|未关联课时
+Not passed yet|Noch nicht bestanden|لم تنجح بعد|尚未通过
+Not published|Nicht veröffentlicht|غير منشور|未发布
+Note|Notiz|ملاحظة|备注
+Note to the student|Hinweis an die Person|ملاحظة للطالب|给学员的说明
+Notes, vocabulary or instructions shown under the video.|Notizen, Wortschatz oder Anweisungen unter dem Video.|ملاحظات أو مفردات أو تعليمات تظهر أسفل الفيديو.|显示在视频下方的讲义、词汇或说明。
+Nothing here yet.|Hier ist noch nichts.|لا شيء هنا بعد.|这里暂时没有内容。
+Nothing here.|Hier ist nichts.|لا شيء هنا.|暂无内容。
+Nothing scheduled yet.|Noch nichts geplant.|لا يوجد شيء مجدول بعد.|暂无日程。
+Offline|Offline|غير متصل|离线
+On the platform|Auf der Plattform|على المنصة|在平台上
+On the terminal, open Comm. → Cloud Server Setting and enter this server:|Öffnen Sie am Terminal Comm. → Cloud Server Setting und tragen Sie diesen Server ein:|على الجهاز، افتح Comm. ← Cloud Server Setting وأدخل هذا الخادم:|在终端上打开 Comm. → Cloud Server Setting，并填写以下服务器地址：
+One account for all your German and Chinese courses.|Ein Konto für alle Ihre Deutsch- und Chinesischkurse.|حساب واحد لجميع دوراتك في الألمانية والصينية.|一个账户，学习全部德语和中文课程。
+Online|Online|عبر الإنترنت|线上
+Online & in person|Online & vor Ort|عبر الإنترنت وحضوري|线上与线下
+Online students|Online-Teilnehmende|طلاب الإنترنت|线上学员
+Online students must finish every lesson|Online-Teilnehmende müssen jede Lektion abschließen|يجب على طلاب الإنترنت إكمال جميع الدروس|线上学员须完成全部课时
+Only YouTube and Vimeo links are supported.|Nur YouTube- und Vimeo-Links werden unterstützt.|يُدعم فقط روابط YouTube وVimeo.|仅支持 YouTube 和 Vimeo 链接。
+Only for course|Nur für Kurs|لدورة محددة فقط|仅限课程
+Only {0} seats left|Nur noch {0} Plätze|تبقّى {0} مقاعد فقط|仅剩 {0} 个名额
+Open|Öffnen|فتح|打开
+Open for enrollment|Offen zur Anmeldung|التسجيل مفتوح|开放报名
+Opens|Öffnet|يُفتح|开始时间
+Order|Reihenfolge|الترتيب|顺序
+Other materials|Weitere Materialien|مواد أخرى|其他资料
+Outlook|Aussicht|التوقعات|预期
+Overall|Gesamt|الإجمالي|总分
+Overall score|Gesamtpunktzahl|الدرجة الإجمالية|总成绩
+Overdue|Überfällig|متأخر عن الموعد|已逾期
+Overview|Übersicht|نظرة عامة|概览

@@ -1,0 +1,97 @@
+@model CourseFormModel
+@{
+    var isNew = Model.Id is null;
+    ViewData["Title"] = isNew ? L["New course"] : Tx(Model.Input.Title);
+    var levels = Model.Levels.Select(l => new SelectListItem($"{Label(l.Language)} · {l.Code} — {Tx(l.Name)}", l.Id.ToString())).ToList();
+    var instructors = Model.Instructors.Select(u => new SelectListItem($"{u.Name} ({u.Email})", u.Id.ToString())).ToList();
+}
+<header class="topbar">
+    <div>
+        <nav class="crumbs"><a asp-action="Index">@L["Courses"]</a><icon name="chevron-right" class="icon--flip" /><span>@(isNew ? L["New course"] : L["Edit course"])</span></nav>
+        <h1 class="topbar__title">@(isNew ? L["New course"] : Tx(Model.Input.Title))</h1>
+    </div>
+    @if (!isNew)
+    {
+        <a class="btn" asp-area="Teach" asp-controller="Courses" asp-action="Overview" asp-route-courseId="@Model.Id"><icon name="presentation" />@L["Course workspace"]</a>
+    }
+</header>
+<form method="post" enctype="multipart/form-data" class="form" style="max-width:960px" asp-action="@(isNew ? "Create" : "Edit")" asp-route-id="@Model.Id">
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+    <section class="form-section">
+        <h2 class="form-section__title">@L["Course"]</h2>
+        <p class="form-section__lead">@L["Title, summary and description appear on the website in the visitor's language."]</p>
+        <div class="form-grid">
+            <field asp-for="Input.LevelId" asp-items="levels" empty="Choose a level" />
+            <field asp-for="Input.InstructorId" asp-items="instructors" empty="Not assigned yet" />
+            <localized-field asp-for="Input.Title" wide="true" />
+            <localized-field asp-for="Input.Summary" rows="2" wide="true" />
+            <localized-field asp-for="Input.Description" rows="8" wide="true" />
+            <field asp-for="Input.Slug" hint="Leave empty to generate it from the English title." />
+            <field asp-for="Input.SortOrder" />
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h2 class="form-section__title">@L["Format, dates & price"]</h2>
+        <div class="form-grid form-grid--3" style="margin-top:16px">
+            <field asp-for="Input.DeliveryMode" />
+            <field asp-for="Input.Price" />
+            <field asp-for="Input.Capacity" hint="Leave empty for unlimited seats." />
+            <field asp-for="Input.StartDate" />
+            <field asp-for="Input.EndDate" />
+            <field asp-for="Input.TotalHours" />
+            <localized-field asp-for="Input.ScheduleNote" wide="true" hint="e.g. Sun · Tue · Thu, 18:00–20:00" />
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h2 class="form-section__title">@L["Completion & next level"]</h2>
+        <p class="form-section__lead">@L["How the overall score is weighted, and what a student needs for the certificate and to move to the next level."]</p>
+        <div class="form-grid form-grid--3">
+            <field asp-for="Input.Policy.QuizWeight" />
+            <field asp-for="Input.Policy.AssignmentWeight" />
+            <field asp-for="Input.Policy.FinalExamWeight" />
+            <field asp-for="Input.Policy.PassingScore" />
+            <field asp-for="Input.Policy.ProgressionScore" />
+            <field asp-for="Input.Policy.MinFinalExamScore" />
+            <field asp-for="Input.Policy.MinAttendanceRate" hint="Applies to in-person students." />
+            <field asp-for="Input.Policy.RequireAllLessons" wide="true" />
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h2 class="form-section__title">@L["Cover & visibility"]</h2>
+        <div class="form-grid" style="margin-top:16px">
+            <div class="field field--wide">
+                <label class="field__label" for="cover">@L["Cover image"]</label>
+                @if (Model.CoverImageKey is not null && Model.Id is { } courseId)
+                {
+                    <div class="current-file">
+                        <img src="@Url.Action("Cover", "Media", new { area = "", courseId, v = Model.CoverImageKey[^12..^4] })" alt="" style="width:96px; height:48px; object-fit:cover; border-radius:6px" />
+                        <label class="check" style="margin-inline-start:auto"><input class="check__box" type="checkbox" name="removeCover" value="true" /><span class="check__ui"></span><span class="check__label">@L["Remove"]</span></label>
+                    </div>
+                }
+                <input class="input" type="file" id="cover" name="cover" accept=".jpg,.jpeg,.png,.webp" />
+                <p class="field__hint">@L["JPG, PNG or WebP, up to 5 MB. A wide image (16:7) looks best."]</p>
+                <span class="field__error">@(ViewData.ModelState["Input.cover"]?.Errors.FirstOrDefault()?.ErrorMessage)</span>
+            </div>
+            <field asp-for="Input.IsPublished" />
+            <field asp-for="Input.IsFeatured" />
+        </div>
+    </section>
+
+    <div class="form-actions">
+        @if (!isNew && Model.EnrollmentCount == 0)
+        {
+            <button type="submit" form="delete-course" class="btn btn--danger"><icon name="trash" />@L["Delete course"]</button>
+        }
+        <div class="form-actions__main">
+            <a class="btn" asp-action="Index">@L["Cancel"]</a>
+            <button type="submit" class="btn btn--primary btn--lg">@L["Save course"]</button>
+        </div>
+    </div>
+</form>
+@if (!isNew)
+{
+    <form id="delete-course" method="post" asp-action="Delete" asp-route-id="@Model.Id" data-confirm="@L["Delete this course with all its lessons, quizzes and assignments?"]"></form>
+}

@@ -1,0 +1,46 @@
+@model AttemptReview
+@{ ViewData["Title"] = Model.Title; }
+<partial name="_LearnTabs" model="Model.Course" />
+
+<div class="card card__body" style="display:flex; flex-wrap:wrap; align-items:center; gap:24px; margin-bottom:24px">
+    <div class="score-ring" style="--v:@((int)Model.ScorePercent); --c:@(Model.Passed ? "var(--success)" : "var(--rot)")"><span>@((int)Model.ScorePercent)</span></div>
+    <div class="stack" style="--stack:6px; flex:1; min-width:240px">
+        <span class="badge @(Model.Passed ? "badge--success" : "badge--danger")">@(Model.Passed ? L["Passed"] : L["Not passed yet"])</span>
+        <h2 style="font-size:1.5rem">@Model.Title</h2>
+        <p class="muted">@L["{0} of {1} points", Model.EarnedPoints.ToString("0.##"), Model.TotalPoints.ToString("0.##")] · @L["Passing score"] @Model.PassingScore% · @DateTimeText(Model.SubmittedAt)</p>
+    </div>
+    <div class="btn-row">
+        @if (Model.CanRetry)
+        {
+            <a class="btn btn--primary" asp-action="Show" asp-route-courseId="@Model.Course.Id" asp-route-quizId="@Model.QuizId">@L["Try again"]</a>
+        }
+        <a class="btn" asp-controller="Course" asp-action="Index" asp-route-courseId="@Model.Course.Id">@L["Back to course"]</a>
+    </div>
+</div>
+
+@if (!Model.AnswersRevealed)
+{
+    <p class="note note--info" style="margin-bottom:16px">@(Model.Kind == QuizKind.FinalExam ? L["Correct answers of the final exam are not shown."] : L["Correct answers are shown once you have used all your attempts."])</p>
+}
+
+@foreach (var q in Model.Questions)
+{
+    <div class="question">
+        <div class="question__head">
+            <span class="question__num">@q.Number</span>
+            <p class="question__prompt">@q.Prompt</p>
+            <span class="question__points">@q.Awarded.ToString("0.##") / @q.Points</span>
+        </div>
+        <div class="options">
+            @foreach (var o in q.Options)
+            {
+                var css = o.IsCorrect == true ? "is-correct" : o.Selected && o.IsCorrect == false ? "is-wrong" : null;
+                <div class="option @css" style="cursor:default">
+                    <input type="checkbox" disabled checked="@o.Selected" aria-hidden="true" />
+                    <span>@(o.Text is "True" or "False" ? L[o.Text] : o.Text)</span>
+                    @if (o.Selected) { <span class="option__flag muted">@L["Your answer"]</span> }
+                </div>
+            }
+        </div>
+    </div>
+}

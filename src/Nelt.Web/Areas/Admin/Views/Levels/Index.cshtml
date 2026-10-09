@@ -1,0 +1,27 @@
+@model IReadOnlyList<LevelRow>
+@{ ViewData["Title"] = L["Levels"]; }
+<header class="topbar">
+    <div>
+        <h1 class="topbar__title">@L["Levels"]</h1>
+        <p class="topbar__sub">@L["Proficiency levels per language. The order decides which level comes next when a student progresses."]</p>
+    </div>
+    <a class="btn btn--primary" asp-action="Create"><icon name="plus" />@L["New level"]</a>
+</header>
+<div class="grid grid-2">
+    @foreach (var group in Model.GroupBy(l => l.Language))
+    {
+        <section class="card">
+            <div class="card__head"><h2 class="card__title">@Label(group.Key)</h2><span class="muted small">@L["{0} levels", group.Count()]</span></div>
+            <ul class="list">
+                @foreach (var l in group)
+                {
+                    <li class="@Band(l.Code)">
+                        <span class="level-code" style="color:var(--band-ink); min-width:64px">@l.Code</span>
+                        <div class="list__main"><div class="list__title">@Tx(l.Name)</div><div class="list__sub">@L["{0} courses", l.CourseCount] · @L["{0} materials", l.MaterialCount]</div></div>
+                        <a class="btn btn--quiet btn--sm" asp-action="Edit" asp-route-id="@l.Id"><icon name="edit" /></a>
+                    </li>
+                }
+            </ul>
+        </section>
+    }
+</div>

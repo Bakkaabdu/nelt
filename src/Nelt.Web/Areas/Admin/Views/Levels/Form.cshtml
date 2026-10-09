@@ -1,0 +1,25 @@
+@model LevelFormModel
+@{ var isNew = Model.Id is null; ViewData["Title"] = isNew ? L["New level"] : L["Edit level"]; }
+<header class="topbar">
+    <div>
+        <nav class="crumbs"><a asp-action="Index">@L["Levels"]</a><icon name="chevron-right" class="icon--flip" /><span>@(isNew ? L["New level"] : Model.Input.Code)</span></nav>
+        <h1 class="topbar__title">@(isNew ? L["New level"] : L["Edit level"])</h1>
+    </div>
+</header>
+<form method="post" class="form" style="max-width:820px" asp-action="@(isNew ? "Create" : "Edit")" asp-route-id="@Model.Id">
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+    <section class="form-section">
+        <div class="form-grid form-grid--3">
+            <field asp-for="Input.Language" />
+            <field asp-for="Input.Code" placeholder="B1" />
+            <field asp-for="Input.Rank" hint="1 = first level of the language." />
+            <localized-field asp-for="Input.Name" wide="true" />
+            <localized-field asp-for="Input.Description" rows="3" wide="true" />
+        </div>
+    </section>
+    <div class="form-actions">
+        @if (!isNew) { <button type="submit" form="delete-level" class="btn btn--danger"><icon name="trash" />@L["Delete"]</button> }
+        <div class="form-actions__main"><a class="btn" asp-action="Index">@L["Cancel"]</a><button type="submit" class="btn btn--primary">@L["Save"]</button></div>
+    </div>
+</form>
+@if (!isNew) { <form id="delete-level" method="post" asp-action="Delete" asp-route-id="@Model.Id" data-confirm="@L["Delete this level?"]"></form> }

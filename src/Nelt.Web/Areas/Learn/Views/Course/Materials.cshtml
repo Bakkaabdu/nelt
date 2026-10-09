@@ -1,0 +1,46 @@
+@model MaterialShelf
+@{ ViewData["Title"] = L["Materials"]; }
+<partial name="_LearnTabs" model="Model.Course" />
+<p class="muted" style="margin:-8px 0 24px">@L["Books, documents and recordings for level {0} — {1}.", Model.Course.LevelCode, Tx(Model.LevelName)]</p>
+
+@if (Model.Groups.Count == 0)
+{
+    <div class="card empty"><icon name="book" /><p class="empty__title">@L["No materials have been shared for this level yet."]</p></div>
+}
+<div class="grid" style="gap:28px">
+    @foreach (var group in Model.Groups)
+    {
+        <section>
+            <h2 class="eyebrow">@Label(group.Type) <span class="muted">· @group.Items.Count</span></h2>
+            <div class="card">
+                <ul class="list">
+                    @foreach (var item in group.Items)
+                    {
+                        <li style="flex-wrap:wrap">
+                            <icon name="@(item.IsAudio ? "audio" : group.Type == MaterialType.Book ? "book" : "file")" />
+                            <div class="list__main">
+                                <div class="list__title">@item.Title</div>
+                                <div class="list__sub">
+                                    @item.FileName · @FileSize(item.SizeBytes)
+                                    @if (item.IsCourseSpecific) { <span> · @L["For this course"]</span> }
+                                </div>
+                                @if (!string.IsNullOrEmpty(item.Description)) { <p class="small muted" style="margin-top:4px">@item.Description</p> }
+                            </div>
+                            <div class="btn-row">
+                                @if (FilePolicy.IsInlineSafe(item.ContentType) && !item.IsAudio)
+                                {
+                                    <a class="btn btn--sm" href="@Url.Action("Material", "Files", new { area = "", id = item.Id })" target="_blank" rel="noopener"><icon name="eye" />@L["Open"]</a>
+                                }
+                                <a class="btn btn--sm" href="@Url.Action("Material", "Files", new { area = "", id = item.Id, download = true })"><icon name="download" />@L["Download"]</a>
+                            </div>
+                            @if (item.IsAudio)
+                            {
+                                <audio controls preload="none" style="width:100%" src="@Url.Action("Material", "Files", new { area = "", id = item.Id })"></audio>
+                            }
+                        </li>
+                    }
+                </ul>
+            </div>
+        </section>
+    }
+</div>
