@@ -94,9 +94,13 @@ internal sealed class CertificateService(
         IReadOnlyList<CourseCard> next = [];
         if (evaluation.IsNextLevelEligible || request?.EligibleForNextLevel == true)
         {
+            // Ranks are admin-defined and may have gaps (e.g. 1, 2, 5), so take the next rank that actually exists.
             var level = course.Level!;
+            var nextRank = await db.Levels.AsNoTracking()
+                .Where(l => l.Language == level.Language && l.Rank > level.Rank)
+                .MinAsync(l => (int?)l.Rank, ct);
             next = await db.Courses.AsNoTracking()
-                .Where(c => c.IsPublished && c.Level!.Language == level.Language && c.Level.Rank == level.Rank + 1)
+                .Where(c => c.IsPublished && c.Level!.Language == level.Language && c.Level.Rank == nextRank)
                 .OrderBy(c => c.StartDate)
                 .Take(3)
                 .Select(c => new CourseCard(c.Id, c.Slug, c.Title, c.Summary, c.ScheduleNote, c.Level!.Language, c.Level.Code, c.Level.Name,

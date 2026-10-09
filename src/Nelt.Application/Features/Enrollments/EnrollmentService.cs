@@ -130,6 +130,12 @@ internal sealed class EnrollmentService(IAppDbContext db, ICurrentUser user, IPl
             return Error.Conflict("This enrollment is already completed.");
         }
 
+        // A cancelled seat was released; re-activating it must not overbook the course.
+        if (enrollment.Status is EnrollmentStatus.Cancelled && await IsFullAsync(enrollment.CourseId, ct))
+        {
+            return Error.Conflict("This course is fully booked.");
+        }
+
         enrollment.Activate(time.UtcNow, input.AmountPaid, Clean(input.PaymentReference));
         await db.SaveChangesAsync(ct);
         cache.Invalidate();
@@ -182,7 +188,8 @@ internal sealed class EnrollmentService(IAppDbContext db, ICurrentUser user, IPl
             return Error.Validation("Please choose a course.", nameof(ManualEnrollmentInput.CourseId));
         }
 
-        if (!await db.Users.AnyAsync(u => u.Id == studentId, ct))
+        // Only student accounts can be enrolled (not instructors or administrators).
+        if (!await db.Users.AnyAsync(u => u.Id == studentId && db.UserIdsInRoles(Roles.Student).Contains(u.Id), ct))
         {
             return Error.Validation("The selected student was not found.", nameof(ManualEnrollmentInput.StudentId));
         }
@@ -204,14 +211,9 @@ internal sealed class EnrollmentService(IAppDbContext db, ICurrentUser user, IPl
             return Error.Validation("This course is not offered in the selected mode.");
         }
 
-        if (course.Capacity is { } capacity)
+        if (await IsFullAsync(course.Id, ct))
         {
-            var taken = await db.Enrollments.CountAsync(e => e.CourseId == course.Id
-                && (e.Status == EnrollmentStatus.Pending || e.Status == EnrollmentStatus.Active), ct);
-            if (taken >= capacity)
-            {
-                return Error.Conflict("This course is fully booked.");
-            }
+            return Error.Conflict("This course is fully booked.");
         }
 
         var enrollment = existing ?? new Enrollment { CourseId = course.Id, StudentId = studentId };
@@ -241,6 +243,20 @@ internal sealed class EnrollmentService(IAppDbContext db, ICurrentUser user, IPl
 
         cache.Invalidate();
         return enrollment.Id;
+    }
+
+    /// <summary>True when the course has a seat limit and pending + active enrollments already fill it.</summary>
+    private async Task<bool> IsFullAsync(int courseId, CancellationToken ct)
+    {
+        var capacity = await db.Courses.Where(c => c.Id == courseId).Select(c => c.Capacity).FirstOrDefaultAsync(ct);
+        if (capacity is not { } seats)
+        {
+            return false;
+        }
+
+        var taken = await db.Enrollments.CountAsync(e => e.CourseId == courseId
+            && (e.Status == EnrollmentStatus.Pending || e.Status == EnrollmentStatus.Active), ct);
+        return taken >= seats;
     }
 
     private static string? Clean(string? value) => string.IsNullOrWhiteSpace(value) ? null : value.Trim();

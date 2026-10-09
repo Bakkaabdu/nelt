@@ -19,7 +19,7 @@ docker compose up -d db                   # SQL Server on localhost:1433 (used b
 dotnet restore
 dotnet ef migrations add InitialCreate -p src/Nelt.Infrastructure -s src/Nelt.Web -o Persistence/Migrations
 dotnet run --project src/Nelt.Web         # https://localhost:7180
-dotnet test
+dotnet test                               # unit + integration tests (needs the db container running)
 ```
 
 On first start the app creates the schema, the roles, the standard CEFR/HSK levels, starter website copy
@@ -96,6 +96,7 @@ src/
   Nelt.Web              MVC: public site + areas Learn (students), Teach (instructors), Admin; APIs; UI.
 tests/
   Nelt.UnitTests        Domain rules and shared helpers.
+  Nelt.IntegrationTests Whole app in memory against a throw-away SQL Server database (every page, every service).
 ```
 
 * **Data**: EF Core 10 on SQL Server with retrying execution strategy, split queries, UTC everywhere, set-based
