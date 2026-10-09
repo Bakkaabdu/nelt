@@ -1,4 +1,6 @@
+using System.Net.Sockets;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -58,7 +60,7 @@ public static class DatabaseInitializer
 
                 return;
             }
-            catch (Exception ex) when (attempt < MaxAttempts && ex is not OperationCanceledException)
+            catch (Exception ex) when (attempt < MaxAttempts && IsConnectionFailure(ex))
             {
                 // Typical when the database container is still starting.
                 var delay = TimeSpan.FromSeconds(Math.Min(30, attempt * 3));
@@ -66,6 +68,26 @@ public static class DatabaseInitializer
                 await Task.Delay(delay, ct);
             }
         }
+    }
+
+    /// <summary>
+    /// Only "the server is not up yet" is worth waiting for. Schema problems (a missing migration, a failing
+    /// migration script) are fixed in code, so they fail immediately with the real error instead of after minutes of retries.
+    /// </summary>
+    private static bool IsConnectionFailure(Exception exception)
+    {
+        for (var ex = exception; ex is not null; ex = ex.InnerException)
+        {
+            switch (ex)
+            {
+                case SqlException sql when sql.Number is -2 or 2 or 53 or 40 or 233 or 4060 or 10053 or 10054 or 10060 or 10061 or 18456:
+                case SocketException:
+                case TimeoutException:
+                    return true;
+            }
+        }
+
+        return exception is Microsoft.EntityFrameworkCore.Storage.RetryLimitExceededException;
     }
 
     private static async Task SeedRolesAsync(RoleManager<IdentityRole<Guid>> roles, CancellationToken ct)
