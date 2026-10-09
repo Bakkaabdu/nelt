@@ -18,7 +18,7 @@
                     <div class="card__title">@r.StudentName</div>
                     <div class="muted small">
                         @Label(r.Mode)
-                        @if (r.SubmittedAt is { } at) { <span>· @L["Handed in {0}", DateTimeText(at)]</span> @if (r.IsLate) { <span class="badge badge--danger">@L["late"]</span> } }
+                        @if (r.SubmittedAt is { } at) { <span>· @L["Handed in {0}", DateTimeText(at)]</span> @if (r.IsLate) { <span class="badge badge--danger">@L["handed in late"]</span> } }
                     </div>
                 </div>
                 @if (r.SubmissionId is null) { <span class="badge badge--plain">@L["Not handed in"]</span> }

@@ -102,7 +102,7 @@ public class CompletionEvaluatorTests
 
         Assert.False(result.IsCertificateEligible);
         Assert.Equal(70m, snapshot.AttendanceRate);
-        Assert.False(result.Criteria.Any(c => c.Kind == CriterionKind.Lessons));
+        Assert.DoesNotContain(result.Criteria, c => c.Kind == CriterionKind.Lessons);
     }
 
     [Fact]

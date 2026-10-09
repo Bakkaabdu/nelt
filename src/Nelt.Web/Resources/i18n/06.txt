@@ -87,9 +87,9 @@ active {0}|aktiv {0}|نشط {0}|{0} 活跃
 checked in {0}|eingecheckt {0}|سجّل الحضور {0}|{0} 签到
 e.g. Sun · Tue · Thu, 18:00–20:00|z. B. So · Di · Do, 18:00–20:00|مثال: الأحد · الثلاثاء · الخميس، 18:00–20:00|例如：周日·周二·周四 18:00–20:00
 has successfully completed the course “{0}” at level {1} ({2}) with a final score of {3}%.|hat den Kurs „{0}“ auf Niveau {1} ({2}) mit einer Gesamtpunktzahl von {3} % erfolgreich abgeschlossen.|أتمّ بنجاح دورة «{0}» في المستوى {1} ({2}) بدرجة نهائية قدرها {3}%.|已成功完成 {1}（{2}）级别课程“{0}”，总成绩 {3}%。
-late|verspätet|متأخر|逾期
+handed in late|verspätet|متأخر|逾期
 pts|Pkt.|نقطة|分
-recorded|eingetragen|مسجّل يدويًا|手动录入
+entered manually|eingetragen|مسجّل يدويًا|手动录入
 {0} and {1} do not match.|{0} und {1} stimmen nicht überein.|{0} و{1} غير متطابقين.|{0}与{1}不一致。
 {0} assignments|{0} Aufgaben|{0} واجبات|{0} 份作业
 {0} can be at most {1} characters long.|{0} darf höchstens {1} Zeichen lang sein.|يجب ألا يتجاوز {0} {1} حرفًا.|{0}最多 {1} 个字符。

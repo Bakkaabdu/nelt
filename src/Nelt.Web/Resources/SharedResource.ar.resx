@@ -805,10 +805,10 @@
   <data name="active {0}" xml:space="preserve"><value>نشط {0}</value></data>
   <data name="checked in {0}" xml:space="preserve"><value>سجّل الحضور {0}</value></data>
   <data name="e.g. Sun · Tue · Thu, 18:00–20:00" xml:space="preserve"><value>مثال: الأحد · الثلاثاء · الخميس، 18:00–20:00</value></data>
+  <data name="entered manually" xml:space="preserve"><value>مسجّل يدويًا</value></data>
+  <data name="handed in late" xml:space="preserve"><value>متأخر</value></data>
   <data name="has successfully completed the course “{0}” at level {1} ({2}) with a final score of {3}%." xml:space="preserve"><value>أتمّ بنجاح دورة «{0}» في المستوى {1} ({2}) بدرجة نهائية قدرها {3}%.</value></data>
-  <data name="late" xml:space="preserve"><value>متأخر</value></data>
   <data name="pts" xml:space="preserve"><value>نقطة</value></data>
-  <data name="recorded" xml:space="preserve"><value>مسجّل يدويًا</value></data>
   <data name="{0} and {1} do not match." xml:space="preserve"><value>{0} و{1} غير متطابقين.</value></data>
   <data name="{0} assignments" xml:space="preserve"><value>{0} واجبات</value></data>
   <data name="{0} can be at most {1} characters long." xml:space="preserve"><value>يجب ألا يتجاوز {0} {1} حرفًا.</value></data>

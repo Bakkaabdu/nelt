@@ -805,10 +805,10 @@
   <data name="active {0}" xml:space="preserve"><value>{0} 活跃</value></data>
   <data name="checked in {0}" xml:space="preserve"><value>{0} 签到</value></data>
   <data name="e.g. Sun · Tue · Thu, 18:00–20:00" xml:space="preserve"><value>例如：周日·周二·周四 18:00–20:00</value></data>
+  <data name="entered manually" xml:space="preserve"><value>手动录入</value></data>
+  <data name="handed in late" xml:space="preserve"><value>逾期</value></data>
   <data name="has successfully completed the course “{0}” at level {1} ({2}) with a final score of {3}%." xml:space="preserve"><value>已成功完成 {1}（{2}）级别课程“{0}”，总成绩 {3}%。</value></data>
-  <data name="late" xml:space="preserve"><value>逾期</value></data>
   <data name="pts" xml:space="preserve"><value>分</value></data>
-  <data name="recorded" xml:space="preserve"><value>手动录入</value></data>
   <data name="{0} and {1} do not match." xml:space="preserve"><value>{0}与{1}不一致。</value></data>
   <data name="{0} assignments" xml:space="preserve"><value>{0} 份作业</value></data>
   <data name="{0} can be at most {1} characters long." xml:space="preserve"><value>{0}最多 {1} 个字符。</value></data>

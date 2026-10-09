@@ -56,7 +56,7 @@
                 @foreach (var s in Model.Submissions)
                 {
                     <li>
-                        <div class="list__main"><div class="list__title">@s.Title</div><div class="list__sub">@(s.SubmittedAt is { } at ? L["Handed in {0}", DateTimeText(at)] : L["Not handed in"])@(s.IsLate ? " · " + L["late"] : null)</div></div>
+                        <div class="list__main"><div class="list__title">@s.Title</div><div class="list__sub">@(s.SubmittedAt is { } at ? L["Handed in {0}", DateTimeText(at)] : L["Not handed in"])@(s.IsLate ? " · " + L["handed in late"] : null)</div></div>
                         <strong class="num">@(s.Score is { } sc ? $"{sc:0.##}/{s.MaxScore}" : "—")</strong>
                     </li>
                 }

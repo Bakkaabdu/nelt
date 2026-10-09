@@ -805,10 +805,10 @@
   <data name="active {0}" xml:space="preserve"><value>aktiv {0}</value></data>
   <data name="checked in {0}" xml:space="preserve"><value>eingecheckt {0}</value></data>
   <data name="e.g. Sun · Tue · Thu, 18:00–20:00" xml:space="preserve"><value>z. B. So · Di · Do, 18:00–20:00</value></data>
+  <data name="entered manually" xml:space="preserve"><value>eingetragen</value></data>
+  <data name="handed in late" xml:space="preserve"><value>verspätet</value></data>
   <data name="has successfully completed the course “{0}” at level {1} ({2}) with a final score of {3}%." xml:space="preserve"><value>hat den Kurs „{0}“ auf Niveau {1} ({2}) mit einer Gesamtpunktzahl von {3} % erfolgreich abgeschlossen.</value></data>
-  <data name="late" xml:space="preserve"><value>verspätet</value></data>
   <data name="pts" xml:space="preserve"><value>Pkt.</value></data>
-  <data name="recorded" xml:space="preserve"><value>eingetragen</value></data>
   <data name="{0} and {1} do not match." xml:space="preserve"><value>{0} und {1} stimmen nicht überein.</value></data>
   <data name="{0} assignments" xml:space="preserve"><value>{0} Aufgaben</value></data>
   <data name="{0} can be at most {1} characters long." xml:space="preserve"><value>{0} darf höchstens {1} Zeichen lang sein.</value></data>

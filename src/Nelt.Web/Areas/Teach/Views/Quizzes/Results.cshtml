@@ -27,7 +27,7 @@ else
                         <td class="num">
                             @if (r.BestScore is { } best) { <span class="badge @(best >= Model.PassingScore ? "badge--success" : "badge--danger")">@Percent(best)</span> }
                             else { <span class="muted">—</span> }
-                            @if (r.HasRecordedScore) { <div class="cell-sub">@L["recorded"]</div> }
+                            @if (r.HasRecordedScore) { <div class="cell-sub">@L["entered manually"]</div> }
                         </td>
                         <td>
                             <form method="post" class="inline-form" asp-action="RecordScore" asp-route-courseId="@id" asp-route-quizId="@Model.QuizId">

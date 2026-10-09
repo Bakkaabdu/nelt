@@ -46,7 +46,7 @@
             @if (Model.Submission is { } s)
             {
                 <p><span class="badge @(s.Score is null ? "badge--info" : "badge--success")">@(s.Score is null ? L["Submitted"] : L["Graded"])</span></p>
-                <p class="small muted">@L["Handed in {0}", DateTimeText(s.SubmittedAt)]@(s.IsLate ? " · " + L["late"] : null)</p>
+                <p class="small muted">@L["Handed in {0}", DateTimeText(s.SubmittedAt)]@(s.IsLate ? " · " + L["handed in late"] : null)</p>
                 @if (s.FileName is not null) { <p class="small"><icon name="file" style="display:inline" /> @s.FileName</p> }
                 @if (s.Score is { } score)
                 {
