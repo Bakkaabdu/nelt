@@ -307,7 +307,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 24px 0; }
 .quote__bar { display: grid; grid-template-rows: repeat(3, 1fr); width: 10px; min-height: 100%; border-radius: 2px; overflow: hidden; }
 .quote__bar span { transform-origin: top; transition: transform .9s var(--ease); }
 .js .quote__bar span { transform: scaleY(0); }
-.quote__bar span:nth-child(1) { background: #fff; opacity: .95; }
+.quote__bar span:nth-child(1) { background: var(--schwarz); }
 .quote__bar span:nth-child(2) { background: var(--rot); transition-delay: .2s; }
 .quote__bar span:nth-child(3) { background: var(--gold); transition-delay: .4s; }
 .quote.is-visible .quote__bar span { transform: scaleY(1); }
