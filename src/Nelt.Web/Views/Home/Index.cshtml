@@ -74,7 +74,7 @@
     <div class="container quote__inner">
         <div class="quote__bar" aria-hidden="true"><span></span><span></span><span></span></div>
         <figure style="margin:0">
-            <div class="quote__label" id="quote-title">@L["A German saying"]</div>
+            <div class="quote__label" id="quote-title">@L["A famous quote"]</div>
             <blockquote class="quote__de" lang="de" dir="ltr">
                 @for (var i = 0; i < quoteWords.Length; i++)
                 {
@@ -83,6 +83,7 @@
             </blockquote>
             <figcaption>
                 <p class="quote__tr" lang="@(Lang == "de" ? "en" : Lang)">@(Lang == "de" ? "He who comes late is punished by life." : L["He who comes late is punished by life."])</p>
+                <p class="quote__meta"><cite>— @L["Attributed to Mikhail Gorbachev, East Berlin, 1989"]</cite></p>
                 <p class="quote__meta">@L["Be on time — for class, and for your next level."]</p>
             </figcaption>
         </figure>

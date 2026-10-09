@@ -1,5 +1,6 @@
 1 = first level of the language.|1 = erstes Niveau der Sprache.|1 = المستوى الأول في اللغة.|1 = 该语言的第一个级别。
-A German saying|Ein deutsches Sprichwort|مثل ألماني|一句德国谚语
+A famous quote|Ein berühmtes Zitat|قول مأثور|一句名言
+Attributed to Mikhail Gorbachev, East Berlin, 1989|Michail Gorbatschow zugeschrieben, Ost-Berlin 1989|يُنسب إلى ميخائيل غورباتشوف، برلين الشرقية، 1989|据传出自米哈伊尔·戈尔巴乔夫，东柏林，1989年
 A device with this serial number is already registered.|Ein Gerät mit dieser Seriennummer ist bereits registriert.|يوجد جهاز مسجّل بهذا الرقم التسلسلي بالفعل.|已有使用该序列号的设备注册。
 A level with this code already exists.|Ein Niveau mit diesem Code existiert bereits.|يوجد مستوى بهذا الرمز بالفعل.|该代码的级别已存在。
 A new key was generated. The old key no longer works.|Ein neuer Schlüssel wurde erzeugt. Der alte Schlüssel funktioniert nicht mehr.|تم إنشاء مفتاح جديد. المفتاح القديم لم يعد يعمل.|已生成新密钥，旧密钥已失效。

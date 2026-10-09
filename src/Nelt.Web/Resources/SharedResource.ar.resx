@@ -6,8 +6,8 @@
   <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
   <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
   <data name="1 = first level of the language." xml:space="preserve"><value>1 = المستوى الأول في اللغة.</value></data>
-  <data name="A German saying" xml:space="preserve"><value>مثل ألماني</value></data>
   <data name="A device with this serial number is already registered." xml:space="preserve"><value>يوجد جهاز مسجّل بهذا الرقم التسلسلي بالفعل.</value></data>
+  <data name="A famous quote" xml:space="preserve"><value>قول مأثور</value></data>
   <data name="A level with this code already exists." xml:space="preserve"><value>يوجد مستوى بهذا الرمز بالفعل.</value></data>
   <data name="A new key was generated. The old key no longer works." xml:space="preserve"><value>تم إنشاء مفتاح جديد. المفتاح القديم لم يعد يعمل.</value></data>
   <data name="A password is required for new accounts." xml:space="preserve"><value>كلمة المرور مطلوبة للحسابات الجديدة.</value></data>
@@ -79,6 +79,7 @@
   <data name="Attendance overview" xml:space="preserve"><value>نظرة عامة على الحضور</value></data>
   <data name="Attendance rate" xml:space="preserve"><value>نسبة الحضور</value></data>
   <data name="Attendance was saved." xml:space="preserve"><value>تم حفظ الحضور.</value></data>
+  <data name="Attributed to Mikhail Gorbachev, East Berlin, 1989" xml:space="preserve"><value>يُنسب إلى ميخائيل غورباتشوف، برلين الشرقية، 1989</value></data>
   <data name="Audio recordings" xml:space="preserve"><value>تسجيلات صوتية</value></data>
   <data name="Automatic" xml:space="preserve"><value>تلقائي</value></data>
   <data name="Average" xml:space="preserve"><value>المتوسط</value></data>

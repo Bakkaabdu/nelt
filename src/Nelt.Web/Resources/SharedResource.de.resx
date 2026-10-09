@@ -6,8 +6,8 @@
   <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
   <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
   <data name="1 = first level of the language." xml:space="preserve"><value>1 = erstes Niveau der Sprache.</value></data>
-  <data name="A German saying" xml:space="preserve"><value>Ein deutsches Sprichwort</value></data>
   <data name="A device with this serial number is already registered." xml:space="preserve"><value>Ein Gerät mit dieser Seriennummer ist bereits registriert.</value></data>
+  <data name="A famous quote" xml:space="preserve"><value>Ein berühmtes Zitat</value></data>
   <data name="A level with this code already exists." xml:space="preserve"><value>Ein Niveau mit diesem Code existiert bereits.</value></data>
   <data name="A new key was generated. The old key no longer works." xml:space="preserve"><value>Ein neuer Schlüssel wurde erzeugt. Der alte Schlüssel funktioniert nicht mehr.</value></data>
   <data name="A password is required for new accounts." xml:space="preserve"><value>Für neue Konten ist ein Passwort erforderlich.</value></data>
@@ -79,6 +79,7 @@
   <data name="Attendance overview" xml:space="preserve"><value>Anwesenheitsübersicht</value></data>
   <data name="Attendance rate" xml:space="preserve"><value>Anwesenheitsquote</value></data>
   <data name="Attendance was saved." xml:space="preserve"><value>Die Anwesenheit wurde gespeichert.</value></data>
+  <data name="Attributed to Mikhail Gorbachev, East Berlin, 1989" xml:space="preserve"><value>Michail Gorbatschow zugeschrieben, Ost-Berlin 1989</value></data>
   <data name="Audio recordings" xml:space="preserve"><value>Audioaufnahmen</value></data>
   <data name="Automatic" xml:space="preserve"><value>Automatisch</value></data>
   <data name="Average" xml:space="preserve"><value>Durchschnitt</value></data>
