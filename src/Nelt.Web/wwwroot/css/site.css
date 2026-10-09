@@ -20,9 +20,9 @@
     --line-soft: #e8e2d5;
 
     /* Schwarz · Rot · Gold */
-    --schwarz: #111111;
-    --rot: #d0202a;
-    --gold: #f3c10c;
+    --schwarz: #000000;
+    --rot: #dd0000;
+    --gold: #ffce00;
     --rot-ink: #a3161e;
     --gold-ink: #7d5f00;
     --rot-soft: #f7e0dd;
@@ -853,10 +853,20 @@ a.kpi:hover { border-color: var(--ink); }
     @page { size: A4 landscape; margin: 0; }
 }
 
-/* On dark surfaces the black stripe becomes white so all three bands stay visible. */
-.app__side .tricolor > span:nth-child(1),
-.site-footer .tricolor > span:nth-child(1),
-.course-banner .tricolor > span:nth-child(1) { background: #f4f1ea; }
-.app__side .brand__mark > span:nth-child(1),
-.app__mobilebar .brand__mark > span:nth-child(1),
-.site-footer .brand__mark > span:nth-child(1) { background: #f4f1ea; }
+/* On dark surfaces the flag keeps its real black stripe and gets a light frame, so it still reads as
+   Schwarz-Rot-Gold (replacing black with white, or letting it vanish, leaves only red + gold). */
+.app__side .tricolor,
+.site-footer .tricolor,
+.course-banner .tricolor,
+.quote__bar,
+.app__side .brand__mark,
+.app__mobilebar .brand__mark,
+.site-footer .brand__mark { box-shadow: 0 0 0 1.5px rgba(244, 241, 234, .85); }
+
+/* Dark surfaces use paper/ink for UI accents; the flag colours stay on the flag itself. */
+.app__role { color: rgba(244, 241, 234, .62); }
+.side-nav__link.is-active::before { background: #f4f1ea; }
+.side-nav__count { background: #f4f1ea; color: var(--ink); }
+.quote__label { color: rgba(244, 241, 234, .62); }
+.quote__de .w--accent { color: #fff; text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+.keybox { color: #f4f1ea; }
