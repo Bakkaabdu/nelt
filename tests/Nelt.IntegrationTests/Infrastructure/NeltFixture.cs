@@ -2,6 +2,8 @@ using System.Net;
 using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Nelt.Domain.Entities;
 using Nelt.Domain.Enums;
@@ -24,10 +26,7 @@ public sealed class NeltFixture : IAsyncLifetime
     public const string Password = "Test-Passw0rd!";
     public const string AdminEmail = "admin@nelt.test";
 
-    /// <summary>
-    /// Server part of the connection string (no database). Override with the NELT_TEST_SQL environment variable.
-    /// The default matches the SQL Server container from docker-compose.yml (docker compose up -d db).
-    /// </summary>
+    /// <summary>Used only when neither NELT_TEST_SQL nor the app's own development settings provide a connection string.</summary>
     private const string DefaultServer = "Server=localhost,1433;User Id=sa;Password=Nelt_Local_2026!;TrustServerCertificate=True;MultipleActiveResultSets=true";
 
     private static readonly Regex AntiforgeryPattern = new("name=\"__RequestVerificationToken\"[^>]*?value=\"([^\"]+)\"", RegexOptions.Compiled);
@@ -45,15 +44,16 @@ public sealed class NeltFixture : IAsyncLifetime
 
     public async Task InitializeAsync()
     {
-        var server = Environment.GetEnvironmentVariable("NELT_TEST_SQL");
-        if (string.IsNullOrWhiteSpace(server))
+        // Same server and credentials the app itself uses in development, but a separate throw-away database.
+        var connection = new SqlConnectionStringBuilder(ResolveConnectionString())
         {
-            server = DefaultServer;
-        }
+            InitialCatalog = _databaseName,
+            ConnectTimeout = 15,
+        };
 
         // Environment variables are read by WebApplication.CreateBuilder before Program configures services,
         // and they override appsettings.Development.json and user secrets.
-        Environment.SetEnvironmentVariable("ConnectionStrings__Default", $"{server.TrimEnd(';')};Database={_databaseName}");
+        Environment.SetEnvironmentVariable("ConnectionStrings__Default", connection.ConnectionString);
         Environment.SetEnvironmentVariable("Seed__AdminEmail", AdminEmail);
         Environment.SetEnvironmentVariable("Seed__AdminPassword", Password);
         Environment.SetEnvironmentVariable("Seed__AdminName", "Test Administrator");
@@ -98,6 +98,46 @@ public sealed class NeltFixture : IAsyncLifetime
         {
             // Temp files are harmless.
         }
+    }
+
+    /// <summary>
+    /// NELT_TEST_SQL if set; otherwise the ConnectionStrings:Default the app uses in development
+    /// (appsettings.Development.json, user secrets, environment), so the tests log in exactly like the app does.
+    /// </summary>
+    private static string ResolveConnectionString()
+    {
+        var explicitServer = Environment.GetEnvironmentVariable("NELT_TEST_SQL");
+        if (!string.IsNullOrWhiteSpace(explicitServer))
+        {
+            return explicitServer;
+        }
+
+        var web = FindWebProjectDirectory();
+        var configuration = new ConfigurationBuilder()
+            .AddJsonFile(Path.Combine(web, "appsettings.json"), optional: true)
+            .AddJsonFile(Path.Combine(web, "appsettings.Development.json"), optional: true)
+            .AddUserSecrets(typeof(Program).Assembly, optional: true)
+            .AddEnvironmentVariables()
+            .Build();
+
+        var configured = configuration.GetConnectionString("Default");
+        return string.IsNullOrWhiteSpace(configured) || configured.Contains("(localdb)", StringComparison.OrdinalIgnoreCase)
+            ? DefaultServer
+            : configured;
+    }
+
+    private static string FindWebProjectDirectory()
+    {
+        for (var dir = new DirectoryInfo(AppContext.BaseDirectory); dir is not null; dir = dir.Parent)
+        {
+            var web = Path.Combine(dir.FullName, "src", "Nelt.Web");
+            if (File.Exists(Path.Combine(web, "Nelt.Web.csproj")))
+            {
+                return web;
+            }
+        }
+
+        return AppContext.BaseDirectory;
     }
 
     /// <summary>A fresh DI scope (one DbContext), like one HTTP request.</summary>

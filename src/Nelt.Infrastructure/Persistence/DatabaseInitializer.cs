@@ -80,7 +80,7 @@ public static class DatabaseInitializer
         {
             switch (ex)
             {
-                case SqlException sql when sql.Number is -2 or 2 or 53 or 40 or 233 or 4060 or 10053 or 10054 or 10060 or 10061 or 18456:
+                case SqlException sql when sql.Number is -2 or 2 or 53 or 40 or 233 or 4060 or 10053 or 10054 or 10060 or 10061:
                 case SocketException:
                 case TimeoutException:
                     return true;

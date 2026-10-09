@@ -22,7 +22,9 @@ dotnet test tests/Nelt.IntegrationTests --logger "console;verbosity=normal"
 A database named `NeltTests_<random>` is created for the run and dropped at the end. Your development
 database (`Nelt`) is never touched.
 
-To use another SQL Server, set the server part of the connection string (without `Database=`):
+The tests connect with the **same server and login the app uses in development**
+(`ConnectionStrings:Default` from `appsettings.Development.json`, user secrets or environment variables),
+so if the app runs, the tests can reach the database. To use another SQL Server instead:
 
 ```bash
 export NELT_TEST_SQL="Server=myhost,1433;User Id=sa;Password=...;TrustServerCertificate=True;MultipleActiveResultSets=true"
