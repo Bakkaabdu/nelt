@@ -6,6 +6,7 @@
     <Project Path="src/Nelt.Web/Nelt.Web.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/Nelt.IntegrationTests/Nelt.IntegrationTests.csproj" />
     <Project Path="tests/Nelt.UnitTests/Nelt.UnitTests.csproj" />
   </Folder>
 </Solution>
