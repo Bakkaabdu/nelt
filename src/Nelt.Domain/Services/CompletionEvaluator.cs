@@ -72,11 +72,15 @@ public static class CompletionEvaluator
     public static CompletionEvaluation Evaluate(CompletionPolicy policy, PerformanceSnapshot p)
     {
         var overall = OverallScore(policy, p);
-        var criteria = new List<CriterionResult>
+        var criteria = new List<CriterionResult>();
+
+        // A course without a final exam is judged on its other components; it must not wait for an exam that does not exist.
+        if (p.HasFinalExam)
         {
-            FinalExam(policy, p),
-            new(CriterionKind.OverallScore, overall >= policy.PassingScore ? CriterionState.Met : CriterionState.NotMet, overall, policy.PassingScore),
-        };
+            criteria.Add(FinalExam(policy, p));
+        }
+
+        criteria.Add(new(CriterionKind.OverallScore, overall >= policy.PassingScore ? CriterionState.Met : CriterionState.NotMet, overall, policy.PassingScore));
 
         if (p.Mode == StudyMode.InPerson)
         {
@@ -122,7 +126,7 @@ public static class CompletionEvaluator
 
     private static CriterionResult FinalExam(CompletionPolicy policy, PerformanceSnapshot p)
     {
-        if (!p.HasFinalExam || p.FinalExamScore is null)
+        if (p.FinalExamScore is null)
         {
             return new(CriterionKind.FinalExam, CriterionState.Pending, null, policy.MinFinalExamScore);
         }

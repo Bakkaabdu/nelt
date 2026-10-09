@@ -97,7 +97,16 @@ internal sealed class AssignmentService(IAppDbContext db, ICourseAccess access, 
         }
 
         db.Assignments.Add(assignment);
-        await db.SaveChangesAsync(ct);
+        try
+        {
+            await db.SaveChangesAsync(ct);
+        }
+        catch
+        {
+            await storage.DeleteQuietlyAsync(assignment.AttachmentKey);
+            throw;
+        }
+
         return assignment.Id;
     }
 
@@ -121,10 +130,23 @@ internal sealed class AssignmentService(IAppDbContext db, ICourseAccess access, 
             return result;
         }
 
-        await db.SaveChangesAsync(ct);
+        try
+        {
+            await db.SaveChangesAsync(ct);
+        }
+        catch
+        {
+            if (assignment.AttachmentKey != previous)
+            {
+                await storage.DeleteQuietlyAsync(assignment.AttachmentKey);
+            }
+
+            throw;
+        }
+
         if (previous is not null && previous != assignment.AttachmentKey)
         {
-            await storage.DeleteAsync(previous, ct);
+            await storage.DeleteQuietlyAsync(previous);
         }
 
         return Result.Success();
@@ -340,8 +362,15 @@ internal sealed class StudentAssignmentService(IAppDbContext db, ICourseAccess a
             return Error.Conflict("The deadline has passed and late submissions are not accepted.");
         }
 
+        var submission = await db.Submissions.FirstOrDefaultAsync(s => s.AssignmentId == assignmentId && s.EnrollmentId == enrollment.Id, ct);
+        if (submission?.IsGraded == true)
+        {
+            return Error.Conflict("Your work was already graded and can no longer be changed.");
+        }
+
+        // A resubmission may keep the previously uploaded file and only change (or clear) the text.
         var text = string.IsNullOrWhiteSpace(input.Text) ? null : input.Text.Trim();
-        if (text is null && file is null)
+        if (text is null && file is null && submission?.FileKey is null)
         {
             return Error.Validation("Write an answer or attach a file.");
         }
@@ -351,13 +380,8 @@ internal sealed class StudentAssignmentService(IAppDbContext db, ICourseAccess a
             return Result.Fail(fileError with { Field = "file" });
         }
 
-        var submission = await db.Submissions.FirstOrDefaultAsync(s => s.AssignmentId == assignmentId && s.EnrollmentId == enrollment.Id, ct);
-        if (submission?.IsGraded == true)
-        {
-            return Error.Conflict("Your work was already graded and can no longer be changed.");
-        }
-
         string? oldFile = null;
+        string? newFile = null;
         if (submission is null)
         {
             submission = new Submission { AssignmentId = assignmentId, EnrollmentId = enrollment.Id };
@@ -367,7 +391,8 @@ internal sealed class StudentAssignmentService(IAppDbContext db, ICourseAccess a
         if (file is not null)
         {
             oldFile = submission.FileKey;
-            submission.FileKey = await storage.SaveAsync(file.Content, "submissions", file.Extension, ct);
+            newFile = await storage.SaveAsync(file.Content, "submissions", file.Extension, ct);
+            submission.FileKey = newFile;
             submission.FileName = file.SafeFileName;
             submission.FileSize = file.Length;
         }
@@ -384,7 +409,13 @@ internal sealed class StudentAssignmentService(IAppDbContext db, ICourseAccess a
         catch (Exception ex) when (db.IsUniqueViolation(ex))
         {
             db.ClearChangeTracker();
+            await storage.DeleteQuietlyAsync(newFile);
             return Error.Conflict("Your work was already submitted. Refresh the page to see it.");
+        }
+        catch
+        {
+            await storage.DeleteQuietlyAsync(newFile);
+            throw;
         }
 
         if (oldFile is not null)

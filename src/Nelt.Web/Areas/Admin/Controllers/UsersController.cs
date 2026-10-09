@@ -30,7 +30,10 @@ public sealed class UsersController(IUserAdminService users) : AdminController
                 return RedirectToAction(nameof(Index));
             }
 
-            TryAddFormError(result.Error!);
+            if (!TryAddFormError(result.Error!))
+            {
+                return Failure(result.Error!);
+            }
         }
 
         return View("Form", new UserEditModel(null, input, false));

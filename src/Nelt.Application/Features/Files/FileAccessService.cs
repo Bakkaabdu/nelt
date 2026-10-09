@@ -73,7 +73,10 @@ internal sealed class FileAccessService(IAppDbContext db, ICurrentUser user) : I
         }
         else if (user.IsInRole(Roles.Instructor))
         {
-            allowed = await db.Courses.AnyAsync(c => c.LevelId == m.LevelId && c.InstructorId == me, ct);
+            // Same rule as editing: the instructor teaches this level and, for a course-specific file, that course.
+            allowed = m.CourseId is { } courseId
+                ? await db.Courses.AnyAsync(c => c.Id == courseId && c.InstructorId == me, ct)
+                : await db.Courses.AnyAsync(c => c.LevelId == m.LevelId && c.InstructorId == me, ct);
         }
         else
         {

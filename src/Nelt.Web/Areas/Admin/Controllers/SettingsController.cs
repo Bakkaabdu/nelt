@@ -19,7 +19,11 @@ public sealed class SettingsController(IPlatformSettingsService settings) : Admi
         var result = await settings.UpdateAsync(input, Aborted);
         if (result.Failed)
         {
-            TryAddFormError(result.Error!, prefix: null);
+            if (!TryAddFormError(result.Error!, prefix: null))
+            {
+                return Failure(result.Error!);
+            }
+
             return View(input);
         }
 

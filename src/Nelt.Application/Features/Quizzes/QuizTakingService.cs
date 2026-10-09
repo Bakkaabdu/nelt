@@ -86,7 +86,21 @@ internal sealed class QuizTakingService(IAppDbContext db, ICourseAccess access, 
         var attempt = new QuizAttempt { QuizId = quiz.Id, EnrollmentId = enrollment.Id, Source = AttemptSource.Online, StartedAt = now, DeadlineAt = deadline };
         db.QuizAttempts.Add(attempt);
         enrollment.LastActivityAt = now;
-        await db.SaveChangesAsync(ct);
+
+        try
+        {
+            await db.SaveChangesAsync(ct);
+        }
+        catch (Exception ex) when (db.IsUniqueViolation(ex))
+        {
+            // A double click started the attempt twice; the database allows one open attempt, so resume that one.
+            db.ClearChangeTracker();
+            return await db.QuizAttempts
+                .Where(a => a.QuizId == quiz.Id && a.EnrollmentId == enrollment.Id && a.Source == AttemptSource.Online && a.SubmittedAt == null)
+                .Select(a => a.Id)
+                .FirstAsync(ct);
+        }
+
         return attempt.Id;
     }
 
@@ -155,7 +169,7 @@ internal sealed class QuizTakingService(IAppDbContext db, ICourseAccess access, 
 
         var quiz = attempt.Quiz!;
         var used = await db.QuizAttempts.CountAsync(a => a.QuizId == quiz.Id && a.EnrollmentId == enrollment.Id && a.Source == AttemptSource.Online, ct);
-        var canRetry = used < quiz.MaxAttempts && quiz.IsOpenAt(time.UtcNow);
+        var canRetry = used < quiz.MaxAttempts && quiz.IsOpenAt(time.UtcNow) && enrollment.Status == EnrollmentStatus.Active;
         var reveal = quiz.Kind == QuizKind.Quiz && !canRetry;
 
         var answers = await db.AttemptAnswers.AsNoTracking().Where(a => a.AttemptId == attempt.Id).ToListAsync(ct);
@@ -180,6 +194,17 @@ internal sealed class QuizTakingService(IAppDbContext db, ICourseAccess access, 
 
     private async Task GradeAsync(QuizAttempt attempt, IReadOnlyDictionary<int, int[]> answers, CancellationToken ct)
     {
+        // Claim the attempt atomically: if two submits arrive together (double click, or the timer and the button),
+        // only the first one grades it and the second one returns quietly.
+        var submittedAt = time.UtcNow;
+        var claimed = await db.QuizAttempts
+            .Where(a => a.Id == attempt.Id && a.SubmittedAt == null)
+            .ExecuteUpdateAsync(s => s.SetProperty(a => a.SubmittedAt, (DateTime?)submittedAt), ct);
+        if (claimed == 0)
+        {
+            return;
+        }
+
         var questions = await db.Questions.AsNoTracking().Where(q => q.QuizId == attempt.QuizId).Include(q => q.Options).ToListAsync(ct);
 
         decimal earned = 0, total = 0;
@@ -201,7 +226,7 @@ internal sealed class QuizTakingService(IAppDbContext db, ICourseAccess access, 
         attempt.EarnedPoints = earned;
         attempt.TotalPoints = total;
         attempt.ScorePercent = QuizGrader.Percent(earned, total);
-        attempt.SubmittedAt = time.UtcNow;
+        attempt.SubmittedAt = submittedAt;
         await db.SaveChangesAsync(ct);
     }
 
@@ -225,7 +250,8 @@ internal sealed class QuizTakingService(IAppDbContext db, ICourseAccess access, 
             return QuizBlockReason.NoQuestions;
         }
 
-        if (!quiz.IsOpenAt(time.UtcNow))
+        // Completed students keep read access to their results, but cannot take new attempts after their certificate.
+        if (enrollment.Status != EnrollmentStatus.Active || !quiz.IsOpenAt(time.UtcNow))
         {
             return QuizBlockReason.NotOpen;
         }

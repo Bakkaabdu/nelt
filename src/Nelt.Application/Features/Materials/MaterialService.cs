@@ -81,7 +81,15 @@ internal sealed class MaterialService(IAppDbContext db, ICurrentUser user, IFile
             return new MaterialLibrary(levels, null, [], new Dictionary<MaterialType, IReadOnlyList<LibraryItem>>());
         }
 
-        var items = await db.Materials.AsNoTracking().Where(m => m.LevelId == selected.Id)
+        var query = db.Materials.AsNoTracking().Where(m => m.LevelId == selected.Id);
+        if (!user.IsAdmin)
+        {
+            // Files pinned to another instructor's course are not shown (they could not be opened or edited anyway).
+            var me = user.UserId;
+            query = query.Where(m => m.CourseId == null || m.Course!.InstructorId == me);
+        }
+
+        var items = await query
             .OrderBy(m => m.Type).ThenBy(m => m.SortOrder).ThenBy(m => m.Title)
             .Select(m => new LibraryItem(m.Id, m.Type, m.Title, m.Description, m.FileName, m.ContentType, m.SizeBytes, m.CourseId,
                 m.Course != null ? m.Course.Title : null, m.IsPublished, m.CreatedAt))
@@ -147,7 +155,16 @@ internal sealed class MaterialService(IAppDbContext db, ICurrentUser user, IFile
         };
 
         db.Materials.Add(material);
-        await db.SaveChangesAsync(ct);
+        try
+        {
+            await db.SaveChangesAsync(ct);
+        }
+        catch
+        {
+            await storage.DeleteQuietlyAsync(material.FileKey);
+            throw;
+        }
+
         return material.Id;
     }
 

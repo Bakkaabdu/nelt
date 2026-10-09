@@ -63,6 +63,19 @@ public class CompletionEvaluatorTests
     }
 
     [Fact]
+    public void Courses_without_a_final_exam_are_judged_on_the_other_components()
+    {
+        var snapshot = Online(quiz: 80, assignments: 70) with { HasFinalExam = false, FinalExamScore = null };
+
+        var result = CompletionEvaluator.Evaluate(Policy, snapshot);
+
+        Assert.DoesNotContain(result.Criteria, c => c.Kind == CriterionKind.FinalExam);
+        Assert.Equal(75m, result.OverallScore);
+        Assert.True(result.IsCertificateEligible);
+        Assert.True(result.IsNextLevelEligible);
+    }
+
+    [Fact]
     public void Final_exam_below_minimum_fails_even_with_high_overall()
     {
         var result = CompletionEvaluator.Evaluate(Policy, Online(quiz: 100, assignments: 100, final: 45));

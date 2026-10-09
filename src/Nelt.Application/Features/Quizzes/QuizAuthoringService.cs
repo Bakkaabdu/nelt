@@ -297,7 +297,8 @@ internal sealed class QuizAuthoringService(IAppDbContext db, ICourseAccess acces
         }
 
         var valid = await db.Quizzes.AnyAsync(q => q.Id == quizId && q.CourseId == courseId, ct)
-                    && await db.Enrollments.AnyAsync(e => e.Id == input.EnrollmentId && e.CourseId == courseId, ct);
+                    && await db.Enrollments.AnyAsync(e => e.Id == input.EnrollmentId && e.CourseId == courseId
+                        && (e.Status == EnrollmentStatus.Active || e.Status == EnrollmentStatus.Completed), ct);
         if (!valid)
         {
             return Error.NotFound();

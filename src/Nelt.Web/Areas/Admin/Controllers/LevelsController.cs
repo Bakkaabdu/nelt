@@ -24,7 +24,10 @@ public sealed class LevelsController(ILevelService levels) : AdminController
                 return RedirectToAction(nameof(Index));
             }
 
-            TryAddFormError(result.Error!);
+            if (!TryAddFormError(result.Error!))
+            {
+                return Failure(result.Error!);
+            }
         }
 
         return View("Form", new LevelFormModel(null, input));

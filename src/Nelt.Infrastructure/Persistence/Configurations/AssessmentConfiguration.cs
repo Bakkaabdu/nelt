@@ -46,6 +46,11 @@ internal sealed class QuizAttemptConfiguration : IEntityTypeConfiguration<QuizAt
         builder.HasOne(a => a.Quiz).WithMany(q => q.Attempts).HasForeignKey(a => a.QuizId).OnDelete(DeleteBehavior.Restrict);
         builder.HasOne(a => a.Enrollment).WithMany(e => e.QuizAttempts).HasForeignKey(a => a.EnrollmentId).OnDelete(DeleteBehavior.Restrict);
         builder.HasIndex(a => new { a.EnrollmentId, a.QuizId });
+
+        // At most one unfinished online attempt per student and quiz (guards against double-clicked "Start").
+        builder.HasIndex(a => new { a.EnrollmentId, a.QuizId }, "IX_QuizAttempts_OneOpenAttempt")
+            .IsUnique()
+            .HasFilter("[SubmittedAt] IS NULL AND [Source] = 1");
     }
 }
 

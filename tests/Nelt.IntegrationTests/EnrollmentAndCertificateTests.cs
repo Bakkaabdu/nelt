@@ -174,7 +174,7 @@ public sealed class EnrollmentAndCertificateTests(NeltFixture fixture) : Integra
             await using var scope = Fixture.Scope();
             var certificates = scope.ServiceProvider.GetRequiredService<ICertificateService>();
             var overview = Ok(await certificates.OverviewAsync(courseId));
-            Assert.False(overview.Evaluation.IsCertificateEligible); // No final exam result yet.
+            Assert.False(overview.Evaluation.IsCertificateEligible); // Nothing graded yet.
             Fails(await certificates.RequestAsync(courseId), ErrorKind.Conflict);
         }
 
@@ -247,6 +247,55 @@ public sealed class EnrollmentAndCertificateTests(NeltFixture fixture) : Integra
         {
             var enrollment = await check.ServiceProvider.GetRequiredService<AppDbContext>().Enrollments.AsNoTracking().SingleAsync(e => e.Id == enrollmentId);
             Assert.Equal(EnrollmentStatus.Completed, enrollment.Status);
+        }
+
+        // After the certificate, the student keeps read access but cannot take new attempts.
+        using (TestUser.As(studentId, Roles.Student))
+        {
+            await using var scope = Fixture.Scope();
+            var taking = scope.ServiceProvider.GetRequiredService<IQuizTakingService>();
+            var finalId = await scope.ServiceProvider.GetRequiredService<AppDbContext>().Quizzes
+                .Where(q => q.CourseId == courseId && q.Kind == QuizKind.FinalExam).Select(q => q.Id).SingleAsync();
+
+            Assert.Equal(QuizBlockReason.NotOpen, Ok(await taking.IntroAsync(courseId, finalId)).BlockReason);
+            Fails(await taking.StartAsync(courseId, finalId), ErrorKind.Conflict);
+        }
+    }
+
+    [Fact]
+    public async Task Courses_without_a_final_exam_still_issue_certificates()
+    {
+        var courseId = await CreateCourseAsync("No final exam course", published: false);
+        var studentId = await Fixture.CreateStudentAsync();
+        int enrollmentId;
+        await using (var setup = Fixture.Scope())
+        {
+            var db = setup.ServiceProvider.GetRequiredService<AppDbContext>();
+            var enrollment = new Enrollment { CourseId = courseId, StudentId = studentId, Mode = StudyMode.InPerson, Status = EnrollmentStatus.Active, ActivatedAt = DateTime.UtcNow };
+            db.Enrollments.Add(enrollment);
+            await db.SaveChangesAsync();
+            enrollmentId = enrollment.Id;
+        }
+
+        using (TestUser.As(Seed.InstructorId, Roles.Instructor))
+        {
+            await using var scope = Fixture.Scope();
+            var authoring = scope.ServiceProvider.GetRequiredService<IQuizAuthoringService>();
+            var quizId = Ok(await authoring.CreateAsync(courseId, new QuizInput { Title = "Unit test" }));
+            Ok(await authoring.SaveQuestionAsync(courseId, quizId, new QuestionInput { Type = QuestionType.TrueFalse, Prompt = "Q", TrueIsCorrect = true }));
+            Ok(await authoring.UpdateAsync(courseId, quizId, new QuizInput { Title = "Unit test", IsPublished = true }));
+            Ok(await authoring.RecordScoreAsync(courseId, quizId, new RecordScoreInput { EnrollmentId = enrollmentId, Score = 85 }));
+        }
+
+        using (TestUser.As(studentId, Roles.Student))
+        {
+            await using var scope = Fixture.Scope();
+            var certificates = scope.ServiceProvider.GetRequiredService<ICertificateService>();
+
+            var overview = Ok(await certificates.OverviewAsync(courseId));
+
+            Assert.True(overview.Evaluation.IsCertificateEligible, string.Join(", ", overview.Evaluation.Criteria.Select(c => $"{c.Kind}={c.State}")));
+            Ok(await certificates.RequestAsync(courseId));
         }
     }
 

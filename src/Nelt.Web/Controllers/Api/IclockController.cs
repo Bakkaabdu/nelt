@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Net;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
@@ -17,7 +18,11 @@ namespace Nelt.Web.Controllers.Api;
 [Route("iclock")]
 [IgnoreAntiforgeryToken]
 [EnableRateLimiting(WebSetup.DeviceRateLimit)]
-public sealed class IclockController(IBiometricIngestionService ingestion, IPlatformTime time, ILogger<IclockController> logger) : ControllerBase
+public sealed class IclockController(
+    IBiometricIngestionService ingestion,
+    IPlatformTime time,
+    IConfiguration configuration,
+    ILogger<IclockController> logger) : ControllerBase
 {
     private const int MaxBodyBytes = 1024 * 1024;
 
@@ -25,6 +30,11 @@ public sealed class IclockController(IBiometricIngestionService ingestion, IPlat
     [HttpGet("cdata")]
     public async Task<IActionResult> Handshake([FromQuery(Name = "SN")] string? serial, CancellationToken ct)
     {
+        if (!IsAllowedNetwork())
+        {
+            return Unregistered(serial);
+        }
+
         var device = await ingestion.AuthenticateBySerialAsync(serial ?? string.Empty, ct);
         if (device is null)
         {
@@ -53,6 +63,11 @@ public sealed class IclockController(IBiometricIngestionService ingestion, IPlat
     [RequestSizeLimit(MaxBodyBytes)]
     public async Task<IActionResult> Upload([FromQuery(Name = "SN")] string? serial, [FromQuery] string? table, CancellationToken ct)
     {
+        if (!IsAllowedNetwork())
+        {
+            return Unregistered(serial);
+        }
+
         var device = await ingestion.AuthenticateBySerialAsync(serial ?? string.Empty, ct);
         if (device is null)
         {
@@ -77,7 +92,7 @@ public sealed class IclockController(IBiometricIngestionService ingestion, IPlat
     /// <summary>The terminal polls for commands; there are none.</summary>
     [HttpGet("getrequest")]
     public async Task<IActionResult> GetRequest([FromQuery(Name = "SN")] string? serial, CancellationToken ct)
-        => await ingestion.AuthenticateBySerialAsync(serial ?? string.Empty, ct) is null ? Unregistered(serial) : Text("OK");
+        => !IsAllowedNetwork() || await ingestion.AuthenticateBySerialAsync(serial ?? string.Empty, ct) is null ? Unregistered(serial) : Text("OK");
 
     [HttpPost("devicecmd")]
     public IActionResult DeviceCommand() => Text("OK");
@@ -101,6 +116,46 @@ public sealed class IclockController(IBiometricIngestionService ingestion, IPlat
         }
 
         return punches;
+    }
+
+    /// <summary>
+    /// Terminals identify themselves only by serial number, so the endpoint can optionally be limited to the
+    /// institute's network: <c>Devices:AllowedNetworks</c> = ["192.168.1.0/24", "10.0.0.15"]. Empty = allow all.
+    /// </summary>
+    private bool IsAllowedNetwork()
+    {
+        var allowed = configuration.GetSection("Devices:AllowedNetworks").Get<string[]>();
+        if (allowed is null || allowed.Length == 0)
+        {
+            return true;
+        }
+
+        var ip = HttpContext.Connection.RemoteIpAddress;
+        if (ip is null)
+        {
+            return false;
+        }
+
+        if (ip.IsIPv4MappedToIPv6)
+        {
+            ip = ip.MapToIPv4();
+        }
+
+        foreach (var entry in allowed)
+        {
+            var text = entry.Trim();
+            if (!text.Contains('/', StringComparison.Ordinal))
+            {
+                text += text.Contains(':', StringComparison.Ordinal) ? "/128" : "/32";
+            }
+
+            if (IPNetwork.TryParse(text, out var network) && network.Contains(ip))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private ContentResult Text(string content) => Content(content, "text/plain; charset=utf-8");

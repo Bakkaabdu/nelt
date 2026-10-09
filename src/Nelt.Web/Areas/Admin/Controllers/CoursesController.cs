@@ -36,7 +36,10 @@ public sealed class CoursesController(ICourseAdminService courses, ILevelService
                 return RedirectToAction(nameof(Index));
             }
 
-            TryAddFormError(result.Error!);
+            if (!TryAddFormError(result.Error!))
+            {
+                return Failure(result.Error!);
+            }
         }
 
         return await FormAsync(null, input, null, 0);

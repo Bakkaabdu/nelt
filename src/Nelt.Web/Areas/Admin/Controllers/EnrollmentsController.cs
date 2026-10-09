@@ -50,7 +50,10 @@ public sealed class EnrollmentsController(IEnrollmentService enrollments, ICours
                 return RedirectToAction(nameof(Index));
             }
 
-            TryAddFormError(result.Error!);
+            if (!TryAddFormError(result.Error!))
+            {
+                return Failure(result.Error!);
+            }
         }
 
         return View(new ManualEnrollmentPage(input, await users.SearchStudentsAsync(null, Aborted), await courses.ListAsync(Aborted)));

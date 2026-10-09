@@ -131,7 +131,21 @@ that has no translation yet (exit code 1 → use it in CI).
 | `Storage:RootPath` | `App_Data/storage` | Uploaded videos, materials, submissions |
 | `Attendance:OpensMinutesBeforeStart` / `LateAfterMinutes` / `FinalizeIntervalMinutes` | 30 / 10 / 5 | Check-in window and absence job |
 | `Devices:AllowPlainHttp` | false | Let terminals use HTTP for `/iclock` |
+| `Devices:AllowedNetworks` | `[]` (all) | Networks allowed to reach `/iclock`, e.g. `["192.168.1.0/24"]` (terminals identify only by serial number) |
 | `Seed:AdminEmail`, `Seed:AdminPassword`, `Seed:AdminName` | — | First administrator |
 
 Time zone and currency are set in Admin → Platform information (default Africa/Tripoli, LYD).
 For production put the app behind a TLS-terminating reverse proxy (`ASPNETCORE_FORWARDEDHEADERS_ENABLED=true`).
+
+### Before the first production deployment
+
+1. **Generate and commit the initial migration** (the app falls back to `EnsureCreated` without one, and then
+   later model changes would never reach the production database):
+   ```bash
+   dotnet ef migrations add InitialCreate -p src/Nelt.Infrastructure -s src/Nelt.Web -o Persistence/Migrations
+   ```
+2. Behind nginx / Cloudflare / any proxy set `ASPNETCORE_FORWARDEDHEADERS_ENABLED=true`, otherwise every visitor
+   shares the sign-in rate limit and HTTPS redirection can loop.
+3. Set `Devices__AllowedNetworks__0=192.168.1.0/24` (your LAN) if fingerprint terminals use `/iclock`.
+4. Set `Seed__AdminEmail` / `Seed__AdminPassword` for the first start only, then remove them.
+5. Run `dotnet test` with the database container up — the integration tests open every page as every role.

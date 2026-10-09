@@ -240,6 +240,62 @@ public sealed class AssessmentServiceTests(NeltFixture fixture) : IntegrationTes
         Assert.True(row.HasRecordedScore);
         Assert.Equal(90m, row.BestScore);
         Fails(await authoring.RecordScoreAsync(courseId, quizId, new RecordScoreInput { EnrollmentId = Seed.StudentEnrollmentId, Score = 50 }), ErrorKind.NotFound);
+
+        // Students who have not paid yet (or were cancelled) cannot receive scores.
+        Fails(await authoring.RecordScoreAsync(Seed.CourseId, Seed.QuizId, new RecordScoreInput { EnrollmentId = Seed.PendingEnrollmentId, Score = 50 }), ErrorKind.NotFound);
+    }
+
+    [Fact]
+    public async Task Double_clicks_on_start_and_submit_do_not_create_extra_attempts()
+    {
+        var (courseId, studentId, _) = await CourseWithStudentsAsync("Double click course");
+        int quizId;
+        using (TestUser.As(Seed.InstructorId, Roles.Instructor))
+        {
+            await using var scope = Fixture.Scope();
+            var authoring = scope.ServiceProvider.GetRequiredService<IQuizAuthoringService>();
+            quizId = Ok(await authoring.CreateAsync(courseId, new QuizInput { Title = "Race", MaxAttempts = 1 }));
+            Ok(await authoring.SaveQuestionAsync(courseId, quizId, SingleChoice("Q")));
+            Ok(await authoring.UpdateAsync(courseId, quizId, new QuizInput { Title = "Race", MaxAttempts = 1, IsPublished = true }));
+        }
+
+        using var _ = TestUser.As(studentId, Roles.Student);
+
+        async Task<Result<int>> StartAsync()
+        {
+            await using var scope = Fixture.Scope();
+            return await scope.ServiceProvider.GetRequiredService<IQuizTakingService>().StartAsync(courseId, quizId);
+        }
+
+        var starts = await Task.WhenAll(StartAsync(), StartAsync(), StartAsync());
+        var attemptId = Ok(starts[0]);
+        Assert.All(starts, r => Assert.Equal(attemptId, Ok(r)));
+
+        int[] answer;
+        await using (var scope = Fixture.Scope())
+        {
+            var sheet = Ok(await scope.ServiceProvider.GetRequiredService<IQuizTakingService>().SheetAsync(courseId, attemptId));
+            answer = [sheet.Questions[0].Options[0].Id];
+            var questionId = sheet.Questions[0].Id;
+
+            async Task<Result> SubmitAsync()
+            {
+                await using var inner = Fixture.Scope();
+                return await inner.ServiceProvider.GetRequiredService<IQuizTakingService>()
+                    .SubmitAsync(courseId, attemptId, new Dictionary<int, int[]> { [questionId] = answer });
+            }
+
+            var submits = await Task.WhenAll(SubmitAsync(), SubmitAsync());
+            Assert.All(submits, r => Assert.True(r.Succeeded, r.Error?.Message));
+        }
+
+        await using (var check = Fixture.Scope())
+        {
+            var db = check.ServiceProvider.GetRequiredService<AppDbContext>();
+            Assert.Equal(1, await db.QuizAttempts.CountAsync(a => a.QuizId == quizId));
+            Assert.Equal(1, await db.AttemptAnswers.CountAsync(a => a.AttemptId == attemptId));
+            Assert.Equal(100m, (await db.QuizAttempts.SingleAsync(a => a.Id == attemptId)).ScorePercent);
+        }
     }
 
     [Fact]
@@ -291,6 +347,12 @@ public sealed class AssessmentServiceTests(NeltFixture fixture) : IntegrationTes
             Assert.Equal("Updated.", detail.Submission?.Text);
             Assert.Equal("essay.txt", detail.Submission?.FileName);
             Assert.True(detail.CanSubmit);
+
+            // Resubmitting with an empty answer keeps the uploaded file (it is still a valid submission).
+            Ok(await student.SubmitAsync(courseId, assignmentId, new SubmitInput { Text = " " }, file: null));
+            detail = Ok(await student.GetAsync(courseId, assignmentId));
+            Assert.Null(detail.Submission?.Text);
+            Assert.Equal("essay.txt", detail.Submission?.FileName);
         }
 
         using (TestUser.As(Seed.InstructorId, Roles.Instructor))

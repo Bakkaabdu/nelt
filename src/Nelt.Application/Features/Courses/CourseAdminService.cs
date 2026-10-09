@@ -78,7 +78,16 @@ internal sealed class CourseAdminService(
         }
 
         db.Courses.Add(course);
-        await db.SaveChangesAsync(ct);
+        try
+        {
+            await db.SaveChangesAsync(ct);
+        }
+        catch
+        {
+            await storage.DeleteQuietlyAsync(course.CoverImageKey);
+            throw;
+        }
+
         cache.Invalidate();
         return course.Id;
     }
@@ -98,7 +107,20 @@ internal sealed class CourseAdminService(
             return applied;
         }
 
-        await db.SaveChangesAsync(ct);
+        try
+        {
+            await db.SaveChangesAsync(ct);
+        }
+        catch
+        {
+            if (course.CoverImageKey != previousCover)
+            {
+                await storage.DeleteQuietlyAsync(course.CoverImageKey);
+            }
+
+            throw;
+        }
+
         cache.Invalidate();
 
         if (previousCover is not null && previousCover != course.CoverImageKey)

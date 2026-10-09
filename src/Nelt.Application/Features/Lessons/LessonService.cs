@@ -123,7 +123,16 @@ internal sealed class LessonService(IAppDbContext db, ICourseAccess access, IFil
         }
 
         db.Lessons.Add(lesson);
-        await db.SaveChangesAsync(ct);
+        try
+        {
+            await db.SaveChangesAsync(ct);
+        }
+        catch
+        {
+            await storage.DeleteQuietlyAsync(lesson.VideoKey);
+            throw;
+        }
+
         cache.Invalidate();
         return lesson.Id;
     }
@@ -148,11 +157,24 @@ internal sealed class LessonService(IAppDbContext db, ICourseAccess access, IFil
             return result;
         }
 
-        await db.SaveChangesAsync(ct);
+        try
+        {
+            await db.SaveChangesAsync(ct);
+        }
+        catch
+        {
+            if (lesson.VideoKey != previous)
+            {
+                await storage.DeleteQuietlyAsync(lesson.VideoKey);
+            }
+
+            throw;
+        }
+
         cache.Invalidate();
         if (previous is not null && previous != lesson.VideoKey)
         {
-            await storage.DeleteAsync(previous, ct);
+            await storage.DeleteQuietlyAsync(previous);
         }
 
         return Result.Success();
