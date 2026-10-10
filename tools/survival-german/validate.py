@@ -297,7 +297,7 @@ def validate(path):
 
 
 def main(argv):
-    files = [Path(a) for a in argv] or sorted(MISSIONS.glob("*.json"))
+    files = [Path(a) for a in argv] or sorted(MISSIONS.glob("m[1-7].a[12].json"))
     failed = False
     for f in files:
         rep, stats = validate(f)

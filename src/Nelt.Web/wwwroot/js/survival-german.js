@@ -258,8 +258,64 @@
         window.speechSynthesis.addEventListener?.("voiceschanged", () => speech.pickVoice());
     }
 
-    const speakBtn = (text, label = "استمع") => speech.supported
-        ? `<button type="button" class="sg-say" data-say="${esc(fill(text))}" title="${label}" aria-label="${label}">🔊</button>`
+    // ------------------------------------------------------------------ recorded speech (neural voices, tools/survival-german/make_audio.py)
+
+    const AUDIO_BASE = root.dataset.audio || BASE.replace(/missions\/?$/, "audio/");
+    const audioMap = {};
+    let playing = null;
+
+    const clipFor = (raw, who) => {
+        if (!raw) {
+            return null;
+        }
+        const key = `${who}|${raw}`;
+        return audioMap[key] || (/\{(country|fromCountry)\}/.test(raw) ? audioMap[`${key}|${country().de}`] : null) || null;
+    };
+
+    const stopVoice = () => {
+        if (playing) {
+            playing.onerror = null;
+            playing.pause();
+            playing = null;
+        }
+        if (speech.supported) {
+            window.speechSynthesis.cancel();
+        }
+    };
+
+    /** Plays the recorded clip for this line (who = speaker key), or falls back to the browser voice. */
+    function say(raw, who = "_", slow = false) {
+        if (!raw) {
+            return false;
+        }
+        stopVoice();
+        const id = clipFor(raw, who);
+        if (!id) {
+            return speech.speak(raw, slow);
+        }
+        const a = new Audio(`${AUDIO_BASE}${id}.mp3`);
+        a.preservesPitch = true;
+        a.playbackRate = slow ? 0.72 : 1;
+        a.onerror = () => {
+            if (playing === a) {
+                playing = null;
+                speech.speak(raw, slow);
+            }
+        };
+        playing = a;
+        a.play().catch((e) => {
+            if (playing === a && e && e.name !== "AbortError") {
+                playing = null;
+                speech.speak(raw, slow);
+            }
+        });
+        return true;
+    }
+
+    const canSay = (raw, who) => Boolean(clipFor(raw, who)) || speech.supported;
+
+    const speakBtn = (text, who = "_", label = "استمع") => canSay(text, who)
+        ? `<button type="button" class="sg-say" data-say="${esc(text)}" data-who="${esc(who)}" title="${label}" aria-label="${label}">🔊</button>`
         : "";
 
     // ------------------------------------------------------------------ progress queries
@@ -294,9 +350,7 @@
     let screen = "";
     const show = (name, html) => {
         screen = name;
-        if (speech.supported) {
-            window.speechSynthesis.cancel();
-        }
+        stopVoice();
         root.innerHTML = `<div class="sg-screen sg-screen--${name}">${html}</div>`;
         document.body.classList.toggle("sg-playing", name === "play");
         root.scrollIntoView({ block: "start" });
@@ -464,6 +518,14 @@
                 throw new Error(`HTTP ${res.status}`);
             }
             cache[key] = await res.json();
+            try {
+                const voices = await fetch(`${BASE}${key}.audio.json`, { headers: { Accept: "application/json" } });
+                if (voices.ok) {
+                    Object.assign(audioMap, await voices.json());
+                }
+            } catch {
+                /* no recordings: the browser voice is used */
+            }
         }
         return cache[key];
     }
@@ -707,7 +769,7 @@
                 <span class="sg-line__avatar" aria-hidden="true">${esc(s.avatar || "🙂")}</span>
                 <div class="sg-line__bubble">
                     <span class="sg-line__who"><b lang="de" dir="ltr">${esc(fill(s.name))}</b>${s.role && !s.me ? ` · ${ar(s.role)}` : ""}</span>
-                    <p>${de(line.de)} ${speakBtn(line.de)}</p>
+                    <p>${de(line.de)} ${speakBtn(line.de, line.who)}</p>
                     ${line.ar && !opts.noTranslation ? `
                         <button type="button" class="sg-reveal" data-reveal="${trId}">ترجمة</button>
                         <p class="sg-tr" id="${trId}" hidden>${ar(line.ar)}</p>` : ""}
@@ -718,7 +780,8 @@
     function docHtml(doc) {
         const kind = doc.kind || "sign";
         const trId = `tr-${Math.random().toString(36).slice(2, 9)}`;
-        const lines = (doc.lines || []).map(fill);
+        const rawLines = doc.lines || [];
+        const lines = rawLines.map(fill);
         let body;
         if (kind === "board" || (kind === "screen" && lines.some((l) => l.includes(" | ")))) {
             const rows = lines.map((l) => l.split(/\s\|\s/));
@@ -732,16 +795,16 @@
                 return `<li>${cols.map((c) => `<span>${esc(c)}</span>`).join("")}</li>`;
             }).join("")}</ul>`;
         } else if (kind === "announcement") {
-            const text = lines.join(" ");
+            const text = rawLines.join(" ");
             const id = `ann-${Math.random().toString(36).slice(2, 9)}`;
             body = `
                 <div class="sg-ann">
                     <span class="sg-ann__wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
-                    ${speech.supported ? `<button type="button" class="sg-btn sg-btn--sm" data-say="${esc(text)}">▶ استمع للإعلان</button>
-                    <button type="button" class="sg-btn sg-btn--sm sg-btn--ghost" data-say="${esc(text)}" data-slow="1">🐢 ببطء</button>` : ""}
+                    ${canSay(text, "_ann") ? `<button type="button" class="sg-btn sg-btn--sm" data-say="${esc(text)}" data-who="_ann">▶ استمع للإعلان</button>
+                    <button type="button" class="sg-btn sg-btn--sm sg-btn--ghost" data-say="${esc(text)}" data-who="_ann" data-slow="1">🐢 ببطء</button>` : ""}
                     <button type="button" class="sg-reveal" data-reveal="${id}">اعرض النص الألماني</button>
                 </div>
-                <div id="${id}" ${speech.supported ? "hidden" : ""}><p>${lines.map(esc).join("<br>")}</p></div>`;
+                <div id="${id}" ${canSay(text, "_ann") ? "hidden" : ""}><p>${lines.map(esc).join("<br>")}</p></div>`;
         } else {
             body = lines.map((l) => `<p>${esc(l)}</p>`).join("");
         }
@@ -756,20 +819,20 @@
     function playStep(step) {
         switch (step.type) {
             case "narration":
-                append(`<div class="sg-narration"><p>${ar(step.ar)}</p>${step.de ? `<p class="sg-narration__de">${de(step.de)} ${speakBtn(step.de)}</p>` : ""}</div>`);
+                append(`<div class="sg-narration"><p>${ar(step.ar)}</p>${step.de ? `<p class="sg-narration__de">${de(step.de)} ${speakBtn(step.de, "_")}</p>` : ""}</div>`);
                 continueButton();
                 break;
             case "line":
                 append(lineHtml(step));
                 if (step.who !== "me" && data.sound) {
-                    speech.speak(step.de);
+                    say(step.de, step.who);
                 }
                 continueButton();
                 break;
             case "doc":
                 append(docHtml(step));
                 if (step.kind === "announcement" && data.sound) {
-                    speech.speak((step.lines || []).join(" "));
+                    say((step.lines || []).join(" "), "_ann");
                 }
                 continueButton();
                 break;
@@ -780,7 +843,7 @@
                         <p class="sg-learn__de">${de(step.de)} ${speakBtn(step.de)}</p>
                         <p class="sg-learn__ar">${ar(step.ar)}</p>
                         <p class="sg-learn__use"><b>متى نستعملها؟</b> ${ar(step.use)}</p>
-                        <p class="sg-learn__ex">${de(step.example)} ${speakBtn(step.example)}<br><span>${ar(step.exampleAr)}</span></p>
+                        <p class="sg-learn__ex">${de(step.example)} ${speakBtn(step.example, "_")}<br><span>${ar(step.exampleAr)}</span></p>
                     </div>`);
                 continueButton();
                 break;
@@ -867,13 +930,13 @@
                 const opts = shuffle(ch.options.map((o, i) => ({ o, i })));
                 const audio = ch.type === "listen" ? `
                     <div class="sg-listen">
-                        ${speech.supported ? `
-                            <button type="button" class="sg-listen__play" data-say="${esc(fill(ch.audio))}" aria-label="استمع">▶</button>
-                            <button type="button" class="sg-btn sg-btn--sm sg-btn--ghost" data-say="${esc(fill(ch.audio))}" data-slow="1">🐢 أبطأ</button>
+                        ${canSay(ch.audio, "_listen") ? `
+                            <button type="button" class="sg-listen__play" data-say="${esc(ch.audio)}" data-who="_listen" aria-label="استمع">▶</button>
+                            <button type="button" class="sg-btn sg-btn--sm sg-btn--ghost" data-say="${esc(ch.audio)}" data-who="_listen" data-slow="1">🐢 أبطأ</button>
                             <button type="button" class="sg-reveal" data-reveal="aud-${esc(ch.id)}">اعرض النص (تلميح)</button>`
                         : `<p class="sg-note">متصفحك لا يدعم النطق الآلي، لذلك نعرض النص مكتوبًا.</p>`}
                     </div>
-                    <div class="sg-listen__text" id="aud-${esc(ch.id)}" ${speech.supported ? "hidden" : ""}>
+                    <div class="sg-listen__text" id="aud-${esc(ch.id)}" ${canSay(ch.audio, "_listen") ? "hidden" : ""}>
                         <p>${de(ch.audio)}</p>${ch.audioAr ? `<p class="sg-tr">${ar(ch.audioAr)}</p>` : ""}
                     </div>` : "";
                 inner = `${audio}
@@ -955,9 +1018,9 @@
         run.ch.el = append(challengeFrame(ch, inner), "sg-item--challenge").querySelector(".sg-challenge");
         run.waiting = "challenge";
         if (ch.npc && data.sound) {
-            speech.speak(ch.npc.de);
+            say(ch.npc.de, ch.npc.who);
         } else if (ch.type === "listen" && data.sound) {
-            setTimeout(() => run?.ch?.step === ch && speech.speak(ch.audio), 350);
+            setTimeout(() => run?.ch?.step === ch && say(ch.audio, "_listen"), 350);
         }
         $("input[name=answer]", run.ch.el)?.focus({ preventScroll: true });
     }
@@ -1054,7 +1117,7 @@
         if (ch.reply) {
             append(lineHtml(ch.reply));
             if (data.sound) {
-                speech.speak(ch.reply.de);
+                say(ch.reply.de, ch.reply.who);
             }
         }
         run.ch = null;
@@ -1304,10 +1367,10 @@
 
     const exprHtml = (e) => `
         <li class="sg-expr">
-            <p class="sg-expr__de">${de(e.de)} ${speakBtn(e.de)}</p>
+            <p class="sg-expr__de">${de(e.de)} ${speakBtn(e.de, "_")}</p>
             <p class="sg-expr__ar">${ar(e.ar)}</p>
             <p class="sg-expr__use">${ar(e.use)}</p>
-            <p class="sg-expr__ex">${de(e.example)}<br><span>${ar(e.exampleAr)}</span></p>
+            <p class="sg-expr__ex">${de(e.example)} ${speakBtn(e.example, "_")}<br><span>${ar(e.exampleAr)}</span></p>
         </li>`;
 
     // ---------- end of a mission
@@ -1451,7 +1514,7 @@
         }
 
         if (t.dataset.say !== undefined && t.dataset.say !== "") {
-            if (!speech.speak(t.dataset.say, t.dataset.slow === "1")) {
+            if (!say(t.dataset.say, t.dataset.who || "_", t.dataset.slow === "1")) {
                 toast("النطق غير متاح في هذا المتصفح");
             }
             return;

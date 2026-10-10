@@ -70,6 +70,11 @@ seven missions from Berlin airport to a new flat in Munich, each 21–25 challen
   progress is stored in the browser (`localStorage`), so it works signed in or not.
 - Content: `src/Nelt.Web/wwwroot/game/missions/m<1-7>.<a1|a2>.json`. Format: `tools/survival-german/SCHEMA.md`.
 - After editing content run `python3 tools/survival-german/validate.py`.
+- Speech: every German line is pre-recorded with neural voices into `wwwroot/game/audio/*.mp3`
+  (manifests `missions/m<N>.<level>.audio.json`). After changing dialogue, re-run
+  `python3 tools/survival-german/make_audio.py <voices-dir>` (instructions at the top of the script); lines without a
+  recording fall back to the browser's speech synthesis. Voices: Thorsten (CC0, Thorsten Müller), CSS10 German (Hokuspokus, public domain
+  LibriVox recording) and Eva K (M-AILABS speech dataset), run with sherpa-onnx.
 
 ## Fingerprint terminals
 
