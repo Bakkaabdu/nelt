@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [master, ci]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      sql:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        env:
+          ACCEPT_EULA: "Y"
+          MSSQL_SA_PASSWORD: "Ci_Passw0rd!2026"
+        ports: ["1433:1433"]
+    env:
+      NELT_TEST_SQL: "Server=localhost,1433;User Id=sa;Password=Ci_Passw0rd!2026;TrustServerCertificate=True;MultipleActiveResultSets=true"
+      DOTNET_NOLOGO: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate game content
+        run: python3 tools/survival-german/validate.py
+
+      - name: Build
+        run: dotnet build Nelt.slnx -c Release
+
+      - name: Wait for SQL Server
+        run: |
+          for i in $(seq 1 60); do
+            (echo > /dev/tcp/127.0.0.1/1433) 2>/dev/null && break
+            sleep 2
+          done
+          sleep 10
+
+      - name: Test
+        run: dotnet test Nelt.slnx -c Release --no-build --logger "trx;LogFilePrefix=results" --results-directory TestResults
+
+      - name: Report failed tests
+        if: failure()
+        run: |
+          python3 - <<'PY'
+          import glob, xml.etree.ElementTree as ET
+          ns = {"t": "http://microsoft.com/schemas/VisualStudio/TeamTest/2010"}
+          n = 0
+          for f in glob.glob("TestResults/**/*.trx", recursive=True):
+              root = ET.parse(f).getroot()
+              for r in root.iterfind(".//t:UnitTestResult", ns):
+                  if r.get("outcome") != "Failed":
+                      continue
+                  msg = r.findtext(".//t:Message", default="", namespaces=ns)
+                  msg = " ".join(msg.split())[:900]
+                  print(f"::error title={r.get('testName')[:200]}::{msg}")
+                  n += 1
+          print(f"{n} failed test(s)")
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: TestResults
