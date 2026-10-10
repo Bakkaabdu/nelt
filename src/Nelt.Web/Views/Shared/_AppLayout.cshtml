@@ -60,6 +60,7 @@
                     <a class="side-nav__link @(IsActive("Learn", "Dashboard") && ViewContext.RouteData.Values["action"] as string == "Index" ? "is-active" : null)" asp-area="Learn" asp-controller="Dashboard" asp-action="Index"><icon name="home" />@L["My learning"]</a>
                     <a class="side-nav__link @(ViewContext.RouteData.Values["action"] as string == "Schedule" ? "is-active" : null)" asp-area="Learn" asp-controller="Dashboard" asp-action="Schedule"><icon name="calendar" />@L["Schedule & events"]</a>
                     <a class="side-nav__link" asp-area="" asp-controller="Courses" asp-action="Index"><icon name="search" />@L["Find a course"]</a>
+                    <a class="side-nav__link" asp-area="" asp-controller="SurvivalGerman" asp-action="Index"><icon name="compass" /><span lang="en" dir="ltr">Survival German</span></a>
                     @await RenderSectionAsync("SideNav", required: false)
                 }
                 <div class="side-nav__label">@L["Account"]</div>

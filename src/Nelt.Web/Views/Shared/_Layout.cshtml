@@ -26,6 +26,7 @@
             <nav class="nav" id="site-nav" aria-label="@L["Main"]">
                 <a class="nav__link @(IsActive("", "Courses") ? "is-active" : null)" asp-area="" asp-controller="Courses" asp-action="Index">@L["Courses"]</a>
                 <a class="nav__link @(IsActive("", "Events") ? "is-active" : null)" asp-area="" asp-controller="Events" asp-action="Index">@L["Events"]</a>
+                <a class="nav__link nav__link--game @(IsActive("", "SurvivalGerman") ? "is-active" : null)" asp-area="" asp-controller="SurvivalGerman" asp-action="Index" lang="en" dir="ltr"><icon name="compass" /><span>Survival German</span></a>
                 <a class="nav__link" href="@Url.Action("Index", "Home", new { area = "" })#about">@L["About"]</a>
                 <partial name="_LangSwitch" />
                 <div class="nav__actions">

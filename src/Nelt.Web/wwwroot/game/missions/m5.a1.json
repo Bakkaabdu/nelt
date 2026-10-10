@@ -1,0 +1,468 @@
+{
+  "id": "m5",
+  "level": "A1",
+  "title": { "de": "Beim Arzt", "ar": "عند الطبيب" },
+  "place": "Hausarztpraxis Dr. Keller, Leopoldstraße 52, München-Schwabing",
+  "intro": "مرّت بضعة أيام على وصولك إلى ميونخ. تعلّمت التسوّق وطلب الطعام، لكنك تستيقظ اليوم وأنت متعب: رأسك يؤلمك، وحلقك يؤلمك، وجسمك ساخن. لينا قلقة عليك وتقول: «يجب أن تذهب إلى الطبيب!»",
+  "objective": "احجز موعدًا في عيادة الدكتورة كيلر، وتحدّث بالألمانية مع موظفة الاستقبال والطبيبة، وافهم التعليمات وموعد المراجعة، ثم اشترِ من الصيدلية ما طلبته لينا.",
+  "outro": "أحسنت! وصفت أعراضك، وفهمت كلام الطبيبة، وأخذت موعد المراجعة، وعدت إلى البيت ومعك الشاي. بعد أيام من الراحة ستتحسّن… وعندها تنتظرك رسالة مهمة: دعوة إلى مقابلة عمل في «كافيه زونِنشاين»!",
+  "cast": {
+    "lina": { "name": "Lina", "role": "صديقتك وشريكتك في السكن", "avatar": "👩🏼" },
+    "berger": { "name": "Frau Berger", "role": "موظفة الاستقبال في العيادة", "avatar": "👩‍💼" },
+    "keller": { "name": "Dr. Keller", "role": "طبيبة العائلة", "avatar": "👩‍⚕️" },
+    "schulz": { "name": "Herr Schulz", "role": "مريض في غرفة الانتظار", "avatar": "👴" },
+    "apotheker": { "name": "Herr Demir", "role": "صيدلي في «Linden-Apotheke»", "avatar": "🧑‍⚕️" }
+  },
+  "vocab": [
+    { "de": "der Arzt / die Ärztin", "ar": "الطبيب / الطبيبة" },
+    { "de": "die Arztpraxis", "ar": "عيادة الطبيب" },
+    { "de": "die Hausärztin / der Hausarzt", "ar": "طبيبة / طبيب العائلة (الطبيب العام)" },
+    { "de": "der Termin", "ar": "الموعد" },
+    { "de": "die Sprechzeiten (Pl.)", "ar": "ساعات عمل العيادة" },
+    { "de": "die Anmeldung", "ar": "مكتب الاستقبال والتسجيل" },
+    { "de": "das Wartezimmer", "ar": "غرفة الانتظار" },
+    { "de": "das Sprechzimmer", "ar": "غرفة الفحص (غرفة الطبيب)" },
+    { "de": "die Versichertenkarte", "ar": "بطاقة التأمين الصحي" },
+    { "de": "die Krankenkasse", "ar": "شركة التأمين الصحي" },
+    { "de": "das Formular", "ar": "الاستمارة" },
+    { "de": "krank", "ar": "مريض" },
+    { "de": "die Erkältung", "ar": "نزلة البرد (الزكام)" },
+    { "de": "das Fieber", "ar": "الحمّى (ارتفاع الحرارة)" },
+    { "de": "der Husten", "ar": "السعال" },
+    { "de": "der Schnupfen", "ar": "الرشح (سيلان الأنف)" },
+    { "de": "die Kopfschmerzen (Pl.)", "ar": "الصداع" },
+    { "de": "die Halsschmerzen (Pl.)", "ar": "ألم الحلق" },
+    { "de": "die Bauchschmerzen (Pl.)", "ar": "ألم البطن" },
+    { "de": "der Kopf", "ar": "الرأس" },
+    { "de": "der Hals", "ar": "الحلق / الرقبة" },
+    { "de": "der Bauch", "ar": "البطن" },
+    { "de": "das Auge", "ar": "العين" },
+    { "de": "das Ohr", "ar": "الأذن" },
+    { "de": "die Hand", "ar": "اليد" },
+    { "de": "das Bein", "ar": "الساق" },
+    { "de": "der Fuß", "ar": "القدم" },
+    { "de": "wehtun (Der Kopf tut weh.)", "ar": "يؤلم (رأسي يؤلمني)" },
+    { "de": "gestern – heute – morgen", "ar": "أمس – اليوم – غدًا" },
+    { "de": "die Apotheke", "ar": "الصيدلية" },
+    { "de": "der Tee", "ar": "الشاي" },
+    { "de": "das Taschentuch, die Taschentücher", "ar": "المنديل، المناديل" }
+  ],
+  "expressions": [
+    { "de": "Ich fühle mich nicht gut.", "ar": "لا أشعر أنني بخير.", "use": "جملة عامة ومهذبة عندما تكون متعبًا أو مريضًا، مع الأصدقاء أو في العيادة أو العمل.", "example": "Entschuldigung, ich fühle mich nicht gut. Ich gehe nach Hause.", "exampleAr": "عذرًا، لا أشعر أنني بخير. سأذهب إلى البيت." },
+    { "de": "Ich habe Kopfschmerzen.", "ar": "عندي صداع.", "use": "لوصف ألم الرأس. غيّر الجزء الأول للأعضاء الأخرى: Halsschmerzen، Bauchschmerzen.", "example": "Ich habe Bauchschmerzen. Ich esse heute nichts.", "exampleAr": "عندي ألم في البطن. لن آكل شيئًا اليوم." },
+    { "de": "Ich habe einen Termin.", "ar": "عندي موعد.", "use": "أول جملة تقولها عند وصولك إلى العيادة أو إلى أي مكتب.", "example": "Ich habe um 10:30 Uhr einen Termin.", "exampleAr": "عندي موعد الساعة 10:30." },
+    { "de": "Seit gestern.", "ar": "منذ أمس.", "use": "جواب على سؤال الطبيب «Seit wann?» (منذ متى؟).", "example": "Ich habe seit zwei Tagen Husten.", "exampleAr": "عندي سعال منذ يومين." },
+    { "de": "Ich möchte einen Termin, bitte.", "ar": "أريد موعدًا من فضلك.", "use": "لحجز موعد بالهاتف أو عند الاستقبال.", "example": "Guten Morgen! Ich möchte einen Termin, bitte.", "exampleAr": "صباح الخير! أريد موعدًا من فضلك." },
+    { "de": "… tut weh. / … tun weh.", "ar": "… يؤلمني. / … تؤلمني.", "use": "لتحديد مكان الألم: tut للمفرد، tun للجمع.", "example": "Mein Hals tut weh. Meine Füße tun weh.", "exampleAr": "حلقي يؤلمني. قدماي تؤلمانني." },
+    { "de": "Können Sie das bitte wiederholen?", "ar": "هل يمكنك أن تعيد ذلك من فضلك؟", "use": "عندما لا تفهم الكلام وتريد سماعه مرة أخرى.", "example": "Entschuldigung, können Sie das bitte wiederholen?", "exampleAr": "عذرًا، هل يمكنك أن تعيد ذلك من فضلك؟" },
+    { "de": "Können Sie bitte langsamer sprechen?", "ar": "هل يمكنك أن تتكلم ببطء أكثر من فضلك؟", "use": "عندما يتكلم الشخص بسرعة كبيرة.", "example": "Ich spreche nur ein bisschen Deutsch. Können Sie bitte langsamer sprechen?", "exampleAr": "أتكلم القليل فقط من الألمانية. هل يمكنك أن تتكلم ببطء أكثر من فضلك؟" },
+    { "de": "Gute Besserung!", "ar": "أتمنى لك الشفاء العاجل!", "use": "تقولها لأي شخص مريض.", "example": "Du bist krank? Oh, gute Besserung!", "exampleAr": "أنت مريض؟ أتمنى لك الشفاء العاجل!" }
+  ],
+  "summary": [
+    "تقول كيف تشعر: Ich fühle mich nicht gut. / Ich bin krank.",
+    "تصف الأعراض: Ich habe Kopfschmerzen, Halsschmerzen, Fieber, Husten.",
+    "تسمّي أجزاء الجسم وتستخدم tut weh / tun weh.",
+    "تجيب عن «Seit wann?» بـ Seit gestern / Seit zwei Tagen / Seit Dienstag.",
+    "تحجز موعدًا بالهاتف، وتفهم ساعات عمل العيادة والأوقات والتواريخ (16.10.).",
+    "تقول عند الاستقبال: Ich habe einen Termin، وتعرف Versichertenkarte وFormular وWartezimmer.",
+    "تطلب الإعادة أو الكلام ببطء، وتفهم تعليمات بسيطة: zu Hause bleiben، viel trinken، wiederkommen.",
+    "تشتري من الصيدلية وتدفع، وتقول وتفهم: Gute Besserung!"
+  ],
+  "scenes": [
+    {
+      "id": "morning",
+      "title": { "de": "Ein schlechter Morgen", "ar": "صباح سيّئ" },
+      "steps": [
+        { "type": "narration", "ar": "صباح يوم الأربعاء في شقة لينا في شفابينغ. تستيقظ ورأسك ثقيل، وحلقك يؤلمك عندما تبلع. تمشي ببطء إلى المطبخ." },
+        { "type": "choice", "id": "c1", "skill": "dialogue",
+          "npc": { "who": "lina", "de": "Guten Morgen, {name}! Oh… Wie geht's dir?", "ar": "صباح الخير يا {name}! أوه… كيف حالك؟" },
+          "prompt": "أنت لست بخير. ماذا تقول للينا؟",
+          "options": [
+            { "de": "Ich fühle mich nicht gut.", "correct": true },
+            { "de": "Schlecht. Ich bin krank.", "correct": true },
+            { "de": "Sehr gut, danke!", "why": "تعني «جيد جدًا، شكرًا»، لكنك مريض ولست بخير." },
+            { "de": "Ich habe Hunger.", "why": "تعني «أنا جائع». لينا تسأل عن حالك، وأنت مريض لا جائع." }
+          ],
+          "reply": { "who": "lina", "de": "Oh nein! Was tut weh?", "ar": "يا للأسف! ما الذي يؤلمك؟" },
+          "hint": "ابحث عن جملة فيها «nicht gut» أو «krank».",
+          "explain": "«Ich fühle mich nicht gut» = لا أشعر أنني بخير، و«Ich bin krank» = أنا مريض. الجملتان مناسبتان." },
+        { "type": "learn", "de": "Ich fühle mich nicht gut.", "ar": "لا أشعر أنني بخير.", "use": "تقولها عندما تشعر بالتعب أو المرض: لصديق، أو في العيادة، أو في العمل. هي جملة عامة ومهذبة، ولا تحتاج فيها إلى ذكر الأعراض.", "example": "Entschuldigung, ich fühle mich nicht gut. Ich gehe nach Hause.", "exampleAr": "عذرًا، لا أشعر أنني بخير. سأذهب إلى البيت." },
+        { "type": "find", "id": "c2", "skill": "vocab",
+          "prompt": "لينا تسأل: ما الذي يؤلمك؟ اقرأ جوابك، ثم اختر أجزاء الجسم التي تؤلمك.",
+          "clue": "Mein Kopf tut weh. Und mein Hals tut auch weh.",
+          "items": [
+            { "de": "der Kopf", "emoji": "🤕", "ar": "الرأس" },
+            { "de": "der Hals", "emoji": "🧣", "ar": "الحلق / الرقبة" },
+            { "de": "das Auge", "emoji": "👁️", "ar": "العين" },
+            { "de": "das Ohr", "emoji": "👂", "ar": "الأذن" },
+            { "de": "die Hand", "emoji": "✋", "ar": "اليد" },
+            { "de": "das Bein", "emoji": "🦵", "ar": "الساق" },
+            { "de": "der Fuß", "emoji": "🦶", "ar": "القدم" },
+            { "de": "der Bauch", "emoji": "🫃", "ar": "البطن" }
+          ],
+          "targets": ["der Kopf", "der Hals"],
+          "hint": "ابحث في الجملتين عن الكلمة التي تأتي بعد «Mein».",
+          "explain": "Kopf = الرأس، Hals = الحلق. و«tut weh» تعني «يؤلم»: Mein Kopf tut weh = رأسي يؤلمني." },
+        { "type": "grammar", "title": "وصف الألم: Ich habe + …schmerzen", "body": "لتقول «عندي ألم» في الألمانية: **Ich habe** + اسم العضو + **schmerzen** في كلمة واحدة. Kopf + Schmerzen = **Kopfschmerzen** (صداع). تأتي هذه الكلمات عادةً **بصيغة الجمع وبدون أداة**. وبالطريقة نفسها: **Ich habe Fieber** (عندي حرارة) و**Ich habe Husten** (عندي سعال).", "examples": [
+          { "de": "Ich habe Kopfschmerzen.", "ar": "عندي صداع." },
+          { "de": "Ich habe Halsschmerzen.", "ar": "عندي ألم في الحلق." },
+          { "de": "Ich habe Bauchschmerzen.", "ar": "عندي ألم في البطن." },
+          { "de": "Ich habe Fieber und Husten.", "ar": "عندي حرارة وسعال." }
+        ] },
+        { "type": "learn", "de": "Ich habe Kopfschmerzen.", "ar": "عندي صداع. (رأسي يؤلمني)", "use": "تصف بها ألم الرأس للطبيب أو لصديق. يمكنك تغيير الجزء الأول: Halsschmerzen (الحلق)، Bauchschmerzen (البطن)، Rückenschmerzen (الظهر).", "example": "Ich habe Kopfschmerzen. Ich bleibe heute zu Hause.", "exampleAr": "عندي صداع. سأبقى في البيت اليوم." },
+        { "type": "fill", "id": "c3", "skill": "grammar",
+          "sentence": "Mein Hals tut weh. Ich habe ___.",
+          "ar": "حلقي يؤلمني. عندي ___.",
+          "options": ["Halsschmerzen", "Kopfschmerzen", "Bauchschmerzen", "Hals"],
+          "answers": ["Halsschmerzen"],
+          "hint": "أيّ عضو يؤلمك في الجملة الأولى؟ أضف إليه «schmerzen».",
+          "explain": "Hals + Schmerzen = Halsschmerzen (ألم الحلق). أما «Ich habe Hals» وحدها فتعني «عندي حلق»، وهذا لا معنى له هنا." },
+        { "type": "line", "who": "lina", "de": "Und du bist so warm! Hast du Fieber?", "ar": "وجسمك ساخن جدًا! هل عندك حرارة؟" },
+        { "type": "line", "who": "me", "de": "Ja, ich glaube. Und ich habe Husten.", "ar": "نعم، أظن ذلك. وعندي سعال." },
+        { "type": "match", "id": "c4", "skill": "vocab",
+          "prompt": "قبل الذهاب إلى الطبيب: طابِق كل كلمة مع معناها.",
+          "pairs": [
+            ["das Fieber", "الحمّى (الحرارة)"],
+            ["der Husten", "السعال"],
+            ["der Schnupfen", "الرشح"],
+            ["die Kopfschmerzen", "الصداع"],
+            ["die Halsschmerzen", "ألم الحلق"],
+            ["die Erkältung", "نزلة البرد"]
+          ],
+          "hint": "Kopf = الرأس، Hals = الحلق. وErkältung فيها كلمة kalt (بارد).",
+          "explain": "هذه أهم كلمات نزلة البرد. ستحتاجها بعد قليل عند الطبيبة." },
+        { "type": "narration", "ar": "⚠️ تنبيه: هذه لعبة لتعلّم اللغة وليست نصيحة طبية. في حالة طوارئ حقيقية في ألمانيا، اتصل فورًا بالرقم 112." },
+        { "type": "line", "who": "lina", "de": "Du musst heute zum Arzt! Meine Hausärztin ist Dr. Keller. Ich schicke dir die Nummer.", "ar": "يجب أن تذهب إلى الطبيب اليوم! طبيبتي هي الدكتورة كيلر. سأرسل لك الرقم." },
+        { "type": "doc", "kind": "message", "title": "Lina 📱", "lines": [
+          "Praxis Dr. Keller 📞 089 3456 210",
+          "Leopoldstraße 52 – nur 10 Minuten zu Fuß!",
+          "Ruf gleich an. Gute Besserung! 🍵"
+        ], "ar": "عيادة الدكتورة كيلر 📞 089 3456 210 — شارع ليوبولد 52، عشر دقائق فقط مشيًا! — اتصل الآن. أتمنى لك الشفاء العاجل! 🍵" }
+      ]
+    },
+    {
+      "id": "phone",
+      "title": { "de": "Der Anruf", "ar": "المكالمة الهاتفية" },
+      "steps": [
+        { "type": "narration", "ar": "قبل أن تتصل، تبحث عن العيادة في الإنترنت وتجد صورة اللافتة عند الباب." },
+        { "type": "doc", "kind": "sign", "title": "Hausarztpraxis Dr. Keller", "lines": [
+          "Dr. med. Anna Keller – Allgemeinmedizin",
+          "Sprechzeiten:",
+          "Mo, Di, Do: 8:00–12:00 und 15:00–18:00 Uhr",
+          "Mi, Fr: 8:00–12:00 Uhr",
+          "Sa, So: geschlossen",
+          "Termine bitte telefonisch: 089 3456 210"
+        ], "ar": "عيادة الدكتورة آنا كيلر – طب عام. ساعات العمل: الاثنين والثلاثاء والخميس: 8:00–12:00 و15:00–18:00. الأربعاء والجمعة: 8:00–12:00. السبت والأحد: مغلقة. المواعيد بالهاتف: 089 3456 210" },
+        { "type": "choice", "id": "c5", "skill": "reading",
+          "prompt": "اليوم هو الأربعاء (Mittwoch). متى تستطيع الذهاب إلى العيادة اليوم؟",
+          "options": [
+            { "ar": "صباحًا فقط، من 8:00 حتى 12:00", "correct": true },
+            { "ar": "بعد الظهر، من 15:00 حتى 18:00", "why": "هذه الساعات لأيام Mo وDi وDo فقط. يوم الأربعاء (Mi) تفتح العيادة صباحًا فقط." },
+            { "ar": "العيادة مغلقة يوم الأربعاء", "why": "المغلق هو Sa وSo (السبت والأحد). يوم Mi مفتوح من 8 إلى 12." },
+            { "ar": "طوال اليوم، من 8:00 حتى 18:00", "why": "لا يوجد يوم مفتوح من 8 إلى 18 دون استراحة، والأربعاء ينتهي الساعة 12:00." }
+          ],
+          "hint": "Mittwoch = Mi. ابحث عن السطر الذي فيه «Mi».",
+          "explain": "السطر «Mi, Fr: 8:00–12:00 Uhr» يعني: الأربعاء والجمعة من الثامنة حتى الثانية عشرة ظهرًا فقط." },
+        { "type": "narration", "ar": "الساعة الآن 8:10. تأخذ نفسًا عميقًا وتتصل بالرقم." },
+        { "type": "choice", "id": "c6", "skill": "dialogue",
+          "npc": { "who": "berger", "de": "Praxis Dr. Keller, Berger, guten Morgen!", "ar": "عيادة الدكتورة كيلر، معك برغر، صباح الخير!" },
+          "prompt": "ماذا تقول؟",
+          "options": [
+            { "de": "Guten Morgen! Ich möchte einen Termin, bitte.", "correct": true },
+            { "de": "Guten Morgen, mein Name ist {name}. Ich brauche einen Termin.", "correct": true },
+            { "de": "Guten Abend! Einen Tisch für zwei, bitte.", "why": "هذه جملة من المطعم (طاولة لشخصين). وأنت تتصل بالعيادة في الصباح، لا في المساء." },
+            { "de": "Ich bin Frau Berger.", "why": "Frau Berger هي الموظفة، لا أنت! عرّف بنفسك واطلب موعدًا." }
+          ],
+          "reply": { "who": "berger", "de": "Gern. Sind Sie krank?", "ar": "بكل سرور. هل أنت مريض؟" },
+          "hint": "ردّ التحية، ثم اطلب «einen Termin» (موعدًا).",
+          "explain": "«Ich möchte einen Termin» و«Ich brauche einen Termin» جملتان مهذبتان لطلب موعد بالهاتف." },
+        { "type": "line", "who": "me", "de": "Ja. Ich habe Fieber und Kopfschmerzen.", "ar": "نعم. عندي حرارة وصداع." },
+        { "type": "narration", "ar": "فجأة تتكلم السيدة برغر بسرعة كبيرة… ولا تفهم شيئًا تقريبًا!" },
+        { "type": "line", "who": "berger", "de": "Okay, Moment, heute ist es ziemlich voll, aber um halb elf hätte ich noch was, sonst erst morgen früh um Viertel nach neun…", "ar": "حسنًا، لحظة، اليوم مزدحم جدًا، لكن لديّ شيء في العاشرة والنصف، وإلا فصباح الغد في التاسعة والربع…" },
+        { "type": "write", "id": "c7", "skill": "writing",
+          "prompt": "لم تفهم لأنها تتكلم بسرعة. اكتب بالألمانية: «هل يمكنك أن تتكلمي ببطء أكثر من فضلك؟»",
+          "answers": [
+            "Können Sie bitte langsamer sprechen?",
+            "Können Sie langsamer sprechen, bitte?",
+            "Können Sie bitte etwas langsamer sprechen?",
+            "Können Sie langsamer sprechen?",
+            "Können Sie bitte langsam sprechen?",
+            "Könnten Sie bitte langsamer sprechen?",
+            "Sprechen Sie bitte langsamer.",
+            "Bitte sprechen Sie langsamer.",
+            "Langsamer, bitte.",
+            "Bitte langsamer.",
+            "Können Sie etwas langsamer sprechen?",
+            "Könnten Sie bitte etwas langsamer sprechen?",
+            "Könnten Sie langsamer sprechen?",
+            "Sprechen Sie bitte langsam."
+          ],
+          "hint": "تذكّر من المهمات السابقة: Können Sie bitte … sprechen? و«langsamer» تعني «أبطأ».",
+          "explain": "«Können Sie bitte langsamer sprechen?» طلب مهذب جدًا. الألمان يفهمونه ويتكلمون ببطء فورًا." },
+        { "type": "line", "who": "berger", "de": "Oh, natürlich! Entschuldigung.", "ar": "أوه، طبعًا! عذرًا." },
+        { "type": "listen", "id": "c8", "skill": "numbers",
+          "audio": "Heute um 10:30 Uhr. Oder morgen um 9:15 Uhr.",
+          "audioAr": "اليوم الساعة 10:30. أو غدًا الساعة 9:15.",
+          "prompt": "ما الموعدان اللذان تقترحهما السيدة برغر؟",
+          "options": [
+            { "ar": "اليوم 10:30، أو غدًا 9:15", "correct": true },
+            { "ar": "اليوم 9:15، أو غدًا 10:30", "why": "انتبه: heute (اليوم) جاءت مع 10:30، وmorgen (غدًا) مع 9:15." },
+            { "ar": "اليوم 10:15، أو غدًا 9:30", "why": "الدقائق معكوسة. اسمع مرة أخرى: zehn Uhr dreißig ثم neun Uhr fünfzehn." },
+            { "ar": "غدًا 10:30، أو بعد غد 9:15", "why": "قالت «Heute» (اليوم) في البداية، لا «morgen»." }
+          ],
+          "hint": "heute = اليوم، morgen = غدًا. واستمع إلى الرقم بعد «um».",
+          "explain": "«Heute um 10:30 Uhr» = اليوم الساعة 10:30، و«morgen um 9:15 Uhr» = غدًا الساعة 9:15." },
+        { "type": "decision", "prompt": "أيّ موعد تختار؟", "options": [
+          { "ar": "اليوم الساعة 10:30", "de": "Heute um 10:30 Uhr, bitte.", "then": [
+            { "type": "line", "who": "me", "de": "Heute um 10:30 Uhr, bitte.", "ar": "اليوم الساعة 10:30 من فضلك." }
+          ] },
+          { "ar": "غدًا الساعة 9:15", "de": "Morgen um 9:15 Uhr, bitte.", "then": [
+            { "type": "line", "who": "me", "de": "Morgen um 9:15 Uhr, bitte.", "ar": "غدًا الساعة 9:15 من فضلك." },
+            { "type": "narration", "ar": "تسمعك لينا من المطبخ وتهزّ رأسها بقوة: «Morgen? Nein! Du hast Fieber. Heute!»" },
+            { "type": "line", "who": "me", "de": "Ähm… Entschuldigung. Lieber heute um 10:30 Uhr, bitte.", "ar": "أمم… عذرًا. الأفضل اليوم الساعة 10:30 من فضلك." }
+          ] }
+        ] },
+        { "type": "line", "who": "berger", "de": "Gut, heute um 10:30 Uhr. Wie ist Ihr Name, bitte?", "ar": "حسنًا، اليوم الساعة 10:30. ما اسمك من فضلك؟" },
+        { "type": "line", "who": "me", "de": "Mein Name ist {name}.", "ar": "اسمي {name}." },
+        { "type": "line", "who": "berger", "de": "Danke. Bringen Sie bitte Ihre Versichertenkarte mit. Bis später!", "ar": "شكرًا. أحضر معك بطاقة التأمين الصحي من فضلك. إلى اللقاء لاحقًا!" }
+      ]
+    },
+    {
+      "id": "reception",
+      "title": { "de": "An der Anmeldung", "ar": "عند مكتب الاستقبال" },
+      "steps": [
+        { "type": "narration", "ar": "الساعة 10:20. تصل إلى Leopoldstraße 52، تصعد إلى الطابق الأول، وتقف أمام مكتب الاستقبال (Anmeldung)." },
+        { "type": "learn", "de": "Ich habe einen Termin.", "ar": "عندي موعد.", "use": "أول جملة تقولها عند وصولك إلى العيادة أو إلى مكتب رسمي، لكي يعرف الموظف أنك حجزت من قبل. يمكنك إضافة الوقت: Ich habe um 10:30 Uhr einen Termin.", "example": "Tut mir leid, ich kann heute nicht. Ich habe einen Termin.", "exampleAr": "آسف، لا أستطيع اليوم. عندي موعد." },
+        { "type": "line", "who": "berger", "de": "Guten Tag! Was kann ich für Sie tun?", "ar": "مرحبًا! كيف أستطيع مساعدتك؟" },
+        { "type": "build", "id": "c9", "skill": "grammar",
+          "prompt": "قل للموظفة: «عندي موعد الساعة 10:30.»",
+          "tiles": ["Ich", "habe", "um", "10:30 Uhr", "einen", "Termin", ".", "bin", "am"],
+          "answers": [
+            ["Ich", "habe", "um", "10:30 Uhr", "einen", "Termin", "."],
+            ["Ich", "habe", "einen", "Termin", "um", "10:30 Uhr", "."]
+          ],
+          "hint": "ابدأ بـ «Ich habe». والوقت يأتي بعد «um».",
+          "explain": "الفعل «habe» يأتي في المكان الثاني. ومع الساعة نستخدم «um»: um 10:30 Uhr." },
+        { "type": "line", "who": "berger", "de": "Ah, {name}, richtig. Ihre Karte, bitte.", "ar": "آه، {name}، صحيح. بطاقتك من فضلك." },
+        { "type": "narration", "ar": "تُخرج محفظتك بسرعة وتعطيها… بطاقتك البنكية! تبتسم السيدة برغر." },
+        { "type": "choice", "id": "c10", "skill": "dialogue",
+          "npc": { "who": "berger", "de": "Nein, nein, nicht die Bankkarte! Ich brauche Ihre Versichertenkarte.", "ar": "لا، لا، ليست البطاقة البنكية! أحتاج بطاقة التأمين الصحي." },
+          "prompt": "ماذا تريد الموظفة بالضبط؟",
+          "options": [
+            { "ar": "بطاقة التأمين الصحي", "correct": true },
+            { "ar": "البطاقة البنكية لكي أدفع", "why": "قالت «nicht die Bankkarte» أي «ليست البطاقة البنكية». هي تريد بطاقة أخرى." },
+            { "ar": "جواز السفر", "why": "جواز السفر بالألمانية «der Reisepass». الموظفة قالت «Versichertenkarte»." },
+            { "ar": "تذكرة القطار", "why": "التذكرة «das Ticket» أو «die Fahrkarte»، ولا علاقة لها بالعيادة." }
+          ],
+          "reply": { "who": "berger", "de": "Ja, genau, danke! Sind Sie zum ersten Mal hier? Dann füllen Sie bitte das Formular aus.", "ar": "نعم، بالضبط، شكرًا! هل أنت هنا لأول مرة؟ إذن املأ الاستمارة من فضلك." },
+          "hint": "Versicherung = تأمين. والبطاقة التي يعطيك إياها التأمين الصحي…",
+          "explain": "die Versichertenkarte (وتُسمّى أيضًا Krankenversicherungskarte) هي بطاقة التأمين الصحي. تقدّمها عند الاستقبال في العيادة." },
+        { "type": "doc", "kind": "form", "title": "Patientenformular – Praxis Dr. Keller", "lines": [
+          "Name, Vorname: ____________",
+          "Geburtsdatum: __.__.____",
+          "Adresse (Straße, Hausnummer): ____________",
+          "PLZ, Ort: 80796 München",
+          "Telefon: ____________",
+          "Krankenkasse: ____________",
+          "Allergien: ☐ ja ☐ nein"
+        ], "ar": "استمارة المريض – عيادة الدكتورة كيلر: الاسم الأخير والاسم الأول، تاريخ الميلاد، العنوان (الشارع ورقم المبنى)، الرمز البريدي والمدينة: 80796 ميونخ، الهاتف، شركة التأمين الصحي، الحساسية: نعم / لا" },
+        { "type": "write", "id": "c11", "skill": "writing", "bonus": true,
+          "prompt": "في خانة «Adresse (Straße, Hausnummer)» اكتب عنوان شقة لينا التي تسكن فيها الآن.",
+          "answers": ["Belgradstraße 14", "Belgradstr. 14", "Belgradstraße 14, München", "Belgradstraße 14, 80796 München", "Belgradstr. 14, München", "Belgradstr. 14, 80796 München"],
+          "hint": "تذكّر عنوان لينا في شفابينغ: Belgrad… + رقم المبنى.",
+          "explain": "عنوانك الآن: Belgradstraße 14. في ألمانيا نكتب اسم الشارع أولًا ثم رقم المبنى. وStraße تُختصر Str." },
+        { "type": "line", "who": "me", "de": "Hier, bitte. Wie lange muss ich warten?", "ar": "تفضلي. كم يجب أن أنتظر؟" },
+        { "type": "listen", "id": "c12", "skill": "listening",
+          "audio": "Ungefähr zwanzig Minuten. Bitte nehmen Sie im Wartezimmer Platz.",
+          "audioAr": "حوالي عشرين دقيقة. تفضل بالجلوس في غرفة الانتظار من فضلك.",
+          "prompt": "كم ستنتظر تقريبًا، وأين؟",
+          "options": [
+            { "ar": "حوالي 20 دقيقة، في غرفة الانتظار", "correct": true },
+            { "ar": "حوالي 12 دقيقة، في غرفة الانتظار", "why": "12 = zwölf. أما zwanzig فهي 20." },
+            { "ar": "حوالي 20 دقيقة، في الصيدلية", "why": "قالت «im Wartezimmer» أي في غرفة الانتظار، لا في الصيدلية (Apotheke)." },
+            { "ar": "ساعتان، في الخارج", "why": "لم تقل «zwei Stunden» (ساعتان). قالت «zwanzig Minuten»." }
+          ],
+          "hint": "zwanzig = 20 وzwölf = 12. وWartezimmer = warten (ينتظر) + Zimmer (غرفة).",
+          "explain": "«Ungefähr zwanzig Minuten» = حوالي عشرين دقيقة. «Nehmen Sie Platz» = تفضّل بالجلوس." },
+        { "type": "narration", "ar": "في غرفة الانتظار يجلس رجل كبير في السن يسعل كثيرًا. ينظر إليك ويبتسم." },
+        { "type": "choice", "id": "c13", "skill": "dialogue",
+          "npc": { "who": "schulz", "de": "Sie sind auch erkältet, oder?", "ar": "أنت مصاب بالزكام أيضًا، أليس كذلك؟" },
+          "prompt": "ماذا تجيب؟",
+          "options": [
+            { "de": "Ja, ich habe Husten und Halsschmerzen.", "correct": true },
+            { "de": "Ja, leider. Ich habe Fieber.", "correct": true },
+            { "de": "Nein, ich möchte einen Tisch für zwei.", "why": "هذه جملة من المطعم (أريد طاولة لشخصين). الرجل يسأل هل أنت مريض." },
+            { "de": "Ja, ich habe einen Termin um 9:15 Uhr.", "why": "الرجل يسأل عن مرضك لا عن موعدك. وموعدك أصلًا الساعة 10:30." }
+          ],
+          "reply": { "who": "schulz", "de": "Ich auch. Im Oktober sind alle krank! Gute Besserung!", "ar": "وأنا أيضًا. في أكتوبر الجميع مرضى! أتمنى لك الشفاء العاجل!" },
+          "hint": "erkältet = مصاب بنزلة برد. صِف عرَضًا من أعراضك.",
+          "explain": "جواب مناسب يذكر أعراضك: Husten، Halsschmerzen، Fieber. و«Gute Besserung!» تقولها لأي شخص مريض." },
+        { "type": "line", "who": "me", "de": "Danke, Ihnen auch!", "ar": "شكرًا، ولك أيضًا!" },
+        { "type": "line", "who": "berger", "de": "{name}, bitte ins Sprechzimmer 2!", "ar": "{name}، تفضل إلى غرفة الفحص رقم 2!" }
+      ]
+    },
+    {
+      "id": "doctor",
+      "title": { "de": "Im Sprechzimmer", "ar": "في غرفة الفحص" },
+      "steps": [
+        { "type": "narration", "ar": "تدخل غرفة الفحص رقم 2. الدكتورة كيلر امرأة هادئة ولطيفة في الخمسين من عمرها." },
+        { "type": "line", "who": "keller", "de": "Guten Tag, ich bin Dr. Keller. Was fehlt Ihnen denn?", "ar": "مرحبًا، أنا الدكتورة كيلر. ممّ تشكو؟" },
+        { "type": "build", "id": "c14", "skill": "grammar",
+          "prompt": "ابدأ بجملة عامة: «لا أشعر أنني بخير.»",
+          "tiles": ["Ich", "fühle", "mich", "nicht", "gut", ".", "mir", "fühlt", "kein"],
+          "answers": [["Ich", "fühle", "mich", "nicht", "gut", "."]],
+          "hint": "الفعل مع ich: fühle. وبعده «mich» (نفسي)، ثم nicht gut.",
+          "explain": "«Ich fühle mich nicht gut»: مع ich نقول fühle … mich. وكلمة «nicht» تأتي قبل «gut»." },
+        { "type": "line", "who": "me", "de": "Ich habe Kopfschmerzen und Halsschmerzen. Und ich habe Fieber.", "ar": "عندي صداع وألم في الحلق. وعندي حرارة." },
+        { "type": "learn", "de": "Seit gestern.", "ar": "منذ أمس.", "use": "جواب قصير على سؤال «Seit wann?» (منذ متى؟). الطبيب يسأله دائمًا ليعرف مدة المرض. ويمكنك أن تقول أيضًا: Seit zwei Tagen (منذ يومين)، Seit Montag (منذ يوم الاثنين).", "example": "Ich wohne seit Freitag in München.", "exampleAr": "أسكن في ميونخ منذ يوم الجمعة." },
+        { "type": "choice", "id": "c15", "skill": "dialogue",
+          "npc": { "who": "keller", "de": "Seit wann haben Sie die Schmerzen?", "ar": "منذ متى عندك هذه الآلام؟" },
+          "prompt": "بدأ الألم أمس، يوم الثلاثاء (Dienstag). ماذا تجيب؟",
+          "options": [
+            { "de": "Seit gestern.", "correct": true },
+            { "de": "Seit Dienstag.", "correct": true },
+            { "de": "Bis morgen.", "why": "«Bis morgen» تعني «إلى الغد» وهي تحية وداع. الطبيبة تسأل متى بدأ الألم." },
+            { "de": "Um 10:30 Uhr.", "why": "هذا وقت موعدك، لا جواب لسؤال «Seit wann?» (منذ متى؟)." },
+            { "de": "Morgen.", "why": "Morgen = غدًا، وهو في المستقبل. الألم بدأ في الماضي (أمس)." }
+          ],
+          "reply": { "who": "keller", "de": "Seit gestern, okay. Tut der Hals sehr weh?", "ar": "منذ أمس، حسنًا. هل يؤلمك حلقك كثيرًا؟" },
+          "hint": "السؤال «Seit wann?» = منذ متى؟ وgestern = أمس.",
+          "explain": "«Seit gestern» و«Seit Dienstag» كلاهما صحيح، لأن اليوم الأربعاء والألم بدأ يوم الثلاثاء." },
+        { "type": "grammar", "title": "المفرد والجمع: tut weh / tun weh", "body": "طريقة ثانية لوصف الألم: **… tut weh** = «… يؤلمني». إذا كان العضو **مفردًا** نقول **tut weh**: Der Kopf tut weh. وإذا كان **جمعًا** نقول **tun weh**: Die Augen tun weh. ومع mein/meine: **Mein** Hals tut weh — **Meine** Füße tun weh.", "examples": [
+          { "de": "Mein Kopf tut weh.", "ar": "رأسي يؤلمني." },
+          { "de": "Der Bauch tut weh.", "ar": "البطن يؤلمني." },
+          { "de": "Meine Augen tun weh.", "ar": "عيناي تؤلمانني." },
+          { "de": "Was tut weh?", "ar": "ما الذي يؤلمك؟" }
+        ] },
+        { "type": "fill", "id": "c16", "skill": "grammar",
+          "sentence": "Ja, mein Hals ___ sehr weh.",
+          "ar": "نعم، حلقي يؤلمني كثيرًا.",
+          "options": ["tut", "tun", "tust", "habe"],
+          "answers": ["tut"],
+          "hint": "«mein Hals» مفرد (شيء واحد).",
+          "explain": "مع المفرد نقول «tut weh»: Mein Hals tut weh. أما «tun weh» فللجمع، مثل: Meine Ohren tun weh." },
+        { "type": "narration", "ar": "تقيس الطبيبة حرارتك وتنظر في حلقك بمصباح صغير." },
+        { "type": "listen", "id": "c17", "skill": "numbers", "bonus": true,
+          "audio": "Sie haben Fieber: achtunddreißig Komma fünf Grad.",
+          "audioAr": "عندك حرارة: ثمانٍ وثلاثون فاصلة خمسة درجة.",
+          "prompt": "كم حرارتك؟",
+          "options": [
+            { "ar": "38,5 درجة", "correct": true },
+            { "ar": "35,8 درجة", "why": "achtunddreißig = 38، وبعد «Komma» جاء «fünf» = 5." },
+            { "ar": "39,5 درجة", "why": "39 = neununddreißig. والطبيبة قالت achtunddreißig (38)." },
+            { "ar": "28,5 درجة", "why": "28 = achtundzwanzig. والطبيبة قالت achtunddreißig (38)." }
+          ],
+          "hint": "في الألمانية الآحاد قبل العشرات: acht-und-dreißig = 8 و30.",
+          "explain": "achtunddreißig Komma fünf = 38,5. في الألمانية نكتب الفاصلة العشرية فاصلة: 38,5 Grad." },
+        { "type": "line", "who": "keller", "de": "Sie haben eine Erkältung. Das ist nicht schlimm. Bleiben Sie ein paar Tage zu Hause, trinken Sie viel Wasser und Tee, ruhen Sie sich aus, und am Freitag kommen Sie zur Kontrolle.", "ar": "عندك نزلة برد. هذا ليس خطيرًا. ابقَ في البيت بضعة أيام، واشرب الكثير من الماء والشاي، واسترح، وتعالَ يوم الجمعة للمراجعة." },
+        { "type": "narration", "ar": "تتكلم الطبيبة بسرعة، وفي كلامها كلمات جديدة كثيرة. تريد أن تسمعه مرة ثانية." },
+        { "type": "choice", "id": "c18", "skill": "dialogue",
+          "prompt": "ماذا تقول للطبيبة بأدب؟",
+          "options": [
+            { "de": "Entschuldigung, können Sie das bitte wiederholen?", "correct": true },
+            { "de": "Wie bitte? Noch einmal, bitte.", "correct": true },
+            { "de": "Ich habe einen Termin.", "why": "أنت الآن داخل غرفة الطبيبة. المشكلة أنك لم تفهم كلامها، فاطلب الإعادة." },
+            { "de": "Tschüss, bis morgen!", "why": "هذه تحية وداع. لا تذهب قبل أن تفهم التعليمات!" },
+            { "de": "Das macht nichts.", "why": "تعني «لا بأس / لا مشكلة». لكنك تحتاج أن تفهم ما يجب عليك فعله." }
+          ],
+          "reply": { "who": "keller", "de": "Natürlich. Ich sage es noch einmal, langsam.", "ar": "طبعًا. سأقوله مرة أخرى، ببطء." },
+          "hint": "تذكّر: wiederholen = يعيد، noch einmal = مرة أخرى.",
+          "explain": "«Können Sie das bitte wiederholen?» و«Wie bitte? Noch einmal, bitte.» طريقتان مهذبتان لطلب الإعادة." },
+        { "type": "listen", "id": "c19", "skill": "listening",
+          "audio": "Bleiben Sie zu Hause. Trinken Sie viel Wasser und Tee. Ruhen Sie sich aus. Und am Freitag kommen Sie bitte wieder.",
+          "audioAr": "ابقَ في البيت. اشرب الكثير من الماء والشاي. استرح. وتعالَ مرة أخرى يوم الجمعة من فضلك.",
+          "prompt": "ماذا يجب أن تفعل؟",
+          "options": [
+            { "ar": "أبقى في البيت، وأشرب الكثير من الماء والشاي، وأرتاح، وأعود يوم الجمعة", "correct": true },
+            { "ar": "أذهب إلى العمل، وأشرب القهوة، وأعود يوم الجمعة", "why": "قالت «Bleiben Sie zu Hause» أي ابقَ في البيت، وقالت Tee (شاي) لا Kaffee." },
+            { "ar": "أبقى في البيت، وآكل كثيرًا، وأعود يوم الاثنين", "why": "قالت trinken (يشرب) لا essen (يأكل)، والمراجعة يوم Freitag (الجمعة)." },
+            { "ar": "أتمشّى كثيرًا في الخارج، ولا أعود", "why": "قالت العكس: ابقَ في البيت واسترح (ausruhen)، وتعالَ مرة أخرى يوم الجمعة." }
+          ],
+          "hint": "zu Hause = في البيت، trinken = يشرب، wiederkommen = يعود.",
+          "explain": "التعليمات: zu Hause bleiben (البقاء في البيت)، viel trinken (الشرب كثيرًا)، sich ausruhen (الاستراحة)، وam Freitag wiederkommen (العودة يوم الجمعة)." },
+        { "type": "line", "who": "keller", "de": "Gute Besserung!", "ar": "أتمنى لك الشفاء العاجل!" },
+        { "type": "line", "who": "me", "de": "Vielen Dank, Frau Doktor. Auf Wiedersehen!", "ar": "شكرًا جزيلًا يا دكتورة. إلى اللقاء!" }
+      ]
+    },
+    {
+      "id": "after",
+      "title": { "de": "Neuer Termin und Apotheke", "ar": "موعد جديد والصيدلية" },
+      "steps": [
+        { "type": "line", "who": "berger", "de": "So, Sie brauchen noch einen Termin für Freitag. Geht es um 9:15 Uhr?", "ar": "إذن، تحتاج موعدًا آخر يوم الجمعة. هل تناسبك الساعة 9:15؟" },
+        { "type": "line", "who": "me", "de": "Ja, das geht. Danke!", "ar": "نعم، هذا يناسبني. شكرًا!" },
+        { "type": "doc", "kind": "ticket", "title": "Terminkarte", "lines": [
+          "Hausarztpraxis Dr. Keller",
+          "Leopoldstraße 52, 80802 München",
+          "Ihr nächster Termin:",
+          "Fr. | 16.10. | 9:15 Uhr",
+          "Bitte Versichertenkarte mitbringen!",
+          "Termin absagen? Bitte 24 Stunden vorher anrufen: 089 3456 210"
+        ], "ar": "بطاقة الموعد – عيادة الدكتورة كيلر، شارع ليوبولد 52. موعدك القادم: الجمعة 16 أكتوبر الساعة 9:15. أحضر بطاقة التأمين الصحي من فضلك! لإلغاء الموعد اتصل قبله بـ 24 ساعة: 089 3456 210" },
+        { "type": "choice", "id": "c20", "skill": "reading",
+          "prompt": "اقرأ بطاقة الموعد. ما الصحيح؟",
+          "options": [
+            { "ar": "الموعد القادم يوم الجمعة 16 أكتوبر الساعة 9:15", "correct": true },
+            { "ar": "الموعد القادم يوم الجمعة الساعة 16:10", "why": "16.10. هو التاريخ (16 أكتوبر)، أما الساعة فهي 9:15." },
+            { "ar": "يجب أن أحضر جواز السفر", "why": "البطاقة تقول «Versichertenkarte mitbringen» أي أحضر بطاقة التأمين الصحي." },
+            { "ar": "لإلغاء الموعد أتصل قبله بساعتين", "why": "«24 Stunden vorher» = قبل 24 ساعة، لا قبل ساعتين." }
+          ],
+          "hint": "في الألمانية يُكتب التاريخ: اليوم.الشهر. — فـ 16.10. = 16 أكتوبر.",
+          "explain": "Fr. = Freitag (الجمعة)، 16.10. = 16 أكتوبر، 9:15 Uhr = الساعة. ويجب إحضار Versichertenkarte." },
+        { "type": "narration", "ar": "في طريق العودة تمرّ بصيدلية صغيرة اسمها «Linden-Apotheke». يهتز هاتفك: رسالة من لينا." },
+        { "type": "doc", "kind": "message", "title": "Lina 📱", "lines": [
+          "Und? Was sagt die Ärztin? 🤒",
+          "Kauf bitte in der Apotheke Tee für den Hals und Taschentücher!",
+          "Ich koche heute Abend Suppe für dich 🍲"
+        ], "ar": "ها؟ ماذا قالت الطبيبة؟ 🤒 — اشترِ من الصيدلية من فضلك شايًا للحلق ومناديل! — سأطبخ لك حساءً هذا المساء 🍲" },
+        { "type": "find", "id": "c21", "skill": "reading",
+          "prompt": "أنت في الصيدلية. اختر فقط الأشياء التي طلبتها لينا.",
+          "clue": "Tee für den Hals und Taschentücher",
+          "items": [
+            { "de": "der Halstee", "emoji": "🍵", "ar": "شاي للحلق" },
+            { "de": "die Taschentücher", "emoji": "🧻", "ar": "المناديل" },
+            { "de": "das Pflaster", "emoji": "🩹", "ar": "لاصقة جروح" },
+            { "de": "die Sonnencreme", "emoji": "🧴", "ar": "كريم الشمس" },
+            { "de": "die Zahnbürste", "emoji": "🪥", "ar": "فرشاة الأسنان" },
+            { "de": "das Thermometer", "emoji": "🌡️", "ar": "ميزان الحرارة" }
+          ],
+          "targets": ["der Halstee", "die Taschentücher"],
+          "hint": "اقرأ رسالة لينا مرة أخرى: Tee … und Taschen…",
+          "explain": "Halstee = Hals + Tee (شاي للحلق)، وTaschentücher = مناديل. الباقي لم تطلبه لينا." },
+        { "type": "line", "who": "apotheker", "de": "Guten Tag! Was möchten Sie?", "ar": "مرحبًا! ماذا تريد؟" },
+        { "type": "line", "who": "me", "de": "Diesen Tee und die Taschentücher, bitte.", "ar": "هذا الشاي والمناديل من فضلك." },
+        { "type": "listen", "id": "c22", "skill": "numbers",
+          "audio": "Das macht zusammen sechs Euro vierzig, bitte.",
+          "audioAr": "المجموع ستة يوروهات وأربعون سنتًا من فضلك.",
+          "prompt": "كم يجب أن تدفع؟",
+          "options": [
+            { "ar": "6,40 €", "correct": true },
+            { "ar": "4,60 €", "why": "قال sechs (6) أولًا ثم vierzig (40 سنتًا)." },
+            { "ar": "16,40 €", "why": "16 = sechzehn. والصيدلي قال sechs (6)." },
+            { "ar": "6,14 €", "why": "14 = vierzehn. والصيدلي قال vierzig (40)." }
+          ],
+          "reply": { "who": "apotheker", "de": "Bar oder mit Karte?", "ar": "نقدًا أم بالبطاقة؟" },
+          "hint": "تذكّر من السوبرماركت: sechs Euro vierzig = اليوروهات ثم السنتات.",
+          "explain": "«sechs Euro vierzig» = 6,40 €. في ألمانيا نكتب السعر بفاصلة: 6,40 €." },
+        { "type": "line", "who": "me", "de": "Mit Karte, bitte.", "ar": "بالبطاقة من فضلك." },
+        { "type": "line", "who": "apotheker", "de": "Gern. Hier, bitte. Gute Besserung!", "ar": "بكل سرور. تفضل. أتمنى لك الشفاء العاجل!" },
+        { "type": "narration", "ar": "تعود إلى الشقة وتجلس على الكنبة مع كوب شاي. بعد قليل تصلك رسالة أخرى من لينا." },
+        { "type": "choice", "id": "c23", "skill": "reading", "final": true,
+          "doc": { "kind": "message", "title": "Lina 📱", "lines": [
+            "Was hast du?",
+            "Was sagt die Ärztin?",
+            "Und wann musst du wieder hin?"
+          ], "ar": "ما بك؟ ماذا قالت الطبيبة؟ ومتى يجب أن تذهب مرة أخرى؟" },
+          "prompt": "اختر الردّ الذي يجيب عن أسئلة لينا الثلاثة بشكل صحيح.",
+          "options": [
+            { "de": "Ich habe eine Erkältung. Ich muss zu Hause bleiben und viel trinken. Am Freitag um 9:15 Uhr habe ich wieder einen Termin.", "correct": true },
+            { "de": "Ich habe eine Erkältung. Ich muss viel Kaffee trinken. Am Freitag um 16:10 Uhr habe ich wieder einen Termin.", "why": "الطبيبة قالت Wasser und Tee لا Kaffee. و16.10. هو التاريخ، أما الموعد فالساعة 9:15." },
+            { "de": "Ich habe Bauchschmerzen. Ich muss jeden Tag arbeiten. Am Montag habe ich wieder einen Termin.", "why": "عندك صداع وألم حلق لا ألم بطن، والطبيبة قالت ابقَ في البيت، والموعد يوم الجمعة لا الاثنين." },
+            { "de": "Mir geht's super! Ich gehe heute Abend ins Restaurant.", "why": "أنت مريض، ولينا تسأل عن المرض وعن كلام الطبيبة وعن الموعد. هذا الرد لا يجيب عن أي سؤال." }
+          ],
+          "reply": { "who": "lina", "de": "Gut! Dann ab ins Bett – die Suppe kommt gleich! 😊", "ar": "جيد! إذن إلى السرير فورًا – الحساء قادم بعد قليل! 😊" },
+          "hint": "تذكّر ثلاثة أشياء: ما المرض؟ ما التعليمات (Wasser und Tee)؟ ومتى الموعد في بطاقة الموعد؟",
+          "explain": "الرد الصحيح يذكر المرض (eine Erkältung)، والتعليمات (zu Hause bleiben, viel trinken)، والموعد من البطاقة (Freitag, 9:15 Uhr)." }
+      ]
+    }
+  ]
+}

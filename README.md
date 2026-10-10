@@ -61,6 +61,16 @@ Approving a certificate re-evaluates the student, snapshots the score and assign
 
 ---
 
+## Survival German (game)
+
+`/survival-german` (linked from the top navigation) is an A1/A2 story game for Arabic-speaking learners:
+seven missions from Berlin airport to a new flat in Munich, each 21–25 challenges, with hearts, stars, points and achievements.
+
+- Engine: `src/Nelt.Web/wwwroot/js/survival-german.js` + `css/survival-german.css`. It runs fully in the browser;
+  progress is stored in the browser (`localStorage`), so it works signed in or not.
+- Content: `src/Nelt.Web/wwwroot/game/missions/m<1-7>.<a1|a2>.json`. Format: `tools/survival-german/SCHEMA.md`.
+- After editing content run `python3 tools/survival-german/validate.py`.
+
 ## Fingerprint terminals
 
 Attendance is recorded against scheduled class sessions. A check-in inside a session's window (30 min before start

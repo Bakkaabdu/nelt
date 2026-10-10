@@ -1,0 +1,505 @@
+{
+  "id": "m6",
+  "level": "A2",
+  "title": { "de": "Das Vorstellungsgespräch", "ar": "مقابلة العمل" },
+  "place": "Café Sonnenschein GmbH, Filiale Sendlinger Tor, München",
+  "intro": "مرّ أسبوعان على وصولك إلى ألمانيا. صحتك الآن أفضل بعد زيارة الطبيب، وتدرس كل صباح في دورة للغة الألمانية. قبل أيام أرسلتَ سيرتك الذاتية إلى «Café Sonnenschein GmbH»، وهي سلسلة صغيرة من المخابز والمقاهي في ميونخ، لوظيفة بدوام جزئي في خدمة الزبائن. واليوم وصلك الرد!",
+  "objective": "استعدّ للمقابلة مع لينا، ثم اجتزها بالألمانية: تحدّث عن نفسك وعن دراستك وعملك السابق ويومك، واشرح متى تستطيع العمل ولماذا، واسأل عن الوظيفة، وأنهِ المقابلة بأدب.",
+  "outro": "رائع! لقد أقنعت السيد براندت والسيدة يلماز، وسيكون يوم الاثنين أول يوم عمل تجريبي لك. لكن في المساء تخبرك لينا بخبر مهم: شريكتها في السكن ستعود في نهاية الشهر… وعليك أن تبحث عن غرفة خاصة بك!",
+  "cast": {
+    "lina": { "name": "Lina Hoffmann", "role": "صديقتك في ميونخ", "avatar": "👩‍🦰" },
+    "jonas": { "name": "Felix", "role": "موظف في المقهى", "avatar": "🧑‍🍳" },
+    "brandt": { "name": "Herr Brandt", "role": "مدير الفرع", "avatar": "👨‍💼" },
+    "yilmaz": { "name": "Frau Yilmaz", "role": "قسم شؤون الموظفين", "avatar": "👩‍💼" }
+  },
+  "vocab": [
+    { "de": "das Vorstellungsgespräch", "ar": "مقابلة العمل" },
+    { "de": "die Bewerbung", "ar": "طلب التوظيف" },
+    { "de": "die Stelle", "ar": "الوظيفة / الشاغر" },
+    { "de": "die Servicekraft", "ar": "موظف/ة خدمة الزبائن" },
+    { "de": "die Teilzeit", "ar": "الدوام الجزئي" },
+    { "de": "die Unterlagen (Pl.)", "ar": "الوثائق / الأوراق" },
+    { "de": "das Arbeitszeugnis", "ar": "شهادة الخبرة" },
+    { "de": "der Lebenslauf", "ar": "السيرة الذاتية" },
+    { "de": "die Erfahrung", "ar": "الخبرة" },
+    { "de": "studieren", "ar": "يدرس في الجامعة" },
+    { "de": "die Wirtschaft", "ar": "الاقتصاد" },
+    { "de": "bedienen", "ar": "يخدم (الزبائن)" },
+    { "de": "kassieren", "ar": "يحصّل المال عند الصندوق" },
+    { "de": "der Gast (die Gäste)", "ar": "الضيف / الزبون (الضيوف)" },
+    { "de": "die Muttersprache", "ar": "اللغة الأم" },
+    { "de": "der Alltag", "ar": "الحياة اليومية" },
+    { "de": "aufstehen", "ar": "يستيقظ / ينهض" },
+    { "de": "anfangen", "ar": "يبدأ" },
+    { "de": "die Schicht", "ar": "المناوبة" },
+    { "de": "die Frühschicht / die Spätschicht", "ar": "المناوبة الصباحية / المسائية" },
+    { "de": "der Stundenlohn", "ar": "الأجر في الساعة" },
+    { "de": "die Einarbeitung", "ar": "فترة التدريب في بداية العمل" },
+    { "de": "der Probetag", "ar": "يوم العمل التجريبي" },
+    { "de": "die Verspätung", "ar": "التأخير" },
+    { "de": "die Störung", "ar": "العطل" },
+    { "de": "Bescheid geben", "ar": "يُبلغ / يُعلم" },
+    { "de": "kennenlernen", "ar": "يتعرّف إلى" },
+    { "de": "dauern", "ar": "يستغرق" },
+    { "de": "die Steuer-ID", "ar": "الرقم الضريبي" },
+    { "de": "die Krankenversicherung", "ar": "التأمين الصحي" },
+    { "de": "sich freuen auf", "ar": "يتطلّع بشوق إلى" },
+    { "de": "die Kasse", "ar": "الصندوق (مكان الدفع)" }
+  ],
+  "expressions": [
+    { "de": "Ich habe … gearbeitet / studiert.", "ar": "عملتُ … / درستُ …", "use": "للحديث عن عملك أو دراستك السابقة بصيغة Perfekt.", "example": "Ich habe drei Jahre als Verkäufer gearbeitet.", "exampleAr": "عملتُ ثلاث سنوات بائعًا." },
+    { "de": "Ich bin vor … nach Deutschland gekommen.", "ar": "جئتُ إلى ألمانيا قبل …", "use": "لتقول متى وصلت. أفعال الحركة مثل kommen تأخذ sein في Perfekt.", "example": "Ich bin vor einem Monat nach Deutschland gekommen.", "exampleAr": "جئتُ إلى ألمانيا قبل شهر." },
+    { "de": "Ich lerne seit … Deutsch.", "ar": "أتعلّم الألمانية منذ …", "use": "لشيء بدأ في الماضي وما زال مستمرًا. بعد seit يأتي Dativ، والفعل في المضارع.", "example": "Ich lerne seit einem Jahr Deutsch.", "exampleAr": "أتعلّم الألمانية منذ سنة." },
+    { "de": "…, weil ich …", "ar": "…، لأنني …", "use": "لشرح السبب. بعد weil يذهب الفعل إلى آخر الجملة.", "example": "Ich möchte hier arbeiten, weil ich gern mit Menschen arbeite.", "exampleAr": "أريد أن أعمل هنا لأنني أحب العمل مع الناس." },
+    { "de": "Könnten Sie die Frage bitte wiederholen?", "ar": "هل يمكنك من فضلك أن تكرر السؤال؟", "use": "طلب مهذب جدًا عندما لا تفهم السؤال. Könnten أكثر تهذيبًا من Können.", "example": "Entschuldigung, könnten Sie bitte etwas langsamer sprechen?", "exampleAr": "عفوًا، هل يمكنك أن تتكلم ببطء أكثر قليلًا؟" },
+    { "de": "Es tut mir leid, ich komme etwas später.", "ar": "أنا آسف، سأتأخر قليلًا.", "use": "عندما تتأخر عن موعد: اتصل أو اكتب رسالة قبل الموعد.", "example": "Es tut mir leid, ich komme zehn Minuten später, weil der Bus Verspätung hat.", "exampleAr": "أنا آسف، سأتأخر عشر دقائق لأن الحافلة متأخرة." },
+    { "de": "Das weiß ich leider noch nicht genau.", "ar": "للأسف لا أعرف ذلك بدقة بعد.", "use": "رد مهذب وصادق عندما لا تعرف الجواب.", "example": "Meine neue Adresse? Das weiß ich leider noch nicht genau.", "exampleAr": "عنواني الجديد؟ للأسف لا أعرفه بدقة بعد." },
+    { "de": "Ich kann gut in der Spätschicht arbeiten.", "ar": "يمكنني العمل في المناوبة المسائية.", "use": "للحديث عن الأوقات التي تستطيع فيها العمل.", "example": "Am Wochenende kann ich auch gut arbeiten.", "exampleAr": "يمكنني العمل في عطلة نهاية الأسبوع أيضًا." },
+    { "de": "Gibt es eine Einarbeitung?", "ar": "هل توجد فترة تدريب في البداية؟", "use": "سؤال جيد عن الوظيفة في نهاية المقابلة.", "example": "Gibt es eine Einarbeitung, und wann könnte ich anfangen?", "exampleAr": "هل توجد فترة تدريب، ومتى يمكنني أن أبدأ؟" },
+    { "de": "Ich freue mich auf …", "ar": "أتطلّع إلى …", "use": "لشيء سيحدث في المستقبل. (sich freuen über = يفرح بشيء حدث بالفعل.)", "example": "Ich freue mich auf den Probetag!", "exampleAr": "أتطلّع إلى يوم العمل التجريبي!" }
+  ],
+  "summary": [
+    "فهمت دعوة رسمية إلى مقابلة عمل، ورددت عليها بالبريد أو برسالة صوتية.",
+    "تحدثت عن الماضي بصيغة Perfekt: ich habe gearbeitet / studiert / kassiert، و ich bin gekommen.",
+    "شرحت الأسباب بجمل weil مع الفعل في آخر الجملة.",
+    "اتصلت لتعتذر عن التأخير بسبب عطل في المترو.",
+    "وصفت يومك بالأفعال المنفصلة: ich stehe … auf، der Kurs fängt … an.",
+    "فهمت جدول المناوبات وعدد الساعات والأيام، وشرحت متى تستطيع العمل.",
+    "طلبت التكرار بأدب، وأجبت بصدق عندما لم تعرف الجواب، وطرحت أسئلة عن الوظيفة.",
+    "أنهيت المقابلة بأدب، وفهمت مكالمة الدعوة إلى يوم العمل التجريبي."
+  ],
+  "scenes": [
+    {
+      "id": "einladung",
+      "title": { "de": "Die Antwort vom Café", "ar": "الرد من المقهى" },
+      "steps": [
+        { "type": "narration", "ar": "مساء الاثنين. ترجع من دورة الألمانية إلى شقة لينا في شفابينغ، وتفتح بريدك الإلكتروني. رسالة جديدة من «Café Sonnenschein GmbH»!" },
+        { "type": "doc", "kind": "letter", "title": "E-Mail: Ihre Bewerbung als Servicekraft",
+          "lines": [
+            "Von: Aylin Yilmaz, Personalabteilung, Café Sonnenschein GmbH",
+            "Betreff: Ihre Bewerbung als Servicekraft (Teilzeit)",
+            "Guten Tag {name},",
+            "vielen Dank für Ihre Bewerbung. Ihre Unterlagen haben uns gut gefallen!",
+            "Wir möchten Sie gern persönlich kennenlernen und laden Sie zu einem Vorstellungsgespräch ein:",
+            "Donnerstag, 22. Oktober, um 9:30 Uhr",
+            "Café Sonnenschein, Filiale Sendlinger Tor, Sendlinger Straße 28, 80331 München",
+            "Das Gespräch dauert etwa 30 Minuten. Herr Brandt (Filialleiter) und ich führen das Gespräch zusammen.",
+            "Bitte bringen Sie Ihren Ausweis und, wenn möglich, Ihre Arbeitszeugnisse mit.",
+            "Könnten Sie uns bis Dienstag kurz Bescheid geben, ob der Termin für Sie passt?",
+            "Mit freundlichen Grüßen",
+            "Aylin Yilmaz",
+            "Tel. 089 2345 6780"
+          ],
+          "ar": "من: آيلين يلماز، قسم شؤون الموظفين. الموضوع: طلبك لوظيفة في خدمة الزبائن (دوام جزئي). مرحبًا {name}، شكرًا جزيلًا على طلبك. أعجبتنا أوراقك! نودّ أن نتعرّف إليك شخصيًا، وندعوك إلى مقابلة عمل: الخميس 22 أكتوبر، الساعة 9:30، فرع زندلينغر تور، شارع زندلينغر 28. تستغرق المقابلة نحو 30 دقيقة. سنجري المقابلة معًا: السيد براندت (مدير الفرع) وأنا. من فضلك أحضر بطاقة هويتك، وإن أمكن شهادات الخبرة. هل يمكنك أن تُعلمنا حتى يوم الثلاثاء إن كان الموعد يناسبك؟ مع أطيب التحيات، آيلين يلماز." },
+        { "type": "choice", "id": "m6a2-c1", "skill": "reading",
+          "prompt": "اقرأ البريد. مَن سيجري المقابلة، وكم تستغرق؟",
+          "options": [
+            { "ar": "السيد براندت والسيدة يلماز معًا، نحو 30 دقيقة", "correct": true },
+            { "ar": "السيد براندت وحده، نحو 30 دقيقة", "why": "اقرأ: «Herr Brandt … und ich führen das Gespräch zusammen» – أي الاثنان معًا." },
+            { "ar": "السيدة يلماز وحدها، نحو ساعة", "why": "المقابلة مع شخصين، ومدتها «etwa 30 Minuten» أي نصف ساعة تقريبًا." },
+            { "ar": "السيد براندت والسيدة يلماز، نحو 15 دقيقة", "why": "الرقم في البريد 30 (dreißig) وليس 15." }
+          ],
+          "hint": "ابحث عن الفعلين «dauert» و «führen … zusammen».",
+          "explain": "«Das Gespräch dauert etwa 30 Minuten» = تستغرق المقابلة نحو 30 دقيقة. و «zusammen» = معًا، أي براندت ويلماز." },
+        { "type": "match", "id": "m6a2-c2", "skill": "vocab",
+          "prompt": "صِل الكلمات من البريد بمعانيها.",
+          "pairs": [
+            ["die Teilzeit", "الدوام الجزئي"],
+            ["das Arbeitszeugnis", "شهادة الخبرة"],
+            ["persönlich", "شخصيًا"],
+            ["kennenlernen", "يتعرّف إلى"],
+            ["Bescheid geben", "يُبلغ / يُعلم"],
+            ["dauern", "يستغرق"]
+          ],
+          "hint": "Teil = جزء، و Zeit = وقت. و Zeugnis = شهادة.",
+          "explain": "هذه كلمات تتكرر كثيرًا في رسائل العمل الرسمية. «Bescheid geben» تعني أن تُخبر شخصًا بقرارك." },
+        { "type": "decision", "prompt": "السيدة يلماز تريد ردًّا حتى الثلاثاء. كيف تجيب؟",
+          "options": [
+            { "ar": "أكتب ردًّا بالبريد الإلكتروني", "then": [
+              { "type": "narration", "ar": "تكتب: «Guten Tag Frau Yilmaz, vielen Dank für die Einladung!» والآن الجملة الأهم: هل يناسبك الموعد؟" },
+              { "type": "write", "id": "m6a2-c3a", "skill": "writing",
+                "prompt": "اكتب بالألمانية: «الموعد يناسبني جيدًا.»",
+                "answers": ["Der Termin passt mir gut", "Der Termin passt mir sehr gut", "Der Termin passt gut", "Der Termin am Donnerstag passt mir gut", "Der Termin passt mir gut, danke", "Der Termin passt sehr gut", "Der Termin passt mir", "Der Termin am Donnerstag passt mir sehr gut", "Der Termin am Donnerstag um 9:30 Uhr passt mir gut", "Ja, der Termin passt mir gut", "Der Termin passt mir gut, vielen Dank", "Der Termin am Donnerstag passt mir"],
+                "hint": "استخدم الفعل «passen» كما في البريد: Der Termin … mir gut.",
+                "explain": "«Der Termin passt mir gut.» الفعل passen يأتي مع Dativ: mir (لي). وهي العبارة المعتادة لقبول موعد." },
+              { "type": "doc", "kind": "message", "title": "E-Mail gesendet ✓",
+                "lines": ["Guten Tag Frau Yilmaz,", "vielen Dank für die Einladung! Der Termin am Donnerstag um 9:30 Uhr passt mir gut.", "Ich bringe meinen Ausweis und mein Arbeitszeugnis mit.", "Mit freundlichen Grüßen", "{name}"],
+                "ar": "مرحبًا سيدة يلماز، شكرًا جزيلًا على الدعوة! موعد الخميس الساعة 9:30 يناسبني جيدًا. سأحضر بطاقة هويتي وشهادة الخبرة. مع أطيب التحيات، {name}" }
+            ] },
+            { "ar": "أتصل بالسيدة يلماز", "then": [
+              { "type": "narration", "ar": "تتصل بالرقم 089 2345 6780. يرنّ الهاتف خمس مرات… ثم تسمع رسالة مسجّلة." },
+              { "type": "line", "who": "yilmaz", "de": "Guten Tag, hier ist die Mailbox von Aylin Yilmaz, Café Sonnenschein. Ich bin gerade nicht im Büro. Bitte sprechen Sie nach dem Signalton.", "ar": "مرحبًا، هذا البريد الصوتي لآيلين يلماز، كافيه زونِنشاين. أنا لست في المكتب الآن. من فضلك تكلّم بعد الصفّارة." },
+              { "type": "choice", "id": "m6a2-c3b", "skill": "dialogue",
+                "prompt": "بيب! اترك رسالة صوتية مناسبة.",
+                "options": [
+                  { "de": "Guten Tag, Frau Yilmaz, hier ist {name}. Vielen Dank für die Einladung! Der Termin am Donnerstag um 9:30 Uhr passt mir gut. Auf Wiederhören!", "correct": true },
+                  { "de": "Guten Tag, hier spricht {name}. Ich habe Ihre E-Mail bekommen und komme gern am Donnerstag. Vielen Dank und auf Wiederhören!", "correct": true },
+                  { "de": "Hallo? Hallo? Frau Yilmaz, sind Sie da? Warum antworten Sie nicht?", "why": "هذا بريد صوتي (Mailbox)، والسيدة يلماز ليست موجودة. اترك رسالة واضحة: من أنت وماذا تريد." },
+                  { "de": "Guten Tag, hier ist {name}. Der Termin passt mir gut. Bis Freitag!", "why": "المقابلة يوم الخميس (Donnerstag) وليس الجمعة (Freitag)." }
+                ],
+                "hint": "رسالة جيدة فيها: اسمك + شكر + الموعد + تحية الختام.",
+                "explain": "في الرسالة الصوتية قل مَن أنت (Hier ist …)، واشكر، وأكّد الموعد، واختم بـ «Auf Wiederhören»." },
+              { "type": "learn", "de": "Auf Wiederhören!", "ar": "إلى اللقاء (على الهاتف)", "use": "نهاية المكالمة الهاتفية الرسمية، بدلًا من «Auf Wiedersehen»، لأننا نسمع الشخص ولا نراه.", "example": "Vielen Dank für Ihren Anruf. Auf Wiederhören!", "exampleAr": "شكرًا على اتصالك. إلى اللقاء!" }
+            ] }
+          ] },
+        { "type": "narration", "ar": "تُخبر لينا بالخبر، فترسل لك رسالة من غرفتها بعد دقيقة:" },
+        { "type": "doc", "kind": "message", "title": "Lina",
+          "lines": ["Vorstellungsgespräch am Donnerstag?! 🎉 Glückwunsch!", "Am Mittwoch beim Frühstück üben wir zusammen.", "Ich habe schon Brezeln gekauft! 🥨☕"],
+          "ar": "مقابلة عمل يوم الخميس؟! مبروك! يوم الأربعاء على الفطور نتدرّب معًا. لقد اشتريت البريتسل بالفعل!" }
+      ]
+    },
+    {
+      "id": "vorbereitung",
+      "title": { "de": "Training mit Lina", "ar": "التدريب مع لينا" },
+      "steps": [
+        { "type": "narration", "ar": "صباح الأربعاء. القهوة جاهزة والبريتسل على الطاولة. لينا تفتح دفترًا وتقول بجدية مصطنعة: «اليوم أنا مدرّبتك!»" },
+        { "type": "line", "who": "lina", "de": "Herr Brandt fragt bestimmt nach deiner Erfahrung. Dafür brauchst du das Perfekt. Ich habe dir alles aufgeschrieben!", "ar": "السيد براندت سيسألك بالتأكيد عن خبرتك. لذلك تحتاج إلى صيغة Perfekt. لقد كتبت لك كل شيء!" },
+        { "type": "doc", "kind": "list", "title": "Linas Notizen 📝",
+          "lines": [
+            "Name: {name}, 24 Jahre",
+            "Herkunft: {country}",
+            "Studium: Wirtschaft (Bachelor), in der Heimat",
+            "Arbeit: 2 Jahre Service im Restaurant (Gäste bedient, kassiert)",
+            "In Deutschland: seit zwei Wochen",
+            "Deutsch: seit einem Jahr; jetzt Deutschkurs Mo–Fr, 8:30–12:00 Uhr",
+            "Hobbys: Kochen, Fotografieren, Schwimmen",
+            "Zeit: nachmittags und am Wochenende"
+          ],
+          "ar": "الاسم: {name}، 24 سنة. البلد الأصلي: {countryAr}. الدراسة: اقتصاد (بكالوريوس) في بلدك. العمل: سنتان في خدمة الزبائن في مطعم (خدمة الضيوف، التحصيل عند الصندوق). في ألمانيا: منذ أسبوعين. الألمانية: منذ سنة؛ الآن دورة من الاثنين إلى الجمعة، 8:30–12:00. الهوايات: الطبخ، التصوير، السباحة. الوقت المتاح: بعد الظهر وفي عطلة نهاية الأسبوع." },
+        { "type": "grammar", "title": "الماضي في الكلام: Perfekt",
+          "body": "للحديث عن الماضي نستخدم غالبًا **Perfekt**: فعل مساعد (**haben** أو **sein**) في المكان الثاني + **Partizip II** في آخر الجملة. أغلب الأفعال تأخذ **haben**: ich habe **gearbeitet**. أفعال الحركة مثل **kommen، fahren، fliegen** تأخذ **sein**: ich bin **gekommen**. والأفعال التي تنتهي بـ **-ieren** لا تأخذ ge-: **studiert، kassiert**.",
+          "examples": [
+            { "de": "Ich habe zwei Jahre in einem Restaurant gearbeitet.", "ar": "عملتُ سنتين في مطعم." },
+            { "de": "Ich habe Wirtschaft studiert.", "ar": "درستُ الاقتصاد." },
+            { "de": "Ich bin vor zwei Wochen nach Deutschland gekommen.", "ar": "جئتُ إلى ألمانيا قبل أسبوعين." }
+          ] },
+        { "type": "fill", "id": "m6a2-c4", "skill": "grammar",
+          "sentence": "In meiner Heimat ___ ich zwei Jahre in einem Restaurant gearbeitet.",
+          "ar": "في بلدي عملتُ سنتين في مطعم.",
+          "options": ["habe", "bin", "hat", "war"],
+          "answers": ["habe"],
+          "hint": "arbeiten ليس فعل حركة. وانظر إلى الفاعل: ich.",
+          "explain": "arbeiten يأخذ haben في Perfekt: «ich habe … gearbeitet». و hat للغائب (er/sie)، و war لا يأتي مع Partizip هنا." },
+        { "type": "build", "id": "m6a2-c5", "skill": "grammar",
+          "prompt": "كوّن الجملة: «جئتُ إلى ألمانيا قبل أسبوعين.»",
+          "tiles": ["Ich", "bin", "vor", "zwei", "Wochen", "nach", "Deutschland", "gekommen", ".", "habe", "kommt", "in"],
+          "answers": [["Ich", "bin", "vor", "zwei", "Wochen", "nach", "Deutschland", "gekommen", "."]],
+          "hint": "kommen فعل حركة → sein. والـ Partizip في آخر الجملة.",
+          "explain": "«Ich bin vor zwei Wochen nach Deutschland gekommen.» kommen يأخذ sein، و «vor + مدة» = قبل، و «nach + بلد» = إلى." },
+        { "type": "line", "who": "lina", "de": "Und Herr Brandt fragt sicher: 'Warum möchten Sie bei uns arbeiten?' Dafür brauchst du 'weil'.", "ar": "وسيسأل السيد براندت بالتأكيد: «لماذا تريد العمل عندنا؟» ولهذا تحتاج إلى «weil»." },
+        { "type": "grammar", "title": "weil: الفعل إلى آخر الجملة",
+          "body": "بعد **weil** (لأنّ) ينتقل الفعل المصرَّف إلى **آخر الجملة**، ونضع **فاصلة** قبل weil. يمكن أيضًا أن تبدأ الجواب مباشرة بـ **Weil …** عندما تجيب عن سؤال «Warum?».",
+          "examples": [
+            { "de": "Ich möchte bei Ihnen arbeiten, weil ich gern mit Menschen arbeite.", "ar": "أريد العمل عندكم لأنني أحب العمل مع الناس." },
+            { "de": "Ich kann nur nachmittags arbeiten, weil ich vormittags einen Deutschkurs habe.", "ar": "أستطيع العمل بعد الظهر فقط لأن لدي دورة ألمانية في الصباح." },
+            { "de": "Warum lernen Sie Deutsch? – Weil ich in Deutschland arbeiten möchte.", "ar": "لماذا تتعلّم الألمانية؟ – لأنني أريد العمل في ألمانيا." }
+          ] },
+        { "type": "choice", "id": "m6a2-c6", "skill": "grammar",
+          "npc": { "who": "lina", "de": "So, ich bin jetzt Herr Brandt: Warum möchten Sie bei uns arbeiten?", "ar": "حسنًا، أنا الآن السيد براندت: لماذا تريد العمل عندنا؟" },
+          "prompt": "أي جواب صحيح لغويًا ومناسب؟ (قد تكون أكثر من إجابة صحيحة)",
+          "options": [
+            { "de": "Weil ich gern mit Menschen arbeite und Ihr Café sehr schön finde.", "correct": true },
+            { "de": "Ich möchte bei Ihnen arbeiten, weil ich schon Erfahrung im Service habe.", "correct": true },
+            { "de": "Weil ich arbeite gern mit Menschen.", "why": "ترتيب خاطئ: بعد weil يذهب الفعل arbeite إلى آخر الجملة: «weil ich gern mit Menschen arbeite»." },
+            { "de": "Weil der Kuchen ist lecker.", "why": "الفعل ist يجب أن يكون في الآخر، وأيضًا هذا سبب ضعيف في مقابلة عمل!" }
+          ],
+          "reply": { "who": "lina", "de": "Super! Verb am Ende – wie ein Profi! 😄", "ar": "رائع! الفعل في الآخر – مثل المحترفين!" },
+          "hint": "ابحث عن الجمل التي ينتهي فيها جزء weil بالفعل.",
+          "explain": "في الجوابين الصحيحين يأتي الفعل المصرَّف (arbeite، finde، habe) في آخر جملة weil، والسبب مناسب لوظيفة في مقهى." },
+        { "type": "learn", "de": "Könnten Sie die Frage bitte wiederholen?", "ar": "هل يمكنك من فضلك أن تكرر السؤال؟", "use": "تقول لينا: «في المقابلة استخدم Könnten بدل Können، فهي أكثر تهذيبًا.» ويمكنك أيضًا أن تطلب: «Könnten Sie bitte etwas langsamer sprechen?»", "example": "Entschuldigung, das habe ich nicht verstanden. Könnten Sie die Frage bitte wiederholen?", "exampleAr": "عفوًا، لم أفهم ذلك. هل يمكنك من فضلك أن تكرر السؤال؟" }
+      ]
+    },
+    {
+      "id": "unterwegs",
+      "title": { "de": "Störung in der U-Bahn", "ar": "عطل في المترو" },
+      "steps": [
+        { "type": "narration", "ar": "الخميس، 9:05. تركب مترو U2 من محطة Hohenzollernplatz باتجاه Sendlinger Tor. الرحلة تستغرق عادةً 12 دقيقة… لكن القطار يتوقف فجأة في النفق، ثم تسمع إعلانًا." },
+        { "type": "listen", "id": "m6a2-c7", "skill": "listening",
+          "audio": "Sehr geehrte Fahrgäste, wegen einer Signalstörung haben die Züge der Linie U2 zurzeit etwa fünfzehn Minuten Verspätung. Wir bitten um Ihr Verständnis.",
+          "audioAr": "أيها الركاب الكرام، بسبب عطل في الإشارات تتأخر قطارات الخط U2 حاليًا نحو خمس عشرة دقيقة. نرجو تفهّمكم.",
+          "prompt": "استمع إلى الإعلان. ما المشكلة؟",
+          "options": [
+            { "ar": "تأخير نحو 15 دقيقة بسبب عطل في الإشارات", "correct": true },
+            { "ar": "تأخير نحو 50 دقيقة بسبب عطل في الإشارات", "why": "سمعت «fünfzehn» (15) وليس «fünfzig» (50). انتبه إلى النهاية: -zehn أو -zig." },
+            { "ar": "الخط U2 لا يعمل اليوم أبدًا", "why": "الإعلان يتكلم عن «Verspätung» (تأخير)، وليس عن توقف الخط طوال اليوم." },
+            { "ar": "يجب أن تنزل وتغيّر القطار", "why": "لم يطلب الإعلان من الركاب النزول أو تغيير القطار." }
+          ],
+          "hint": "ركّز على الرقم وعلى كلمة «Verspätung».",
+          "explain": "«wegen einer Signalstörung … etwa fünfzehn Minuten Verspätung» = بسبب عطل في الإشارات تأخير نحو 15 دقيقة. تعرف كلمة Verspätung من رحلة القطار!" },
+        { "type": "narration", "ar": "تنظر إلى الساعة: 9:08. مع التأخير والمشي من المحطة ستصل نحو الساعة 9:40، أي متأخرًا عشر دقائق. في ألمانيا من المهم أن تُخبر الشركة قبل الموعد. ماذا تفعل؟" },
+        { "type": "decision", "prompt": "عندك إشارة في الهاتف. كيف تُخبر السيدة يلماز؟",
+          "options": [
+            { "ar": "أتصل بها الآن", "then": [
+              { "type": "choice", "id": "m6a2-c8", "skill": "dialogue",
+                "npc": { "who": "yilmaz", "de": "Café Sonnenschein, Yilmaz, guten Morgen!", "ar": "كافيه زونِنشاين، يلماز، صباح الخير!" },
+                "prompt": "اشرح المشكلة بأدب.",
+                "options": [
+                  { "de": "Guten Morgen, Frau Yilmaz, hier ist {name}. Es tut mir leid, aber ich komme etwa zehn Minuten später, weil die U-Bahn Verspätung hat.", "correct": true },
+                  { "de": "Guten Morgen, hier spricht {name}. Entschuldigung, die U2 hat leider Verspätung. Ich bin etwa um 9:40 Uhr da.", "correct": true },
+                  { "de": "Guten Morgen! Ich komme heute nicht, weil die U-Bahn Verspätung hat.", "why": "التأخير عشر دقائق فقط! لا داعي لإلغاء المقابلة، يكفي أن تقول إنك ستتأخر قليلًا." },
+                  { "de": "Hallo, hier ist {name}. Ich komme später, weil die U-Bahn hat Verspätung.", "why": "خطأ في الترتيب: بعد weil يذهب الفعل إلى الآخر: «weil die U-Bahn Verspätung hat»." }
+                ],
+                "reply": { "who": "yilmaz", "de": "Danke, dass Sie anrufen! Kein Problem, Herr Brandt hat auch noch ein Telefonat. Bis gleich!", "ar": "شكرًا لأنك اتصلت! لا مشكلة، السيد براندت أيضًا ما زال في مكالمة. إلى اللقاء بعد قليل!" },
+                "hint": "اعتذر (Es tut mir leid / Entschuldigung)، واذكر السبب ووقت الوصول.",
+                "explain": "الجوابان يعتذران ويذكران السبب ووقت الوصول تقريبًا. هكذا تُظهر أنك مسؤول حتى عندما تتأخر." }
+            ] },
+            { "ar": "أكتب لها رسالة نصية", "then": [
+              { "type": "narration", "ar": "تكتب رسالة قصيرة إلى الرقم الموجود في البريد:" },
+              { "type": "doc", "kind": "message", "title": "SMS an Frau Yilmaz",
+                "lines": ["Guten Morgen Frau Yilmaz, hier ist {name}.", "Es tut mir sehr leid: Die U2 hat wegen einer Störung 15 Minuten Verspätung.", "Ich bin etwa um 9:40 Uhr da.", "Viele Grüße"],
+                "ar": "صباح الخير سيدة يلماز، معك {name}. أنا آسف جدًا: المترو U2 متأخر 15 دقيقة بسبب عطل. سأصل نحو الساعة 9:40. مع التحيات." },
+              { "type": "doc", "kind": "message", "title": "Frau Yilmaz",
+                "lines": ["Kein Problem, danke für die Info! Bis gleich. A. Yilmaz"],
+                "ar": "لا مشكلة، شكرًا على المعلومة! إلى اللقاء بعد قليل. آ. يلماز" }
+            ] }
+          ] },
+        { "type": "learn", "de": "Es tut mir leid, ich komme etwas später.", "ar": "أنا آسف، سأتأخر قليلًا.", "use": "إذا عرفت أنك ستتأخر، أخبر الشخص قبل الموعد واذكر السبب. هذا مهم جدًا في ألمانيا.", "example": "Es tut mir leid, ich komme zehn Minuten später, weil mein Bus Verspätung hat.", "exampleAr": "أنا آسف، سأتأخر عشر دقائق لأن حافلتي متأخرة." }
+      ]
+    },
+    {
+      "id": "empfang",
+      "title": { "de": "Ankunft im Café", "ar": "الوصول إلى المقهى" },
+      "steps": [
+        { "type": "narration", "ar": "9:41. تدخل مقهى زونِنشاين وأنت تتنفس بسرعة. رائحة القهوة والكعك الطازج. وراء الصندوق شاب يبتسم لك." },
+        { "type": "choice", "id": "m6a2-c9", "skill": "dialogue",
+          "npc": { "who": "jonas", "de": "Guten Morgen! Was darf ich Ihnen bringen? Unser Apfelkuchen ist heute ganz frisch!", "ar": "صباح الخير! ماذا أحضر لك؟ كعكة التفاح طازجة جدًا اليوم!" },
+          "prompt": "وضّح بأدب سبب مجيئك.",
+          "options": [
+            { "de": "Guten Morgen! Danke, im Moment nicht. Ich habe um 9:30 Uhr ein Vorstellungsgespräch bei Herrn Brandt – ich bin leider etwas zu spät.", "correct": true },
+            { "de": "Guten Morgen! Mein Name ist {name}. Ich habe einen Termin mit Herrn Brandt und Frau Yilmaz.", "correct": true },
+            { "de": "Ja, gern! Ein Stück Apfelkuchen und einen Cappuccino, bitte.", "why": "أنت متأخر عن المقابلة! هذا طلب طعام كزبون، والأهم الآن أن توضّح أن لديك موعدًا." },
+            { "de": "Ich habe einen Termin beim Arzt.", "why": "أنت لست في عيادة الطبيب الآن! موعدك هنا هو مقابلة عمل مع السيد براندت." }
+          ],
+          "reply": { "who": "jonas", "de": "Ah, Sie sind {name}! Frau Yilmaz hat schon gesagt, dass Sie etwas später kommen. Kein Problem!", "ar": "آه، أنت {name}! السيدة يلماز قالت إنك ستأتي متأخرًا قليلًا. لا مشكلة!" },
+          "hint": "قل إن لديك موعدًا أو مقابلة، ومع مَن.",
+          "explain": "«Ich habe ein Vorstellungsgespräch / einen Termin bei/mit Herrn Brandt» توضّح فورًا سبب وجودك. لاحظ: Herr → Herr**n** بعد bei و mit." },
+        { "type": "listen", "id": "m6a2-c10", "skill": "listening",
+          "audio": "Das Büro ist oben im ersten Stock. Gehen Sie die Treppe hoch und dann die zweite Tür links.",
+          "audioAr": "المكتب في الأعلى في الطابق الأول. اصعد الدرج ثم الباب الثاني على اليسار.",
+          "prompt": "فيليكس يشرح لك الطريق. أين المكتب؟",
+          "options": [
+            { "ar": "في الطابق الأول، الباب الثاني على اليسار", "correct": true },
+            { "ar": "في الطابق الأول، الباب الثاني على اليمين", "why": "سمعت «links» (يسار) وليس «rechts» (يمين)." },
+            { "ar": "في الطابق الثاني، الباب الأول على اليسار", "why": "الطابق هو «im ersten Stock» (الأول)، والباب هو «die zweite Tür» (الثاني)." },
+            { "ar": "في الأسفل بجانب الصندوق", "why": "فيليكس قال «oben» (في الأعلى) و «die Treppe hoch» (اصعد الدرج)." }
+          ],
+          "hint": "هناك رقمان: رقم الطابق ورقم الباب. واتجاه واحد في الآخر.",
+          "explain": "«im ersten Stock … die zweite Tür links» = الطابق الأول، الباب الثاني على اليسار. تعرف «links/rechts» من رحلتك في المطار." },
+        { "type": "narration", "ar": "تصعد الدرج وتطرق الباب الثاني على اليسار." },
+        { "type": "line", "who": "brandt", "de": "Herein! Ah, guten Morgen! Sie sind bestimmt {name}. Ich bin Thomas Brandt, und das ist meine Kollegin, Frau Yilmaz.", "ar": "تفضّل! آه، صباح الخير! أنت {name} بالتأكيد. أنا توماس براندت، وهذه زميلتي السيدة يلماز." },
+        { "type": "line", "who": "me", "de": "Guten Morgen, Herr Brandt! Guten Morgen, Frau Yilmaz! Entschuldigen Sie bitte die Verspätung.", "ar": "صباح الخير يا سيد براندت! صباح الخير يا سيدة يلماز! أعتذر عن التأخير." },
+        { "type": "line", "who": "yilmaz", "de": "Kein Problem, das passiert in München leider oft. Bitte nehmen Sie Platz!", "ar": "لا مشكلة، هذا يحدث في ميونخ كثيرًا للأسف. تفضّل بالجلوس!" },
+        { "type": "choice", "id": "m6a2-c11", "skill": "dialogue",
+          "npc": { "who": "brandt", "de": "Haben Sie uns trotzdem gut gefunden?", "ar": "هل وجدت المكان بسهولة رغم ذلك؟" },
+          "prompt": "دردشة قصيرة قبل المقابلة. ماذا تقول؟",
+          "options": [
+            { "de": "Ja, danke! Die U-Bahn hatte leider Verspätung, aber dann habe ich das Café schnell gefunden.", "correct": true },
+            { "de": "Ja, danke. Ich bin mit der U2 gekommen, und das Café ist ja direkt am Sendlinger Tor.", "correct": true },
+            { "de": "Ja, ich finde Sie sehr nett, danke!", "why": "سوء فهم! الفعل finden هنا يعني «يجد المكان»، وليس «يرى/يعتقد». السيد براندت يسأل هل وجدت الطريق." },
+            { "de": "Nein, danke. Ich habe keinen Hunger.", "why": "السؤال ليس عن الطعام، بل عن الطريق إلى المقهى." }
+          ],
+          "reply": { "who": "brandt", "de": "Sehr gut. Dann fangen wir an!", "ar": "جيد جدًا. إذن لنبدأ!" },
+          "hint": "«jemanden/etwas finden» قد تعني «يجد» أو «يرى أن…». أيّ معنى هنا؟",
+          "explain": "«Haben Sie uns gut gefunden?» سؤال لطيف شائع في البداية ويعني: هل وصلت بسهولة؟ لاحظ Präteritum «hatte» و Perfekt «habe gefunden / bin gekommen»." },
+        { "type": "line", "who": "yilmaz", "de": "Haben Sie Ihre Unterlagen dabei?", "ar": "هل أحضرت أوراقك معك؟" },
+        { "type": "find", "id": "m6a2-c12", "skill": "reading",
+          "prompt": "افتح حقيبتك واختر الوثائق التي طلبتها السيدة يلماز في بريد الدعوة.",
+          "clue": "Bitte bringen Sie Ihren Ausweis und, wenn möglich, Ihre Arbeitszeugnisse mit.",
+          "items": [
+            { "de": "der Ausweis", "emoji": "🪪", "ar": "بطاقة الهوية" },
+            { "de": "das Arbeitszeugnis", "emoji": "📄", "ar": "شهادة الخبرة" },
+            { "de": "die Brezel", "emoji": "🥨", "ar": "البريتسل" },
+            { "de": "der Regenschirm", "emoji": "☂️", "ar": "المظلة" },
+            { "de": "die Fahrkarte", "emoji": "🎫", "ar": "تذكرة المواصلات" },
+            { "de": "der Schlüssel", "emoji": "🔑", "ar": "المفتاح" }
+          ],
+          "targets": ["der Ausweis", "das Arbeitszeugnis"],
+          "hint": "تذكّر بريد الدعوة: «Bitte bringen Sie … mit.»",
+          "explain": "«die Unterlagen» = الأوراق الرسمية. هنا: بطاقة الهوية وشهادة الخبرة من المطعم. أما البريتسل فهو من فطور لينا!" }
+      ]
+    },
+    {
+      "id": "ueber-mich",
+      "title": { "de": "Erzählen Sie von sich", "ar": "حدّثنا عن نفسك" },
+      "steps": [
+        { "type": "choice", "id": "m6a2-c13", "skill": "dialogue",
+          "npc": { "who": "brandt", "de": "Gut. Erzählen Sie doch mal ein bisschen von sich.", "ar": "جيد. حدّثنا قليلًا عن نفسك." },
+          "prompt": "قدّم نفسك معتمدًا على ملاحظات لينا. (قد تكون أكثر من إجابة صحيحة)",
+          "options": [
+            { "de": "Gern. Ich heiße {name}, bin 24 Jahre alt und komme {fromCountry}. Ich bin vor zwei Wochen nach München gekommen und mache jetzt einen Deutschkurs.", "correct": true },
+            { "de": "Mein Name ist {name}, ich bin 24. Ich komme {fromCountry} und habe dort Wirtschaft studiert. Meine Muttersprache ist Arabisch, und ich spreche auch gut Englisch.", "correct": true },
+            { "de": "Ich heiße {name}, ich habe 24 Jahre, und ich bin gekommen vor zwei Wochen nach München.", "why": "خطآن: للعمر نقول «ich bin 24 Jahre alt»، و Partizip «gekommen» يأتي في آخر الجملة." },
+            { "de": "Ich heiße {name}. Und Sie? Wie alt bist du?", "why": "لم تقدّم نفسك بشكل كافٍ، وخلطت بين Sie و du، وسؤال المدير عن عمره غير مناسب." }
+          ],
+          "reply": { "who": "brandt", "de": "Sehr schön, danke! Und wie lange lernen Sie schon Deutsch?", "ar": "جميل جدًا، شكرًا! ومنذ متى تتعلّم الألمانية؟" },
+          "hint": "ابحث عن الجمل التي فيها «ich bin 24» والفعل المساعد في المكان الثاني والـ Partizip في الآخر.",
+          "explain": "الجوابان يذكران الاسم والعمر والبلد، ويستخدمان Perfekt بشكل صحيح: «Ich bin … gekommen»، «habe … studiert»." },
+        { "type": "write", "id": "m6a2-c14", "skill": "writing",
+          "prompt": "أجب بجملة كاملة: «أتعلّم الألمانية منذ سنة.»",
+          "answers": ["Ich lerne seit einem Jahr Deutsch", "Ich lerne Deutsch seit einem Jahr", "Seit einem Jahr lerne ich Deutsch", "Ich lerne schon seit einem Jahr Deutsch", "Ich lerne seit 1 Jahr Deutsch", "Ich lerne schon ein Jahr Deutsch", "Seit einem Jahr lerne ich schon Deutsch"],
+          "hint": "منذ = seit، وبعدها Dativ: das Jahr → einem Jahr. والفعل في المضارع!",
+          "explain": "«Ich lerne seit einem Jahr Deutsch.» مع seit نستخدم المضارع لأن التعلّم ما زال مستمرًا. و seit + Dativ: einem Jahr." },
+        { "type": "line", "who": "yilmaz", "de": "Das hört man! Wir haben viele Touristen hier. Welche Sprachen sprechen Sie noch?", "ar": "هذا واضح! لدينا سياح كثيرون هنا. ما اللغات الأخرى التي تتحدثها؟" },
+        { "type": "line", "who": "me", "de": "Arabisch ist meine Muttersprache, und Englisch spreche ich gut, weil ich es in der Schule und an der Uni gelernt habe.", "ar": "العربية لغتي الأم، وأتحدث الإنجليزية جيدًا لأنني تعلّمتها في المدرسة والجامعة." },
+        { "type": "narration", "ar": "يقلّب السيد براندت سيرتك الذاتية، ثم يسأل سؤالًا طويلًا بسرعة كبيرة…" },
+        { "type": "choice", "id": "m6a2-c15", "skill": "dialogue",
+          "npc": { "who": "brandt", "de": "In Ihrem Lebenslauf steht, dass Sie im Service gearbeitet haben – wie lange waren Sie da, und was haben Sie da genau gemacht?", "ar": "مكتوب في سيرتك الذاتية أنك عملت في خدمة الزبائن – كم بقيت هناك، وماذا كنت تفعل بالضبط؟" },
+          "prompt": "تكلّم بسرعة وبجملة طويلة، ولم تفهم كل شيء. ماذا تقول؟",
+          "options": [
+            { "de": "Entschuldigung, könnten Sie die Frage bitte wiederholen?", "correct": true },
+            { "de": "Könnten Sie bitte etwas langsamer sprechen? Mein Deutsch ist noch nicht so gut.", "correct": true },
+            { "de": "Hä? Was meinen Sie?", "why": "«Hä?» غير مهذبة أبدًا في مقابلة عمل. استخدم «Entschuldigung» و «Könnten Sie …?»." },
+            { "de": "Ja, genau.", "why": "لا تتظاهر بالفهم! السؤال مهم، والأفضل أن تطلب التكرار بأدب." }
+          ],
+          "reply": { "who": "brandt", "de": "Natürlich, gern. Langsam: Wie lange haben Sie im Restaurant gearbeitet? Und was haben Sie dort gemacht?", "ar": "طبعًا، بكل سرور. ببطء: كم من الوقت عملت في المطعم؟ وماذا فعلت هناك؟" },
+          "hint": "تذكّر بطاقة لينا: Könnten Sie …?",
+          "explain": "طلب التكرار أو الكلام ببطء أمر طبيعي ويُظهر أنك تريد أن تفهم جيدًا. «Könnten Sie …?» هي الصيغة الأكثر تهذيبًا." },
+        { "type": "line", "who": "me", "de": "Ich habe zwei Jahre in meiner Heimat in einem Restaurant gearbeitet.", "ar": "عملتُ سنتين في مطعم في بلدي." },
+        { "type": "fill", "id": "m6a2-c16", "skill": "grammar", "bonus": true,
+          "sentence": "Ich habe die Gäste bedient und an der Kasse ___.",
+          "ar": "خدمتُ الضيوف وحصّلتُ المال عند الصندوق.",
+          "options": ["kassiert", "gekassiert", "kassieren", "kassierte"],
+          "answers": ["kassiert"],
+          "hint": "تذكّر قاعدة الأفعال التي تنتهي بـ -ieren في Perfekt.",
+          "explain": "الأفعال التي تنتهي بـ -ieren لا تأخذ ge- في Partizip II: kassieren → kassiert، studieren → studiert. أما bedienen → bedient لأن be- بادئة غير منفصلة." },
+        { "type": "line", "who": "brandt", "de": "Sehr gut, das brauchen wir hier auch. Und warum möchten Sie gerade bei uns arbeiten?", "ar": "جيد جدًا، نحتاج هذا هنا أيضًا. ولماذا تريد العمل عندنا بالذات؟" },
+        { "type": "write", "id": "m6a2-c17", "skill": "writing",
+          "prompt": "أجب بجملة تبدأ بـ Weil: «لأنني أحب العمل مع الناس.»",
+          "answers": ["Weil ich gern mit Menschen arbeite", "Weil ich gerne mit Menschen arbeite", "Weil ich gern mit Leuten arbeite", "Weil ich gerne mit Leuten arbeite", "Weil ich sehr gern mit Menschen arbeite", "Weil ich sehr gerne mit Menschen arbeite"],
+          "hint": "تدرّبت على هذه الجملة مع لينا! الفعل arbeite في الآخر.",
+          "explain": "«Weil ich gern mit Menschen arbeite.» بعد weil يذهب الفعل المصرَّف إلى آخر الجملة." },
+        { "type": "line", "who": "brandt", "de": "Das ist bei uns sehr wichtig – unsere Gäste sollen sich wohlfühlen.", "ar": "هذا مهم جدًا عندنا – نريد أن يشعر ضيوفنا بالراحة." },
+        { "type": "decision", "prompt": "السيدة يلماز تسأل: «Und was machen Sie gern in Ihrer Freizeit?» عن أي هواية تتحدث؟",
+          "options": [
+            { "ar": "الطبخ", "de": "Kochen", "then": [
+              { "type": "line", "who": "me", "de": "Ich koche sehr gern, besonders Gerichte aus meiner Heimat. Letzte Woche habe ich für meine Mitbewohnerin gekocht.", "ar": "أحب الطبخ كثيرًا، خاصة أطباق بلدي. في الأسبوع الماضي طبخت لشريكتي في السكن." },
+              { "type": "line", "who": "brandt", "de": "Oh, vielleicht können Sie uns mal ein Rezept zeigen!", "ar": "أوه، ربما يمكنك أن تُرينا وصفة يومًا ما!" }
+            ] },
+            { "ar": "التصوير", "de": "Fotografieren", "then": [
+              { "type": "line", "who": "me", "de": "Ich fotografiere gern. Am Sonntag bin ich durch den Englischen Garten gelaufen und habe viele Fotos gemacht.", "ar": "أحب التصوير. يوم الأحد مشيت في الحديقة الإنجليزية والتقطت صورًا كثيرة." },
+              { "type": "line", "who": "yilmaz", "de": "Der Englische Garten ist im Herbst wunderschön, oder?", "ar": "الحديقة الإنجليزية جميلة جدًا في الخريف، أليس كذلك؟" }
+            ] },
+            { "ar": "السباحة", "de": "Schwimmen", "then": [
+              { "type": "line", "who": "me", "de": "Ich schwimme gern. Ich gehe zweimal pro Woche ins Schwimmbad, meistens am Abend.", "ar": "أحب السباحة. أذهب إلى المسبح مرتين في الأسبوع، غالبًا في المساء." },
+              { "type": "line", "who": "brandt", "de": "Sport ist gut – die Arbeit im Café ist auch ein bisschen Sport! 😄", "ar": "الرياضة جيدة – والعمل في المقهى رياضة قليلًا أيضًا!" }
+            ] }
+          ] }
+      ]
+    },
+    {
+      "id": "alltag",
+      "title": { "de": "Alltag und Arbeitszeiten", "ar": "الحياة اليومية وأوقات العمل" },
+      "steps": [
+        { "type": "line", "who": "brandt", "de": "Jetzt zu Ihrem Alltag. Wie sieht ein normaler Tag bei Ihnen aus?", "ar": "الآن عن حياتك اليومية. كيف يبدو يومك العادي؟" },
+        { "type": "grammar", "title": "الأفعال المنفصلة في الحياة اليومية",
+          "body": "أفعال مثل **aufstehen، anfangen، einkaufen** تنفصل في الجملة: الفعل في المكان الثاني، والبادئة (**auf، an، ein**) في **آخر الجملة**. أما مع فعل مساعد مثل **kann** أو **möchte** فيبقى الفعل كاملًا في الآخر.",
+          "examples": [
+            { "de": "Ich stehe um sechs Uhr auf.", "ar": "أستيقظ الساعة السادسة." },
+            { "de": "Mein Kurs fängt um 8:30 Uhr an.", "ar": "دورتي تبدأ الساعة 8:30." },
+            { "de": "Ich kann um 13 Uhr anfangen.", "ar": "يمكنني أن أبدأ الساعة 13." }
+          ] },
+        { "type": "line", "who": "me", "de": "Ich stehe um sechs Uhr auf, frühstücke und fahre dann mit der U-Bahn zum Deutschkurs.", "ar": "أستيقظ الساعة السادسة، وأتناول الفطور، ثم أذهب بالمترو إلى دورة الألمانية." },
+        { "type": "build", "id": "m6a2-c18", "skill": "grammar",
+          "prompt": "أكمل وصف يومك: «دورتي تبدأ الساعة 8:30.»",
+          "tiles": ["Mein", "Kurs", "fängt", "um", "8:30", "Uhr", "an", ".", "anfängt", "Meine"],
+          "answers": [["Mein", "Kurs", "fängt", "um", "8:30", "Uhr", "an", "."]],
+          "hint": "anfangen فعل منفصل: الجزء «an» يذهب إلى الآخر. و der Kurs مذكّر.",
+          "explain": "«Mein Kurs fängt um 8:30 Uhr an.» الفعل fängt في المكان الثاني، و an في الآخر. و der Kurs → mein Kurs." },
+        { "type": "line", "who": "me", "de": "Um zwölf Uhr ist der Kurs zu Ende. Nachmittags mache ich Hausaufgaben oder kaufe ein.", "ar": "الساعة الثانية عشرة تنتهي الدورة. بعد الظهر أحلّ الواجبات أو أتسوّق." },
+        { "type": "line", "who": "yilmaz", "de": "Danke. Schauen Sie mal, das ist unser Schichtplan.", "ar": "شكرًا. انظر، هذا جدول المناوبات عندنا." },
+        { "type": "doc", "kind": "list", "title": "Schichtplan – Filiale Sendlinger Tor",
+          "lines": [
+            "Frühschicht: 6:30 – 12:30 Uhr",
+            "Spätschicht: 13:00 – 19:00 Uhr",
+            "Samstag: 7:00 – 18:00 Uhr (zwei Schichten)",
+            "Sonntag: 8:00 – 17:00 Uhr (jedes zweite Wochenende)"
+          ],
+          "ar": "المناوبة الصباحية: 6:30 – 12:30. المناوبة المسائية: 13:00 – 19:00. السبت: 7:00 – 18:00 (مناوبتان). الأحد: 8:00 – 17:00 (كل أسبوعين مرة)." },
+        { "type": "choice", "id": "m6a2-c19", "skill": "dialogue",
+          "npc": { "who": "yilmaz", "de": "Wir haben eine Frühschicht und eine Spätschicht. Wann können Sie arbeiten?", "ar": "لدينا مناوبة صباحية ومناوبة مسائية. متى يمكنك العمل؟" },
+          "prompt": "انظر إلى جدول المناوبات وإلى وقت دورتك. أي جواب مناسب؟",
+          "options": [
+            { "de": "Ich kann gut in der Spätschicht arbeiten, weil ich vormittags einen Deutschkurs habe.", "correct": true },
+            { "de": "Nachmittags und am Wochenende habe ich Zeit. Vormittags habe ich leider Unterricht.", "correct": true },
+            { "de": "Ich kann gut in der Frühschicht arbeiten, weil ich vormittags einen Deutschkurs habe.", "why": "تناقض: المناوبة الصباحية (6:30–12:30) في نفس وقت دورتك (8:30–12:00). الأنسب المناوبة المسائية." },
+            { "de": "Ich arbeite nur, wenn ich Lust habe.", "why": "«فقط عندما أرغب» جواب غير مهذب وغير مهني في مقابلة عمل." }
+          ],
+          "reply": { "who": "yilmaz", "de": "Perfekt! Wir suchen vor allem jemanden für die Spätschicht.", "ar": "ممتاز! نحن نبحث بالأخص عن شخص للمناوبة المسائية." },
+          "hint": "دورتك من 8:30 إلى 12:00. أي مناوبة لا تتعارض معها؟",
+          "explain": "الجوابان يشرحان الوقت المتاح بوضوح ويذكران السبب: الدورة في الصباح، لذلك العمل بعد الظهر." },
+        { "type": "listen", "id": "m6a2-c20", "skill": "numbers",
+          "audio": "Die Stelle hat zwanzig Stunden pro Woche. Sie arbeiten an vier Tagen, jeweils fünf Stunden, meistens von 14 bis 19 Uhr. Der Stundenlohn ist 14,50 Euro.",
+          "audioAr": "الوظيفة عشرون ساعة في الأسبوع. تعمل أربعة أيام، خمس ساعات في كل يوم، غالبًا من 14 إلى 19. والأجر في الساعة 14,50 يورو.",
+          "prompt": "استمع إلى السيدة يلماز. كم يومًا ستعمل في الأسبوع؟",
+          "options": [
+            { "de": "4 Tage", "correct": true },
+            { "de": "5 Tage", "why": "5 هي عدد الساعات في كل يوم (jeweils fünf Stunden)، وليست عدد الأيام." },
+            { "de": "20 Tage", "why": "20 هي عدد الساعات في الأسبوع (zwanzig Stunden pro Woche)." },
+            { "de": "14 Tage", "why": "14 هي ساعة بداية العمل (14 Uhr) وجزء من الأجر (14,50 €)." }
+          ],
+          "hint": "ابحث عن الرقم الذي يأتي قبل كلمة «Tagen».",
+          "explain": "«an vier Tagen, jeweils fünf Stunden» = أربعة أيام، خمس ساعات كل يوم: 4 × 5 = 20 ساعة في الأسبوع." },
+        { "type": "line", "who": "yilmaz", "de": "Noch eine Frage zu den Formalitäten: Haben Sie schon eine Steuer-ID und eine Krankenversicherung in Deutschland?", "ar": "سؤال آخر عن الإجراءات الرسمية: هل لديك بالفعل رقم ضريبي وتأمين صحي في ألمانيا؟" },
+        { "type": "choice", "id": "m6a2-c21", "skill": "dialogue",
+          "prompt": "لست متأكدًا من الجواب. كيف تردّ بأدب وصدق؟",
+          "options": [
+            { "de": "Das weiß ich leider noch nicht genau. Darf ich Ihnen die Informationen bis Montag per E-Mail schicken?", "correct": true },
+            { "de": "Ehrlich gesagt bin ich nicht sicher. Ich habe mich angemeldet, aber die Steuer-ID ist noch nicht gekommen.", "correct": true },
+            { "de": "Ja, natürlich, alles schon da.", "why": "لا تقل «نعم» إذا لم تكن متأكدًا! ستحتاج الشركة هذه الأرقام فعلًا، والصدق أفضل." },
+            { "de": "Das ist nicht mein Problem.", "why": "هذا رد غير مهذب أبدًا. قل بأدب إنك لا تعرف، واعرض أن ترسل المعلومة لاحقًا." }
+          ],
+          "reply": { "who": "yilmaz", "de": "Kein Problem, das ist am Anfang ganz normal. Schicken Sie mir einfach eine E-Mail, wenn Sie die Nummer haben.", "ar": "لا مشكلة، هذا طبيعي جدًا في البداية. أرسل لي بريدًا إلكترونيًا عندما يصلك الرقم." },
+          "hint": "ابدأ بـ «Das weiß ich leider …» أو «Ehrlich gesagt …».",
+          "explain": "عندما لا تعرف، قل ذلك بصدق وأدب، واعرض حلًا: إرسال المعلومة لاحقًا. هذا يترك انطباعًا جيدًا." },
+        { "type": "learn", "de": "Das weiß ich leider noch nicht genau.", "ar": "للأسف لا أعرف ذلك بدقة بعد.", "use": "جواب صادق ومهذب. كلمة «leider» (للأسف) و «noch nicht» (ليس بعد) تجعلان الجواب لطيفًا وتُظهران أنك ستعرف لاحقًا.", "example": "Wann ziehen Sie um? – Das weiß ich leider noch nicht genau.", "exampleAr": "متى ستنتقل إلى سكن جديد؟ – للأسف لا أعرف ذلك بدقة بعد." }
+      ]
+    },
+    {
+      "id": "abschluss",
+      "title": { "de": "Zum Schluss", "ar": "في الختام" },
+      "steps": [
+        { "type": "choice", "id": "m6a2-c22", "skill": "dialogue",
+          "npc": { "who": "brandt", "de": "Gut, von unserer Seite war es das. Haben Sie noch Fragen an uns?", "ar": "حسنًا، هذا كل شيء من جهتنا. هل لديك أسئلة لنا؟" },
+          "prompt": "اسأل سؤالًا مناسبًا عن الوظيفة. (قد تكون أكثر من إجابة صحيحة)",
+          "options": [
+            { "de": "Ja, gern: Gibt es am Anfang eine Einarbeitung?", "correct": true },
+            { "de": "Ja: Wann könnte ich anfangen?", "correct": true },
+            { "de": "Ja. Muss ich bei der Arbeit besondere Kleidung tragen?", "correct": true },
+            { "de": "Ja: Wie alt sind Sie eigentlich, Frau Yilmaz?", "why": "سؤال شخصي لا علاقة له بالوظيفة، وغير مهذب في المقابلة." },
+            { "de": "Nein. Wann ist Feierabend? Ich möchte nicht so viel arbeiten.", "why": "هذا يعطي انطباعًا سيئًا جدًا: كأنك لا تريد العمل. اسأل عن التدريب أو البداية أو الملابس." }
+          ],
+          "reply": { "who": "brandt", "de": "Gute Frage! Am Anfang arbeiten Sie eine Woche mit Felix zusammen – er zeigt Ihnen alles: die Kasse, die Kaffeemaschine, die Kuchen. Ein T-Shirt mit unserem Logo bekommen Sie von uns. Und anfangen könnten Sie nach einem Probetag schon Ende Oktober.", "ar": "سؤال جيد! في البداية تعمل أسبوعًا مع فيليكس – سيريك كل شيء: الصندوق، وآلة القهوة، والكعك. وستحصل منا على قميص عليه شعارنا. ويمكنك أن تبدأ بعد يوم عمل تجريبي، في نهاية أكتوبر." },
+          "hint": "سؤال جيد يتعلق بالعمل نفسه: التدريب، البداية، الملابس…",
+          "explain": "الأسئلة عن التدريب (Einarbeitung) وموعد البداية والملابس تُظهر أنك مهتم بالوظيفة فعلًا." },
+        { "type": "line", "who": "yilmaz", "de": "Wir melden uns bis Freitag bei Ihnen.", "ar": "سنتواصل معك حتى يوم الجمعة." },
+        { "type": "fill", "id": "m6a2-c23", "skill": "grammar", "bonus": true,
+          "sentence": "Vielen Dank für das Gespräch! Ich freue mich ___ Ihre Antwort.",
+          "ar": "شكرًا جزيلًا على المقابلة! أتطلّع إلى ردّكم.",
+          "options": ["auf", "über", "für", "an"],
+          "answers": ["auf"],
+          "hint": "الرد لم يصل بعد. أي حرف جر نستخدمه لشيء في المستقبل؟",
+          "explain": "«sich freuen auf» = يتطلّع إلى شيء سيأتي. أما «sich freuen über» فلشيء حدث بالفعل، مثل: «Ich freue mich über die Einladung»." },
+        { "type": "line", "who": "me", "de": "Vielen Dank für das Gespräch! Ich freue mich auf Ihre Antwort. Auf Wiedersehen, Herr Brandt! Auf Wiedersehen, Frau Yilmaz!", "ar": "شكرًا جزيلًا على المقابلة! أتطلّع إلى ردّكم. إلى اللقاء يا سيد براندت! إلى اللقاء يا سيدة يلماز!" },
+        { "type": "line", "who": "jonas", "de": "Und, wie war's? Ich drücke Ihnen die Daumen!", "ar": "وماذا، كيف كانت؟ أتمنى لك الحظ!" },
+        { "type": "narration", "ar": "في اليوم التالي، الجمعة، أنت في دورة الألمانية. الساعة 12:05 – انتهت الدورة للتو، فيرنّ هاتفك: رقم مقهى زونِنشاين!" },
+        { "type": "listen", "id": "m6a2-c24", "skill": "listening", "final": true,
+          "audio": "Guten Tag, hier ist Thomas Brandt vom Café Sonnenschein. Das Gespräch gestern hat uns sehr gut gefallen. Wir möchten Sie gern zu einem Probetag einladen: am Montag, in der Spätschicht, von 13 bis 17 Uhr. Passt Ihnen das?",
+          "audioAr": "مرحبًا، معك توماس براندت من كافيه زونِنشاين. أعجبتنا المقابلة أمس كثيرًا. نودّ أن ندعوك إلى يوم عمل تجريبي: يوم الاثنين، في المناوبة المسائية، من 13 إلى 17. هل يناسبك ذلك؟",
+          "prompt": "استمع إلى السيد براندت واختر أفضل رد.",
+          "options": [
+            { "de": "Vielen Dank, Herr Brandt, das freut mich sehr! Am Montag um 13 Uhr passt es mir gut, weil mein Kurs um 12 Uhr zu Ende ist.", "correct": true },
+            { "de": "Das ist toll, vielen Dank! Ja, Montag von 13 bis 17 Uhr passt mir. Ich freue mich auf den Probetag!", "correct": true },
+            { "de": "Vielen Dank! Am Montag um 6:30 Uhr passt es mir gut.", "why": "السيد براندت قال «in der Spätschicht, von 13 bis 17 Uhr»، وليس المناوبة الصباحية." },
+            { "de": "Leider kann ich am Montag nicht, weil ich vormittags einen Deutschkurs habe.", "why": "يوم العمل التجريبي بعد الظهر (من 13)، ودورتك تنتهي الساعة 12، فلا يوجد تعارض." },
+            { "de": "Super, Thomas! Ich freu mich auf dich. Bis Montag!", "why": "غير رسمي: «Thomas» و «dich» للأصدقاء. مع المدير نقول «Herr Brandt» ونستخدم Sie." }
+          ],
+          "hint": "انتبه إلى اليوم والساعة، وإلى وقت دورتك، وإلى أسلوب Sie.",
+          "explain": "الردّان الصحيحان رسميان، ويقبلان الموعد الصحيح (الاثنين، 13–17)، والأول يشرح السبب بجملة weil. لقد جمعت الاستماع والأرقام وweil والأسلوب الرسمي معًا!" },
+        { "type": "line", "who": "brandt", "de": "Wunderbar! Dann bis Montag um 13 Uhr. Auf Wiederhören!", "ar": "رائع! إذن إلى اللقاء يوم الاثنين الساعة 13. إلى اللقاء!" },
+        { "type": "doc", "kind": "message", "title": "Lina",
+          "lines": ["Probetag?! 🎉🎉 Ich habe es gewusst!", "Heute Abend koche ich, und du erzählst mir alles!"],
+          "ar": "يوم عمل تجريبي؟! كنت أعرف ذلك! الليلة سأطبخ أنا، وأنت تحكي لي كل شيء!" }
+      ]
+    }
+  ]
+}

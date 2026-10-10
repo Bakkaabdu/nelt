@@ -1,0 +1,533 @@
+{
+  "id": "m7",
+  "level": "A2",
+  "title": { "de": "Ein neues Zuhause in München", "ar": "بيت جديد في ميونخ" },
+  "place": "München – Schwabing, Giesing und Milbertshofen",
+  "intro": "منذ أسبوع تعمل نادلًا بدوام جزئي في مقهى Sonnenschein، وبدأت تشعر أن ميونخ أصبحت مدينتك. لكن مساء اليوم تنتظرك لينا في المطبخ بخبر غير سار: Jonas سيعود في نهاية الشهر ويحتاج غرفته. أمامك أسابيع قليلة لتجد سكنًا في أغلى مدينة في ألمانيا — حيث يتصل خمسون شخصًا بكل إعلان!",
+  "objective": "افهم إعلانات السكن واختصاراتها، واتصل بالمؤجّرين ورتّب مواعيد المعاينة، وعرّف بنفسك واشرح احتياجاتك، وافهم نظام المبنى، وقارن بين عرضين بالحساب الدقيق، ثم وقّع عقد إيجار ابتداءً من 1 نوفمبر.",
+  "outro": "تذكّر يومك الأول: كنت في مطار برلين لا تعرف أين المخرج. ثم ركبت القطار السريع، واشتريت طعامك، وطلبت عشاءك، وشرحت للطبيب ما يؤلمك، ونجحت في مقابلة عمل… واليوم وقّعت عقد إيجار بالألمانية! لم تعد زائرًا في ألمانيا — أصبح لك بيت هنا. Herzlichen Glückwunsch, {name}! 🏠🎉",
+  "cast": {
+    "lina": { "name": "Lina Hoffmann", "role": "صديقتك في ميونخ", "avatar": "👩‍🦰" },
+    "schulz": { "name": "Herr Schulz", "role": "مؤجّر شقة في Neuhausen", "avatar": "👨‍🦳" },
+    "mia": { "name": "Mia", "role": "ساكنة في شقة مشتركة (WG) في Giesing، ممرّضة", "avatar": "👩‍⚕️" },
+    "paul": { "name": "Paul", "role": "ساكن في الشقة المشتركة، طالب", "avatar": "🧑‍🎓" },
+    "wagner": { "name": "Frau Wagner", "role": "المؤجّرة في Milbertshofen", "avatar": "👵" }
+  },
+  "vocab": [
+    { "de": "die Wohngemeinschaft (WG)", "ar": "السكن المشترك" },
+    { "de": "der Mitbewohner / die Mitbewohnerin", "ar": "شريك / شريكة السكن" },
+    { "de": "die Vermieterin / der Vermieter", "ar": "المؤجِّرة / المؤجِّر" },
+    { "de": "der Mieter / die Mieterin", "ar": "المستأجر / المستأجرة" },
+    { "de": "der Mietvertrag", "ar": "عقد الإيجار" },
+    { "de": "die Kaution", "ar": "مبلغ التأمين (يُدفع مرة واحدة ويُستردّ لاحقًا)" },
+    { "de": "die Kaltmiete (KM)", "ar": "الإيجار الأساسي" },
+    { "de": "die Nebenkosten (NK)", "ar": "التكاليف الإضافية" },
+    { "de": "die Warmmiete", "ar": "الإيجار الشامل" },
+    { "de": "zuzüglich (zzgl.)", "ar": "يُضاف إليه" },
+    { "de": "inklusive (inkl.)", "ar": "شامل / مشمول" },
+    { "de": "die Einbauküche (EBK)", "ar": "مطبخ مجهّز" },
+    { "de": "das Obergeschoss (OG)", "ar": "الطابق (فوق الأرضي)" },
+    { "de": "der Aufzug", "ar": "المصعد" },
+    { "de": "möbliert / teilmöbliert", "ar": "مفروش / مفروش جزئيًا" },
+    { "de": "hell / ruhig", "ar": "مضيء / هادئ" },
+    { "de": "die Besichtigung", "ar": "المعاينة" },
+    { "de": "vergeben sein", "ar": "مؤجَّر بالفعل / محجوز" },
+    { "de": "einziehen (ist eingezogen)", "ar": "ينتقل إلى السكن" },
+    { "de": "umziehen / der Umzug", "ar": "ينتقل من سكن إلى آخر / الانتقال" },
+    { "de": "unterschreiben", "ar": "يوقّع" },
+    { "de": "überweisen", "ar": "يحوّل (مالًا عبر البنك)" },
+    { "de": "der Putzplan", "ar": "جدول التنظيف" },
+    { "de": "die Hausordnung", "ar": "نظام المبنى" },
+    { "de": "die Ruhezeit", "ar": "وقت الهدوء" },
+    { "de": "den Müll trennen", "ar": "يفرز القمامة" },
+    { "de": "die Wertstoffinsel", "ar": "نقطة إعادة التدوير في الشارع" },
+    { "de": "der Hausflur", "ar": "ممرّ المبنى / الدرج" },
+    { "de": "der Fahrradkeller", "ar": "قبو الدراجات" },
+    { "de": "der Strom / die Heizung", "ar": "الكهرباء / التدفئة" },
+    { "de": "der Schreibtisch", "ar": "مكتب الكتابة" },
+    { "de": "das Haustier", "ar": "الحيوان الأليف" },
+    { "de": "Bescheid sagen", "ar": "يُبلغ / يُعلم" }
+  ],
+  "expressions": [
+    { "de": "Ich rufe wegen Ihrer Anzeige an.", "ar": "أتصل بخصوص إعلانك.", "use": "أفضل بداية لمكالمة مع مؤجّر بعد أن تقول اسمك.", "example": "Guten Tag, mein Name ist Sara. Ich rufe wegen Ihrer Anzeige an.", "exampleAr": "مرحبًا، اسمي سارة. أتصل بخصوص إعلانك." },
+    { "de": "Ich interessiere mich für das Zimmer.", "ar": "أنا مهتم بالغرفة.", "use": "لتُظهر اهتمامك بسكن في رسالة أو مكالمة. sich interessieren für + Akkusativ.", "example": "Ich interessiere mich für die Wohnung in Neuhausen.", "exampleAr": "أنا مهتم بالشقة في Neuhausen." },
+    { "de": "Die Wohnung ist schon vergeben.", "ar": "الشقة مؤجّرة بالفعل.", "use": "تسمعها من المؤجّر عندما يكون قد اختار مستأجرًا آخر.", "example": "Tut mir leid, das Zimmer ist leider schon vergeben.", "exampleAr": "آسف، الغرفة مؤجّرة للأسف." },
+    { "de": "Morgen kann ich leider nicht. Geht es auch am …?", "ar": "غدًا لا أستطيع للأسف. هل يمكن يوم …؟", "use": "لرفض موعد بأدب واقتراح يوم آخر.", "example": "Am Dienstag kann ich leider nicht. Geht es auch am Mittwoch?", "exampleAr": "يوم الثلاثاء لا أستطيع للأسف. هل يمكن يوم الأربعاء؟" },
+    { "de": "Was bedeutet … in der Anzeige?", "ar": "ماذا يعني … في الإعلان؟", "use": "لطلب توضيح كلمة أو اختصار غير مفهوم.", "example": "Was bedeutet EBK in der Anzeige?", "exampleAr": "ماذا تعني EBK في الإعلان؟" },
+    { "de": "Ist Internet in der Miete inklusive?", "ar": "هل الإنترنت مشمول في الإيجار؟", "use": "للتأكد مما تدفعه فعلًا كل شهر.", "example": "Sind Strom und Heizung in den Nebenkosten dabei?", "exampleAr": "هل الكهرباء والتدفئة ضمن التكاليف الإضافية؟" },
+    { "de": "Ich brauche ein ruhiges Zimmer, weil …", "ar": "أحتاج غرفة هادئة لأن …", "use": "لشرح احتياجاتك في السكن مع ذكر السبب.", "example": "Ich brauche einen Schreibtisch, weil ich abends lerne.", "exampleAr": "أحتاج مكتبًا لأنني أدرس في المساء." },
+    { "de": "Ab wann ist das Zimmer frei?", "ar": "من متى تكون الغرفة متاحة؟", "use": "للسؤال عن تاريخ بداية الإيجار.", "example": "Ab wann kann ich einziehen?", "exampleAr": "من متى يمكنني الانتقال إلى السكن؟" },
+    { "de": "Ich habe mich entschieden: Ich nehme das Zimmer.", "ar": "لقد قررت: سآخذ الغرفة.", "use": "لإبلاغ المؤجّر بقبولك العرض.", "example": "Ich habe mich für die Wohnung in Giesing entschieden.", "exampleAr": "لقد اخترت الشقة في Giesing." },
+    { "de": "Sagen Sie mir bitte bis Freitag Bescheid.", "ar": "أبلغني من فضلك حتى يوم الجمعة.", "use": "عندما يُطلب منك (أو تطلب) ردًّا حتى موعد معيّن.", "example": "Kannst du mir bis morgen Bescheid sagen?", "exampleAr": "هل يمكنك أن تبلغني حتى الغد؟" }
+  ],
+  "summary": [
+    "فهمت إعلانات السكن واختصاراتها: KM, NK, zzgl., inkl., EBK, OG, möbl., Kaution: 2 KM.",
+    "حسبت الإيجار الشامل والتأمين، وقارنت بين عرضين بدقة (مع الإنترنت والتأمين).",
+    "أجريت مكالمات مع مؤجّرين: بدأت بأدب، وفهمت أن الشقة «schon vergeben»، ورفضت موعدًا واقترحت آخر.",
+    "استخدمت Perfekt مع haben وsein: Ich habe … gewohnt / Ich bin … gekommen.",
+    "شرحت احتياجاتك بجمل weil مع الفعل في آخر الجملة.",
+    "فهمت «halb sechs» = 17:30، وطلبت توضيحًا لكلمات الإعلان.",
+    "فهمت Putzplan الشقة المشتركة ونظام المبنى (Ruhezeiten، فرز القمامة، dürfen/müssen).",
+    "رتّبت توقيع العقد، وتحويل التأمين، واستلام المفاتيح."
+  ],
+  "scenes": [
+    {
+      "id": "news",
+      "title": { "de": "Schlechte Nachrichten", "ar": "أخبار سيئة" },
+      "steps": [
+        { "type": "narration", "ar": "مساء الاثنين. تعود من يوم العمل التجريبي في مقهى Sonnenschein — وقد قبلوك! تبدأ العمل غدًا. لينا تجلس في المطبخ، ويبدو على وجهها القلق." },
+        { "type": "line", "who": "lina", "de": "Hallo {name}! Wie war der Probetag? Komm, setz dich. Ich muss dir leider etwas sagen.", "ar": "مرحبًا {name}! كيف كان يوم العمل التجريبي؟ تعال، اجلس. عليّ للأسف أن أخبرك بشيء." },
+        { "type": "listen", "id": "c1", "skill": "listening",
+          "audio": "Jonas hat heute Nachmittag angerufen. Sein Praktikum in Hamburg ist schon zu Ende, deshalb kommt er am 31. Oktober zurück. Dann braucht er sein Zimmer wieder.",
+          "audioAr": "اتصل Jonas بعد ظهر اليوم. تدريبه في هامبورغ انتهى بالفعل، لذلك سيعود في 31 أكتوبر. وعندها سيحتاج غرفته مرة أخرى.",
+          "prompt": "لماذا يجب أن تبحث عن سكن؟",
+          "options": [
+            { "ar": "لأن Jonas سيعود في 31 أكتوبر ويحتاج غرفته.", "correct": true },
+            { "ar": "لأن لينا ستنتقل إلى هامبورغ.", "why": "هامبورغ هي مكان تدريب Jonas، ولينا لا تنتقل." },
+            { "ar": "لأن Jonas وجد عملًا في ميونخ ويريد غرفة جديدة.", "why": "Jonas أنهى تدريبه ويعود إلى غرفته هو، لا يبحث عن غرفة جديدة." },
+            { "ar": "لأن إيجار الشقة ارتفع.", "why": "لينا لم تذكر الإيجار." }
+          ],
+          "hint": "اسمع: من اتصل؟ ومتى يعود؟ وماذا يحتاج؟",
+          "explain": "«Jonas … kommt am 31. Oktober zurück. Dann braucht er sein Zimmer wieder.» = سيعود في 31 أكتوبر ويحتاج غرفته من جديد. «deshalb» = لذلك." },
+        { "type": "choice", "id": "c2", "skill": "dialogue",
+          "prompt": "كيف تردّ على لينا؟",
+          "options": [
+            { "de": "Oh nein! Dann muss ich schnell ein Zimmer finden.", "correct": true },
+            { "de": "Kein Problem, Lina. Ich fange morgen mit der Suche an.", "correct": true },
+            { "de": "Super! Dann wohnen Jonas und ich zusammen in seinem Zimmer.", "why": "Jonas يحتاج غرفته لنفسه، ولا يناسب أن تفرح بخبر سيئ." },
+            { "de": "Oh nein! Dann muss ich schnell ein Zimmer gefunden.", "why": "بعد الفعل الناقص muss يأتي المصدر في آخر الجملة: finden، لا gefunden." }
+          ],
+          "reply": { "who": "lina", "de": "Keine Sorge, ich helfe dir! Ich habe heute schon im Internet gesucht und ein paar Anzeigen gefunden.", "ar": "لا تقلق، سأساعدك! لقد بحثت اليوم على الإنترنت ووجدت بعض الإعلانات." },
+          "hint": "ردّ يناسب الخبر السيئ، وانتبه إلى شكل الفعل بعد muss.",
+          "explain": "«Dann muss ich … finden» (muss + مصدر في الآخر) و«Ich fange … mit der Suche an» (فعل منفصل) ردّان طبيعيان." },
+        { "type": "grammar", "title": "الماضي في الكلام: Perfekt",
+          "body": "للحديث عن الماضي في الكلام اليومي نستخدم **Perfekt**: فعل مساعد **haben** أو **sein** في المكان الثاني + **Partizip II** في آخر الجملة. معظم الأفعال تأخذ **haben**: Ich **habe** gesucht. أفعال الحركة وتغيّر المكان تأخذ **sein**: Ich **bin** gefahren / gekommen / umgezogen.",
+          "examples": [
+            { "de": "Jonas hat heute angerufen.", "ar": "اتصل Jonas اليوم." },
+            { "de": "Lina hat ein paar Anzeigen gefunden.", "ar": "وجدت لينا بعض الإعلانات." },
+            { "de": "Ich bin mit der U-Bahn gefahren.", "ar": "ذهبتُ بالمترو." },
+            { "de": "Mia ist letztes Jahr nach München gezogen.", "ar": "انتقلت Mia إلى ميونخ العام الماضي." }
+          ] },
+        { "type": "fill", "id": "c3", "skill": "grammar",
+          "sentence": "Lina ___ schon ein paar Anzeigen gefunden.",
+          "ar": "لقد وجدت لينا بالفعل بعض الإعلانات.",
+          "options": ["hat", "ist", "habe", "haben"],
+          "answers": ["hat"],
+          "hint": "finden ليس فعل حركة. والفاعل هو Lina (هي).",
+          "explain": "finden يأخذ haben في Perfekt، ومع Lina (sie) نقول: sie **hat** … gefunden." }
+      ]
+    },
+    {
+      "id": "ads",
+      "title": { "de": "Wohnungsanzeigen", "ar": "إعلانات السكن" },
+      "steps": [
+        { "type": "narration", "ar": "تفتح لينا حاسوبها على موقع «Wohnbörse München». الإعلانات مليئة بالاختصارات… والأسعار تجعلك تبتلع ريقك." },
+        { "type": "doc", "kind": "ad", "title": "Anzeige 1 – Wohnbörse München", "lines": [
+          "1-Zi.-Whg., 26 m², München-Neuhausen",
+          "KM 720 € zzgl. NK 170 €",
+          "EBK, Balkon, 3. OG ohne Aufzug",
+          "Kaution: 3 KM",
+          "Frei ab sofort",
+          "Tel.: 089 / 54 32 18 (Herr Schulz, ab 18 Uhr)"
+        ], "ar": "شقة من غرفة واحدة، 26 م²، حي Neuhausen. الإيجار الأساسي 720 € يُضاف إليه 170 € تكاليف إضافية. مطبخ مجهّز، شرفة، الطابق الثالث بدون مصعد. التأمين: 3 أضعاف الإيجار الأساسي. متاحة فورًا. الهاتف: … (السيد Schulz، بعد الساعة 18)" },
+        { "type": "grammar", "title": "اختصارات الإعلانات — المستوى المتقدم قليلًا",
+          "body": "**KM** = Kaltmiete (الإيجار الأساسي)، **NK** = Nebenkosten (تدفئة، ماء، نفايات، تنظيف الدرج)، **warm** أو **WM** = KM + NK. **zzgl.** = zuzüglich (يُضاف إليه)، **inkl.** = inklusive (شامل). **EBK** = Einbauküche (مطبخ مجهّز)، **OG** = Obergeschoss (الطابق). **Kaution: 3 KM** = التأمين يساوي ثلاثة أضعاف الإيجار الأساسي، ويُدفع **مرة واحدة** فقط.",
+          "examples": [
+            { "de": "KM 720 € zzgl. NK 170 € = 890 € warm", "ar": "الإيجار الشامل 890 € شهريًا" },
+            { "de": "Kaution: 3 KM = 3 × 720 € = 2.160 €", "ar": "التأمين 2.160 € مرة واحدة" },
+            { "de": "760 € warm (inkl. Internet)", "ar": "760 € شاملة الإنترنت" }
+          ] },
+        { "type": "choice", "id": "c4", "skill": "numbers",
+          "prompt": "Anzeige 1: Wie viel muss man jeden Monat bezahlen?",
+          "options": [
+            { "de": "890 €", "correct": true },
+            { "de": "720 €", "why": "هذه الـKaltmiete فقط. zzgl. NK تعني أن عليك إضافة 170 €." },
+            { "de": "170 €", "why": "هذه الـNebenkosten فقط." },
+            { "de": "2.160 €", "why": "هذا مبلغ التأمين (3 × 720 €)، ويُدفع مرة واحدة فقط، لا كل شهر." }
+          ],
+          "hint": "zzgl. = يُضاف إليه. ما تدفعه شهريًا = KM + NK.",
+          "explain": "720 € + 170 € = 890 € warm كل شهر. أما الـKaution (2.160 €) فتُدفع مرة واحدة عند توقيع العقد." },
+        { "type": "match", "id": "c5", "skill": "vocab",
+          "prompt": "صِل كل اختصار أو كلمة من الإعلانات بمعناها.",
+          "pairs": [
+            ["EBK", "مطبخ مجهّز"],
+            ["3. OG", "الطابق الثالث"],
+            ["zzgl.", "يُضاف إليه"],
+            ["inkl.", "شامل"],
+            ["die Kaution", "مبلغ التأمين"],
+            ["ab sofort", "متاح فورًا"]
+          ],
+          "hint": "E = Einbau، K = Küche. OG = Obergeschoss. sofort = فورًا.",
+          "explain": "هذه الاختصارات موجودة في معظم إعلانات السكن الألمانية. zzgl. وinkl. متضادّتان: الأولى تعني «زائد»، والثانية «مشمول»." },
+        { "type": "line", "who": "lina", "de": "890 Euro warm für 26 Quadratmeter – das ist für München fast billig! Da musst du gleich um 18 Uhr anrufen. Schau mal, hier sind noch zwei Zimmer.", "ar": "890 يورو شاملة مقابل 26 مترًا مربعًا — هذا تقريبًا رخيص في ميونخ! يجب أن تتصل فورًا الساعة 18:00. انظر، هنا غرفتان أخريان." },
+        { "type": "doc", "kind": "ad", "title": "Anzeige 2 – Wohnbörse München", "lines": [
+          "Nette 3er-WG in Giesing sucht neue/n Mitbewohner/in!",
+          "Zimmer: 18 m², möbliert, frei ab 01.11.",
+          "Miete: 760 € warm (inkl. Internet)",
+          "Kaution: 1.500 €",
+          "4. OG, leider kein Aufzug 😅",
+          "Wir: Paul (27, Student), Mia (30, Krankenpflegerin) und Katze Minka 🐈",
+          "Schreib uns eine Nachricht!"
+        ], "ar": "شقة مشتركة لطيفة لثلاثة أشخاص في Giesing تبحث عن شريك/شريكة سكن! الغرفة: 18 م²، مفروشة، متاحة من 1 نوفمبر. الإيجار: 760 € شاملة (مع الإنترنت). التأمين: 1.500 €. الطابق الرابع، للأسف بدون مصعد. نحن: Paul (‏27، طالب)، Mia (‏30، ممرّضة) والقطة Minka. اكتب لنا رسالة!" },
+        { "type": "doc", "kind": "ad", "title": "Anzeige 3 – Wohnbörse München", "lines": [
+          "Möbl. Zimmer in ruhiger 3-Zi.-Whg.",
+          "Milbertshofen, 5 Min. zur U-Bahn",
+          "17 m², hell, mit Schreibtisch",
+          "KM 640 € zzgl. 90 € NK",
+          "Kaution: 2 KM",
+          "Küche und Bad zur Mitbenutzung (Vermieterin wohnt mit)",
+          "Frei ab 01.11. – nur an Nichtraucher, keine Haustiere",
+          "Tel.: 089 / 31 29 47 (Frau Wagner)"
+        ], "ar": "غرفة مفروشة في شقة هادئة من ثلاث غرف. Milbertshofen، 5 دقائق إلى المترو. 17 م²، مضيئة، مع مكتب. الإيجار الأساسي 640 € يُضاف إليه 90 € تكاليف إضافية. التأمين: ضعفا الإيجار الأساسي. المطبخ والحمّام مشتركان (المؤجّرة تسكن في الشقة). متاحة من 1 نوفمبر – لغير المدخّنين فقط، بدون حيوانات أليفة. الهاتف: … (السيدة Wagner)" },
+        { "type": "find", "id": "c6", "skill": "reading",
+          "prompt": "قارن الإعلانين 2 و3. ما الذي ينطبق على الاثنين معًا؟ اختر كل ما ينطبق.",
+          "items": [
+            { "de": "möbliert", "emoji": "🛋️", "ar": "مفروش" },
+            { "de": "frei ab 01.11.", "emoji": "📅", "ar": "متاح من 1 نوفمبر" },
+            { "de": "Internet inklusive", "emoji": "🌐", "ar": "الإنترنت مشمول" },
+            { "de": "mit Katze", "emoji": "🐈", "ar": "مع قطة" },
+            { "de": "mit Balkon", "emoji": "🌇", "ar": "مع شرفة" },
+            { "de": "Vermieterin wohnt mit", "emoji": "👵", "ar": "المؤجّرة تسكن معك" }
+          ],
+          "targets": ["möbliert", "frei ab 01.11."],
+          "hint": "اختر فقط ما تجده في الإعلان 2 وفي الإعلان 3 معًا.",
+          "explain": "الغرفتان مفروشتان (möbliert / Möbl.) ومتاحتان من 1 نوفمبر. الإنترنت والقطة في الـWG فقط، والمؤجّرة في الإعلان 3 فقط، والشرفة في الإعلان 1." },
+        { "type": "write", "id": "c7", "skill": "numbers", "bonus": true,
+          "prompt": "الإعلان 3: «Kaution: 2 KM». كم يورو مبلغ التأمين؟ اكتب الرقم.",
+          "answers": ["1280", "1.280", "1280 €", "1.280 €", "1280 Euro", "1.280 Euro", "1.280,00 €", "1280,00 €", "eintausendzweihundertachtzig", "eintausendzweihundertachtzig Euro"],
+          "hint": "KM في الإعلان 3 = 640 €. والتأمين = 2 × KM.",
+          "explain": "2 × 640 € = 1.280 €. التأمين يُحسب من الـKaltmiete، لا من الإيجار الشامل." }
+      ]
+    },
+    {
+      "id": "calls",
+      "title": { "de": "Anrufe und Nachrichten", "ar": "مكالمات ورسائل" },
+      "steps": [
+        { "type": "narration", "ar": "الساعة 18:01 تمامًا. تتصل بالسيد Schulz بخصوص الشقة في Neuhausen." },
+        { "type": "line", "who": "schulz", "de": "Schulz, guten Tag.", "ar": "Schulz، مرحبًا." },
+        { "type": "choice", "id": "c8", "skill": "dialogue",
+          "prompt": "ابدأ المكالمة بشكل مهذب وواضح.",
+          "options": [
+            { "de": "Guten Tag, Herr Schulz. Mein Name ist {name}. Ich rufe wegen Ihrer Anzeige an. Ist die Wohnung in Neuhausen noch frei?", "correct": true },
+            { "de": "Guten Tag, hier ist {name}. Ich habe Ihre Anzeige gelesen und interessiere mich für die Wohnung.", "correct": true },
+            { "de": "Guten Tag, ich habe gestern Ihre Wohnung gekauft.", "why": "أنت تريد أن تستأجر، لا أن تشتري — ولم يحدث شيء بعد." },
+            { "de": "Guten Tag, ich möchte einen Termin bei Dr. Keller.", "why": "هذه جملة من عيادة الطبيب! أنت تتصل بمؤجّر شقة." }
+          ],
+          "hint": "قدّم نفسك، ثم اذكر الإعلان أو الشقة.",
+          "explain": "«Ich rufe wegen Ihrer Anzeige an» و«Ich interessiere mich für die Wohnung» بدايتان مهذبتان وواضحتان." },
+        { "type": "listen", "id": "c9", "skill": "listening",
+          "audio": "Ach, die Wohnung in Neuhausen? Tut mir leid, die ist schon vergeben. Seit gestern haben über fünfzig Leute angerufen, und heute Mittag habe ich den Mietvertrag unterschrieben.",
+          "audioAr": "آه، الشقة في Neuhausen؟ آسف، لقد أُجّرت بالفعل. منذ الأمس اتصل أكثر من خمسين شخصًا، وظهر اليوم وقّعتُ عقد الإيجار.",
+          "prompt": "ماذا حدث للشقة؟",
+          "options": [
+            { "ar": "أُجّرت بالفعل؛ وقّع المالك العقد ظهر اليوم.", "correct": true },
+            { "ar": "ما زالت متاحة، لكن خمسين شخصًا يريدونها.", "why": "«schon vergeben» = أُجّرت بالفعل، والعقد تمّ توقيعه." },
+            { "ar": "الإيجار صار أغلى بـ50 €.", "why": "الرقم 50 هو عدد المتصلين، لا السعر." },
+            { "ar": "المعاينة غدًا ظهرًا.", "why": "«heute Mittag» = ظهر اليوم، وهو وقت توقيع العقد، لا موعد معاينة." }
+          ],
+          "hint": "ركّز على «schon vergeben» وعلى الفعل unterschrieben.",
+          "explain": "«Die Wohnung ist schon vergeben» = أُعطيت لشخص آخر. «Ich habe den Mietvertrag unterschrieben» = وقّعتُ العقد (Perfekt)." },
+        { "type": "learn", "de": "Die Wohnung ist schon vergeben.", "ar": "الشقة مؤجّرة بالفعل.", "use": "ستسمعها كثيرًا في ميونخ! vergeben = أُعطيت لشخص آخر. معناها مثل «schon weg» لكنها أكثر رسمية.", "example": "Tut mir leid, das Zimmer ist leider schon vergeben.", "exampleAr": "آسف، الغرفة مؤجّرة للأسف." },
+        { "type": "line", "who": "me", "de": "Schade! Trotzdem vielen Dank. Auf Wiederhören!", "ar": "خسارة! شكرًا جزيلًا على كل حال. إلى اللقاء!" },
+        { "type": "line", "who": "lina", "de": "Mach dir nichts draus. In München ist das ganz normal. Ruf doch Frau Wagner an!", "ar": "لا تحزن. هذا طبيعي جدًا في ميونخ. اتصل بالسيدة Wagner!" },
+        { "type": "line", "who": "wagner", "de": "Wagner, guten Abend.", "ar": "Wagner، مساء الخير." },
+        { "type": "line", "who": "me", "de": "Guten Abend, Frau Wagner. Mein Name ist {name}. Ich interessiere mich für Ihr Zimmer in Milbertshofen. Ist es noch frei?", "ar": "مساء الخير يا سيدة Wagner. اسمي {name}. أنا مهتم بغرفتك في Milbertshofen. هل ما زالت شاغرة؟" },
+        { "type": "line", "who": "wagner", "de": "Ja, es ist noch frei. Möchten Sie es besichtigen? Passt es Ihnen morgen um 18 Uhr?", "ar": "نعم، ما زالت شاغرة. هل تريد معاينتها؟ هل يناسبك غدًا الساعة 18:00؟" },
+        { "type": "choice", "id": "c10", "skill": "dialogue",
+          "prompt": "غدًا (الثلاثاء) تعمل في المقهى حتى الساعة 19:00. ارفض بأدب واقترح يومًا آخر.",
+          "options": [
+            { "de": "Morgen kann ich leider nicht, weil ich bis 19 Uhr arbeite. Geht es auch am Donnerstag?", "correct": true },
+            { "de": "Morgen arbeite ich leider bis 19 Uhr. Hätten Sie vielleicht am Donnerstag Zeit?", "correct": true },
+            { "de": "Morgen kann ich leider nicht, weil ich arbeite bis 19 Uhr. Geht es am Donnerstag?", "why": "بعد weil يذهب الفعل إلى آخر الجملة: weil ich bis 19 Uhr arbeite." },
+            { "de": "Ja, morgen um 18 Uhr passt mir sehr gut.", "why": "أنت تعمل غدًا حتى 19:00، فلن تستطيع الحضور الساعة 18:00." }
+          ],
+          "reply": { "who": "wagner", "de": "Kein Problem. Am Donnerstag geht es auch.", "ar": "لا مشكلة. يوم الخميس مناسب أيضًا." },
+          "hint": "اعتذر، واذكر السبب، واقترح يومًا آخر. وانتبه لترتيب الكلمات بعد weil.",
+          "explain": "«… weil ich bis 19 Uhr arbeite» (الفعل في الآخر) و«Hätten Sie … Zeit?» (صيغة مهذبة جدًا) كلاهما صحيح ومهذب." },
+        { "type": "listen", "id": "c11", "skill": "listening",
+          "audio": "Dann kommen Sie am Donnerstag um halb sechs. Die Adresse ist Knorrstraße 31, im zweiten Stock. Klingeln Sie bitte bei Wagner.",
+          "audioAr": "إذن تعال يوم الخميس الساعة الخامسة والنصف. العنوان Knorrstraße 31، الطابق الثاني. اضغط من فضلك جرس Wagner.",
+          "prompt": "متى بالضبط موعد المعاينة، وأين؟",
+          "options": [
+            { "ar": "الخميس 17:30، الطابق الثاني", "correct": true },
+            { "ar": "الخميس 18:30، الطابق الثاني", "why": "halb sechs = نصف ساعة قبل السادسة = 17:30، وليست «السادسة والنصف»." },
+            { "ar": "الخميس 17:30، الطابق الثالث", "why": "«im zweiten Stock» = في الطابق الثاني." },
+            { "ar": "الثلاثاء 17:30، الطابق الثاني", "why": "الثلاثاء (Dienstag) لا يناسبك؛ الموعد يوم الخميس (Donnerstag)." }
+          ],
+          "hint": "انتبه جيدًا إلى «halb sechs»: في الألمانية halb تشير إلى الساعة القادمة.",
+          "explain": "«um halb sechs» = 17:30 (نصف ساعة قبل السادسة). «im zweiten Stock» = في الطابق الثاني." },
+        { "type": "learn", "de": "um halb sechs", "ar": "الساعة الخامسة والنصف (17:30)", "use": "انتبه! في الألمانية «halb» تشير إلى الساعة التالية: halb sechs = نصف ساعة قبل السادسة. هذا يختلف عن العربية.", "example": "Der Film beginnt um halb acht.", "exampleAr": "يبدأ الفيلم الساعة السابعة والنصف." },
+        { "type": "line", "who": "me", "de": "Gut, Donnerstag um halb sechs. Ich habe noch eine Frage zur Anzeige.", "ar": "حسنًا، الخميس الساعة الخامسة والنصف. عندي سؤال آخر عن الإعلان." },
+        { "type": "build", "id": "c12", "skill": "grammar",
+          "prompt": "اسأل السيدة Wagner: ماذا تعني KM في الإعلان؟",
+          "tiles": ["Was", "bedeutet", "KM", "in", "der", "Anzeige", "?", "bedeuten", "Wo", "dem"],
+          "answers": [["Was", "bedeutet", "KM", "in", "der", "Anzeige", "?"]],
+          "hint": "سؤال بـ W: كلمة السؤال، ثم الفعل، ثم الفاعل. Anzeige مؤنثة.",
+          "explain": "«Was bedeutet KM in der Anzeige?» — الفعل في المكان الثاني بعد Was، وKM مفرد فنقول bedeutet. in + der Anzeige (مؤنث، Dativ)." },
+        { "type": "line", "who": "wagner", "de": "KM heißt Kaltmiete. Das sind 640 Euro, ohne Nebenkosten. Die Kaution sind zwei Kaltmieten, also 1.280 Euro.", "ar": "KM تعني الإيجار الأساسي. أي 640 يورو، بدون التكاليف الإضافية. والتأمين يساوي إيجارين أساسيين، أي 1.280 يورو." },
+        { "type": "line", "who": "me", "de": "Ah, jetzt verstehe ich. Vielen Dank! Dann bis Donnerstag. Auf Wiederhören!", "ar": "آه، الآن فهمت. شكرًا جزيلًا! إلى اللقاء يوم الخميس إذن." },
+        { "type": "narration", "ar": "ثم تكتب رسالة إلى الشقة المشتركة في Giesing:", "de": "Hallo Paul und Mia, ich habe eure Anzeige gelesen und interessiere mich sehr für das Zimmer. Ich heiße {name}, komme {fromCountry} und arbeite als Servicekraft im Café Sonnenschein. Wann kann ich das Zimmer besichtigen? Viele Grüße, {name}" },
+        { "type": "doc", "kind": "message", "title": "Mia 💬", "lines": [
+          "Hi {name}, danke für deine Nachricht! 😊",
+          "Komm doch am Mittwoch um 19 Uhr zum WG-Casting.",
+          "Tegernseer Landstraße 120, 4. Stock – leider ohne Aufzug.",
+          "Bis Mittwoch! LG Mia"
+        ], "ar": "أهلًا {name}، شكرًا على رسالتك! تعال يوم الأربعاء الساعة 19:00 إلى «مقابلة السكن المشترك». العنوان: Tegernseer Landstraße 120، الطابق الرابع – للأسف بدون مصعد. إلى اللقاء يوم الأربعاء! مع أطيب التحيات (LG = Liebe Grüße)، Mia" }
+      ]
+    },
+    {
+      "id": "wg",
+      "title": { "de": "WG-Casting in Giesing", "ar": "مقابلة السكن المشترك" },
+      "steps": [
+        { "type": "narration", "ar": "الأربعاء، 19:00. تصعد أربعة طوابق بلا مصعد وتصل لاهثًا. تفتح لك Mia، وخلفها Paul — وقطة رمادية تنظر إليك بفضول. في الـWG الجميع يقول «du»." },
+        { "type": "line", "who": "mia", "de": "Hi {name}! Komm rein. Willst du einen Tee?", "ar": "أهلًا {name}! تفضّل. هل تريد شايًا؟" },
+        { "type": "line", "who": "me", "de": "Gern, danke!", "ar": "بكل سرور، شكرًا!" },
+        { "type": "line", "who": "paul", "de": "Setz dich. Erzähl mal ein bisschen von dir!", "ar": "اجلس. حدّثنا قليلًا عن نفسك!" },
+        { "type": "choice", "id": "c13", "skill": "dialogue",
+          "prompt": "عرّف بنفسك لـ Paul وMia.",
+          "options": [
+            { "de": "Ich heiße {name} und komme {fromCountry}. Seit ein paar Wochen wohne ich bei einer Freundin in Schwabing, und ich arbeite als Servicekraft im Café Sonnenschein.", "correct": true },
+            { "de": "Ich heiße {name}. Ich bin vor ein paar Wochen nach Deutschland gekommen, und jetzt arbeite ich im Café Sonnenschein.", "correct": true },
+            { "de": "Ich heiße {name}. Ich habe vor ein paar Wochen nach Deutschland gekommen.", "why": "kommen فعل حركة، فيأخذ sein: Ich bin … gekommen." },
+            { "de": "Ich bin {name} und ich habe 24 Jahre alt.", "why": "العمر في الألمانية مع sein: Ich bin 24 Jahre alt." }
+          ],
+          "reply": { "who": "paul", "de": "Cool, das Café Sonnenschein kenne ich! Der Apfelkuchen dort ist super.", "ar": "رائع، أعرف مقهى Sonnenschein! كعكة التفاح هناك ممتازة." },
+          "hint": "تحقق من الفعل المساعد في Perfekt، ومن طريقة قول العمر.",
+          "explain": "«Seit ein paar Wochen wohne ich …» (seit + مضارع لشيء مستمر) و«Ich bin … gekommen» (Perfekt مع sein) صحيحتان." },
+        { "type": "line", "who": "mia", "de": "Und hast du schon mal in einer WG gewohnt?", "ar": "وهل سكنتَ من قبل في سكن مشترك؟" },
+        { "type": "write", "id": "c14", "skill": "writing",
+          "prompt": "أجب بالألمانية: نعم، سكنتُ من قبل في سكن مشترك (WG).",
+          "answers": [
+            "Ja, ich habe schon in einer WG gewohnt",
+            "Ja, ich habe schon mal in einer WG gewohnt",
+            "Ja, ich habe schon einmal in einer WG gewohnt",
+            "Ja, ich habe in einer WG gewohnt",
+            "Ja, ich habe schon in einer Wohngemeinschaft gewohnt",
+            "Ja, ich habe schon mal in einer Wohngemeinschaft gewohnt",
+            "Ja, ich habe schon einmal in einer Wohngemeinschaft gewohnt",
+            "Ja, ich habe in einer Wohngemeinschaft gewohnt",
+            "Ja, schon mal",
+            "Ja, ich habe schon mal in einer WG gelebt",
+            "Ja, ich habe schon in einer WG gelebt"
+          ],
+          "hint": "استخدم Perfekt: Ja, ich habe … in einer WG … (wohnen ← gewohnt).",
+          "explain": "«Ja, ich habe schon (mal) in einer WG gewohnt.» — wohnen يأخذ haben، والـPartizip II هو gewohnt في آخر الجملة." },
+        { "type": "line", "who": "mia", "de": "Super, dann kennst du das ja. Bei uns ist alles ganz entspannt, aber wir haben einen Putzplan.", "ar": "رائع، إذن أنت تعرف كيف يكون الأمر. عندنا كل شيء مريح، لكن لدينا جدول تنظيف." },
+        { "type": "listen", "id": "c15", "skill": "listening",
+          "audio": "Jede Woche putzt eine andere Person das Bad und die Küche. Am Freitag bringt jemand den Müll runter. Das steht alles auf dem Plan am Kühlschrank.",
+          "audioAr": "كل أسبوع ينظّف شخص مختلف الحمّام والمطبخ. يوم الجمعة ينزل أحدنا القمامة. كل هذا مكتوب في الجدول على الثلاجة.",
+          "prompt": "ما هو الـPutzplan في هذه الشقة؟",
+          "options": [
+            { "ar": "جدول تنظيف: كل أسبوع ينظّف شخص مختلف الحمّام والمطبخ.", "correct": true },
+            { "ar": "خطة لدفع الإيجار كل يوم جمعة.", "why": "يوم الجمعة هو يوم إنزال القمامة، لا دفع الإيجار." },
+            { "ar": "قائمة مشتريات معلّقة على الثلاجة.", "why": "على الثلاجة جدول، لكنه للتنظيف (putzen = ينظّف)، لا للمشتريات." },
+            { "ar": "قاعدة: ممنوع استخدام المطبخ يوم الجمعة.", "why": "Mia لم تذكر أي منع. قالت فقط من ينظّف ومن ينزل القمامة." }
+          ],
+          "hint": "putzen = ينظّف. فكّر: Putz + Plan.",
+          "explain": "«der Putzplan» = جدول التنظيف. «Jede Woche putzt eine andere Person …» = كل أسبوع ينظّف شخص آخر." },
+        { "type": "line", "who": "paul", "de": "Und was ist dir bei einer Wohnung wichtig?", "ar": "وما المهم بالنسبة لك في السكن؟" },
+        { "type": "grammar", "title": "weil / dass / wenn: الفعل في آخر الجملة",
+          "body": "لشرح السبب نستخدم **weil** (لأن). بعد weil يذهب الفعل المصرَّف إلى **آخر الجملة**: Ich suche ein Zimmer, weil Jonas **zurückkommt**. والقاعدة نفسها مع **dass** (أنّ) و**wenn** (عندما/إذا). ولا تنسَ الفاصلة قبلها.",
+          "examples": [
+            { "de": "Ich brauche ein ruhiges Zimmer, weil ich abends oft lerne.", "ar": "أحتاج غرفة هادئة لأنني أدرس غالبًا في المساء." },
+            { "de": "Ich finde gut, dass die Küche so groß ist.", "ar": "يعجبني أن المطبخ كبير جدًا." },
+            { "de": "Wenn ich frei habe, koche ich gern.", "ar": "عندما أكون في إجازة، أحب الطبخ." }
+          ] },
+        { "type": "build", "id": "c16", "skill": "grammar",
+          "prompt": "قل: أحتاج غرفة هادئة، لأنني أدرس غالبًا في المساء.",
+          "tiles": ["Ich", "brauche", "ein", "ruhiges", "Zimmer", ",", "weil", "ich", "abends", "oft", "lerne", ".", "dass", "lernen"],
+          "answers": [["Ich", "brauche", "ein", "ruhiges", "Zimmer", ",", "weil", "ich", "abends", "oft", "lerne", "."], ["Ich", "brauche", "ein", "ruhiges", "Zimmer", ",", "weil", "ich", "oft", "abends", "lerne", "."]],
+          "hint": "الجملة الأولى عادية، ثم فاصلة + weil، والفعل lerne في آخر الجملة.",
+          "explain": "بعد weil يأتي الفاعل ich ثم باقي الجملة، والفعل المصرَّف lerne في الآخر: …, weil ich abends oft lerne." },
+        { "type": "line", "who": "paul", "de": "Verstehe. Bei uns ist es abends manchmal ein bisschen laut. Wir kochen oft zusammen, und manchmal kommen Freunde vorbei.", "ar": "فهمت. عندنا يكون الجو أحيانًا صاخبًا قليلًا في المساء. نطبخ معًا كثيرًا، وأحيانًا يزورنا أصدقاء." },
+        { "type": "line", "who": "mia", "de": "Und Minka ist kein Problem für dich?", "ar": "وMinka ليست مشكلة بالنسبة لك؟" },
+        { "type": "line", "who": "me", "de": "Nein, gar nicht. Ich mag Katzen!", "ar": "لا، أبدًا. أنا أحب القطط!" },
+        { "type": "line", "who": "mia", "de": "Perfekt! Wir haben noch ein paar Castings. Wir sagen dir bis Freitag Bescheid, okay?", "ar": "ممتاز! لدينا بعض المقابلات الأخرى. سنبلغك حتى يوم الجمعة، اتفقنا؟" }
+      ]
+    },
+    {
+      "id": "wagner",
+      "title": { "de": "Besichtigung bei Frau Wagner", "ar": "المعاينة عند السيدة Wagner" },
+      "steps": [
+        { "type": "narration", "ar": "الخميس، 17:25. Knorrstraße 31، الطابق الثاني. المبنى هادئ جدًا. تفتح لك السيدة Wagner، سيدة متقاعدة أنيقة. معها تستخدم «Sie»." },
+        { "type": "line", "who": "wagner", "de": "Guten Tag! Sie sind sicher {name}. Kommen Sie herein! Haben Sie gut hergefunden?", "ar": "مرحبًا! لا بدّ أنك {name}. تفضّل بالدخول! هل وجدت المكان بسهولة؟" },
+        { "type": "choice", "id": "c17", "skill": "grammar",
+          "prompt": "أجب: نعم، جئت بالمترو، وكان الأمر سهلًا.",
+          "options": [
+            { "de": "Ja, danke. Ich bin mit der U-Bahn gekommen, das war ganz einfach.", "correct": true },
+            { "de": "Ja, ich bin mit der U-Bahn gefahren. Das war kein Problem.", "correct": true },
+            { "de": "Ja, ich habe mit der U-Bahn gefahren.", "why": "fahren فعل حركة، فيأخذ sein: Ich bin … gefahren." },
+            { "de": "Nein, ich habe die U-Bahn gekauft.", "why": "لا معنى لها: لم تشترِ المترو! وأنت وجدت المكان، فالجواب Ja." }
+          ],
+          "reply": { "who": "wagner", "de": "Schön! Hier ist das Zimmer. Schauen Sie sich ruhig um.", "ar": "جميل! هذه هي الغرفة. تفضّل، انظر حولك على راحتك." },
+          "hint": "kommen وfahren فعلا حركة. أيّ فعل مساعد يأخذان؟",
+          "explain": "أفعال الحركة تأخذ sein في Perfekt: Ich **bin** gekommen / Ich **bin** gefahren. و«das war …» = كان (Präteritum من sein)." },
+        { "type": "line", "who": "wagner", "de": "Das Zimmer hat 17 Quadratmeter. Das Bett, der Schrank und der Schreibtisch bleiben hier. Eine Lampe müssen Sie aber selbst kaufen, die alte ist leider kaputt.", "ar": "مساحة الغرفة 17 مترًا مربعًا. السرير والخزانة والمكتب تبقى هنا. لكن عليك أن تشتري مصباحًا بنفسك، فالقديم معطّل للأسف." },
+        { "type": "find", "id": "c18", "skill": "vocab",
+          "prompt": "ما الأثاث الذي سيبقى في الغرفة؟ اختر فقط ما ذكرته السيدة Wagner.",
+          "items": [
+            { "de": "das Bett", "emoji": "🛏️", "ar": "السرير" },
+            { "de": "der Schrank", "emoji": "🗄️", "ar": "الخزانة" },
+            { "de": "der Schreibtisch", "emoji": "🖥️", "ar": "المكتب" },
+            { "de": "die Lampe", "emoji": "💡", "ar": "المصباح" },
+            { "de": "das Sofa", "emoji": "🛋️", "ar": "الأريكة" },
+            { "de": "der Fernseher", "emoji": "📺", "ar": "التلفاز" }
+          ],
+          "targets": ["das Bett", "der Schrank", "der Schreibtisch"],
+          "hint": "«bleiben hier» = تبقى هنا. وماذا قالت عن المصباح؟",
+          "explain": "Bett وSchrank وSchreibtisch «bleiben hier». أما die Lampe فـ«müssen Sie selbst kaufen» لأن القديم kaputt (معطّل)." },
+        { "type": "line", "who": "wagner", "de": "So, jetzt habe ich ein paar Fragen an Sie. Was machen Sie beruflich?", "ar": "حسنًا، الآن عندي بعض الأسئلة لك. ما عملك؟" },
+        { "type": "choice", "id": "c19", "skill": "dialogue",
+          "prompt": "أجب عن سؤال العمل.",
+          "options": [
+            { "de": "Ich arbeite als Servicekraft im Café Sonnenschein. Ich habe am Dienstag angefangen.", "correct": true },
+            { "de": "Ich arbeite in Teilzeit als Servicekraft im Café Sonnenschein.", "correct": true },
+            { "de": "Ich bin als Servicekraft im Café Sonnenschein gearbeitet.", "why": "arbeiten ليس فعل حركة، فيأخذ haben. والأفضل هنا المضارع: Ich arbeite als …" },
+            { "de": "Ich wohne im Café Sonnenschein, weil es dort billig ist.", "why": "أنت تعمل (arbeiten) في المقهى، ولا تسكن فيه!" }
+          ],
+          "reply": { "who": "wagner", "de": "Ah, das Café kenne ich! Da gibt es sehr guten Kuchen.", "ar": "آه، أعرف هذا المقهى! فيه كعك لذيذ جدًا." },
+          "hint": "قل أين تعمل الآن، ويمكنك أن تضيف متى بدأت.",
+          "explain": "«Ich arbeite als Servicekraft …» تصف عملك الآن، و«Ich habe am Dienstag angefangen» = بدأت يوم الثلاثاء (anfangen ← angefangen)." },
+        { "type": "line", "who": "wagner", "de": "Rauchen Sie? Und haben Sie Haustiere? Das ist mir sehr wichtig.", "ar": "هل تدخّن؟ وهل لديك حيوانات أليفة؟ هذا مهم جدًا بالنسبة لي." },
+        { "type": "fill", "id": "c20", "skill": "grammar",
+          "sentence": "Nein, ich rauche nicht, und ich habe ___ Haustiere.",
+          "ar": "لا، لا أدخّن، وليس لديّ حيوانات أليفة.",
+          "options": ["keine", "kein", "nicht", "einen"],
+          "answers": ["keine"],
+          "hint": "Haustiere جمع. كيف ننفي اسمًا في الجمع؟",
+          "explain": "نفي الاسم يكون بـ kein-، ومع الجمع: **keine** Haustiere. أما nicht فلنفي الفعل: ich rauche nicht." },
+        { "type": "line", "who": "wagner", "de": "Wunderbar. Bekommen Sie oft Besuch?", "ar": "رائع. هل يزورك الناس كثيرًا؟" },
+        { "type": "line", "who": "me", "de": "Manchmal kommt Lina, eine Freundin, zu Besuch. Aber wir sind nicht laut, versprochen!", "ar": "أحيانًا تزورني لينا، وهي صديقة. لكننا لسنا صاخبين، أعدك!" },
+        { "type": "line", "who": "wagner", "de": "Das ist kein Problem. Aber bitte beachten Sie die Hausordnung. Hier, lesen Sie mal.", "ar": "لا مشكلة. لكن من فضلك التزم بنظام المبنى. تفضّل، اقرأه." },
+        { "type": "doc", "kind": "letter", "title": "Hausordnung – Knorrstraße 31", "lines": [
+          "Ruhezeiten: täglich von 22:00 bis 7:00 Uhr, sonntags den ganzen Tag.",
+          "Bitte trennen Sie den Müll:",
+          "Papier und Karton → blaue Tonne",
+          "Essensreste, Obst und Gemüse → braune Tonne (Bio)",
+          "Restmüll → schwarze Tonne",
+          "Glas, Plastik und Dosen → Wertstoffinsel an der Ecke",
+          "Fahrräder bitte in den Fahrradkeller, nicht in den Hausflur.",
+          "Rauchen ist im ganzen Haus nicht erlaubt.",
+          "Ihre Hausverwaltung"
+        ], "ar": "نظام المبنى: أوقات الهدوء يوميًا من 22:00 حتى 7:00، ويوم الأحد طوال اليوم. الرجاء فرز القمامة: الورق والكرتون ← الحاوية الزرقاء، بقايا الطعام والفواكه والخضار ← الحاوية البنية (عضوي)، النفايات المتبقية ← الحاوية السوداء، الزجاج والبلاستيك والعلب ← نقطة إعادة التدوير عند الزاوية. الدراجات في قبو الدراجات، لا في ممر المبنى. التدخين ممنوع في المبنى كله. إدارة المبنى" },
+        { "type": "grammar", "title": "قواعد السكن: dürfen وmüssen مع man",
+          "body": "في القواعد نستخدم **man** (المرء / أيّ شخص) مع فعل ناقص. **müssen** = يجب: Man **muss** den Müll trennen. **dürfen** = يُسمح: Man **darf** … و**nicht dürfen** = ممنوع: Man **darf** im Haus **nicht** rauchen. الفعل الثاني يأتي مصدرًا في آخر الجملة.",
+          "examples": [
+            { "de": "Man muss den Müll trennen.", "ar": "يجب فرز القمامة." },
+            { "de": "Nach 22 Uhr darf man keine laute Musik hören.", "ar": "بعد الساعة 22:00 لا يُسمح بسماع موسيقى صاخبة." },
+            { "de": "Im Haus darf man nicht rauchen.", "ar": "لا يُسمح بالتدخين في المبنى." }
+          ] },
+        { "type": "choice", "id": "c21", "skill": "reading",
+          "prompt": "Was ist laut Hausordnung richtig?",
+          "options": [
+            { "de": "Am Sonntag muss man den ganzen Tag leise sein.", "correct": true },
+            { "de": "Glasflaschen darf man in die blaue Tonne werfen.", "why": "الزجاج يذهب إلى Wertstoffinsel. الحاوية الزرقاء للورق والكرتون فقط." },
+            { "de": "Um 23 Uhr darf man noch laut Musik hören.", "why": "وقت الهدوء يبدأ الساعة 22:00، فالساعة 23:00 داخله." },
+            { "de": "Das Fahrrad darf im Hausflur stehen.", "why": "الدراجات في Fahrradkeller، «nicht in den Hausflur»." }
+          ],
+          "hint": "اقرأ السطر الأول جيدًا: ماذا يقول عن يوم الأحد (sonntags)؟",
+          "explain": "«sonntags den ganzen Tag» = يوم الأحد طوال اليوم وقت هدوء. لذلك: Am Sonntag muss man den ganzen Tag leise sein." },
+        { "type": "line", "who": "wagner", "de": "Haben Sie noch Fragen?", "ar": "هل لديك أسئلة أخرى؟" },
+        { "type": "write", "id": "c22", "skill": "writing",
+          "prompt": "الإعلان لا يذكر الإنترنت. اسأل السيدة Wagner بالألمانية: هل الإنترنت مشمول (في الإيجار)؟",
+          "answers": [
+            "Ist Internet inklusive",
+            "Ist das Internet inklusive",
+            "Ist Internet auch inklusive",
+            "Ist das Internet auch inklusive",
+            "Ist Internet dabei",
+            "Ist das Internet dabei",
+            "Ist Internet auch dabei",
+            "Ist Internet in der Miete inklusive",
+            "Ist das Internet in der Miete inklusive",
+            "Ist Internet in der Miete dabei",
+            "Ist das Internet in der Miete dabei",
+            "Ist Internet in der Miete enthalten",
+            "Ist das Internet in der Miete enthalten",
+            "Ist Internet in den Nebenkosten inklusive",
+            "Ist Internet in den Nebenkosten dabei",
+            "Ist Internet in den Nebenkosten enthalten",
+            "Ist das Internet in den Nebenkosten enthalten",
+            "Ist Internet enthalten",
+            "Ist WLAN inklusive",
+            "Ist das WLAN inklusive",
+            "Ist WLAN dabei",
+            "Gibt es auch Internet",
+            "Gibt es Internet"
+          ],
+          "hint": "سؤال نعم/لا: ابدأ بالفعل Ist، ثم Internet، ثم «مشمول».",
+          "explain": "«Ist Internet (in der Miete) inklusive?» — في سؤال نعم/لا يأتي الفعل أولًا. ويمكن أيضًا: dabei أو enthalten." },
+        { "type": "line", "who": "wagner", "de": "Strom, Wasser und Heizung sind in den Nebenkosten dabei. Internet leider nicht. Aber Sie können mein WLAN mitbenutzen – für 30 Euro im Monat.", "ar": "الكهرباء والماء والتدفئة ضمن التكاليف الإضافية. الإنترنت للأسف لا. لكن يمكنك استخدام شبكة الواي فاي الخاصة بي مقابل 30 يورو في الشهر." },
+        { "type": "line", "who": "wagner", "de": "Sie sind mir sympathisch. Wenn Sie möchten, können Sie am 1. November einziehen. Sagen Sie mir bitte bis Freitag Bescheid.", "ar": "أنت شخص لطيف في نظري. إذا أردت، يمكنك الانتقال إلى هنا في 1 نوفمبر. أبلغني من فضلك حتى يوم الجمعة." },
+        { "type": "line", "who": "me", "de": "Vielen Dank, Frau Wagner! Ich rufe Sie morgen an.", "ar": "شكرًا جزيلًا يا سيدة Wagner! سأتصل بك غدًا." }
+      ]
+    },
+    {
+      "id": "decision",
+      "title": { "de": "Die Entscheidung", "ar": "القرار" },
+      "steps": [
+        { "type": "narration", "ar": "مساء الخميس في المطبخ. لينا تأخذ ورقة وقلمًا: «حسنًا، لنحسب بدقة!»" },
+        { "type": "choice", "id": "c23", "skill": "numbers", "bonus": true,
+          "doc": { "kind": "list", "title": "Linas Vergleich", "lines": [
+            "A – WG in Giesing: 18 m², möbliert, 760 € warm (inkl. Internet), Kaution 1.500 €, 4. OG ohne Aufzug, abends oft Besuch",
+            "B – Frau Wagner: 17 m², möbliert, KM 640 € + NK 90 € + WLAN 30 €, Kaution 2 KM, sehr ruhig"
+          ], "ar": "A – شقة مشتركة في Giesing: ‏18 م²، مفروشة، 760 € شاملة (مع الإنترنت)، تأمين 1.500 €، الطابق الرابع بلا مصعد، زوار كثيرًا في المساء. B – السيدة Wagner: ‏17 م²، مفروشة، 640 € أساسي + 90 € تكاليف إضافية + 30 € واي فاي، التأمين ضعفا الإيجار الأساسي، هادئة جدًا." },
+          "prompt": "Was stimmt? احسب جيدًا!",
+          "options": [
+            { "ar": "الغرفتان تكلّفان 760 € شهريًا مع الإنترنت، لكن تأمين B أقل بـ220 €.", "correct": true },
+            { "ar": "B أرخص بـ30 € شهريًا.", "why": "نسيت الواي فاي: 640 + 90 + 30 = 760 €، أي نفس سعر A." },
+            { "ar": "A أرخص لأن الإنترنت مشمول فيها.", "why": "المجموع متساوٍ: 760 € في الحالتين." },
+            { "ar": "تأمين B هو 1.500 €.", "why": "1.500 € هو تأمين A. تأمين B = 2 × 640 € = 1.280 €." }
+          ],
+          "hint": "اجمع كل ما تدفعه لـB شهريًا، ثم احسب 2 × KM وقارنه بـ1.500 €.",
+          "explain": "B: ‏640 + 90 + 30 = 760 € — مثل A تمامًا. التأمين: A = 1.500 €، B = 2 × 640 = 1.280 €، والفرق 1.500 − 1.280 = 220 €." },
+        { "type": "line", "who": "lina", "de": "Also: gleich teuer! Aber bei Frau Wagner ist es ruhig, und die Kaution ist niedriger. In der WG hast du dafür mehr Gesellschaft – und eine Katze. 😄 Was meinst du?", "ar": "إذن: السعر نفسه! لكن عند السيدة Wagner المكان هادئ، والتأمين أقل. وفي الـWG في المقابل صحبة أكثر — وقطة. ما رأيك؟" },
+        { "type": "decision", "prompt": "أيّ غرفة تختار؟", "options": [
+          { "ar": "أنتظر جواب الـWG (صحبة أكثر، ومعها Minka)", "de": "Ich warte auf die Antwort von Paul und Mia.", "then": [
+            { "type": "narration", "ar": "صباح الجمعة تصلك رسالة من Mia…" },
+            { "type": "doc", "kind": "message", "title": "Mia 💬", "lines": [
+              "Hi {name}, leider haben wir uns für jemand anderen entschieden – eine Freundin von Paul. 😕",
+              "Es tut uns echt leid! Viel Glück bei der Suche!",
+              "LG Mia"
+            ], "ar": "أهلًا {name}، للأسف اخترنا شخصًا آخر — صديقة لـ Paul. نحن آسفون حقًا! حظًا موفقًا في البحث! مع أطيب التحيات، Mia" },
+            { "type": "line", "who": "lina", "de": "Mist! Ruf schnell Frau Wagner an, bevor sie das Zimmer jemand anderem gibt!", "ar": "يا للأسف! اتصل بسرعة بالسيدة Wagner قبل أن تعطي الغرفة لشخص آخر!" },
+            { "type": "narration", "ar": "تتصل بالسيدة Wagner بقلب يخفق… والغرفة ما زالت لك! 😮‍💨 درس ميونخ: الانتظار مخاطرة." }
+          ] },
+          { "ar": "أختار غرفة السيدة Wagner (هادئة، وتأمين أقل)", "de": "Ich nehme das Zimmer bei Frau Wagner.", "then": [
+            { "type": "line", "who": "lina", "de": "Gute Entscheidung! Du lernst abends, da brauchst du deine Ruhe. Und 220 Euro weniger Kaution sind auch schön.", "ar": "قرار جيد! أنت تدرس في المساء، فتحتاج إلى الهدوء. و220 يورو أقل في التأمين شيء جميل أيضًا." },
+            { "type": "narration", "ar": "صباح الجمعة تتصل بالسيدة Wagner." }
+          ] }
+        ] },
+        { "type": "line", "who": "me", "de": "Guten Morgen, Frau Wagner! Hier ist {name}. Ich habe mich entschieden: Ich nehme das Zimmer!", "ar": "صباح الخير يا سيدة Wagner! معك {name}. لقد قررت: سآخذ الغرفة!" },
+        { "type": "listen", "id": "c24", "skill": "listening",
+          "audio": "Das freut mich sehr! Dann unterschreiben wir den Mietvertrag am Samstag um elf Uhr. Die Kaution überweisen Sie bitte bis zum 30. Oktober. Und am 1. November bekommen Sie die Schlüssel.",
+          "audioAr": "هذا يسعدني جدًا! إذن نوقّع عقد الإيجار يوم السبت الساعة الحادية عشرة. ومن فضلك حوّل مبلغ التأمين حتى 30 أكتوبر. وفي 1 نوفمبر تستلم المفاتيح.",
+          "prompt": "ماذا يجب أن تفعل، ومتى؟",
+          "options": [
+            { "ar": "السبت 11:00 توقيع العقد، تحويل التأمين حتى 30 أكتوبر، والمفاتيح في 1 نوفمبر.", "correct": true },
+            { "ar": "السبت 11:00 دفع التأمين نقدًا، والمفاتيح في 30 أكتوبر.", "why": "السبت لتوقيع العقد. التأمين تحويل بنكي (überweisen) حتى 30 أكتوبر، والمفاتيح في 1 نوفمبر." },
+            { "ar": "توقيع العقد في 1 نوفمبر، والمفاتيح يوم السبت.", "why": "العكس: العقد يوم السبت، والمفاتيح في 1 نوفمبر." },
+            { "ar": "الأحد 11:00 توقيع العقد.", "why": "Samstag = السبت، وليس الأحد (Sonntag)." }
+          ],
+          "hint": "اسمع ثلاثة أشياء: den Mietvertrag، die Kaution، die Schlüssel — ومع كل واحد تاريخ.",
+          "explain": "Mietvertrag ← السبت 11:00؛ Kaution ← تحويل حتى 30 أكتوبر (bis zum = حتى)؛ Schlüssel ← 1 نوفمبر." },
+        { "type": "narration", "ar": "يوم السبت توقّع العقد مع السيدة Wagner. ثم تكتب رسالة إلى لينا لتخبرها بكل شيء." },
+        { "type": "choice", "id": "c25", "skill": "writing", "final": true,
+          "prompt": "اختر الرسالة الصحيحة تمامًا: قواعد سليمة ومعلومات صحيحة.",
+          "options": [
+            { "de": "Lina, ich habe ein Zimmer gefunden! Am 1. November ziehe ich bei Frau Wagner ein. Ich habe das Zimmer genommen, weil es ruhig und möbliert ist.", "correct": true },
+            { "de": "Lina, ich bin ein Zimmer gefunden! Am 1. November ziehe ich bei Frau Wagner ein, weil das Zimmer ruhig ist.", "why": "finden يأخذ haben: Ich habe ein Zimmer gefunden." },
+            { "de": "Lina, ich habe ein Zimmer gefunden! Am 1. November ziehe ich ein, weil das Zimmer ist ruhig und möbliert.", "why": "بعد weil يذهب الفعل إلى الآخر: weil das Zimmer ruhig und möbliert ist." },
+            { "de": "Lina, ich habe ein Zimmer gefunden! Am 30. Oktober bekomme ich die Schlüssel, und ich bezahle keine Kaution.", "why": "المعلومات خاطئة: المفاتيح في 1 نوفمبر، والتأمين يجب تحويله حتى 30 أكتوبر." }
+          ],
+          "hint": "افحص ثلاثة أشياء: الفعل المساعد في Perfekt، مكان الفعل بعد weil، والتواريخ.",
+          "explain": "الرسالة الصحيحة تجمع Perfekt (habe … gefunden / genommen)، والفعل المنفصل (ziehe … ein)، وweil مع الفعل في الآخر، والتاريخ الصحيح." },
+        { "type": "doc", "kind": "message", "title": "Lina 💬", "lines": [
+          "JUHU!!! 🎉 Ich bin so stolz auf dich, {name}!",
+          "Heute Abend feiern wir – ich koche, und du bringst Kuchen vom Café Sonnenschein mit. 😄",
+          "Und Jonas hilft dir beim Umzug, das hat er schon versprochen! 💪"
+        ], "ar": "يا للفرحة! أنا فخورة بك جدًا يا {name}! الليلة نحتفل — أنا أطبخ، وأنت تُحضر كعكة من مقهى Sonnenschein. وJonas سيساعدك في الانتقال، لقد وعد بذلك!" }
+      ]
+    }
+  ]
+}

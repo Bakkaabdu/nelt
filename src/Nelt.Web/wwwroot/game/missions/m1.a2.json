@@ -1,0 +1,547 @@
+{
+  "id": "m1",
+  "level": "A2",
+  "title": { "de": "Ankunft am Flughafen", "ar": "الوصول إلى المطار" },
+  "place": "Flughafen BER, Terminal 1",
+  "intro": "بعد رحلة طويلة من {countryAr} هبطت طائرتك أخيرًا في مطار برلين براندنبورغ (BER). أنت تعرف بعض الألمانية، لكن هذه أول مرة تستعملها في الحياة الحقيقية. ستسكن عند صديقتك لينا في ميونخ حتى نهاية الشهر — لكن قبل ذلك ينتظرك يوم مليء بالمفاجآت في المطار!",
+  "objective": "أجب عن أسئلة ضابط الجوازات، وتعامل مع مشكلة حقيبتك المفقودة، واسأل عن أفضل طريق إلى محطة برلين الرئيسية، ثم اعثر على قطارك وافهم ما يجب أن تفعله بعد ذلك.",
+  "outro": "رائع! رغم الحقيبة المفقودة وتأخر القطار، تجلس الآن في القطار FEX متجهًا إلى محطة برلين الرئيسية، وحقيبتك ستصل إلى عنوان لينا خلال أيام. في المحطة الرئيسية تنتظرك المهمة التالية: شراء تذكرة القطار السريع ICE إلى ميونخ!",
+  "cast": {
+    "officer": { "name": "Herr Vogel", "role": "ضابط مراقبة الجوازات", "avatar": "👮‍♂️" },
+    "worker": { "name": "Herr Ott", "role": "عامل في صالة الأمتعة", "avatar": "👷‍♂️" },
+    "becker": { "name": "Frau Becker", "role": "موظفة مكتب الأمتعة المفقودة", "avatar": "👩‍💼" },
+    "info": { "name": "Herr Brückner", "role": "موظف الاستعلامات", "avatar": "🧑‍💼" },
+    "lehmann": { "name": "Herr Lehmann", "role": "مسافر متقاعد", "avatar": "👴" },
+    "lina": { "name": "Lina Hoffmann", "role": "صديقتك في ميونخ", "avatar": "👱‍♀️" }
+  },
+  "vocab": [
+    { "de": "die Passkontrolle", "ar": "مراقبة الجوازات" },
+    { "de": "der Aufenthalt", "ar": "الإقامة / فترة البقاء" },
+    { "de": "landen (ist gelandet)", "ar": "يهبط (هبطت الطائرة)" },
+    { "de": "der Flug", "ar": "الرحلة الجوية" },
+    { "de": "das Gepäckband", "ar": "حزام الأمتعة" },
+    { "de": "die Gepäckermittlung", "ar": "مكتب الأمتعة المفقودة" },
+    { "de": "der Gepäckschein", "ar": "إيصال الأمتعة" },
+    { "de": "die Verlustmeldung", "ar": "بلاغ الفقدان" },
+    { "de": "verloren", "ar": "مفقود / ضائع" },
+    { "de": "ankommen (ist angekommen)", "ar": "يصل (وصل)" },
+    { "de": "aussehen", "ar": "يبدو (شكله)" },
+    { "de": "die Farbe", "ar": "اللون" },
+    { "de": "dunkelblau", "ar": "أزرق داكن" },
+    { "de": "grau", "ar": "رمادي" },
+    { "de": "die Adresse", "ar": "العنوان" },
+    { "de": "schicken", "ar": "يرسل" },
+    { "de": "der Schalter", "ar": "الشبّاك / المكتب" },
+    { "de": "das Untergeschoss", "ar": "الطابق السفلي" },
+    { "de": "der Flughafen-Express (FEX)", "ar": "قطار المطار السريع" },
+    { "de": "die S-Bahn", "ar": "قطار المدينة السريع" },
+    { "de": "halten", "ar": "يتوقف" },
+    { "de": "dauern", "ar": "يستغرق" },
+    { "de": "die Abfahrt", "ar": "المغادرة / الانطلاق" },
+    { "de": "die Ankunft", "ar": "الوصول" },
+    { "de": "die Verspätung", "ar": "التأخير" },
+    { "de": "pünktlich", "ar": "في الموعد" },
+    { "de": "das Gleis", "ar": "الرصيف" },
+    { "de": "umsteigen", "ar": "يبدّل القطار" },
+    { "de": "abholen", "ar": "يستقبل / يأخذ (شخصًا من مكان)" },
+    { "de": "die Fahrkarte", "ar": "تذكرة السفر" }
+  ],
+  "expressions": [
+    { "de": "Könnten Sie …?", "ar": "هل يمكنك … (بأدب أكثر)؟", "use": "صيغة أكثر تهذيبًا من Können Sie، مناسبة مع الموظفين والغرباء.", "example": "Könnten Sie das bitte wiederholen?", "exampleAr": "هل يمكنك تكرار ذلك من فضلك؟" },
+    { "de": "Könnten Sie bitte etwas langsamer sprechen?", "ar": "هل يمكنك التكلم ببطء أكثر قليلًا من فضلك؟", "use": "عندما يتكلم الشخص بسرعة لا تستطيع متابعتها.", "example": "Entschuldigung, könnten Sie bitte etwas langsamer sprechen?", "exampleAr": "عفوًا، هل يمكنك التكلم ببطء أكثر قليلًا؟" },
+    { "de": "Mein Koffer ist nicht angekommen.", "ar": "حقيبتي لم تصل.", "use": "عند الإبلاغ عن حقيبة مفقودة في المطار.", "example": "Mein Gepäck ist leider nicht angekommen.", "exampleAr": "للأسف لم تصل أمتعتي." },
+    { "de": "nicht …, sondern …", "ar": "ليس …، بل …", "use": "لتصحيح معلومة خاطئة بلطف.", "example": "Nicht grau, sondern blau.", "exampleAr": "ليس رماديًا، بل أزرق." },
+    { "de": "Wie komme ich am besten zum …?", "ar": "ما أفضل طريقة للوصول إلى …؟", "use": "للسؤال عن الطريق أو وسيلة المواصلات.", "example": "Wie komme ich am besten zum Hauptbahnhof?", "exampleAr": "ما أفضل طريقة للوصول إلى المحطة الرئيسية؟" },
+    { "de": "Ich wohne bei …", "ar": "أسكن عند …", "use": "لتقول عند من تسكن. بعد bei يأتي الدّاتيف.", "example": "Ich wohne bei einer Freundin.", "exampleAr": "أسكن عند صديقة." },
+    { "de": "Das tut mir leid.", "ar": "أنا آسف لذلك.", "use": "للتعبير عن الأسف لمشكلة حدثت لشخص آخر.", "example": "Ihr Koffer ist weg? Das tut mir leid!", "exampleAr": "حقيبتك ضاعت؟ آسف لذلك!" },
+    { "de": "Der Zug hat Verspätung.", "ar": "القطار متأخر.", "use": "جملة ستسمعها كثيرًا في ألمانيا!", "example": "Der ICE hat zwanzig Minuten Verspätung.", "exampleAr": "قطار ICE متأخر عشرين دقيقة." },
+    { "de": "Vielen Dank für Ihre Hilfe!", "ar": "شكرًا جزيلًا على مساعدتك!", "use": "لشكر موظف أو شخص ساعدك.", "example": "Vielen Dank für Ihre Hilfe! Schönen Tag noch!", "exampleAr": "شكرًا جزيلًا على مساعدتك! أتمنى لك يومًا سعيدًا!" },
+    { "de": "Ich lerne seit … Deutsch.", "ar": "أتعلم الألمانية منذ …", "use": "لتقول منذ متى تتعلم. بعد seit يأتي الدّاتيف.", "example": "Ich lerne seit einem Jahr Deutsch.", "exampleAr": "أتعلم الألمانية منذ سنة." }
+  ],
+  "summary": [
+    "الإجابة عن أسئلة الجوازات بتفصيل: سبب الزيارة، مكان السكن (bei + Dativ)، ومدة البقاء (bis).",
+    "استعمال الماضي التام (Perfekt) لوصف ما حدث: Ich bin gelandet / Mein Koffer ist nicht angekommen / Ich habe … gefunden.",
+    "الإبلاغ عن حقيبة مفقودة: وصف الحقيبة، وتصحيح الخطأ بـ nicht …, sondern …، وإعطاء العنوان.",
+    "طلب المساعدة بأدب بـ Könnten Sie …? والسؤال عن أفضل طريق: Wie komme ich am besten zum …?",
+    "فهم الأسباب بجمل weil (والفعل في آخر الجملة) والمقارنة بين FEX و S-Bahn.",
+    "مساعدة مسافر آخر والتحدث عن نفسك: Ich lerne seit sechs Monaten Deutsch.",
+    "قراءة لوحة المغادرة وفهم إعلان تأخير: Verspätung، Abfahrt، pünktlich.",
+    "فهم رسالة صوتية تشرح الخطوات التالية في الرحلة إلى ميونخ."
+  ],
+  "scenes": [
+    {
+      "id": "einreise",
+      "title": { "de": "Die Einreise", "ar": "الدخول إلى ألمانيا" },
+      "steps": [
+        { "type": "narration", "ar": "تقف في طابور مراقبة الجوازات منذ عشرين دقيقة. الضابط يسأل كل مسافر عدة أسئلة. الآن جاء دورك. تعطيه جوازك." },
+        { "type": "line", "who": "officer", "de": "Guten Tag. Sie kommen {fromCountry}?", "ar": "مرحبًا. أنت قادم من {countryAr}؟" },
+        { "type": "line", "who": "me", "de": "Ja, genau. Ich bin heute Morgen losgeflogen.", "ar": "نعم، بالضبط. سافرت بالطائرة صباح اليوم." },
+        {
+          "type": "choice", "id": "a1", "skill": "dialogue",
+          "npc": { "who": "officer", "de": "Und warum kommen Sie nach Deutschland?", "ar": "ولماذا تأتي إلى ألمانيا؟" },
+          "prompt": "أجب عن سؤال الضابط.",
+          "options": [
+            { "de": "Ich besuche eine Freundin in München.", "correct": true },
+            { "de": "Ich möchte eine Freundin in München besuchen.", "correct": true },
+            { "de": "Ich bin mit dem Flugzeug gekommen.", "why": "هذه الجملة تجيب عن «كيف جئت؟» (Wie?)، أما warum فتسأل عن السبب." },
+            { "de": "Ich komme {fromCountry}.", "why": "هذا جواب عن Woher (من أين؟)، والضابط سألك عن السبب (warum)." }
+          ],
+          "reply": { "who": "officer", "de": "Aha. Und wo wohnen Sie in München?", "ar": "حسنًا. وأين تسكن في ميونخ؟" },
+          "hint": "warum = لماذا. ما سبب رحلتك في القصة؟",
+          "explain": "سبب الزيارة: Ich besuche eine Freundin. ويمكن أيضًا استعمال الفعل الناقص: Ich möchte … besuchen (الفعل الثاني في آخر الجملة)."
+        },
+        {
+          "type": "grammar",
+          "title": "حروف الجر bei / mit / zu + الدّاتيف",
+          "body": "بعد **bei** و **mit** و **zu** و **aus** و **von** و **nach** يأتي دائمًا **الدّاتيف**: eine Freundin ← **einer** Freundin، der Bahnhof ← **dem** Bahnhof.\n**bei** = عند (مكان السكن أو العمل)، **mit** = مع (برفقة)، **zu** = إلى (اتجاه نحو شخص أو مكان).",
+          "examples": [
+            { "de": "Ich wohne bei einer Freundin.", "ar": "أسكن عند صديقة." },
+            { "de": "Ich fahre mit dem Zug.", "ar": "أسافر بالقطار." },
+            { "de": "Ich gehe zum Bahnhof (zu + dem).", "ar": "أذهب إلى المحطة." }
+          ]
+        },
+        {
+          "type": "choice", "id": "a2", "skill": "grammar",
+          "prompt": "الضابط سأل: Wo wohnen Sie in München? اختر الجواب الصحيح (قد يكون هناك أكثر من جواب صحيح).",
+          "options": [
+            { "de": "Bei einer Freundin in Schwabing.", "correct": true },
+            { "de": "Ich wohne bei einer Freundin in der Belgradstraße.", "correct": true },
+            { "de": "Zu einer Freundin.", "why": "zu تدل على الاتجاه (إلى أين؟ Wohin)، والسؤال Wo يسأل عن المكان الثابت. الصحيح: bei." },
+            { "de": "Mit einer Freundin.", "why": "mit تعني «مع/برفقة»، ولا تجيب عن مكان السكن. لتقول «عند صديقة» استعمل bei." }
+          ],
+          "reply": { "who": "officer", "de": "Gut. Und wie lange bleiben Sie bei ihr?", "ar": "جيد. وكم من الوقت ستبقى عندها؟" },
+          "hint": "Wo = أين (مكان ثابت). أي حرف جر يعني «عند»؟",
+          "explain": "bei + Dativ = عند: bei einer Freundin. و in der Belgradstraße أيضًا داتيف لأنها تجيب عن Wo."
+        },
+        {
+          "type": "fill", "id": "a3", "skill": "grammar",
+          "sentence": "Ich bleibe ___ Ende des Monats bei ihr. Dann suche ich ein eigenes Zimmer.",
+          "ar": "سأبقى عندها حتى نهاية الشهر. ثم أبحث عن غرفة خاصة بي.",
+          "options": ["bis", "seit", "um", "vor"],
+          "answers": ["bis"],
+          "hint": "تحتاج كلمة تعني «حتى» (نقطة النهاية في المستقبل).",
+          "explain": "bis = حتى: bis Ende des Monats. أما seit فتعني «منذ» (بداية في الماضي)، و um للساعة."
+        },
+        { "type": "line", "who": "officer", "de": "In Ordnung. Willkommen in Deutschland und einen schönen Aufenthalt!", "ar": "حسنًا. مرحبًا بك في ألمانيا، وأتمنى لك إقامة طيبة!" },
+        { "type": "line", "who": "me", "de": "Vielen Dank! Auf Wiedersehen!", "ar": "شكرًا جزيلًا! إلى اللقاء!" }
+      ]
+    },
+    {
+      "id": "gepaeckband",
+      "title": { "de": "Am Gepäckband", "ar": "عند حزام الأمتعة" },
+      "steps": [
+        { "type": "narration", "ar": "تتبع لافتات Gepäckausgabe. على الشاشة ترى رقم رحلتك." },
+        { "type": "doc", "kind": "screen", "title": "Gepäckausgabe", "lines": ["Flug | Ankunft | Band", "482 | 12:10 | 7", "217 | 12:25 | 9", "903 | 12:40 | 3"], "ar": "استلام الأمتعة — الرحلة | وقت الوصول | الحزام" },
+        { "type": "narration", "ar": "تقف عند الحزام 7. فجأة يأتي إعلان." },
+        {
+          "type": "listen", "id": "a4", "skill": "listening",
+          "audio": "Achtung, bitte! Fluggäste von Flug 482: Ihr Gepäck kommt heute nicht an Band 7, sondern an Band 9. Wir bitten um Entschuldigung.",
+          "audioAr": "انتباه من فضلكم! ركاب الرحلة 482: أمتعتكم لن تصل اليوم إلى الحزام 7، بل إلى الحزام 9. نعتذر عن ذلك.",
+          "prompt": "إلى أين يجب أن تذهب الآن؟",
+          "options": [
+            { "ar": "إلى الحزام 9", "correct": true },
+            { "ar": "أبقى عند الحزام 7", "why": "الإعلان قال: nicht an Band 7, sondern an Band 9 — ليس 7 بل 9. الشاشة لم تُحدَّث بعد." },
+            { "ar": "إلى الحزام 4", "why": "4 جزء من رقم رحلتك 482، وليس رقم الحزام." },
+            { "ar": "إلى الحزام 19", "why": "سمعت neun (9) وليس neunzehn (19)." }
+          ],
+          "hint": "انتبه إلى التركيب nicht …, sondern … (ليس …، بل …).",
+          "explain": "nicht an Band 7, sondern an Band 9 = ليس عند الحزام 7 بل عند الحزام 9. و Wir bitten um Entschuldigung = نعتذر."
+        },
+        { "type": "narration", "ar": "تنتظر عند الحزام 9. تمر الحقائب واحدة تلو الأخرى… يأخذ الجميع حقائبهم. بعد عشرين دقيقة يتوقف الحزام. حقيبتك الزرقاء ليست هنا!" },
+        { "type": "narration", "ar": "يهتز هاتفك. رسالة من لينا." },
+        { "type": "doc", "kind": "message", "title": "Lina 💬", "lines": ["Hallo {name}! Bist du gut in Berlin angekommen? ✈️", "Ich habe dir schon das Ticket für den Zug zum Hauptbahnhof geschickt.", "Das ICE-Ticket nach München kaufst du am besten am Hauptbahnhof.", "Meine Adresse, falls du sie brauchst: Belgradstraße 14, 80796 München.", "Ruf mich an, wenn du im Zug bist! 😊"], "ar": "مرحبًا {name}! هل وصلت إلى برلين بسلام؟ أرسلت لك تذكرة القطار إلى المحطة الرئيسية. تذكرة ICE إلى ميونخ من الأفضل أن تشتريها من المحطة الرئيسية. عنواني إذا احتجته: Belgradstraße 14، 80796 ميونخ. اتصل بي عندما تكون في القطار!" },
+        {
+          "type": "choice", "id": "a5", "skill": "reading",
+          "prompt": "ماذا فهمت من رسالة لينا؟",
+          "options": [
+            { "ar": "لينا أرسلت تذكرة القطار إلى المحطة الرئيسية، وتذكرة ICE أشتريها هناك، وأتصل بها من القطار", "correct": true },
+            { "ar": "يجب أن أشتري تذكرة ICE في المطار", "why": "كتبت: kaufst du am besten am Hauptbahnhof — الأفضل شراؤها في المحطة الرئيسية." },
+            { "ar": "يجب أن أرسل لها تذكرتي", "why": "Ich habe dir … geschickt = أنا أرسلت لك. هي التي أرسلت التذكرة." },
+            { "ar": "يجب أن أتصل بها فور وصولي إلى ميونخ", "why": "كتبت: wenn du im Zug bist — عندما تكون في القطار، وليس في ميونخ." }
+          ],
+          "hint": "انتبه إلى من فعل ماذا: ich (لينا) و du (أنت). وماذا يعني wenn du im Zug bist؟",
+          "explain": "Ich habe dir … geschickt (Perfekt) = أرسلتُ لك. am besten = الأفضل. wenn du im Zug bist = عندما تكون في القطار."
+        },
+        {
+          "type": "decision",
+          "prompt": "حقيبتك لم تأتِ. ماذا تفعل؟",
+          "options": [
+            {
+              "ar": "أنتظر قليلًا، ربما تأتي متأخرة",
+              "then": [
+                { "type": "narration", "ar": "تنتظر عشر دقائق أخرى. الحزام فارغ. يقترب عامل بزي برتقالي." },
+                { "type": "line", "who": "worker", "de": "Suchen Sie Ihren Koffer? Hier kommt nichts mehr. Gehen Sie am besten zur Gepäckermittlung, da drüben.", "ar": "هل تبحث عن حقيبتك؟ لن يأتي شيء هنا بعد الآن. الأفضل أن تذهب إلى مكتب الأمتعة المفقودة، هناك." },
+                { "type": "line", "who": "me", "de": "Okay, danke!", "ar": "حسنًا، شكرًا!" }
+              ]
+            },
+            {
+              "ar": "أبحث فورًا عن مكتب الأمتعة المفقودة",
+              "then": [
+                { "type": "narration", "ar": "تنظر حولك وترى لافتة زرقاء في زاوية الصالة." },
+                { "type": "doc", "kind": "sign", "lines": ["Gepäckermittlung", "Lost & Found", "Öffnungszeiten: täglich 6:00–23:00 Uhr"], "ar": "مكتب الأمتعة المفقودة — مواعيد العمل: يوميًا من 6:00 إلى 23:00" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "match", "id": "a6", "skill": "vocab",
+          "prompt": "قبل أن تذهب إلى المكتب، راجع الكلمات المهمة: صِل كل كلمة بمعناها.",
+          "pairs": [
+            ["die Gepäckermittlung", "مكتب الأمتعة المفقودة"],
+            ["der Gepäckschein", "إيصال الأمتعة"],
+            ["das Gepäckband", "حزام الأمتعة"],
+            ["verloren", "مفقود"],
+            ["die Adresse", "العنوان"],
+            ["die Farbe", "اللون"]
+          ],
+          "hint": "Gepäck = الأمتعة. ermitteln = يتحرّى / يبحث، و Schein = ورقة / إيصال.",
+          "explain": "هذه الكلمات ستحتاجها الآن عند الإبلاغ عن حقيبتك."
+        }
+      ]
+    },
+    {
+      "id": "gepaeckermittlung",
+      "title": { "de": "Bei der Gepäckermittlung", "ar": "في مكتب الأمتعة المفقودة" },
+      "steps": [
+        { "type": "narration", "ar": "خلف الشبّاك تجلس موظفة تبتسم رغم الطابور الطويل." },
+        {
+          "type": "choice", "id": "a7", "skill": "dialogue",
+          "npc": { "who": "becker", "de": "Guten Tag! Was kann ich für Sie tun?", "ar": "مرحبًا! ماذا يمكنني أن أفعل لك؟" },
+          "prompt": "اشرح مشكلتك.",
+          "options": [
+            { "de": "Guten Tag. Mein Koffer ist leider nicht angekommen.", "correct": true },
+            { "de": "Guten Tag. Ich habe meinen Koffer nicht gefunden. Können Sie mir helfen?", "correct": true },
+            { "de": "Guten Tag. Ich habe meinen Koffer gestern gekauft.", "why": "هذه الجملة تعني «اشتريت حقيبتي أمس»، ولا تشرح أن الحقيبة ضاعت." },
+            { "de": "Guten Tag. Ich möchte bitte einen Koffer kaufen.", "why": "هذا مكتب الأمتعة المفقودة وليس متجرًا. أنت تريد حقيبتك أنت، لا حقيبة جديدة." }
+          ],
+          "reply": { "who": "becker", "de": "Oh, das tut mir leid. Mit welchem Flug sind Sie gekommen?", "ar": "أوه، آسفة لذلك. بأي رحلة جئت؟" },
+          "hint": "تحتاج جملة في الماضي التام (Perfekt) تقول إن الحقيبة لم تصل أو لم تجدها.",
+          "explain": "ankommen ← ist angekommen (مع sein لأنه فعل حركة)، و finden ← habe gefunden (مع haben). كلا الجملتين تشرحان المشكلة."
+        },
+        { "type": "line", "who": "me", "de": "Mit Flug 482.", "ar": "بالرحلة 482." },
+        {
+          "type": "grammar",
+          "title": "الماضي التام (Perfekt): haben أم sein؟",
+          "body": "Perfekt = **haben/sein** (في المكان الثاني) + **التصريف الثالث** (في آخر الجملة).\nأفعال الحركة وتغيّر المكان تأخذ **sein**: fliegen ← ist geflogen، landen ← ist gelandet، ankommen ← ist angekommen.\nمعظم الأفعال الأخرى تأخذ **haben**: finden ← hat gefunden، warten ← hat gewartet.",
+          "examples": [
+            { "de": "Das Flugzeug ist um 12:10 Uhr gelandet.", "ar": "هبطت الطائرة الساعة 12:10." },
+            { "de": "Ich habe eine Stunde gewartet.", "ar": "انتظرت ساعة." },
+            { "de": "Mein Koffer ist nicht angekommen.", "ar": "حقيبتي لم تصل." }
+          ]
+        },
+        { "type": "line", "who": "becker", "de": "Und wann sind Sie gelandet?", "ar": "ومتى هبطت؟" },
+        {
+          "type": "fill", "id": "a8", "skill": "grammar",
+          "sentence": "Wir ___ um 12:10 Uhr gelandet.",
+          "ar": "هبطنا الساعة 12:10.",
+          "options": ["sind", "haben", "hatten", "ist"],
+          "answers": ["sind"],
+          "hint": "landen فعل حركة. والفاعل wir.",
+          "explain": "landen يأخذ sein في Perfekt، ومع wir نقول sind: Wir sind gelandet. (ist تأتي مع er/sie/es)."
+        },
+        { "type": "line", "who": "becker", "de": "Gut. Haben Sie Ihren Gepäckschein? … Danke. Und wie sieht Ihr Koffer aus?", "ar": "حسنًا. هل معك إيصال الأمتعة؟ … شكرًا. وكيف يبدو شكل حقيبتك؟" },
+        {
+          "type": "build", "id": "a9", "skill": "writing",
+          "prompt": "صِف حقيبتك: «حقيبتي كبيرة وزرقاء.»",
+          "tiles": ["Mein", "Koffer", "ist", "groß", "und", "blau", ".", "Meine", "grau"],
+          "answers": [
+            ["Mein", "Koffer", "ist", "groß", "und", "blau", "."],
+            ["Mein", "Koffer", "ist", "blau", "und", "groß", "."]
+          ],
+          "hint": "der Koffer مذكر، إذن mein وليس meine. والفعل ist في المكان الثاني.",
+          "explain": "Mein Koffer ist groß und blau. — der Koffer ← mein Koffer. الصفة بعد ist لا تأخذ نهاية."
+        },
+        { "type": "narration", "ar": "الموظفة تكتب بسرعة على الحاسوب، ثم تطبع ورقة وتعطيك إياها لتتحقق منها." },
+        { "type": "doc", "kind": "form", "title": "Verlustmeldung", "lines": ["Name: {name}", "Flug: 482 – Ankunft 12:10 Uhr", "Gepäckstück: Koffer, groß", "Farbe: grau", "Adresse in Deutschland: ________"], "ar": "بلاغ فقدان — الاسم — الرحلة: 482، الوصول 12:10 — قطعة الأمتعة: حقيبة، كبيرة — اللون: رمادي — العنوان في ألمانيا: ________" },
+        { "type": "narration", "ar": "لحظة! هناك خطأ في الورقة. الموظفة سمعت كلمة أخرى!" },
+        {
+          "type": "choice", "id": "a10", "skill": "dialogue",
+          "prompt": "صحّح الخطأ بأدب.",
+          "options": [
+            { "de": "Entschuldigung, mein Koffer ist nicht grau, sondern blau.", "correct": true },
+            { "de": "Entschuldigung, da steht grau. Aber mein Koffer ist blau.", "correct": true },
+            { "de": "Ja, genau, grau. Danke!", "why": "حقيبتك زرقاء (blau). إذا وافقت على grau فلن يجدوا حقيبتك!" },
+            { "de": "Mein Koffer ist sehr schön.", "why": "الجملة صحيحة لكنها لا تصحح اللون الخاطئ في البلاغ." }
+          ],
+          "reply": { "who": "becker", "de": "Oh, Entschuldigung! Blau, nicht grau. Ich habe mich verhört. Ich korrigiere das sofort.", "ar": "أوه، آسفة! أزرق وليس رماديًا. لقد أخطأت في السمع. سأصحح ذلك فورًا." },
+          "hint": "في الورقة مكتوب grau، وحقيبتك blau. استعمل nicht …, sondern … أو قل ما هو مكتوب ثم الصحيح.",
+          "explain": "nicht grau, sondern blau = ليس رماديًا بل أزرق. هذه أفضل طريقة لتصحيح معلومة بلطف. و grau و blau متشابهتان في السمع!"
+        },
+        { "type": "learn", "de": "nicht …, sondern …", "ar": "ليس …، بل …", "use": "لتصحيح معلومة: تنفي الخطأ بـ nicht ثم تذكر الصحيح بعد sondern.", "example": "Ich fahre nicht nach Hamburg, sondern nach München.", "exampleAr": "لست ذاهبًا إلى هامبورغ، بل إلى ميونخ." },
+        { "type": "line", "who": "becker", "de": "Wenn wir Ihren Koffer finden, schicken wir ihn zu Ihnen nach Hause. Wie ist Ihre Adresse in Deutschland?", "ar": "عندما نجد حقيبتك، سنرسلها إلى منزلك. ما عنوانك في ألمانيا؟" },
+        {
+          "type": "write", "id": "a11", "skill": "writing",
+          "prompt": "اكتب اسم الشارع ورقم البيت من عنوان لينا (موجود في رسالتها).",
+          "answers": [
+            "Belgradstraße 14",
+            "Belgradstraße 14, München",
+            "Belgradstraße 14, 80796 München",
+            "Belgradstraße 14 in München",
+            "Belgradstraße vierzehn",
+            "Meine Adresse ist Belgradstraße 14",
+            "Meine Adresse ist Belgradstraße 14, München",
+            "Meine Adresse ist Belgradstraße 14, 80796 München",
+            "Meine Adresse ist Belgradstraße 14 in München",
+            "Die Adresse ist Belgradstraße 14, 80796 München",
+            "Ich wohne in der Belgradstraße 14",
+            "Ich wohne in der Belgradstraße 14 in München",
+            "Belgradstr. 14",
+            "Belgradstr. 14, 80796 München"
+          ],
+          "hint": "في رسالة لينا: Meine Adresse … — الشارع ينتهي بـ -straße ثم يأتي الرقم.",
+          "explain": "في ألمانيا يُكتب اسم الشارع أولًا ثم رقم البيت: Belgradstraße 14، ثم الرمز البريدي والمدينة: 80796 München."
+        },
+        { "type": "line", "who": "becker", "de": "Perfekt. Normalerweise dauert es ein bis drei Tage. Hier ist Ihre Nummer: BER-48213. Damit können Sie uns jederzeit anrufen.", "ar": "ممتاز. عادةً يستغرق الأمر من يوم إلى ثلاثة أيام. هذا رقم بلاغك: BER-48213. يمكنك الاتصال بنا به في أي وقت." },
+        { "type": "line", "who": "me", "de": "Vielen Dank für Ihre Hilfe!", "ar": "شكرًا جزيلًا على مساعدتك!" }
+      ]
+    },
+    {
+      "id": "information",
+      "title": { "de": "Am Informationsschalter", "ar": "عند مكتب الاستعلامات" },
+      "steps": [
+        { "type": "narration", "ar": "تخرج إلى صالة الوصول مع حقيبة يدك فقط. الآن تحتاج أن تعرف أفضل طريق إلى المحطة الرئيسية. تذهب إلى مكتب الاستعلامات." },
+        { "type": "doc", "kind": "announcement", "title": "Durchsage", "lines": ["Sehr geehrte Fluggäste, bitte lassen Sie Ihr Gepäck nicht unbeaufsichtigt. Vielen Dank."], "ar": "أيها المسافرون الكرام، من فضلكم لا تتركوا أمتعتكم دون مراقبة. شكرًا جزيلًا." },
+        {
+          "type": "choice", "id": "a12", "skill": "dialogue",
+          "npc": { "who": "info", "de": "Hallo! Wie kann ich Ihnen helfen?", "ar": "مرحبًا! كيف يمكنني مساعدتك؟" },
+          "prompt": "اسأل الموظف عن الطريق إلى محطة برلين الرئيسية.",
+          "options": [
+            { "de": "Könnten Sie mir bitte sagen, wie ich zum Hauptbahnhof komme?", "correct": true },
+            { "de": "Wie komme ich am besten zum Hauptbahnhof?", "correct": true },
+            { "de": "Wann sind Sie zum Hauptbahnhof gekommen?", "why": "هذه الجملة تسأل الموظف متى ذهب هو إلى المحطة، ولا تسأل عن الطريق." },
+            { "de": "Ich bin schon am Hauptbahnhof.", "why": "تعني «أنا في المحطة الرئيسية بالفعل» — وهذا غير صحيح، أنت ما زلت في المطار." }
+          ],
+          "hint": "تحتاج سؤالًا عن الطريقة (wie). يمكنك أن تسأل مباشرة أو بصيغة أكثر تهذيبًا مع Könnten.",
+          "explain": "Wie komme ich am besten zum …? = ما أفضل طريق إلى …؟ وفي الصيغة غير المباشرة يذهب الفعل إلى آخر الجملة: …, wie ich zum Hauptbahnhof komme."
+        },
+        { "type": "line", "who": "info", "de": "Zum Hauptbahnhof? Am schnellsten geht es mit dem FEX, dem Flughafen-Express. Sie gehen hier rechts, fahren mit der Rolltreppe nach unten ins Untergeschoss, und dort ist schon der Bahnhof. Der FEX fährt alle dreißig Minuten und braucht ungefähr eine halbe Stunde. Sie können auch die S-Bahn nehmen, aber die braucht länger, weil sie an vielen Stationen hält.", "ar": "إلى المحطة الرئيسية؟ أسرع طريقة هي قطار FEX، قطار المطار السريع. اذهب من هنا يمينًا، وانزل بالدرج الكهربائي إلى الطابق السفلي، وهناك المحطة. القطار FEX يمر كل ثلاثين دقيقة ويستغرق نحو نصف ساعة. يمكنك أيضًا أن تأخذ S-Bahn، لكنها تستغرق وقتًا أطول لأنها تتوقف في محطات كثيرة." },
+        { "type": "narration", "ar": "الموظف يتكلم بسرعة كبيرة، والصالة مزعجة. فهمت «FEX» و«Rolltreppe» فقط." },
+        { "type": "learn", "de": "Könnten Sie …?", "ar": "هل يمكنك …؟ (بأدب أكثر)", "use": "Könnten أكثر تهذيبًا من Können. الفعل الأساسي يأتي في آخر الجملة.", "example": "Könnten Sie das bitte wiederholen?", "exampleAr": "هل يمكنك تكرار ذلك من فضلك؟" },
+        {
+          "type": "write", "id": "a13", "skill": "writing",
+          "prompt": "اطلب منه بأدب (مع Könnten) أن يتكلم ببطء أكثر.",
+          "answers": [
+            "Könnten Sie bitte langsamer sprechen",
+            "Könnten Sie bitte etwas langsamer sprechen",
+            "Könnten Sie bitte ein bisschen langsamer sprechen",
+            "Könnten Sie etwas langsamer sprechen",
+            "Könnten Sie langsamer sprechen",
+            "Könnten Sie langsamer sprechen, bitte",
+            "Könnten Sie etwas langsamer sprechen, bitte",
+            "Entschuldigung, könnten Sie bitte langsamer sprechen",
+            "Entschuldigung, könnten Sie bitte etwas langsamer sprechen",
+            "Können Sie bitte langsamer sprechen",
+            "Können Sie bitte etwas langsamer sprechen"
+          ],
+          "hint": "Könnten Sie … ثم bitte، ثم «أبطأ» (langsamer)، والفعل sprechen في النهاية.",
+          "explain": "Könnten Sie bitte (etwas) langsamer sprechen? — langsamer = أبطأ (صيغة المقارنة من langsam)."
+        },
+        { "type": "line", "who": "info", "de": "Natürlich, Entschuldigung! Also: Nehmen Sie am besten den FEX.", "ar": "طبعًا، عذرًا! إذن: الأفضل أن تأخذ قطار FEX." },
+        {
+          "type": "listen", "id": "a14", "skill": "listening", "bonus": true,
+          "audio": "Die S-Bahn braucht länger, weil sie an vielen Stationen hält. Der FEX hält nur an wenigen Stationen. Mit dem FEX sind Sie in etwa dreißig Minuten am Hauptbahnhof.",
+          "audioAr": "قطار S-Bahn يستغرق وقتًا أطول لأنه يتوقف في محطات كثيرة. القطار FEX يتوقف في محطات قليلة فقط. مع FEX تصل إلى المحطة الرئيسية في نحو ثلاثين دقيقة.",
+          "prompt": "لماذا ينصحك الموظف بالقطار FEX؟",
+          "options": [
+            { "ar": "لأن S-Bahn تتوقف في محطات كثيرة، أما FEX فيتوقف في محطات قليلة فيصل أسرع", "correct": true },
+            { "ar": "لأن S-Bahn لا تذهب إلى المحطة الرئيسية", "why": "لم يقل ذلك. قال إن S-Bahn braucht länger (تستغرق وقتًا أطول) فقط." },
+            { "ar": "لأن FEX أرخص من S-Bahn", "why": "لم يتكلم الموظف عن السعر إطلاقًا." },
+            { "ar": "لأن S-Bahn لا تعمل اليوم", "why": "لم يقل ذلك. السبب هو الوقت: weil sie an vielen Stationen hält." }
+          ],
+          "hint": "ابحث عن الجملة التي فيها weil (لأن).",
+          "explain": "weil sie an vielen Stationen hält = لأنها تتوقف في محطات كثيرة. لاحظ أن الفعل hält جاء في آخر الجملة بعد weil."
+        },
+        {
+          "type": "grammar",
+          "title": "جملة weil — الفعل في النهاية",
+          "body": "**weil** = لأن. بعد weil يذهب الفعل المصرَّف إلى **آخر الجملة**.\nالجملة العادية: Die S-Bahn **hält** an vielen Stationen.\nمع weil: …, weil die S-Bahn an vielen Stationen **hält**.\nوقبل weil نضع فاصلة دائمًا.",
+          "examples": [
+            { "de": "Ich nehme den FEX, weil er schneller ist.", "ar": "آخذ FEX لأنه أسرع." },
+            { "de": "Ich bin müde, weil ich lange geflogen bin.", "ar": "أنا متعب لأنني سافرت بالطائرة مدة طويلة." }
+          ]
+        },
+        {
+          "type": "fill", "id": "a15", "skill": "grammar",
+          "sentence": "Ich nehme den FEX, weil er schneller ___.",
+          "ar": "آخذ القطار FEX لأنه أسرع.",
+          "options": ["ist", "fährt", "ist er", "sind"],
+          "answers": ["ist", "fährt"],
+          "hint": "بعد weil يأتي الفعل في آخر الجملة، والفاعل er (مفرد).",
+          "explain": "weil er schneller ist (لأنه أسرع) أو weil er schneller fährt (لأنه يسير أسرع) — كلاهما صحيح. ist er خطأ لأن الفعل يجب أن يكون في الآخر."
+        },
+        {
+          "type": "decision",
+          "prompt": "أي قطار تختار؟",
+          "options": [
+            {
+              "ar": "قطار FEX — الأسرع",
+              "de": "Ich nehme den FEX.",
+              "then": [
+                { "type": "line", "who": "info", "de": "Gute Wahl! Haben Sie schon eine Fahrkarte?", "ar": "اختيار جيد! هل معك تذكرة؟" }
+              ]
+            },
+            {
+              "ar": "S-Bahn — أريد أن أرى المدينة من النافذة",
+              "de": "Ich nehme lieber die S-Bahn.",
+              "then": [
+                { "type": "line", "who": "info", "de": "Das geht auch. Aber Sie müssen am Hauptbahnhof noch ein Ticket kaufen. Mit dem FEX haben Sie mehr Zeit dafür.", "ar": "هذا ممكن أيضًا. لكن عليك أن تشتري تذكرة في المحطة الرئيسية، ومع FEX سيكون لديك وقت أكثر لذلك." },
+                { "type": "line", "who": "me", "de": "Stimmt! Dann nehme ich doch den FEX.", "ar": "صحيح! إذن سآخذ FEX في النهاية." },
+                { "type": "line", "who": "info", "de": "Gut! Haben Sie schon eine Fahrkarte?", "ar": "جيد! هل معك تذكرة؟" }
+              ]
+            }
+          ]
+        },
+        { "type": "line", "who": "me", "de": "Ja, meine Freundin hat mir ein Ticket aufs Handy geschickt.", "ar": "نعم، صديقتي أرسلت لي تذكرة على الهاتف." },
+        { "type": "line", "who": "info", "de": "Wunderbar. Dann gute Reise!", "ar": "رائع. إذن رحلة سعيدة!" }
+      ]
+    },
+    {
+      "id": "weg",
+      "title": { "de": "Der Weg zum Bahnhof", "ar": "الطريق إلى المحطة" },
+      "steps": [
+        { "type": "narration", "ar": "حولك لافتات كثيرة. تتذكر كلام الموظف: Folgen Sie den Schildern zum Bahnhof und fahren Sie mit der Rolltreppe nach unten." },
+        {
+          "type": "find", "id": "a16", "skill": "reading",
+          "prompt": "اختر فقط ما يجب أن تتبعه حسب كلام موظف الاستعلامات.",
+          "clue": "Folgen Sie den Schildern zum Bahnhof und fahren Sie mit der Rolltreppe nach unten.",
+          "items": [
+            { "de": "der Bahnhof", "emoji": "🚆", "ar": "محطة القطار" },
+            { "de": "die Rolltreppe", "emoji": "↘️", "ar": "الدرج الكهربائي" },
+            { "de": "der Taxistand", "emoji": "🚕", "ar": "موقف سيارات الأجرة" },
+            { "de": "das Parkhaus", "emoji": "🅿️", "ar": "موقف السيارات المتعدد الطوابق" },
+            { "de": "der Abflug", "emoji": "🛫", "ar": "المغادرة" },
+            { "de": "die Autovermietung", "emoji": "🚗", "ar": "تأجير السيارات" }
+          ],
+          "targets": ["der Bahnhof", "die Rolltreppe"],
+          "hint": "في الجملة اسمان فقط: واحد بعد zum، وواحد بعد mit der.",
+          "explain": "zum Bahnhof = إلى المحطة، و mit der Rolltreppe nach unten = بالدرج الكهربائي إلى الأسفل. zum = zu + dem (داتيف)."
+        },
+        { "type": "narration", "ar": "عند الدرج الكهربائي يقف رجل مسنّ ينظر إلى اللافتات بحيرة. يلتفت إليك." },
+        {
+          "type": "choice", "id": "a17", "skill": "dialogue",
+          "npc": { "who": "lehmann", "de": "Entschuldigen Sie, wissen Sie vielleicht, wo die S-Bahn abfährt? Ich habe meine Brille im Flugzeug vergessen und kann die Schilder nicht lesen.", "ar": "عفوًا، هل تعرف أين تنطلق S-Bahn؟ نسيت نظارتي في الطائرة ولا أستطيع قراءة اللافتات." },
+          "prompt": "الآن أنت من يساعد! كيف ترد؟",
+          "options": [
+            { "de": "Ja, unten im Untergeschoss. Ich gehe auch dorthin. Kommen Sie mit!", "correct": true },
+            { "de": "Ja, der Bahnhof ist unten. Wir können zusammen mit der Rolltreppe fahren.", "correct": true },
+            { "de": "Nein, ich habe meine Brille nicht vergessen.", "why": "الرجل لم يسألك عن نظارتك، بل عن مكان S-Bahn." },
+            { "de": "Ich bin gestern mit der S-Bahn gefahren.", "why": "هذه الجملة تحكي عن الأمس، ولا تقول له أين تنطلق S-Bahn." }
+          ],
+          "reply": { "who": "lehmann", "de": "Sehr nett von Ihnen, danke! Woher kommen Sie denn? Sie sprechen schon gut Deutsch.", "ar": "لطف كبير منك، شكرًا! من أين أنت؟ تتكلم الألمانية جيدًا بالفعل." },
+          "hint": "السؤال: wo … abfährt؟ = أين تنطلق؟ أجبه بالمكان، ويمكنك أن تعرض عليه أن يأتي معك.",
+          "explain": "unten im Untergeschoss = في الأسفل في الطابق السفلي. Kommen Sie mit! = تعال معي! (فعل منفصل: mitkommen)."
+        },
+        { "type": "line", "who": "me", "de": "Danke! Ich komme {fromCountry}.", "ar": "شكرًا! أنا من {countryAr}." },
+        { "type": "line", "who": "lehmann", "de": "Interessant! Und wie lange lernen Sie schon Deutsch?", "ar": "مثير للاهتمام! ومنذ متى تتعلم الألمانية؟" },
+        {
+          "type": "build", "id": "a18", "skill": "grammar",
+          "prompt": "قل له: «أتعلم الألمانية منذ ستة أشهر.»",
+          "tiles": ["Ich", "lerne", "seit", "sechs", "Monaten", "Deutsch", ".", "Monate", "gelernt"],
+          "answers": [
+            ["Ich", "lerne", "seit", "sechs", "Monaten", "Deutsch", "."],
+            ["Ich", "lerne", "Deutsch", "seit", "sechs", "Monaten", "."]
+          ],
+          "hint": "بعد seit يأتي الداتيف، وجمع الداتيف ينتهي بـ -n. والفعل في الحاضر!",
+          "explain": "Ich lerne seit sechs Monaten Deutsch. — مع seit نستعمل المضارع لأن التعلم مستمر حتى الآن، و Monate ← Monaten في الداتيف."
+        },
+        { "type": "line", "who": "lehmann", "de": "Respekt! Ich habe in der Schule Französisch gelernt, aber ich habe fast alles vergessen.", "ar": "أحسنت! أنا تعلمت الفرنسية في المدرسة، لكنني نسيت كل شيء تقريبًا." },
+        { "type": "narration", "ar": "تضحكان معًا وتنزلان بالدرج الكهربائي إلى المحطة." }
+      ]
+    },
+    {
+      "id": "bahnhof",
+      "title": { "de": "Der Bahnhof Flughafen BER", "ar": "محطة قطار المطار" },
+      "steps": [
+        { "type": "narration", "ar": "في المحطة لوحة كبيرة عليها القطارات المغادرة. السيد ليمان يريد الذهاب إلى Südkreuz." },
+        {
+          "type": "choice", "id": "a19", "skill": "reading",
+          "doc": { "kind": "board", "title": "Abfahrt – Flughafen BER", "lines": ["Zeit | Zug | Nach | Gleis", "13:29 | RB 24 | Eberswalde | 5", "13:35 | FEX | Berlin Hbf | 4", "13:42 | RB 22 | Potsdam Hbf | 6", "13:50 | S45 | Berlin Südkreuz | 2"], "ar": "المغادرة — الوقت | القطار | إلى | الرصيف. Hbf = Hauptbahnhof" },
+          "prompt": "Von welchem Gleis und um wie viel Uhr fährt Ihr Zug zum Berliner Hauptbahnhof?",
+          "options": [
+            { "de": "Von Gleis 4 um 13:35 Uhr.", "correct": true },
+            { "de": "Von Gleis 2 um 13:50 Uhr.", "why": "هذا قطار S45 الذي سيأخذه السيد ليمان إلى Südkreuz، وليس قطارك." },
+            { "de": "Von Gleis 6 um 13:42 Uhr.", "why": "هذا القطار يذهب إلى Potsdam Hbf — محطة رئيسية في مدينة أخرى!" },
+            { "de": "Von Gleis 4 um 13:42 Uhr.", "why": "الرصيف صحيح، لكن 13:42 هو وقت قطار Potsdam. اقرأ السطر نفسه حتى نهايته." }
+          ],
+          "reply": { "who": "lehmann", "de": "Und ich muss zu Gleis 2. Alles Gute für Sie in Deutschland! Tschüss!", "ar": "وأنا يجب أن أذهب إلى الرصيف 2. أتمنى لك كل الخير في ألمانيا! مع السلامة!" },
+          "hint": "ابحث عن Berlin Hbf في عمود Nach، واقرأ الوقت والرصيف في السطر نفسه.",
+          "explain": "Berlin Hbf = Berliner Hauptbahnhof. السطر: 13:35 | FEX | Berlin Hbf | 4 — إذن من الرصيف 4 الساعة 13:35."
+        },
+        { "type": "narration", "ar": "تقف على الرصيف 4. الساعة الآن 13:33… لكن القطار لا يأتي. ثم تسمع إعلانًا." },
+        {
+          "type": "listen", "id": "a20", "skill": "listening",
+          "audio": "Achtung an Gleis 4: Der FEX nach Berlin Hauptbahnhof, planmäßige Abfahrt 13:35 Uhr, hat heute etwa zehn Minuten Verspätung. Wir bitten um Entschuldigung.",
+          "audioAr": "انتباه على الرصيف 4: القطار FEX إلى محطة برلين الرئيسية، موعد مغادرته المقرر 13:35، متأخر اليوم نحو عشر دقائق. نعتذر عن ذلك.",
+          "prompt": "متى سيغادر قطارك الآن تقريبًا؟",
+          "options": [
+            { "ar": "نحو الساعة 13:45", "correct": true },
+            { "ar": "الساعة 13:35 في موعده", "why": "13:35 هو الموعد المقرر (planmäßig)، لكن القطار hat Verspätung (متأخر)." },
+            { "ar": "الساعة 13:25", "why": "Verspätung = تأخير، وليس تقديمًا. أضف عشر دقائق ولا تطرحها." },
+            { "ar": "الساعة 14:35", "why": "التأخير zehn Minuten (عشر دقائق) وليس ساعة كاملة." }
+          ],
+          "hint": "planmäßig = حسب الجدول. و Verspätung = تأخير. كم دقيقة؟",
+          "explain": "13:35 + zehn Minuten Verspätung = نحو 13:45. etwa = تقريبًا."
+        },
+        {
+          "type": "match", "id": "a21", "skill": "vocab", "bonus": true,
+          "prompt": "كلمات القطار التي ستحتاجها في المهمة القادمة: صِل كل كلمة بمعناها.",
+          "pairs": [
+            ["die Abfahrt", "المغادرة"],
+            ["die Ankunft", "الوصول"],
+            ["die Verspätung", "التأخير"],
+            ["pünktlich", "في الموعد"],
+            ["das Gleis", "الرصيف"],
+            ["umsteigen", "تبديل القطار"]
+          ],
+          "hint": "ab = انطلاقًا من، و an = وصولًا إلى. و um- في umsteigen تعني التغيير.",
+          "explain": "abfahren ← die Abfahrt (المغادرة)، ankommen ← die Ankunft (الوصول). ستسمع هذه الكلمات في كل محطة قطار."
+        },
+        { "type": "doc", "kind": "message", "title": "Lina 💬", "lines": ["Und? Sitzt du schon im Zug? 🚆"], "ar": "ها؟ هل تجلس في القطار الآن؟" },
+        {
+          "type": "write", "id": "a22", "skill": "writing",
+          "prompt": "اكتب للينا بالألمانية: «قطاري متأخر عشر دقائق.»",
+          "answers": [
+            "Mein Zug hat zehn Minuten Verspätung",
+            "Mein Zug hat 10 Minuten Verspätung",
+            "Der Zug hat zehn Minuten Verspätung",
+            "Der Zug hat 10 Minuten Verspätung",
+            "Nein, mein Zug hat zehn Minuten Verspätung",
+            "Nein, mein Zug hat 10 Minuten Verspätung",
+            "Nein, der Zug hat zehn Minuten Verspätung",
+            "Nein, der Zug hat 10 Minuten Verspätung",
+            "Noch nicht, mein Zug hat zehn Minuten Verspätung",
+            "Noch nicht, mein Zug hat 10 Minuten Verspätung",
+            "Mein Zug hat etwa zehn Minuten Verspätung",
+            "Mein Zug hat circa zehn Minuten Verspätung",
+            "Mein Zug ist zehn Minuten verspätet",
+            "Mein Zug ist 10 Minuten verspätet",
+            "Der Zug ist zehn Minuten verspätet",
+            "Noch nicht, der Zug hat zehn Minuten Verspätung",
+            "Mein Zug ist zehn Minuten zu spät",
+            "Mein Zug ist 10 Minuten zu spät",
+            "Der Zug ist zehn Minuten zu spät",
+            "Der Zug ist 10 Minuten verspätet"
+          ],
+          "hint": "استعمل التعبير من الإعلان: … hat … Minuten Verspätung.",
+          "explain": "في الألمانية نقول: Der Zug hat Verspätung (حرفيًا: القطار عنده تأخير)، وليس «ist spät»."
+        },
+        { "type": "narration", "ar": "بعد دقيقة تصلك رسالة صوتية من لينا. تضع الهاتف على أذنك." },
+        {
+          "type": "listen", "id": "a23", "skill": "listening", "final": true,
+          "audio": "Hallo {name}! Kein Problem, zehn Minuten sind nicht schlimm. Fahr ganz entspannt zum Hauptbahnhof. Dort kaufst du am Schalter oder am Automaten ein Ticket für den ICE nach München. Wenn du die Fahrkarte hast, schreib mir bitte die Ankunftszeit. Ich hole dich dann am Münchner Hauptbahnhof ab!",
+          "audioAr": "مرحبًا {name}! لا مشكلة، عشر دقائق ليست أمرًا سيئًا. اذهب بهدوء إلى المحطة الرئيسية. هناك تشتري من الشبّاك أو من الآلة تذكرة لقطار ICE إلى ميونخ. عندما تحصل على التذكرة، اكتب لي من فضلك وقت الوصول. سأستقبلك بعدها في محطة ميونخ الرئيسية!",
+          "prompt": "التحدي الأخير! ما الخطة الصحيحة حسب رسالة لينا؟",
+          "options": [
+            { "ar": "FEX إلى محطة برلين الرئيسية ← شراء تذكرة ICE هناك ← إرسال وقت الوصول إلى لينا ← هي تستقبلني في محطة ميونخ الرئيسية", "correct": true },
+            { "ar": "شراء تذكرة ICE هنا في المطار ← FEX إلى برلين ← لينا تستقبلني في محطة برلين الرئيسية", "why": "لينا قالت: Dort (في المحطة الرئيسية) kaufst du … ، وستستقبلك am Münchner Hauptbahnhof، أي في ميونخ وليس برلين." },
+            { "ar": "FEX مباشرةً إلى ميونخ ← الاتصال بلينا عند الوصول", "why": "FEX يذهب فقط إلى محطة برلين الرئيسية. إلى ميونخ تحتاج قطار ICE." },
+            { "ar": "FEX إلى محطة برلين الرئيسية ← لينا تشتري تذكرة ICE وترسلها ← أنتظرها في برلين", "why": "قالت kaufst du — أنت من يشتري التذكرة. وهي تنتظرك في ميونخ." }
+          ],
+          "hint": "استمع إلى: Dort kaufst du … و Wenn du die Fahrkarte hast … و Ich hole dich … ab.",
+          "explain": "الخطة: zum Hauptbahnhof ← dort ein Ticket für den ICE kaufen ← die Ankunftszeit schreiben ← Lina holt dich am Münchner Hauptbahnhof ab (abholen فعل منفصل: ich hole … ab)."
+        },
+        { "type": "narration", "ar": "في الساعة 13:46 يدخل القطار الأحمر إلى الرصيف 4. تصعد وتجلس قرب النافذة. تكتب للينا: «Ich bin im Zug! Bis heute Abend! 🚆» — المغامرة الحقيقية بدأت للتو!" }
+      ]
+    }
+  ]
+}

@@ -6,7 +6,7 @@ namespace Nelt.Web.Infrastructure.TagHelpers;
 [HtmlTargetElement("icon", Attributes = "name", TagStructure = TagStructure.WithoutEndTag)]
 public sealed class IconTagHelper(IHttpContextAccessor accessor) : TagHelper
 {
-    public const string SpriteVersion = "3";
+    public const string SpriteVersion = "4";
 
     public string Name { get; set; } = string.Empty;
 

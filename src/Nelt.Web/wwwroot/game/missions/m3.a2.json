@@ -1,0 +1,528 @@
+{
+  "id": "m3",
+  "level": "A2",
+  "title": { "de": "Großeinkauf für das Abendessen", "ar": "تسوّق كبير لعشاء الليلة" },
+  "place": "Frischmarkt, München-Schwabing",
+  "intro": "وصلتَ أمس ليلًا إلى ميونخ بقطار ICE ونمتَ نومًا عميقًا في شقة لينا. عندما تستيقظ تكون لينا قد خرجت إلى العمل، لكنها تركت رسالة طويلة وقائمة مشتريات: الليلة يأتي ضيفان على العشاء! وبجانب الباب كيس فيه زجاجات فارغة…",
+  "objective": "أعِد الزجاجات الفارغة إلى آلة الاسترجاع، واشترِ كل ما في قائمة العشاء بأفضل سعر: قارن الأسعار، اطلب الجبن من الطاولة، اسأل عن اللحم الحلال، وتعامل مع منتج غير متوفر وخطأ في السعر عند الصندوق.",
+  "outro": "العشاء جاهز والضيفان سعيدان! لقد تسوّقت وحدك، وقارنت الأسعار، وحللت مشكلتين بالألمانية. في آخر السهرة تقول لينا: «غدًا مساءً أدعوك إلى مطعم بافاري قرب Marienplatz!» المهمة القادمة: المطعم.",
+  "cast": {
+    "lina": { "name": "Lina Hoffmann", "role": "صديقتك وصاحبة الشقة", "avatar": "👩🏼" },
+    "mitarbeiter": { "name": "Herr Krämer", "role": "موظف في السوبرماركت", "avatar": "🧑‍💼" },
+    "kunde": { "name": "Herr Özdemir", "role": "زبون في السوبرماركت", "avatar": "👨🏽" },
+    "theke": { "name": "Frau Huber", "role": "بائعة عند طاولة الأجبان واللحوم", "avatar": "👩‍🍳" },
+    "kasse": { "name": "Frau Lange", "role": "أمينة الصندوق (الكاشير)", "avatar": "👩‍💼" }
+  },
+  "vocab": [
+    { "de": "der Einkauf / einkaufen", "ar": "التسوّق / يتسوّق" },
+    { "de": "die Kartoffel, die Kartoffeln", "ar": "البطاطا" },
+    { "de": "die Zwiebel, die Zwiebeln", "ar": "البصل" },
+    { "de": "die Paprika", "ar": "الفلفل الحلو" },
+    { "de": "die Gurke", "ar": "الخيار" },
+    { "de": "die Minze (frisch / getrocknet)", "ar": "النعناع (طازج / مجفّف)" },
+    { "de": "der Schafskäse", "ar": "جبن الغنم (يشبه الفيتا)" },
+    { "de": "die Hähnchenbrust", "ar": "صدر الدجاج" },
+    { "de": "halal / das Halal-Siegel", "ar": "حلال / ختم الحلال" },
+    { "de": "der Joghurt", "ar": "الزبادي (اللبن)" },
+    { "de": "das Spülmittel", "ar": "سائل غسل الصحون" },
+    { "de": "die Gewürze", "ar": "التوابل" },
+    { "de": "der Becher", "ar": "كوب / علبة بلاستيكية (للزبادي)" },
+    { "de": "die Dose", "ar": "علبة معدنية" },
+    { "de": "das Netz", "ar": "الكيس الشبكي" },
+    { "de": "das Glas", "ar": "المرطبان / الكأس" },
+    { "de": "die Packung", "ar": "العلبة / العبوة" },
+    { "de": "die Käsetheke", "ar": "طاولة بيع الأجبان" },
+    { "de": "das Kühlregal", "ar": "رف التبريد" },
+    { "de": "der Pfandautomat", "ar": "آلة استرجاع الزجاجات" },
+    { "de": "der Pfandbon", "ar": "قسيمة التأمين (المسترجَع)" },
+    { "de": "das Leergut / leer", "ar": "الزجاجات الفارغة المسترجَعة / فارغ" },
+    { "de": "der Glascontainer", "ar": "حاوية إعادة تدوير الزجاج" },
+    { "de": "das Angebot", "ar": "العرض الخاص" },
+    { "de": "statt … nur …", "ar": "بدلًا من … فقط …" },
+    { "de": "gültig bis", "ar": "صالح حتى" },
+    { "de": "günstig / günstiger", "ar": "رخيص / أرخص" },
+    { "de": "teuer / teurer", "ar": "غالٍ / أغلى" },
+    { "de": "die Lieferung", "ar": "التوريد / الشحنة" },
+    { "de": "die Kundenkarte", "ar": "بطاقة الزبون (لجمع النقاط)" },
+    { "de": "die Papiertüte", "ar": "الكيس الورقي" },
+    { "de": "das Bargeld", "ar": "النقود (الكاش)" },
+    { "de": "die PIN eingeben", "ar": "يُدخل الرقم السري" },
+    { "de": "der Kassenbon", "ar": "الإيصال" }
+  ],
+  "expressions": [
+    { "de": "Ich hätte gern …", "ar": "أودّ أن آخذ … / أريد من فضلك …", "use": "طلب مهذّب جدًا عند الطاولة أو في المطعم، أفضل من Ich will.", "example": "Ich hätte gern 200 Gramm Gouda.", "exampleAr": "أودّ 200 غرام من جبن الغودا." },
+    { "de": "Könnten Sie mir bitte helfen?", "ar": "هل يمكنك مساعدتي من فضلك؟", "use": "بداية مهذّبة لأي سؤال لموظف.", "example": "Könnten Sie mir bitte helfen? Ich finde den Reis nicht.", "exampleAr": "هل يمكنك مساعدتي؟ لا أجد الأرز." },
+    { "de": "… haben wir leider nicht mehr.", "ar": "… لم يعد لدينا للأسف.", "use": "يقولها الموظف عندما نفد المنتج.", "example": "Frische Minze haben wir leider nicht mehr.", "exampleAr": "لم يعد لدينا نعناع طازج للأسف." },
+    { "de": "Wann bekommen Sie wieder …?", "ar": "متى يصلكم … مرة أخرى؟", "use": "للسؤال متى يتوفّر المنتج من جديد.", "example": "Wann bekommen Sie wieder frisches Brot?", "exampleAr": "متى يصلكم خبز طازج مرة أخرى؟" },
+    { "de": "Darf es ein bisschen mehr sein?", "ar": "هل يمكن أن يكون أكثر قليلًا؟", "use": "سؤال شائع عند طاولة الجبن أو اللحم عندما يكون الوزن أكثر.", "example": "Nein, danke. Nur 300 Gramm, bitte.", "exampleAr": "لا، شكرًا. 300 غرام فقط من فضلك." },
+    { "de": "X ist günstiger als Y.", "ar": "X أرخص من Y.", "use": "لمقارنة الأسعار.", "example": "Das Netz ist günstiger als die losen Kartoffeln.", "exampleAr": "الكيس الشبكي أرخص من البطاطا السائبة." },
+    { "de": "Ich habe … vergessen.", "ar": "نسيت …", "use": "لتشرح أنك نسيت شيئًا (Perfekt).", "example": "Ich habe meine Tasche zu Hause vergessen.", "exampleAr": "نسيت حقيبتي في البيت." },
+    { "de": "Ich glaube, der Preis stimmt nicht.", "ar": "أظن أن السعر غير صحيح.", "use": "لتصحيح خطأ في السعر بأدب.", "example": "Entschuldigung, ich glaube, der Preis für den Joghurt stimmt nicht.", "exampleAr": "عفوًا، أظن أن سعر الزبادي غير صحيح." },
+    { "de": "Ich habe noch einen Pfandbon.", "ar": "معي أيضًا قسيمة تأمين.", "use": "تعطيها للكاشير فيخصم قيمتها من المجموع.", "example": "Hier ist noch mein Pfandbon.", "exampleAr": "وهذه قسيمة التأمين الخاصة بي." },
+    { "de": "Die Zahlung hat nicht funktioniert.", "ar": "الدفع لم ينجح.", "use": "عندما تُرفض البطاقة عند الصندوق.", "example": "Kann ich es noch einmal versuchen?", "exampleAr": "هل يمكنني أن أحاول مرة أخرى؟" },
+    { "de": "Einen schönen Tag noch! – Danke, gleichfalls!", "ar": "يومًا سعيدًا! – شكرًا، ولك كذلك!", "use": "وداع مهذّب في المتاجر.", "example": "Schönes Wochenende! – Danke, gleichfalls!", "exampleAr": "عطلة سعيدة! – شكرًا، ولك كذلك!" }
+  ],
+  "summary": [
+    "تفهم رسالة طويلة فيها Perfekt: Ich bin zur Arbeit gegangen / Ich habe keine Zeit gehabt.",
+    "تستعمل آلة استرجاع الزجاجات وتفهم Pfandbon و Einweg و «Flasche nicht erkannt».",
+    "تقارن الأسعار بسعر الكيلو (Grundpreis) وتقول: X ist günstiger als Y.",
+    "تطلب بأدب عند طاولة الجبن: Ich hätte gern 300 Gramm … وتصحّح الكمية إن كانت أكثر.",
+    "تسأل عن منتج غير متوفر وعن اللحم الحلال، وتفهم أماكن المنتجات بالـ Dativ: neben dem Joghurt, bei den Gewürzen.",
+    "تفهم كلمات العبوات: der Becher, die Dose, das Netz, das Glas, die Packung, die Flasche.",
+    "تتعامل مع الصندوق: Kundenkarte، كيس، قسيمة التأمين، خطأ في سعر العرض، وبطاقة لا تعمل."
+  ],
+  "scenes": [
+    {
+      "id": "wg",
+      "title": { "de": "Eine lange Nachricht", "ar": "رسالة طويلة" },
+      "steps": [
+        { "type": "narration", "ar": "الساعة التاسعة صباحًا. الشقة هادئة. على باب الثلاجة ورقة لاصقة، وعلى الطاولة قائمة طويلة و30 يورو، وبجانب الباب كيس فيه ست زجاجات فارغة." },
+        { "type": "doc", "kind": "message", "title": "Lina 💬", "lines": [
+          "Guten Morgen, {name}! ☀️",
+          "Ich bin schon zur Arbeit gegangen – du hast so tief geschlafen! 😄",
+          "Heute Abend kommen zwei Freunde zum Essen: Karim und Sophie.",
+          "Deshalb brauchen wir noch ein paar Sachen. Die Liste liegt auf dem Küchentisch, das Geld (30 €) auch.",
+          "Kannst du bitte auch die leeren Flaschen mitnehmen? Im Frischmarkt gibt es einen Pfandautomaten.",
+          "Ich habe gestern leider keine Zeit gehabt. 🙈",
+          "Danke, du bist super! Lina"
+        ], "ar": "صباح الخير يا {name}! ☀️ ذهبتُ إلى العمل — كنتَ نائمًا بعمق! 😄 الليلة يأتي صديقان على العشاء: كريم وصوفي. لذلك نحتاج بعض الأشياء. القائمة على طاولة المطبخ، والمال (30 €) أيضًا. هل يمكنك أن تأخذ الزجاجات الفارغة أيضًا؟ في Frischmarkt آلة لاسترجاع الزجاجات. لم يكن لديّ وقت أمس 🙈 شكرًا، أنت رائع! لينا" },
+        { "type": "choice", "id": "m3a2_c1", "skill": "reading",
+          "prompt": "Lies Linas Nachricht: Warum muss {name} heute einkaufen?",
+          "options": [
+            { "de": "Weil heute Abend zwei Freunde zum Essen kommen.", "correct": true },
+            { "de": "Weil Lina krank ist.", "why": "لينا ليست مريضة؛ هي في العمل." },
+            { "de": "Weil der Frischmarkt morgen geschlossen ist.", "why": "الرسالة لا تقول شيئًا عن إغلاق السوبرماركت." },
+            { "de": "Weil {name} heute Geburtstag hat.", "why": "لا ذكر لعيد ميلاد. السبب هو الضيفان على العشاء." }
+          ],
+          "hint": "ابحث عن الكلمة Deshalb (لذلك): ما الجملة قبلها؟",
+          "explain": "Heute Abend kommen zwei Freunde zum Essen. Deshalb … — الجملة التي قبل deshalb هي السبب. ولاحظ: بعد weil يذهب الفعل إلى آخر الجملة." },
+        { "type": "doc", "kind": "list", "title": "Einkaufsliste – Abendessen 🍲", "lines": [
+          "2 kg Kartoffeln",
+          "3 rote Paprika",
+          "1 kg Zwiebeln",
+          "1 Gurke",
+          "frische Minze (für den Joghurt-Dip)",
+          "300 g Schafskäse (Käsetheke)",
+          "Hähnchenbrust, ca. 400 g – halal (für Karim!)",
+          "2 Becher Joghurt, 500 g (im Angebot!)",
+          "1 l Milch",
+          "Spülmittel",
+          "+ 6 leere Flaschen → Pfandautomat"
+        ], "ar": "2 كغ بطاطا · 3 فلفل أحمر · 1 كغ بصل · خيارة · نعناع طازج (لصلصة الزبادي) · 300 غ جبن غنم (من طاولة الأجبان) · صدر دجاج حوالي 400 غ – حلال (لكريم!) · كوبا زبادي 500 غ (في العرض!) · 1 لتر حليب · سائل غسل الصحون · + 6 زجاجات فارغة ← آلة الاسترجاع" },
+        { "type": "match", "id": "m3a2_c2", "skill": "vocab",
+          "prompt": "صِل كلمات من القائمة بمعناها.",
+          "pairs": [["die Kartoffeln", "البطاطا"], ["die Zwiebeln", "البصل"], ["die Gurke", "الخيار"], ["die Minze", "النعناع"], ["der Schafskäse", "جبن الغنم"], ["das Spülmittel", "سائل غسل الصحون"]],
+          "hint": "Schaf = خروف، Käse = جبن. و spülen = يغسل الصحون.",
+          "explain": "كثير من الكلمات الألمانية مركّبة: Schaf + Käse = جبن الغنم، spülen + Mittel = وسيلة للغسل." },
+        { "type": "grammar", "title": "الماضي التام (Perfekt): haben / sein + التصريف الثالث",
+          "body": "في الكلام والرسائل نتحدث عن الماضي غالبًا بالـ **Perfekt**: الفعل المساعد **haben** أو **sein** في المرتبة الثانية، والتصريف الثالث (Partizip II) **في آخر الجملة**. أفعال الحركة مثل gehen و fahren و kommen تأخذ **sein**، ومعظم الأفعال الأخرى تأخذ **haben**.",
+          "examples": [
+            { "de": "Ich bin schon zur Arbeit gegangen.", "ar": "ذهبتُ إلى العمل بالفعل." },
+            { "de": "Ich habe gestern keine Zeit gehabt.", "ar": "لم يكن لديّ وقت أمس." },
+            { "de": "Ich habe Joghurt gekauft.", "ar": "اشتريتُ زبادي." },
+            { "de": "Ich habe meine Tasche vergessen.", "ar": "نسيتُ حقيبتي." }
+          ] },
+        { "type": "fill", "id": "m3a2_c3", "skill": "grammar",
+          "sentence": "Lina ist heute früh zur Arbeit ___.", "ar": "ذهبت لينا إلى العمل باكرًا اليوم.",
+          "options": ["gegangen", "gegeht", "gehen", "gegangt"],
+          "answers": ["gegangen"],
+          "hint": "gehen فعل غير منتظم. انظر إلى رسالة لينا.",
+          "explain": "gehen ← gegangen (غير منتظم). ولأنه فعل حركة يأتي مع sein: Lina ist … gegangen." }
+      ]
+    },
+    {
+      "id": "pfand",
+      "title": { "de": "Am Pfandautomaten", "ar": "عند آلة استرجاع الزجاجات" },
+      "steps": [
+        { "type": "narration", "ar": "تحمل كيس الزجاجات وتمشي إلى Frischmarkt. عند المدخل موظف يرتّب عربات التسوّق. لا ترى أي آلة." },
+        { "type": "write", "id": "m3a2_c4", "skill": "writing", "bonus": true,
+          "prompt": "اسأل الموظف بالألمانية بأدب: «عفوًا، أين آلة استرجاع الزجاجات (Pfandautomat)؟»",
+          "answers": [
+            "Entschuldigung, wo ist der Pfandautomat",
+            "Wo ist der Pfandautomat",
+            "Entschuldigung, wo ist hier der Pfandautomat",
+            "Wo ist hier der Pfandautomat",
+            "Entschuldigung, wo finde ich den Pfandautomaten",
+            "Wo finde ich den Pfandautomaten",
+            "Entschuldigung, wo finde ich den Pfandautomat",
+            "Wo finde ich den Pfandautomat",
+            "Entschuldigung, wo gibt es hier einen Pfandautomaten",
+            "Wo gibt es hier einen Pfandautomaten",
+            "Entschuldigung, wo steht der Pfandautomat",
+            "Wo steht der Pfandautomat",
+            "Entschuldigung, können Sie mir sagen, wo der Pfandautomat ist",
+            "Entschuldigung, könnten Sie mir sagen, wo der Pfandautomat ist"
+          ],
+          "hint": "ابدأ بـ Entschuldigung، ثم سؤال بـ Wo. Automat مذكّر.",
+          "explain": "Entschuldigung, wo ist der Pfandautomat? صحيح تمامًا. ويمكنك أيضًا: Wo finde ich den Pfandautomaten? (المذكّر ← den في المفعول به)." },
+        { "type": "line", "who": "mitarbeiter", "de": "Der Pfandautomat? Gleich hier links, neben dem Eingang. Sie können die Flaschen einfach einlegen.", "ar": "آلة الاسترجاع؟ هنا على اليسار مباشرة، بجانب المدخل. يمكنك أن تضع الزجاجات فيها ببساطة." },
+        { "type": "doc", "kind": "screen", "title": "PFANDRÜCKNAHME", "lines": [
+          "Bitte Flaschen einzeln einlegen.",
+          "Einweg-Pfand: 0,25 € pro Flasche",
+          "Am Ende die grüne Taste »Bon« drücken."
+        ], "ar": "استرجاع التأمين · ضع الزجاجات واحدة واحدة · تأمين الزجاجات أحادية الاستعمال: 0,25 € لكل زجاجة · في النهاية اضغط الزر الأخضر «Bon»." },
+        { "type": "narration", "ar": "تضع الزجاجات واحدة بعد الأخرى. خمس زجاجات تدخل… لكن السادسة تخرج مرة أخرى، وعلى الشاشة رسالة جديدة." },
+        { "type": "choice", "id": "m3a2_c5", "skill": "reading",
+          "doc": { "kind": "screen", "lines": ["⚠ Flasche nicht erkannt.", "Bitte Flasche entnehmen."], "ar": "⚠ لم يتم التعرّف على الزجاجة. يرجى أخذ الزجاجة." },
+          "prompt": "ماذا تعني الرسالة على الشاشة؟",
+          "options": [
+            { "ar": "الآلة لم تتعرّف على الزجاجة، ويجب أن تأخذها", "correct": true },
+            { "ar": "الآلة معطّلة، اذهب إلى الصندوق", "why": "الآلة قبلت خمس زجاجات، فهي تعمل. المشكلة في هذه الزجاجة فقط." },
+            { "ar": "الزجاجة قُبلت وستحصل على 0,25 €", "why": "nicht erkannt = لم يُتعرَّف عليها، أي أنها لم تُقبل." },
+            { "ar": "ضع كل الزجاجات معًا في الآلة", "why": "على العكس: الآلة تطلب الزجاجات einzeln، أي واحدة واحدة." }
+          ],
+          "hint": "erkennen = يتعرّف على. و nicht = لا. و entnehmen = يأخذ / يُخرج.",
+          "explain": "Flasche nicht erkannt = الآلة لم تتعرّف على الزجاجة. Bitte entnehmen = خذها من فضلك." },
+        { "type": "narration", "ar": "رجل خلفك في الطابور ينظر إلى الزجاجة ويقول لك شيئًا." },
+        { "type": "listen", "id": "m3a2_c6", "skill": "listening",
+          "audio": "Darf ich mal sehen? Ah, auf dieser Flasche ist kein Pfandzeichen. Die nimmt der Automat nicht. Die können Sie einfach in den Glascontainer werfen.",
+          "audioAr": "هل أستطيع أن أرى؟ آه، لا يوجد على هذه الزجاجة رمز التأمين. الآلة لا تقبلها. يمكنك ببساطة أن ترميها في حاوية الزجاج.",
+          "prompt": "ماذا ينصحك الرجل أن تفعل بالزجاجة؟",
+          "options": [
+            { "ar": "أن ترميها في حاوية إعادة تدوير الزجاج", "correct": true },
+            { "ar": "أن تعطيها للكاشير وتأخذ 0,25 €", "why": "الزجاجة ليس عليها رمز Pfand، فلا مال مقابلها." },
+            { "ar": "أن تجرّبها مرة أخرى في الآلة", "why": "قال: Die nimmt der Automat nicht — الآلة لا تقبلها أبدًا." },
+            { "ar": "أن تشتري زجاجة جديدة", "why": "لم يتحدث عن الشراء، بل عن Glascontainer (حاوية الزجاج)." }
+          ],
+          "hint": "استمع إلى آخر جملة: أين يمكنك أن «ترمي» (werfen) الزجاجة؟",
+          "explain": "kein Pfandzeichen = لا رمز تأمين، فالآلة لا تقبلها. في ألمانيا الزجاج بلا تأمين يُرمى في Glascontainer." },
+        { "type": "line", "who": "me", "de": "Ach so! Vielen Dank für Ihre Hilfe.", "ar": "آه، فهمت! شكرًا جزيلًا على مساعدتك." },
+        { "type": "line", "who": "kunde", "de": "Gern geschehen. Und jetzt die grüne Taste drücken!", "ar": "عفوًا. والآن اضغط الزر الأخضر!" },
+        { "type": "doc", "kind": "receipt", "title": "PFANDBON", "lines": [
+          "Frischmarkt München-Schwabing",
+          "5 x Einweg à 0,25 € | 1,25 €",
+          "Bitte an der Kasse abgeben."
+        ], "ar": "قسيمة تأمين · 5 زجاجات × 0,25 € = 1,25 € · يرجى تسليمها عند الصندوق." },
+        { "type": "learn", "de": "der Pfandbon", "ar": "قسيمة التأمين", "use": "الورقة التي تخرج من آلة الاسترجاع. تعطيها للكاشير فيخصم المبلغ من مشترياتك. قل: Ich habe noch einen Pfandbon.", "example": "Hier ist mein Pfandbon. – Danke, den ziehe ich ab.", "exampleAr": "هذه قسيمة التأمين. – شكرًا، سأخصمها." }
+      ]
+    },
+    {
+      "id": "gemuese",
+      "title": { "de": "Obst und Gemüse", "ar": "الفواكه والخضار" },
+      "steps": [
+        { "type": "narration", "ar": "تبدأ بقسم الخضار. على البطاطا لافتتا سعر مختلفتان. لينا تحب الأسعار الجيدة!" },
+        { "type": "doc", "kind": "sign", "title": "Preise", "lines": [
+          "Kartoffeln, festkochend | lose | 1 kg 1,49 €",
+          "Kartoffeln, festkochend | 2-kg-Netz | 2,38 € (1 kg = 1,19 €)",
+          "Paprika rot | 3 Stück | 1,99 €",
+          "Zwiebeln | 1-kg-Netz | 1,29 €",
+          "Gurke | Stück | 0,69 €"
+        ], "ar": "بطاطا: سائبة 1,49 € للكيلو · كيس شبكي 2 كغ بـ 2,38 € (الكيلو = 1,19 €) · فلفل أحمر 3 حبات 1,99 € · بصل كيس 1 كغ 1,29 € · خيار للحبة 0,69 €" },
+        { "type": "choice", "id": "m3a2_c7", "skill": "numbers",
+          "prompt": "Lina braucht 2 kg Kartoffeln. Was ist günstiger?",
+          "options": [
+            { "de": "Das 2-kg-Netz. Es kostet nur 2,38 €.", "correct": true },
+            { "de": "Zwei Kilo lose Kartoffeln. Sie kosten auch nur 2,38 €.", "why": "كيلوان من البطاطا السائبة: 2 × 1,49 € = 2,98 €، وهذا أغلى." },
+            { "de": "Die losen Kartoffeln, weil 1,49 € weniger als 2,38 € ist.", "why": "1,49 € سعر كيلو واحد فقط. يجب أن نقارن الكمية نفسها: 2 كغ." },
+            { "de": "Beide kosten gleich viel.", "why": "2,98 € مقابل 2,38 €: الفرق 60 سنتًا." }
+          ],
+          "hint": "احسب سعر 2 كغ من البطاطا السائبة، أو قارن سعر الكيلو (1 kg = …).",
+          "explain": "سعر الكيلو في الكيس 1,19 € وفي السائبة 1,49 €. لكيلوين: 2,38 € مقابل 2,98 €. انظر دائمًا إلى سعر الكيلو (Grundpreis)." },
+        { "type": "grammar", "title": "المقارنة: günstiger als",
+          "body": "للمقارنة نضيف **-er** إلى الصفة ثم نستعمل **als** (من): günstig ← **günstiger als**. بعض الصفات تأخذ Umlaut أو تتغير: teuer ← **teurer**، viel ← **mehr**، gut ← **besser**. وللأفضل: **am günstigsten**.",
+          "examples": [
+            { "de": "Das Netz ist günstiger als die losen Kartoffeln.", "ar": "الكيس الشبكي أرخص من البطاطا السائبة." },
+            { "de": "Das Quellwasser ist teurer als das Mineralwasser.", "ar": "مياه الينابيع أغلى من المياه المعدنية." },
+            { "de": "Im Angebot ist der Joghurt am günstigsten.", "ar": "في العرض يكون الزبادي في أرخص سعر." }
+          ] },
+        { "type": "fill", "id": "m3a2_c8", "skill": "grammar",
+          "sentence": "Das Netz ist ___ als die losen Kartoffeln.", "ar": "الكيس الشبكي أرخص من البطاطا السائبة.",
+          "options": ["günstiger", "billiger", "teurer", "günstig"],
+          "answers": ["günstiger", "billiger"],
+          "hint": "الجملة فيها als، فنحتاج صيغة المقارنة. والمعنى: أرخص.",
+          "explain": "günstiger و billiger كلاهما يعني «أرخص». teurer = أغلى (عكس المعنى)، و günstig بدون -er لا يصح مع als." },
+        { "type": "narration", "ar": "الآن املأ سلتك بالخضار من القائمة. انتبه: بعض المنتجات تشبه بعضها!" },
+        { "type": "find", "id": "m3a2_c9", "skill": "reading",
+          "prompt": "اختر الخضار الأربعة الصحيحة حسب الدلائل.",
+          "clue": "Kartoffeln: 2 kg, am günstigsten · Paprika: drei Stück, rot, nicht grün · Zwiebeln: ein Kilo · eine Gurke",
+          "items": [
+            { "de": "Kartoffeln, 2-kg-Netz", "emoji": "🥔", "ar": "بطاطا، كيس 2 كغ" },
+            { "de": "Süßkartoffeln, 1 kg", "emoji": "🍠", "ar": "بطاطا حلوة، 1 كغ" },
+            { "de": "Paprika rot, 3 Stück", "emoji": "🌶️", "ar": "فلفل أحمر، 3 حبات" },
+            { "de": "Paprika grün, 3 Stück", "emoji": "🫑", "ar": "فلفل أخضر، 3 حبات" },
+            { "de": "Zwiebeln, 1-kg-Netz", "emoji": "🧅", "ar": "بصل، كيس 1 كغ" },
+            { "de": "Knoblauch", "emoji": "🧄", "ar": "ثوم" },
+            { "de": "Gurke", "emoji": "🥒", "ar": "خيار" },
+            { "de": "Zucchini", "emoji": "🥒", "ar": "كوسا" }
+          ],
+          "targets": ["Kartoffeln, 2-kg-Netz", "Paprika rot, 3 Stück", "Zwiebeln, 1-kg-Netz", "Gurke"],
+          "hint": "rot = أحمر، grün = أخضر. و Süßkartoffeln ليست Kartoffeln عادية.",
+          "explain": "الكيس الشبكي هو الأرخص، والفلفل أحمر، والبصل كيلو، وخيارة واحدة. Zucchini (كوسا) تشبه الخيار لكنها ليست Gurke!" },
+        { "type": "narration", "ar": "بقي النعناع الطازج. عند الأعشاب ترى ريحانًا وبقدونسًا… لكن مكان النعناع فارغ. الموظف Herr Krämer يرتّب صناديق قريبة منك." },
+        { "type": "choice", "id": "m3a2_c10", "skill": "dialogue",
+          "prompt": "كيف تسأل الموظف بأدب عن النعناع؟",
+          "options": [
+            { "de": "Entschuldigung, könnten Sie mir bitte helfen? Ich finde die frische Minze nicht.", "correct": true },
+            { "de": "Entschuldigung, haben Sie noch frische Minze?", "correct": true },
+            { "de": "Wo haben Sie die Minze gekauft?", "why": "هذا سؤال بالماضي: «أين اشتريت النعناع؟» — لا يناسب، أنت تبحث عنه في المتجر." },
+            { "de": "Minze! Schnell!", "why": "هذا غير مهذّب إطلاقًا. مع الموظفين نستخدم Entschuldigung و Sie و bitte." }
+          ],
+          "hint": "ابدأ بـ Entschuldigung واستخدم Sie. هل تسأل عن مكان النعناع أم عن الماضي؟",
+          "explain": "Könnten Sie mir bitte helfen? صيغة مهذّبة جدًا (A2). و Haben Sie noch …? سؤال مباشر ومهذّب عن التوفّر." },
+        { "type": "listen", "id": "m3a2_c11", "skill": "listening",
+          "audio": "Frische Minze haben wir heute leider nicht mehr. Die nächste Lieferung kommt erst morgen früh. Aber getrocknete Minze finden Sie in Gang drei, bei den Gewürzen.",
+          "audioAr": "لم يعد لدينا نعناع طازج اليوم للأسف. الشحنة التالية تصل صباح الغد فقط. لكنك تجد نعناعًا مجففًا في الممر الثالث، عند التوابل.",
+          "prompt": "ماذا قال Herr Krämer؟",
+          "options": [
+            { "ar": "لا يوجد نعناع طازج اليوم؛ يصل صباح الغد، ويوجد نعناع مجفّف في الممر 3", "correct": true },
+            { "ar": "النعناع الطازج في الممر 3 بجانب التوابل", "why": "الذي في الممر 3 هو getrocknete Minze (مجفّف) وليس الطازج." },
+            { "ar": "النعناع الطازج يصل اليوم مساءً", "why": "قال morgen früh = صباح الغد، وليس heute Abend." },
+            { "ar": "السوبرماركت لا يبيع النعناع أبدًا", "why": "قال إن الشحنة التالية تصل غدًا، فهم يبيعونه عادةً." }
+          ],
+          "hint": "ركّز على ثلاث معلومات: nicht mehr، morgen früh، Gang drei.",
+          "explain": "nicht mehr = لم يعد. erst morgen früh = صباح الغد فقط. getrocknet = مجفّف. bei den Gewürzen = عند التوابل." },
+        { "type": "decision", "prompt": "لا يوجد نعناع طازج. ماذا تفعل؟", "options": [
+          { "ar": "أشتري النعناع المجفّف مباشرةً", "then": [
+            { "type": "line", "who": "me", "de": "Gut, dann nehme ich getrocknete Minze. Danke!", "ar": "حسنًا، إذن آخذ نعناعًا مجففًا. شكرًا!" },
+            { "type": "line", "who": "mitarbeiter", "de": "Gern! Gang drei, im oberen Regal.", "ar": "بكل سرور! الممر الثالث، في الرف العلوي." }
+          ] },
+          { "ar": "أسأل لينا أولًا برسالة", "then": [
+            { "type": "doc", "kind": "message", "title": "Du → Lina 💬", "lines": ["Hallo Lina! Frische Minze gibt es heute nicht. Soll ich getrocknete Minze kaufen?"], "ar": "مرحبًا لينا! لا يوجد نعناع طازج اليوم. هل أشتري نعناعًا مجففًا؟" },
+            { "type": "doc", "kind": "message", "title": "Lina 💬", "lines": ["Ja, klar! Getrocknete ist auch gut. Meine Oma hat immer getrocknete genommen. 😊"], "ar": "نعم، طبعًا! المجفّف جيد أيضًا. جدّتي كانت تستعمل المجفّف دائمًا. 😊" }
+          ] }
+        ] },
+        { "type": "narration", "ar": "في الممر 3 تجد «Minze, getrocknet – 1,49 €» وتضعه في السلة." },
+        { "type": "learn", "de": "Wann bekommen Sie wieder …?", "ar": "متى يصلكم … مرة أخرى؟", "use": "عندما نفد منتج وتريد أن تعرف متى يعود. الجواب مثلًا: Morgen früh. / Am Montag.", "example": "Wann bekommen Sie wieder frische Minze? – Morgen früh.", "exampleAr": "متى يصلكم نعناع طازج مرة أخرى؟ – صباح الغد." }
+      ]
+    },
+    {
+      "id": "theke",
+      "title": { "de": "An der Käsetheke", "ar": "عند طاولة الأجبان" },
+      "steps": [
+        { "type": "narration", "ar": "عند طاولة الأجبان واللحوم ينتظر عدة زبائن. ترى Herr Özdemir مرة أخرى — الرجل الذي ساعدك عند آلة الزجاجات." },
+        { "type": "doc", "kind": "sign", "title": "Käse- und Fleischtheke", "lines": [
+          "Schafskäse | 100 g | 1,49 €",
+          "Gouda, jung | 100 g | 1,19 €",
+          "Rinderhackfleisch | 100 g | 1,09 €"
+        ], "ar": "جبن غنم: 1,49 € لكل 100 غ · جبن غودا طري: 1,19 € لكل 100 غ · لحم بقر مفروم: 1,09 € لكل 100 غ" },
+        { "type": "line", "who": "theke", "de": "Guten Morgen! Wer ist der Nächste?", "ar": "صباح الخير! من التالي؟" },
+        { "type": "line", "who": "kunde", "de": "Ich glaube, Sie sind dran.", "ar": "أظن أنه دورك." },
+        { "type": "learn", "de": "Ich hätte gern …", "ar": "أودّ … / أريد من فضلك …", "use": "أكثر الطرق تهذيبًا للطلب عند الطاولة أو في المقهى. ويمكنك أيضًا: Ich möchte …", "example": "Ich hätte gern 200 Gramm Gouda, bitte.", "exampleAr": "أودّ 200 غرام من جبن الغودا من فضلك." },
+        { "type": "line", "who": "theke", "de": "Was darf es sein?", "ar": "ماذا تريد؟" },
+        { "type": "write", "id": "m3a2_c12", "skill": "writing",
+          "prompt": "اطلب بأدب 300 غرام من جبن الغنم (Schafskäse).",
+          "answers": [
+            "Ich hätte gern 300 Gramm Schafskäse",
+            "Ich hätte gerne 300 Gramm Schafskäse",
+            "Ich hätte gern 300 g Schafskäse",
+            "Ich hätte gerne 300 g Schafskäse",
+            "Ich hätte gern 300 Gramm Schafskäse, bitte",
+            "Ich hätte gerne 300 Gramm Schafskäse, bitte",
+            "Ich hätte gern dreihundert Gramm Schafskäse",
+            "Ich hätte gerne dreihundert Gramm Schafskäse",
+            "Ich möchte 300 Gramm Schafskäse",
+            "Ich möchte 300 Gramm Schafskäse, bitte",
+            "Ich möchte bitte 300 Gramm Schafskäse",
+            "Ich möchte gern 300 Gramm Schafskäse",
+            "Ich möchte 300 g Schafskäse",
+            "Ich hätte gern 300 Gramm von dem Schafskäse",
+            "Ich hätte gern 300 Gramm vom Schafskäse",
+            "300 Gramm Schafskäse, bitte",
+            "300 g Schafskäse, bitte",
+            "Ich nehme 300 Gramm Schafskäse",
+            "Ich nehme 300 Gramm Schafskäse, bitte"
+          ],
+          "hint": "استعمل العبارة المهذّبة التي تعلّمتها الآن، ثم الكمية ثم المنتج — بدون von.",
+          "explain": "Ich hätte gern 300 Gramm Schafskäse. الكمية قبل المنتج مباشرة. Ich möchte … صحيح أيضًا." },
+        { "type": "narration", "ar": "البائعة تقطع قطعة كبيرة وتضعها على الميزان…" },
+        { "type": "choice", "id": "m3a2_c13", "skill": "dialogue",
+          "npc": { "who": "theke", "de": "Oh, jetzt sind es 380 Gramm. Darf es ein bisschen mehr sein?", "ar": "أوه، الآن صارت 380 غرامًا. هل يمكن أن تكون أكثر قليلًا؟" },
+          "prompt": "لينا تحتاج 300 غرام فقط. ماذا تقول؟",
+          "options": [
+            { "de": "Nein, das ist leider zu viel. Ich brauche nur 300 Gramm.", "correct": true },
+            { "de": "Könnten Sie bitte ein Stück wegnehmen? Ich hätte gern nur 300 Gramm.", "correct": true },
+            { "de": "Ja, gern. Noch 380 Gramm, bitte.", "why": "هذا يعني أنك تريد 380 غرامًا إضافية، أي 760 غرامًا! وأنت تحتاج 300 فقط." },
+            { "de": "Ich habe 300 Gramm gegessen.", "why": "«أكلتُ 300 غرام» لا معنى له هنا. تحتاج أن تقول إن الكمية أكثر من اللازم." }
+          ],
+          "reply": { "who": "theke", "de": "Kein Problem! So, jetzt sind es genau 300 Gramm. Das macht 4,47 Euro.", "ar": "لا مشكلة! هكذا، الآن 300 غرام بالضبط. المجموع 4,47 يورو." },
+          "hint": "zu viel = أكثر من اللازم. و nur = فقط.",
+          "explain": "عند الطاولة تُوزن الكمية يدويًا، فمن الطبيعي أن تصحّحها بأدب: Das ist zu viel / Könnten Sie bitte etwas wegnehmen? والسعر: 3 × 1,49 € = 4,47 €." },
+        { "type": "narration", "ar": "على القائمة أيضًا: دجاج حلال لكريم. لا ترى أي ختم حلال على الطاولة." },
+        { "type": "build", "id": "m3a2_c14", "skill": "dialogue",
+          "prompt": "اسأل البائعة: «هل لديكم لحم حلال أيضًا؟»",
+          "tiles": ["Haben", "Sie", "auch", "Halal-Fleisch", "?", "Hast", "du", "ist"],
+          "answers": [["Haben", "Sie", "auch", "Halal-Fleisch", "?"], ["Haben", "Sie", "Halal-Fleisch", "?"]],
+          "hint": "سؤال نعم/لا: الفعل في البداية. ومع البائعة نستعمل صيغة الاحترام.",
+          "explain": "في سؤال نعم/لا يأتي الفعل أولًا: Haben Sie …? ومع الموظفين نستعمل Sie وليس du." },
+        { "type": "listen", "id": "m3a2_c15", "skill": "listening",
+          "audio": "Hier an der Theke leider nicht. Aber im Kühlregal, gleich neben dem Joghurt, gibt es Hähnchenbrust mit Halal-Siegel. Eine Packung hat 400 Gramm und kostet 5,99 Euro.",
+          "audioAr": "هنا عند الطاولة لا، للأسف. لكن في رف التبريد، بجانب الزبادي مباشرة، يوجد صدر دجاج عليه ختم الحلال. العلبة 400 غرام وسعرها 5,99 يورو.",
+          "prompt": "أين تجد الدجاج الحلال، وكم سعره؟",
+          "options": [
+            { "ar": "في رف التبريد بجانب الزبادي، 400 غ بـ 5,99 €", "correct": true },
+            { "ar": "هنا عند الطاولة، 400 غ بـ 5,99 €", "why": "قالت: Hier an der Theke leider nicht — ليس عند الطاولة." },
+            { "ar": "في رف التبريد بجانب الحليب، 400 غ بـ 9,55 €", "why": "قالت neben dem Joghurt (الزبادي)، والسعر fünf neunundneunzig = 5,99 €." },
+            { "ar": "في رف التبريد بجانب الزبادي، 500 غ بـ 4,99 €", "why": "العلبة vierhundert Gramm (400 غ) وسعرها 5,99 €." }
+          ],
+          "hint": "استمع إلى الكلمة بعد neben dem، ثم إلى الرقمين في الجملة الأخيرة.",
+          "explain": "im Kühlregal, neben dem Joghurt = في رف التبريد بجانب الزبادي. 400 Gramm، 5,99 €. ختم الحلال = das Halal-Siegel." },
+        { "type": "grammar", "title": "الـ Dativ بعد حروف المكان",
+          "body": "عندما نجيب عن **wo?** (أين؟) بعد **in, an, neben, auf, bei** نستعمل الـ **Dativ**: der ← **dem**، das ← **dem**، die ← **der**، الجمع ← **den** (+n). وتُدمج: in dem = **im**، an dem = **am**، bei dem = **beim**.",
+          "examples": [
+            { "de": "neben dem Joghurt (der Joghurt)", "ar": "بجانب الزبادي" },
+            { "de": "im Kühlregal (das Kühlregal)", "ar": "في رف التبريد" },
+            { "de": "an der Kasse (die Kasse)", "ar": "عند الصندوق" },
+            { "de": "bei den Gewürzen (die Gewürze)", "ar": "عند التوابل" }
+          ] },
+        { "type": "line", "who": "me", "de": "Vielen Dank! Einen schönen Tag noch!", "ar": "شكرًا جزيلًا! يومًا سعيدًا!" },
+        { "type": "line", "who": "theke", "de": "Danke, gleichfalls!", "ar": "شكرًا، ولك كذلك!" }
+      ]
+    },
+    {
+      "id": "kuehlregal",
+      "title": { "de": "Kühlregal und Angebote", "ar": "رف التبريد والعروض" },
+      "steps": [
+        { "type": "narration", "ar": "عند رف التبريد تجد لافتة صفراء كبيرة فوق الزبادي." },
+        { "type": "doc", "kind": "sign", "title": "ANGEBOT!", "lines": [
+          "Joghurt natur, 500-g-Becher",
+          "statt 1,19 € nur 0,79 €",
+          "gültig bis Samstag"
+        ], "ar": "عرض! زبادي طبيعي، كوب 500 غ · بدلًا من 1,19 € فقط 0,79 € · صالح حتى السبت" },
+        { "type": "choice", "id": "m3a2_c16", "skill": "numbers",
+          "prompt": "Lina braucht zwei Becher Joghurt. Wie viel kosten sie zusammen im Angebot?",
+          "options": [
+            { "de": "1,58 €", "correct": true },
+            { "de": "2,38 €", "why": "هذا السعر العادي لكوبين (2 × 1,19 €)، وليس سعر العرض." },
+            { "de": "0,79 €", "why": "هذا سعر كوب واحد. لينا تحتاج كوبين." },
+            { "de": "1,98 €", "why": "2 × 0,79 € = 1,58 €. راجع الحساب." }
+          ],
+          "hint": "statt = بدلًا من. السعر الجديد هو الرقم بعد nur. ثم اضربه في 2.",
+          "explain": "statt 1,19 € nur 0,79 € = السعر الآن 0,79 € للكوب. كوبان: 2 × 0,79 € = 1,58 €. تذكّر هذا الرقم!" },
+        { "type": "find", "id": "m3a2_c17", "skill": "reading",
+          "prompt": "اختر من رف التبريد المنتجات الثلاثة التي في القائمة.",
+          "clue": "Hähnchenbrust, 400 g – mit Halal-Siegel · zwei Becher Joghurt, 500 g – im Angebot · ein Liter Milch",
+          "items": [
+            { "de": "Hähnchenbrust, 400 g, halal", "emoji": "🍗", "ar": "صدر دجاج 400 غ، حلال" },
+            { "de": "Hähnchenbrust, 400 g", "emoji": "🍗", "ar": "صدر دجاج 400 غ" },
+            { "de": "2 x Joghurt natur, 500 g", "emoji": "🥣", "ar": "2 × زبادي طبيعي 500 غ" },
+            { "de": "Joghurt natur, 150 g", "emoji": "🥣", "ar": "زبادي طبيعي 150 غ" },
+            { "de": "Milch, 1 l", "emoji": "🥛", "ar": "حليب 1 لتر" },
+            { "de": "Sahne, 200 g", "emoji": "🥛", "ar": "قشطة 200 غ" }
+          ],
+          "targets": ["Hähnchenbrust, 400 g, halal", "2 x Joghurt natur, 500 g", "Milch, 1 l"],
+          "hint": "قارن الوزن والختم بدقة: 400 g مع halal، و 500 g للزبادي.",
+          "explain": "الدجاج يجب أن يحمل ختم الحلال، والزبادي كوبان من 500 غ (في العرض)، والحليب لتر واحد. Sahne = قشطة وليست حليبًا." },
+        { "type": "match", "id": "m3a2_c18", "skill": "vocab", "bonus": true,
+          "prompt": "تحدٍّ إضافي: صِل كل عبوة بمعناها.",
+          "pairs": [["der Becher", "كوب (مثل كوب الزبادي)"], ["die Dose", "علبة معدنية"], ["das Netz", "كيس شبكي"], ["das Glas", "مرطبان زجاجي"], ["die Packung", "عبوة / علبة كرتون"], ["die Flasche", "زجاجة"]],
+          "hint": "تذكّر: الزبادي في Becher، والبطاطا في Netz.",
+          "explain": "ein Becher Joghurt، eine Dose Tomaten، ein Netz Kartoffeln، ein Glas Honig، eine Packung Eier، eine Flasche Wasser." },
+        { "type": "narration", "ar": "وأخيرًا تمرّ بالممر 7 (Haushalt – أدوات منزلية) وتأخذ «Spülmittel, 500 ml – 1,35 €». القائمة كاملة! إلى الصندوق." }
+      ]
+    },
+    {
+      "id": "kasse",
+      "title": { "de": "An der Kasse", "ar": "عند الصندوق" },
+      "steps": [
+        { "type": "narration", "ar": "تضع المشتريات على الشريط. الكاشيرة تبتسم وتسألك سؤالًا قبل أن تبدأ." },
+        { "type": "choice", "id": "m3a2_c19", "skill": "dialogue",
+          "npc": { "who": "kasse", "de": "Hallo! Haben Sie unsere Frischmarkt-Karte? Sammeln Sie Punkte?", "ar": "مرحبًا! هل معك بطاقة Frischmarkt؟ هل تجمع النقاط؟" },
+          "prompt": "ليس معك بطاقة زبون. ماذا تجيب؟",
+          "options": [
+            { "de": "Nein, leider nicht.", "correct": true },
+            { "de": "Nein, so eine Karte habe ich nicht.", "correct": true },
+            { "de": "Ja, mit Karte, bitte.", "why": "هي لا تسأل عن طريقة الدفع، بل عن بطاقة الزبون (Kundenkarte) لجمع النقاط." },
+            { "de": "Ich habe gestern keine Zeit gehabt.", "why": "هذه جملة لينا في رسالتها، ولا علاقة لها بالسؤال." }
+          ],
+          "reply": { "who": "kasse", "de": "Kein Problem. Brauchen Sie eine Tüte?", "ar": "لا مشكلة. هل تحتاج كيسًا؟" },
+          "hint": "Punkte sammeln = جمع النقاط. هل معك هذه البطاقة؟",
+          "explain": "Kundenkarte أو Frischmarkt-Karte = بطاقة زبون للنقاط، وليست بطاقة بنكية. سؤال مختلف عن «Bar oder mit Karte?»." },
+        { "type": "narration", "ar": "تبحث عن حقيبة القماش التي رأيتها في المطبخ… لقد تركتها على الطاولة!" },
+        { "type": "fill", "id": "m3a2_c20", "skill": "grammar",
+          "sentence": "Ja, bitte. Ich habe meine Tasche zu Hause ___.", "ar": "نعم من فضلك. نسيت (تركت) حقيبتي في البيت.",
+          "options": ["vergessen", "gelassen", "vergesse", "vergisst"],
+          "answers": ["vergessen", "gelassen"],
+          "hint": "الجملة فيها habe، فنحتاج التصريف الثالث (Partizip II) في آخرها.",
+          "explain": "Ich habe … vergessen = نسيت. Ich habe … zu Hause gelassen = تركت في البيت. كلاهما Perfekt صحيح. vergesse و vergisst للمضارع." },
+        { "type": "line", "who": "kasse", "de": "Kein Problem. Eine Papiertüte kostet 30 Cent.", "ar": "لا مشكلة. الكيس الورقي بثلاثين سنتًا." },
+        { "type": "line", "who": "me", "de": "Gut. Und ich habe noch einen Pfandbon.", "ar": "حسنًا. ومعي أيضًا قسيمة تأمين." },
+        { "type": "line", "who": "kasse", "de": "Danke, den ziehe ich gleich ab. … So, das macht zweiundzwanzig Euro dreiundzwanzig.", "ar": "شكرًا، سأخصمها فورًا. … هكذا، المجموع 22,23 يورو." },
+        { "type": "choice", "id": "m3a2_c21", "skill": "reading",
+          "doc": { "kind": "receipt", "title": "FRISCHMARKT · Kasse 3", "lines": [
+            "Kartoffeln 2-kg-Netz | 2,38 €",
+            "Paprika rot 3 St. | 1,99 €",
+            "Zwiebeln 1-kg-Netz | 1,29 €",
+            "Gurke | 0,69 €",
+            "Minze getrocknet | 1,49 €",
+            "Schafskäse 0,300 kg | 4,47 €",
+            "Hähnchenbrust halal 400 g | 5,99 €",
+            "Joghurt 500 g 2 x 1,19 | 2,38 €",
+            "Milch 1 l | 1,15 €",
+            "Spülmittel 500 ml | 1,35 €",
+            "Papiertüte | 0,30 €",
+            "Pfandbon | −1,25 €",
+            "SUMME | 22,23 €"
+          ], "ar": "بطاطا · فلفل أحمر · بصل · خيار · نعناع مجفّف · جبن غنم 300 غ · صدر دجاج حلال · زبادي 2 × 1,19 · حليب · سائل صحون · كيس ورقي · قسيمة التأمين (خصم) · المجموع" },
+          "prompt": "راجع الإيصال قبل أن تدفع. ما المشكلة؟",
+          "options": [
+            { "ar": "الزبادي محسوب بالسعر العادي 1,19 € وليس بسعر العرض 0,79 €", "correct": true },
+            { "ar": "قسيمة التأمين غير مخصومة", "why": "انظر إلى السطر «Pfandbon −1,25 €»: القسيمة مخصومة." },
+            { "ar": "جبن الغنم أكثر من 300 غ", "why": "مكتوب 0,300 kg = 300 غ بالضبط، والسعر 4,47 € صحيح." },
+            { "ar": "البطاطا بسعر السائبة", "why": "2,38 € هو سعر الكيس الشبكي 2 كغ. هذا صحيح." }
+          ],
+          "hint": "تذكّر اللافتة الصفراء: أي منتج كان في العرض؟ وما سعره؟",
+          "explain": "الزبادي في العرض بـ 0,79 €، لكن الإيصال يحسب 1,19 €. الفرق: 2 × 0,40 € = 0,80 €." },
+        { "type": "choice", "id": "m3a2_c22", "skill": "dialogue",
+          "prompt": "كيف تشرح المشكلة للكاشيرة بأدب؟",
+          "options": [
+            { "de": "Entschuldigung, der Joghurt ist im Angebot. Er kostet 0,79 €, nicht 1,19 €.", "correct": true },
+            { "de": "Entschuldigung, ich glaube, der Preis für den Joghurt stimmt nicht. Er ist doch im Angebot.", "correct": true },
+            { "de": "Der Joghurt ist zu groß. Ich möchte einen kleinen.", "why": "المشكلة ليست في الحجم بل في السعر. لينا تريد 500 غ." },
+            { "de": "Sie haben den Joghurt vergessen.", "why": "الزبادي موجود في الإيصال؛ المشكلة أن سعره خطأ." }
+          ],
+          "reply": { "who": "kasse", "de": "Oh, Sie haben recht! Das Angebot ist noch nicht im System. Ich korrigiere das sofort.", "ar": "أوه، أنت محق! العرض ليس في النظام بعد. سأصحّح ذلك فورًا." },
+          "hint": "اذكر المنتج، وقل إنه في العرض، أو إن السعر غير صحيح.",
+          "explain": "im Angebot = في العرض. Der Preis stimmt nicht = السعر غير صحيح. و Entschuldigung تجعل الملاحظة مهذّبة." },
+        { "type": "listen", "id": "m3a2_c23", "skill": "numbers",
+          "audio": "So, jetzt stimmt es. Das macht einundzwanzig Euro dreiundvierzig, bitte.",
+          "audioAr": "هكذا، الآن صحيح. المجموع 21,43 يورو من فضلك.",
+          "prompt": "كم المجموع الجديد؟",
+          "options": [
+            { "de": "21,43 €", "correct": true },
+            { "de": "22,23 €", "why": "هذا المجموع القديم بسعر الزبادي الخطأ." },
+            { "de": "21,34 €", "why": "dreiundvierzig = 43 (ثلاثة وأربعون)، وليس 34." },
+            { "de": "23,43 €", "why": "einundzwanzig = 21، وليس dreiundzwanzig (23)." }
+          ],
+          "hint": "22,23 € ناقص 0,80 €…",
+          "explain": "einundzwanzig Euro dreiundvierzig = 21,43 €. والحساب: 22,23 € − 0,80 € = 21,43 €." },
+        { "type": "line", "who": "me", "de": "Ich zahle mit Karte.", "ar": "أدفع بالبطاقة." },
+        { "type": "line", "who": "kasse", "de": "Gern. Bitte stecken Sie die Karte ein und geben Sie die PIN ein.", "ar": "بكل سرور. أدخل البطاقة من فضلك واكتب الرقم السري." },
+        { "type": "narration", "ar": "تدخل البطاقة وتكتب الرقم السري… الجهاز يصدر صوتًا غريبًا." },
+        { "type": "line", "who": "kasse", "de": "Hm, die Zahlung hat leider nicht funktioniert. Haben Sie vielleicht Bargeld?", "ar": "همم، الدفع لم ينجح للأسف. هل معك نقود ربما؟" },
+        { "type": "decision", "prompt": "البطاقة لم تعمل. ماذا تفعل؟", "options": [
+          { "ar": "أدفع نقدًا بمال لينا (30 يورو)", "de": "Dann zahle ich bar.", "then": [
+            { "type": "line", "who": "me", "de": "Kein Problem, dann zahle ich bar. Hier sind dreißig Euro.", "ar": "لا مشكلة، إذن أدفع نقدًا. تفضّلي ثلاثين يورو." },
+            { "type": "line", "who": "kasse", "de": "Danke. Und acht Euro siebenundfünfzig zurück.", "ar": "شكرًا. والباقي 8,57 يورو." },
+            { "type": "narration", "ar": "30,00 € − 21,43 € = 8,57 €. الحساب صحيح، وستعيد الباقي إلى لينا." }
+          ] },
+          { "ar": "أطلب أن أحاول مرة أخرى", "de": "Kann ich es noch einmal versuchen?", "then": [
+            { "type": "line", "who": "me", "de": "Kann ich es noch einmal versuchen?", "ar": "هل يمكنني أن أحاول مرة أخرى؟" },
+            { "type": "line", "who": "kasse", "de": "Natürlich. Bitte die Karte noch einmal einstecken.", "ar": "طبعًا. أدخل البطاقة مرة أخرى من فضلك." },
+            { "type": "doc", "kind": "screen", "lines": ["Zahlung erfolgreich ✔", "21,43 EUR"], "ar": "تمّ الدفع بنجاح ✔ · 21,43 يورو" }
+          ] }
+        ] },
+        { "type": "line", "who": "kasse", "de": "Hier ist Ihr Kassenbon. Einen schönen Tag noch!", "ar": "هذا إيصالك. يومًا سعيدًا!" },
+        { "type": "line", "who": "me", "de": "Danke, gleichfalls! Tschüss!", "ar": "شكرًا، ولكِ كذلك! إلى اللقاء!" }
+      ]
+    },
+    {
+      "id": "abend",
+      "title": { "de": "Abendessen in der WG", "ar": "العشاء في الشقة" },
+      "steps": [
+        { "type": "narration", "ar": "الساعة 18:30. لينا تعود من العمل وتفتح الثلاجة الممتلئة. بعد ساعة سيصل كريم وصوفي." },
+        { "type": "line", "who": "lina", "de": "Wow, {name}! Du hast ja wirklich alles gekauft! Hat alles geklappt?", "ar": "واو يا {name}! لقد اشتريت كل شيء فعلًا! هل سار كل شيء على ما يرام؟" },
+        { "type": "choice", "id": "m3a2_c24", "skill": "dialogue", "final": true,
+          "prompt": "احكِ للينا ما حدث فعلًا. اختر الجواب الصحيح في المعنى والقواعد.",
+          "options": [
+            { "de": "Fast alles! Frische Minze war leider aus, deshalb habe ich getrocknete gekauft. Und an der Kasse habe ich einen Fehler beim Joghurt gefunden.", "correct": true },
+            { "de": "Ja, alles! Ich habe frische Minze gekauft und an der Kasse 22,23 € bezahlt.", "why": "لم يكن هناك نعناع طازج، و22,23 € كان المجموع الخطأ. دفعت 21,43 €." },
+            { "de": "Fast alles! Die Minze war aus, deshalb habe ich keinen Joghurt gekauft.", "why": "اشتريت الزبادي (كوبين في العرض). النعناع المجفّف هو البديل." },
+            { "de": "Fast alles! Frische Minze war leider aus, deshalb habe ich getrocknete kaufen.", "why": "المعنى صحيح، لكن القواعد خطأ: في الـ Perfekt نحتاج التصريف الثالث: habe … gekauft." }
+          ],
+          "reply": { "who": "lina", "de": "Du bist ein echter Profi! Und du hast sogar einen Fehler an der Kasse gefunden. 😄 Komm, jetzt kochen wir zusammen!", "ar": "أنت محترف حقيقي! بل وجدت خطأً عند الصندوق أيضًا. 😄 تعال، الآن نطبخ معًا!" },
+          "hint": "تذكّر ما حدث عند رف النعناع وعند الصندوق، وتأكّد من شكل الفعل في آخر الجملة.",
+          "explain": "war aus = كان قد نفد (Präteritum من sein). deshalb + الفعل مباشرة: deshalb habe ich … gekauft. لقد جمعت القراءة والحساب والحوار والماضي في جملة واحدة!" }
+      ]
+    }
+  ]
+}

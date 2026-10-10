@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Survival German — أنقذ نفسك بالألمانية";
+    ViewData["Description"] = "Survival German: an interactive story game that teaches A1–A2 German for everyday life in Germany, with Arabic support.";
+}
+@section Head {
+    <link rel="preload" href="~/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="~/css/survival-german.css" asp-append-version="true" />
+    <script src="~/js/survival-german.js" asp-append-version="true" defer></script>
+}
+<div class="sg" id="sg" lang="ar" dir="rtl" data-missions="@Url.Content("~/game/missions/")">
+    <div class="sg-boot">
+        <div class="sg-boot__mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p>Survival German — أنقذ نفسك بالألمانية</p>
+        <noscript><p>هذه اللعبة تحتاج إلى تفعيل JavaScript في المتصفح.</p></noscript>
+    </div>
+</div>

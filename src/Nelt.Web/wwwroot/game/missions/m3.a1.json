@@ -1,0 +1,440 @@
+{
+  "id": "m3",
+  "level": "A1",
+  "title": { "de": "Einkaufen im Supermarkt", "ar": "التسوّق في السوبرماركت" },
+  "place": "Frischmarkt, München-Schwabing",
+  "intro": "وصلتَ أمس ليلًا إلى ميونخ بقطار ICE، ونمتَ في شقة لينا في شارع Belgradstraße. في الصباح تجد المطبخ هادئًا والثلاجة فارغة! على الطاولة رسالة من لينا وقائمة مشتريات بالألمانية و20 يورو. اليوم مهمتك الأولى في ميونخ: السوبرماركت.",
+  "objective": "اشترِ كل ما في قائمة لينا من سوبرماركت «Frischmarkt»: اعثر على المنتجات، افهم الأسعار والكميات، وادفع عند الصندوق دون أن تدفع أكثر مما يجب.",
+  "outro": "أحسنت! أول تسوّق لك في ألمانيا انتهى بنجاح، وصحّحتَ خطأً في الإيصال بنفسك. لينا فخورة بك… وتقترح عليك مساءً أن تتذوق الطعام البافاري في مطعم قرب ساحة Marienplatz. المهمة القادمة: المطعم!",
+  "cast": {
+    "lina": { "name": "Lina Hoffmann", "role": "صديقتك وصاحبة الشقة", "avatar": "👩🏼" },
+    "mitarbeiter": { "name": "Herr Becker", "role": "موظف في السوبرماركت", "avatar": "🧑‍💼" },
+    "kundin": { "name": "Frau Weber", "role": "زبونة في السوبرماركت", "avatar": "👵" },
+    "kasse": { "name": "Frau Schulz", "role": "أمينة الصندوق (الكاشير)", "avatar": "👩‍💼" }
+  },
+  "vocab": [
+    { "de": "der Supermarkt", "ar": "السوبرماركت" },
+    { "de": "die Einkaufsliste", "ar": "قائمة المشتريات" },
+    { "de": "die Milch", "ar": "الحليب" },
+    { "de": "das Brot", "ar": "الخبز" },
+    { "de": "das Brötchen, die Brötchen", "ar": "الخبز الصغير (الصمّون)، الجمع" },
+    { "de": "das Ei, die Eier", "ar": "البيضة، البيض" },
+    { "de": "der Apfel, die Äpfel", "ar": "التفاحة، التفاح" },
+    { "de": "die Tomate, die Tomaten", "ar": "الطماطم" },
+    { "de": "der Reis", "ar": "الأرز" },
+    { "de": "die Nudeln", "ar": "المعكرونة" },
+    { "de": "das Wasser", "ar": "الماء" },
+    { "de": "das Obst", "ar": "الفاكهة" },
+    { "de": "das Gemüse", "ar": "الخضار" },
+    { "de": "der Liter", "ar": "اللتر" },
+    { "de": "das Kilo", "ar": "الكيلوغرام" },
+    { "de": "das Gramm", "ar": "الغرام" },
+    { "de": "die Flasche, die Flaschen", "ar": "الزجاجة، الزجاجات" },
+    { "de": "die Packung, die Packungen", "ar": "العلبة، العلب" },
+    { "de": "das Stück", "ar": "القطعة" },
+    { "de": "der Gang", "ar": "الممر (بين الرفوف)" },
+    { "de": "das Kühlregal", "ar": "رف التبريد" },
+    { "de": "das Angebot", "ar": "العرض الخاص (سعر مخفّض)" },
+    { "de": "das Pfand", "ar": "التأمين على الزجاجة (يُستردّ)" },
+    { "de": "die Kasse", "ar": "الصندوق (مكان الدفع)" },
+    { "de": "die Tüte", "ar": "الكيس" },
+    { "de": "der Kassenbon", "ar": "الإيصال" },
+    { "de": "bar", "ar": "نقدًا" },
+    { "de": "die Karte", "ar": "البطاقة (البنكية)" },
+    { "de": "billig", "ar": "رخيص" },
+    { "de": "aus / ausverkauft", "ar": "نفد / بيع كله" }
+  ],
+  "expressions": [
+    { "de": "Wo finde ich …?", "ar": "أين أجد …؟", "use": "للسؤال عن مكان منتج في المتجر.", "example": "Wo finde ich den Reis?", "exampleAr": "أين أجد الأرز؟" },
+    { "de": "Was kostet …?", "ar": "كم ثمن …؟", "use": "للسؤال عن السعر.", "example": "Was kostet das Brot?", "exampleAr": "كم ثمن الخبز؟" },
+    { "de": "Haben Sie …?", "ar": "هل لديكم …؟", "use": "للسؤال هل المنتج متوفر.", "example": "Haben Sie Brot?", "exampleAr": "هل لديكم خبز؟" },
+    { "de": "Ich brauche …", "ar": "أحتاج …", "use": "لتقول ما تريد شراءه.", "example": "Ich brauche eine Tüte.", "exampleAr": "أحتاج كيسًا." },
+    { "de": "… ist leider aus.", "ar": "… نفد للأسف.", "use": "يقولها الموظف عندما لا يبقى منتج.", "example": "Das Brot ist leider aus.", "exampleAr": "الخبز نفد للأسف." },
+    { "de": "Das macht … Euro.", "ar": "المجموع … يورو.", "use": "يقولها الكاشير عند الدفع.", "example": "Das macht elf Euro neunundfünfzig.", "exampleAr": "المجموع أحد عشر يورو وتسعة وخمسون سنتًا." },
+    { "de": "Bar oder mit Karte?", "ar": "نقدًا أم بالبطاقة؟", "use": "سؤال الكاشير عن طريقة الدفع.", "example": "Bar, bitte. / Mit Karte, bitte.", "exampleAr": "نقدًا من فضلك. / بالبطاقة من فضلك." },
+    { "de": "Entschuldigung, ich habe nur …", "ar": "عفوًا، لديّ فقط …", "use": "لتصحيح خطأ في الكمية عند الصندوق.", "example": "Entschuldigung, ich habe nur eine Packung Reis.", "exampleAr": "عفوًا، لديّ علبة أرز واحدة فقط." },
+    { "de": "Wie bitte? Können Sie das bitte wiederholen?", "ar": "عفوًا؟ هل يمكنك أن تكرر ذلك من فضلك؟", "use": "عندما لا تفهم كلام الموظف.", "example": "Wie bitte? Gang fünf?", "exampleAr": "عفوًا؟ الممر الخامس؟" },
+    { "de": "Schönen Tag noch!", "ar": "أتمنى لك يومًا سعيدًا!", "use": "تحية الوداع في المتاجر. الرد: Danke, Ihnen auch!", "example": "Danke, Ihnen auch! Tschüss!", "exampleAr": "شكرًا، ولك أيضًا! إلى اللقاء!" }
+  ],
+  "summary": [
+    "تعلّمت أسماء أطعمة أساسية: Milch, Brot, Brötchen, Eier, Äpfel, Tomaten, Reis, Wasser.",
+    "تعلّمت الكميات: ein Liter, ein Kilo, 500 Gramm, eine Packung, zwei Flaschen (بدون von).",
+    "تعلّمت المفعول به مع ein/eine/einen: Ich brauche einen Liter Milch / eine Tüte / ein Brot.",
+    "تسأل عن المكان والسعر والتوفر: Wo finde ich …? Was kostet …? Haben Sie …?",
+    "تفهم لافتات السوبرماركت: Angebot, Pfand, Kasse, ausverkauft.",
+    "تفهم حوار الصندوق: Brauchen Sie eine Tüte? Das macht … Euro. Bar oder mit Karte? Möchten Sie den Kassenbon?",
+    "تقرأ الإيصال وتصحّح خطأ في الكمية بأدب: Entschuldigung, ich habe nur eine Packung Reis."
+  ],
+  "scenes": [
+    {
+      "id": "kueche",
+      "title": { "de": "Die Einkaufsliste", "ar": "قائمة المشتريات" },
+      "steps": [
+        { "type": "narration", "ar": "الساعة 8:30 صباحًا. لينا ذهبت إلى العمل. تفتح الثلاجة: فارغة تمامًا! على طاولة المطبخ ورقتان وورقة نقدية بقيمة 20 يورو." },
+        { "type": "doc", "kind": "message", "title": "Lina 💬", "lines": [
+          "Guten Morgen, {name}! ☀️",
+          "Ich bin bei der Arbeit.",
+          "Der Kühlschrank ist leer. 😅",
+          "Kannst du bitte einkaufen?",
+          "Die Liste und 20 € sind auf dem Tisch.",
+          "Der Frischmarkt ist um die Ecke.",
+          "Danke! Lina"
+        ], "ar": "صباح الخير يا {name}! ☀️ أنا في العمل. الثلاجة فارغة 😅 هل يمكنك أن تتسوّق من فضلك؟ القائمة و20 يورو على الطاولة. سوبرماركت Frischmarkt عند الزاوية. شكرًا! لينا" },
+        { "type": "doc", "kind": "list", "title": "Einkaufsliste 🛒", "lines": [
+          "1 Liter Milch",
+          "1 Brot",
+          "6 Eier",
+          "1 kg Äpfel",
+          "500 g Tomaten",
+          "500 g Reis",
+          "2 Flaschen Wasser (1,5 l)"
+        ], "ar": "قائمة المشتريات: 1 لتر حليب، رغيف خبز، 6 بيضات، 1 كغ تفاح، 500 غ طماطم، 500 غ أرز، زجاجتا ماء (1,5 لتر)." },
+        { "type": "match", "id": "m3a1_c1", "skill": "vocab",
+          "prompt": "قبل أن تخرج: صِل كل كلمة من قائمة لينا بمعناها.",
+          "pairs": [["die Milch", "الحليب"], ["das Brot", "الخبز"], ["die Eier", "البيض"], ["die Äpfel", "التفاح"], ["die Tomaten", "الطماطم"], ["der Reis", "الأرز"]],
+          "hint": "Ei تشبه كلمة egg بالإنجليزية، و Tomaten تشبه tomatoes.",
+          "explain": "هذه أطعمة أساسية في كل سوبرماركت ألماني. لاحظ الجمع: das Ei ← die Eier، der Apfel ← die Äpfel." },
+        { "type": "grammar", "title": "الكميات بالألمانية: بدون «من»",
+          "body": "في الألمانية نضع الكمية ثم المنتج مباشرة، **بدون von**: ein Liter Milch = لتر حليب. الوحدات **Kilo / Gramm / Liter** لا تتغير في الجمع: zwei Kilo، 500 Gramm. أما **Flasche / Packung** فلها جمع: zwei **Flaschen**، drei **Packungen**.",
+          "examples": [
+            { "de": "ein Liter Milch", "ar": "لتر حليب" },
+            { "de": "500 Gramm Reis", "ar": "500 غرام أرز" },
+            { "de": "zwei Kilo Äpfel", "ar": "كيلوغرامان من التفاح" },
+            { "de": "eine Packung Eier", "ar": "علبة بيض" },
+            { "de": "zwei Flaschen Wasser", "ar": "زجاجتا ماء" }
+          ] },
+        { "type": "choice", "id": "m3a1_c2", "skill": "reading",
+          "prompt": "انظر إلى القائمة: كم من الأرز تحتاج لينا؟",
+          "options": [
+            { "de": "500 Gramm", "correct": true },
+            { "de": "5 Kilo", "why": "في القائمة 500 g، أي نصف كيلو فقط، وليس خمسة كيلوغرامات." },
+            { "de": "1 Liter", "why": "اللتر للسوائل مثل الحليب. الأرز يُوزن بالغرام أو الكيلو." },
+            { "de": "2 Flaschen", "why": "زجاجتان هي كمية الماء، وليست كمية الأرز." }
+          ],
+          "hint": "ابحث عن كلمة Reis في القائمة واقرأ الرقم قبلها.",
+          "explain": "500 g = 500 Gramm = نصف كيلو. الحرف g اختصار Gramm." },
+        { "type": "fill", "id": "m3a1_c3", "skill": "grammar",
+          "sentence": "Ich brauche zwei ___ Wasser.", "ar": "أحتاج زجاجتين من الماء.",
+          "options": ["Flasche", "Flaschen", "Kilo"],
+          "answers": ["Flaschen"],
+          "hint": "بعد zwei نحتاج الجمع. ما جمع die Flasche؟",
+          "explain": "die Flasche ← die Flaschen. بعد رقم أكبر من واحد نستخدم الجمع: zwei Flaschen Wasser. أما Kilo فللوزن، والماء نشتريه بالزجاجة أو باللتر." },
+        { "type": "narration", "ar": "تأخذ القائمة والنقود، وتغلق الباب، وتمشي دقيقتين حتى زاوية الشارع. أمامك لافتة خضراء كبيرة: FRISCHMARKT." }
+      ]
+    },
+    {
+      "id": "eingang",
+      "title": { "de": "Im Frischmarkt", "ar": "داخل السوبرماركت" },
+      "steps": [
+        { "type": "doc", "kind": "sign", "title": "FRISCHMARKT", "lines": [
+          "Mo–Sa 7:00–22:00 Uhr",
+          "← Obst & Gemüse",
+          "Getränke & Pfand →",
+          "Kasse ↓",
+          "ANGEBOT DER WOCHE: Äpfel!"
+        ], "ar": "من الاثنين إلى السبت 7:00–22:00 · ← الفواكه والخضار · المشروبات والتأمين → · الصندوق ↓ · عرض الأسبوع: التفاح!" },
+        { "type": "choice", "id": "m3a1_c4", "skill": "reading",
+          "prompt": "على اللافتة كلمة «ANGEBOT». ماذا تعني؟",
+          "options": [
+            { "ar": "عرض خاص / سعر مخفّض", "correct": true },
+            { "ar": "مغلق", "why": "«مغلق» بالألمانية geschlossen. والسوبرماركت مفتوح الآن." },
+            { "ar": "الصندوق", "why": "الصندوق هو Kasse، وهي كلمة أخرى على اللافتة." },
+            { "ar": "المخرج", "why": "المخرج هو Ausgang، تعلّمتها في المطار." }
+          ],
+          "hint": "التفاح هذا الأسبوع… أرخص من العادة.",
+          "explain": "das Angebot = عرض خاص. «Angebot der Woche» = عرض الأسبوع. ستراها كثيرًا في ألمانيا!" },
+        { "type": "narration", "ar": "فجأة تسمع إعلانًا من مكبّر الصوت في السوبرماركت…" },
+        { "type": "listen", "id": "m3a1_c5", "skill": "listening",
+          "audio": "Liebe Kunden! Heute im Angebot: Äpfel. Ein Kilo kostet nur eins neunundneunzig.",
+          "audioAr": "أعزاءنا الزبائن! اليوم في العرض: التفاح. الكيلو بـ 1,99 يورو فقط.",
+          "prompt": "كم ثمن كيلو التفاح اليوم؟",
+          "options": [
+            { "de": "1,99 €", "correct": true },
+            { "de": "9,19 €", "why": "سمعت «eins neunundneunzig»: يورو واحد و99 سنتًا، وليس تسعة يوروهات." },
+            { "de": "2,99 €", "why": "الرقم الأول eins (1) وليس zwei (2)." },
+            { "de": "1,90 €", "why": "neunundneunzig = 99 وليس neunzig (90)." }
+          ],
+          "hint": "في الألمانية الآحاد قبل العشرات: neun-und-neunzig = تسعة وتسعون.",
+          "explain": "eins neunundneunzig = 1,99 €. في الأسعار الكلام المنطوق يحذف «Euro» أحيانًا: eins neunundneunzig." },
+        { "type": "narration", "ar": "تذهب إلى قسم الفواكه والخضار. هناك صناديق كثيرة! اقرأ الدلائل الألمانية واختر فقط ما تحتاجه لينا." },
+        { "type": "find", "id": "m3a1_c6", "skill": "vocab",
+          "prompt": "اختر المنتجين المطلوبين بحسب الدلائل.",
+          "clue": "1. Obst im Angebot: ein Kilo. 2. Gemüse, rot und rund: 500 Gramm.",
+          "items": [
+            { "de": "1 kg Äpfel", "emoji": "🍎", "ar": "1 كغ تفاح" },
+            { "de": "1 kg Birnen", "emoji": "🍐", "ar": "1 كغ إجاص" },
+            { "de": "500 g Tomaten", "emoji": "🍅", "ar": "500 غ طماطم" },
+            { "de": "1 kg Tomaten", "emoji": "🍅", "ar": "1 كغ طماطم" },
+            { "de": "1 kg Kartoffeln", "emoji": "🥔", "ar": "1 كغ بطاطا" },
+            { "de": "Bananen", "emoji": "🍌", "ar": "موز" }
+          ],
+          "targets": ["1 kg Äpfel", "500 g Tomaten"],
+          "hint": "Obst = فاكهة، Gemüse = خضار. وانتبه للكمية: ein Kilo أم 500 Gramm؟",
+          "explain": "التفاح فاكهة وهو في العرض (1 كغ)، والطماطم خضار حمراء ومستديرة (500 غ). الكمية مهمة مثل المنتج!" }
+      ]
+    },
+    {
+      "id": "gang",
+      "title": { "de": "Wo ist der Reis?", "ar": "أين الأرز؟" },
+      "steps": [
+        { "type": "narration", "ar": "تبحث عن الأرز… الرفوف طويلة جدًا ولا تجده. موظف يرتب علب المعكرونة يلاحظك." },
+        { "type": "learn", "de": "Wo finde ich …?", "ar": "أين أجد …؟", "use": "سؤال مهذّب ومفيد جدًا في أي متجر. يمكنك أيضًا أن تقول: Wo ist …? أو Ich suche …", "example": "Entschuldigung, wo finde ich die Milch?", "exampleAr": "عفوًا، أين أجد الحليب؟" },
+        { "type": "choice", "id": "m3a1_c7", "skill": "dialogue",
+          "npc": { "who": "mitarbeiter", "de": "Guten Morgen! Kann ich Ihnen helfen?", "ar": "صباح الخير! هل يمكنني مساعدتك؟" },
+          "prompt": "ماذا تقول للموظف؟",
+          "options": [
+            { "de": "Ja, bitte. Wo finde ich den Reis?", "correct": true },
+            { "de": "Ja, gern. Ich suche Reis.", "correct": true },
+            { "de": "Ja, ich heiße {name}.", "why": "الموظف يعرض المساعدة، ولم يسألك عن اسمك." },
+            { "de": "Nein, ich habe Reis.", "why": "أنت تبحث عن الأرز ولا تملكه، فأنت تحتاج المساعدة." }
+          ],
+          "reply": { "who": "mitarbeiter", "de": "Der Reis ist in Gang fünf, neben den Nudeln.", "ar": "الأرز في الممر الخامس، بجانب المعكرونة." },
+          "hint": "أنت تحتاج مساعدة: قل «نعم» ثم اسأل عن الأرز.",
+          "explain": "يمكنك أن تسأل بـ Wo finde ich …? أو تقول Ich suche … — كلاهما طبيعي ومهذّب." },
+        { "type": "narration", "ar": "الموظف تكلّم بسرعة كبيرة، ولم تفهم جيدًا." },
+        { "type": "choice", "id": "m3a1_c8", "skill": "dialogue",
+          "prompt": "لم تفهم الجواب. ماذا تقول؟",
+          "options": [
+            { "de": "Wie bitte? Können Sie das bitte wiederholen?", "correct": true },
+            { "de": "Entschuldigung, können Sie bitte langsamer sprechen?", "correct": true },
+            { "de": "Ich verstehe. Danke!", "why": "هذا يعني «فهمت»، لكنك لم تفهم. ستضيع بين الرفوف!" },
+            { "de": "Tschüss!", "why": "الوداع الآن غير مناسب؛ ما زلت لا تعرف أين الأرز." }
+          ],
+          "reply": { "who": "mitarbeiter", "de": "Natürlich! Gang fünf. Der Reis ist in Gang fünf, neben den Nudeln.", "ar": "طبعًا! الممر الخامس. الأرز في الممر الخامس، بجانب المعكرونة." },
+          "hint": "تذكّر العبارات التي تعلّمتها في المطار والقطار عندما لا تفهم.",
+          "explain": "Wie bitte? وطلب التكرار أو التكلّم ببطء — عبارات النجاة التي تعلّمتها في المطار. استعملها دون خجل!" },
+        { "type": "listen", "id": "m3a1_c9", "skill": "listening",
+          "audio": "Gang fünf. Der Reis ist in Gang fünf, neben den Nudeln.",
+          "audioAr": "الممر الخامس. الأرز في الممر الخامس، بجانب المعكرونة.",
+          "prompt": "أين الأرز؟",
+          "options": [
+            { "ar": "في الممر 5، بجانب المعكرونة", "correct": true },
+            { "ar": "في الممر 9، بجانب المعكرونة", "why": "سمعت fünf (5) وليس neun (9)." },
+            { "ar": "في الممر 5، بجانب الحليب", "why": "قال neben den Nudeln، و Nudeln = معكرونة وليست حليبًا (Milch)." },
+            { "ar": "عند الصندوق", "why": "الصندوق Kasse لم يُذكر في الجملة." }
+          ],
+          "hint": "استمع إلى الرقم بعد Gang، ثم إلى الكلمة بعد neben.",
+          "explain": "Gang fünf = الممر 5. neben den Nudeln = بجانب المعكرونة." },
+        { "type": "narration", "ar": "تجد الأرز. الآن الحليب والبيض. اسأل الموظف مرة أخرى قبل أن يذهب." },
+        { "type": "build", "id": "m3a1_c10", "skill": "writing",
+          "prompt": "كوّن الجملة: «أين أجد الحليب؟»",
+          "tiles": ["Wo", "finde", "ich", "die", "Milch", "?", "der", "findest"],
+          "answers": [["Wo", "finde", "ich", "die", "Milch", "?"]],
+          "hint": "أداة السؤال أولًا، ثم الفعل، ثم الفاعل. والحليب مؤنث في الألمانية.",
+          "explain": "في سؤال W يأتي الفعل في المرتبة الثانية: Wo finde ich …? و Milch مؤنث: die Milch." },
+        { "type": "line", "who": "mitarbeiter", "de": "Die Milch und die Eier sind hinten, im Kühlregal.", "ar": "الحليب والبيض في الخلف، في رف التبريد." },
+        { "type": "line", "who": "me", "de": "Danke schön!", "ar": "شكرًا جزيلًا!" },
+        { "type": "line", "who": "mitarbeiter", "de": "Bitte schön!", "ar": "عفوًا!" }
+      ]
+    },
+    {
+      "id": "regal",
+      "title": { "de": "Kühlregal und Brot", "ar": "رف التبريد والخبز" },
+      "steps": [
+        { "type": "grammar", "title": "ein / eine / einen بعد brauchen و kaufen",
+          "body": "بعد أفعال مثل **brauchen** (يحتاج) و **kaufen** (يشتري) و **möchten** يأتي المفعول به. المذكّر يتغير: der → **einen**. المؤنث يبقى **eine**، والمحايد يبقى **ein**. للنفي نستخدم **keinen / keine / kein**.",
+          "examples": [
+            { "de": "Ich brauche einen Liter Milch. (der Liter)", "ar": "أحتاج لترًا من الحليب." },
+            { "de": "Ich brauche eine Packung Eier. (die Packung)", "ar": "أحتاج علبة بيض." },
+            { "de": "Ich kaufe ein Brot. (das Brot)", "ar": "أشتري رغيف خبز." },
+            { "de": "Ich habe keine Tüte.", "ar": "ليس معي كيس." }
+          ] },
+        { "type": "narration", "ar": "في رف التبريد وفي الممر 5 منتجات كثيرة متشابهة. اقرأ الدلائل بدقة." },
+        { "type": "find", "id": "m3a1_c11", "skill": "reading",
+          "prompt": "اختر المنتجات الثلاثة المطلوبة.",
+          "clue": "1. Weiß, ein Liter, im Kühlregal. 2. Sechs Stück in einer Packung. 3. 500 Gramm, neben den Nudeln.",
+          "items": [
+            { "de": "1 l Milch", "emoji": "🥛", "ar": "1 لتر حليب" },
+            { "de": "1 l Orangensaft", "emoji": "🧃", "ar": "1 لتر عصير برتقال" },
+            { "de": "Eier, 6 Stück", "emoji": "🥚", "ar": "بيض، 6 حبات" },
+            { "de": "Eier, 10 Stück", "emoji": "🥚", "ar": "بيض، 10 حبات" },
+            { "de": "Reis, 500 g", "emoji": "🍚", "ar": "أرز، 500 غ" },
+            { "de": "Nudeln, 500 g", "emoji": "🍝", "ar": "معكرونة، 500 غ" },
+            { "de": "Butter, 250 g", "emoji": "🧈", "ar": "زبدة، 250 غ" }
+          ],
+          "targets": ["1 l Milch", "Eier, 6 Stück", "Reis, 500 g"],
+          "hint": "weiß = أبيض، sechs = ستة. وما الذي يكون بجانب المعكرونة؟",
+          "explain": "الحليب أبيض (1 لتر)، والبيض 6 حبات (Stück)، والأرز 500 غ بجانب المعكرونة كما قال الموظف." },
+        { "type": "fill", "id": "m3a1_c12", "skill": "grammar",
+          "sentence": "Ich habe jetzt ___ Packung Eier.", "ar": "معي الآن علبة بيض.",
+          "options": ["ein", "eine", "einen", "einer"],
+          "answers": ["eine"],
+          "hint": "الكلمة هي die Packung. ما أداة المؤنث في المفعول به؟",
+          "explain": "die Packung مؤنث، والمؤنث لا يتغير في المفعول به: eine Packung." },
+        { "type": "narration", "ar": "الآن الخبز. تصل إلى رف الخبز… لكنه فارغ! عليه ورقة صغيرة." },
+        { "type": "doc", "kind": "sign", "lines": ["Brot: leider ausverkauft!", "Frische Brötchen: 0,35 € / Stück"], "ar": "الخبز: نفد للأسف! · خبز صغير طازج (Brötchen): 0,35 يورو للقطعة" },
+        { "type": "learn", "de": "Haben Sie noch …?", "ar": "هل ما زال لديكم …؟", "use": "عندما لا تجد منتجًا أو ترى رفًّا فارغًا. الجواب الشائع: … ist leider aus. (نفد للأسف)", "example": "Haben Sie noch Milch? — Nein, die Milch ist leider aus.", "exampleAr": "هل ما زال لديكم حليب؟ — لا، الحليب نفد للأسف." },
+        { "type": "decision", "prompt": "لا يوجد خبز! ماذا تفعل؟", "options": [
+          { "ar": "أسأل الموظف: هل ما زال لديكم خبز؟", "de": "Haben Sie noch Brot?", "then": [
+            { "type": "line", "who": "me", "de": "Entschuldigung, haben Sie noch Brot?", "ar": "عفوًا، هل ما زال لديكم خبز؟" },
+            { "type": "line", "who": "mitarbeiter", "de": "Nein, das Brot ist leider aus. Aber wir haben Brötchen.", "ar": "لا، الخبز نفد للأسف. لكن لدينا خبز صغير (Brötchen)." }
+          ] },
+          { "ar": "أرسل رسالة إلى لينا", "then": [
+            { "type": "doc", "kind": "message", "title": "Du → Lina 💬", "lines": ["Hallo Lina! Kein Brot. 😟"], "ar": "مرحبًا لينا! لا يوجد خبز. 😟" },
+            { "type": "doc", "kind": "message", "title": "Lina 💬", "lines": ["Kein Problem! Kauf Brötchen. 6 Stück. 😊"], "ar": "لا مشكلة! اشترِ خبزًا صغيرًا. 6 قطع. 😊" },
+            { "type": "narration", "ar": "يمرّ الموظف Herr Becker بجانبك ومعه سلة خبز طازج." }
+          ] }
+        ] },
+        { "type": "choice", "id": "m3a1_c13", "skill": "dialogue",
+          "npc": { "who": "mitarbeiter", "de": "Die Brötchen sind ganz frisch. Möchten Sie Brötchen?", "ar": "الخبز الصغير طازج جدًا. هل تريد خبزًا صغيرًا؟" },
+          "prompt": "تريد 6 قطع. ماذا تجيب؟",
+          "options": [
+            { "de": "Ja, gern. Sechs Brötchen, bitte.", "correct": true },
+            { "de": "Ja, bitte. Ich nehme sechs Stück.", "correct": true },
+            { "de": "Sechs Uhr, bitte.", "why": "Uhr تعني الساعة (الوقت)، وليس عدد القطع." },
+            { "de": "Nein, ich bin müde.", "why": "«أنا متعب» لا علاقة له بالسؤال، وأنت تحتاج خبزًا." }
+          ],
+          "reply": { "who": "mitarbeiter", "de": "Gern! Sechs Brötchen, das sind zwei Euro zehn. Sie bezahlen an der Kasse.", "ar": "بكل سرور! ست قطع، أي 2,10 يورو. تدفع عند الصندوق." },
+          "hint": "قل «نعم» ثم العدد: sechs.",
+          "explain": "Brötchen جمعها مثل مفردها: ein Brötchen، sechs Brötchen. ويمكن أن تقول sechs Stück. 6 × 0,35 € = 2,10 €." }
+      ]
+    },
+    {
+      "id": "getraenke",
+      "title": { "de": "Wasser und Pfand", "ar": "الماء والتأمين" },
+      "steps": [
+        { "type": "narration", "ar": "في قسم المشروبات ترى أسعار الماء، وبجانب كل سعر كلمة غريبة: Pfand. سيدة مسنّة تختار الماء بجانبك." },
+        { "type": "line", "who": "kundin", "de": "Guten Morgen! Brauchen Sie Hilfe?", "ar": "صباح الخير! هل تحتاج مساعدة؟" },
+        { "type": "write", "id": "m3a1_c14", "skill": "writing",
+          "prompt": "اسألها بالألمانية: «ما هو Pfand؟»",
+          "answers": ["Was ist Pfand", "Was ist das Pfand", "Entschuldigung, was ist Pfand", "Entschuldigung, was ist das Pfand", "Was bedeutet Pfand", "Was heißt Pfand", "Ja, bitte. Was ist Pfand", "Ja bitte, was ist Pfand", "Ja, bitte. Was ist das Pfand", "Ja, was ist Pfand", "Was ist denn Pfand", "Entschuldigung, was bedeutet Pfand", "Ja, bitte. Was bedeutet Pfand"],
+          "hint": "ابدأ بأداة السؤال «ما؟» = Was، ثم الفعل ist.",
+          "explain": "Was ist …? = ما هو …؟ سؤال بسيط ومفيد جدًا لأي كلمة لا تعرفها." },
+        { "type": "line", "who": "kundin", "de": "Pfand ist Geld für die Flasche. Sie bringen die Flasche zurück und bekommen das Geld zurück.", "ar": "Pfand هو مال مقابل الزجاجة. تُعيد الزجاجة فتسترجع المال." },
+        { "type": "doc", "kind": "sign", "title": "Getränke", "lines": [
+          "Mineralwasser, still | 1,5 l | 0,49 € + 0,25 € Pfand",
+          "Quellwasser, still | 1,5 l | 0,79 € + 0,25 € Pfand",
+          "Mineralwasser, Glas | 0,7 l | 0,69 € + 0,15 € Pfand"
+        ], "ar": "مياه معدنية بلا غاز 1,5 لتر: 0,49 € + 0,25 € تأمين · مياه ينابيع بلا غاز 1,5 لتر: 0,79 € + 0,25 € تأمين · مياه معدنية في زجاج 0,7 لتر: 0,69 € + 0,15 € تأمين" },
+        { "type": "choice", "id": "m3a1_c15", "skill": "numbers",
+          "prompt": "لينا تريد زجاجات 1,5 لتر. أي ماء هو الأرخص؟",
+          "options": [
+            { "de": "Mineralwasser, still – 0,49 €", "correct": true },
+            { "de": "Quellwasser, still – 0,79 €", "why": "هذه زجاجة 1,5 لتر أيضًا، لكن 0,79 € أغلى من 0,49 €." },
+            { "de": "Mineralwasser, Glas – 0,69 €", "why": "هذه زجاجة 0,7 لتر فقط، ولينا تريد 1,5 لتر. وهي أغلى أيضًا." },
+            { "de": "Alle kosten 0,25 €.", "why": "0,25 € هو التأمين (Pfand) فقط، وليس سعر الماء." }
+          ],
+          "reply": { "who": "kundin", "de": "Genau. Das Mineralwasser ist billig und gut.", "ar": "بالضبط. المياه المعدنية رخيصة وجيدة." },
+          "hint": "قارن السعر الأول في كل سطر، ولا تنسَ حجم الزجاجة (1,5 l).",
+          "explain": "0,49 € هو الأرخص لزجاجة 1,5 لتر. زجاجتان: 2 × 0,49 € = 0,98 €، والتأمين: 2 × 0,25 € = 0,50 €." },
+        { "type": "match", "id": "m3a1_c16", "skill": "vocab", "bonus": true,
+          "prompt": "تحدٍّ إضافي: صِل كل كمية بمعناها.",
+          "pairs": [["eine Flasche", "زجاجة"], ["eine Packung", "علبة"], ["ein Kilo", "كيلوغرام"], ["500 Gramm", "نصف كيلو"], ["ein Liter", "لتر"], ["ein Stück", "قطعة واحدة"]],
+          "hint": "500 Gramm = نصف 1000 Gramm.",
+          "explain": "هذه هي كلمات الكمية الأساسية في السوبرماركت. 1 Kilo = 1000 Gramm." },
+        { "type": "line", "who": "me", "de": "Vielen Dank! Schönen Tag noch!", "ar": "شكرًا جزيلًا! يومًا سعيدًا!" },
+        { "type": "line", "who": "kundin", "de": "Danke, Ihnen auch!", "ar": "شكرًا، ولك أيضًا!" }
+      ]
+    },
+    {
+      "id": "kasse",
+      "title": { "de": "An der Kasse", "ar": "عند الصندوق" },
+      "steps": [
+        { "type": "narration", "ar": "سلتك ممتلئة. تقف في الطابور أمام الصندوق رقم 2. المشكلة: ليس معك كيس، والأغراض كثيرة!" },
+        { "type": "choice", "id": "m3a1_c17", "skill": "dialogue",
+          "npc": { "who": "kasse", "de": "Guten Morgen! Brauchen Sie eine Tüte?", "ar": "صباح الخير! هل تحتاج كيسًا؟" },
+          "prompt": "ماذا تجيب؟",
+          "options": [
+            { "de": "Ja, bitte. Eine Tüte.", "correct": true },
+            { "de": "Ja, gern. Ich habe keine Tüte.", "correct": true },
+            { "de": "Nein, danke.", "why": "ليس معك كيس والأغراض كثيرة. كيف ستحملها إلى البيت؟" },
+            { "de": "Ich brauche Milch.", "why": "الحليب في سلتك بالفعل. الكاشيرة تسأل عن الكيس (Tüte)." }
+          ],
+          "reply": { "who": "kasse", "de": "Gern. Die Tüte kostet zwanzig Cent.", "ar": "بكل سرور. الكيس بعشرين سنتًا." },
+          "hint": "Tüte = كيس. هل معك كيس؟",
+          "explain": "في ألمانيا الكيس ليس مجانيًا عادةً. Ja, bitte أو Ja, gern كلاهما جواب مهذّب." },
+        { "type": "narration", "ar": "الكاشيرة تمرّر المنتجات بسرعة، ثم تقول المجموع وتعطيك الإيصال لتنظر إليه." },
+        { "type": "line", "who": "kasse", "de": "Das macht zwölf Euro achtundachtzig.", "ar": "المجموع 12,88 يورو." },
+        { "type": "choice", "id": "m3a1_c18", "skill": "reading",
+          "doc": { "kind": "receipt", "title": "FRISCHMARKT · Kasse 2", "lines": [
+            "Milch 1 l | 1,15 €",
+            "Brötchen 6 x 0,35 | 2,10 €",
+            "Eier 6 Stück | 1,89 €",
+            "Äpfel 1 kg (Angebot) | 1,99 €",
+            "Reis 500 g 2 x 1,29 | 2,58 €",
+            "Tomaten 500 g | 1,49 €",
+            "Wasser 1,5 l 2 x 0,49 | 0,98 €",
+            "Pfand 2 x 0,25 | 0,50 €",
+            "Tüte | 0,20 €",
+            "SUMME | 12,88 €"
+          ], "ar": "حليب 1 لتر · 6 خبز صغير × 0,35 · بيض 6 حبات · تفاح 1 كغ (عرض) · أرز 500 غ × 2 · طماطم 500 غ · ماء 1,5 لتر × 2 · تأمين × 2 · كيس · المجموع" },
+          "prompt": "اقرأ الإيصال جيدًا. ما الخطأ؟",
+          "options": [
+            { "ar": "الأرز محسوب مرتين، وفي سلتك علبة أرز واحدة فقط", "correct": true },
+            { "ar": "سعر التفاح خطأ", "why": "1,99 € هو سعر العرض الذي سمعته في الإعلان. هذا صحيح." },
+            { "ar": "التأمين (Pfand) لا يجب دفعه", "why": "التأمين يُدفع مع كل زجاجة، وتسترجعه عندما تُعيد الزجاجة الفارغة." },
+            { "ar": "الكيس مجاني", "why": "الكاشيرة قالت إن الكيس بعشرين سنتًا: 0,20 €." }
+          ],
+          "hint": "ابحث عن سطر فيه «2 x» وفكّر: هل اشتريت فعلًا قطعتين؟",
+          "explain": "السطر «Reis 500 g 2 x 1,29» يعني علبتين، لكنك أخذت علبة واحدة. هذا 1,29 € زيادة!" },
+        { "type": "build", "id": "m3a1_c19", "skill": "dialogue",
+          "prompt": "قل للكاشيرة بأدب: «عفوًا، لديّ علبة أرز واحدة فقط.»",
+          "tiles": ["Entschuldigung", ",", "ich", "habe", "nur", "eine", "Packung", "Reis", ".", "zwei", "einen"],
+          "answers": [["Entschuldigung", ",", "ich", "habe", "nur", "eine", "Packung", "Reis", "."]],
+          "hint": "ابدأ بالاعتذار المهذّب، ثم «أنا لديّ فقط…». die Packung مؤنث.",
+          "explain": "Entschuldigung يجعل التصحيح مهذّبًا. nur = فقط. eine Packung لأن die Packung مؤنث." },
+        { "type": "line", "who": "kasse", "de": "Oh, Entschuldigung! Sie haben recht. Nur eine Packung Reis.", "ar": "أوه، عذرًا! أنت محق. علبة أرز واحدة فقط." },
+        { "type": "listen", "id": "m3a1_c20", "skill": "numbers",
+          "audio": "So. Dann macht das jetzt elf Euro neunundfünfzig.",
+          "audioAr": "حسنًا. إذن المجموع الآن 11,59 يورو.",
+          "prompt": "كم المجموع الجديد؟",
+          "options": [
+            { "de": "11,59 €", "correct": true },
+            { "de": "12,88 €", "why": "هذا المجموع القديم مع علبتي الأرز، قبل التصحيح." },
+            { "de": "11,95 €", "why": "neunundfünfzig = 59 (تسعة وخمسون)، وليس 95." },
+            { "de": "15,59 €", "why": "سمعت elf (11) وليس fünfzehn (15)." }
+          ],
+          "hint": "12,88 € ناقص سعر علبة أرز (1,29 €)…",
+          "explain": "elf Euro neunundfünfzig = 11,59 €. والحساب صحيح: 12,88 € − 1,29 € = 11,59 €." },
+        { "type": "learn", "de": "Bar oder mit Karte?", "ar": "نقدًا أم بالبطاقة؟", "use": "تسأل الكاشيرة كيف ستدفع. أجب: Bar, bitte. (نقدًا) أو Mit Karte, bitte. (بالبطاقة)", "example": "Ich zahle bar. / Ich zahle mit Karte.", "exampleAr": "أدفع نقدًا. / أدفع بالبطاقة." },
+        { "type": "line", "who": "kasse", "de": "Zahlen Sie bar oder mit Karte?", "ar": "هل تدفع نقدًا أم بالبطاقة؟" },
+        { "type": "decision", "prompt": "كيف تدفع؟", "options": [
+          { "ar": "نقدًا بورقة لينا (20 يورو)", "de": "Bar, bitte.", "then": [
+            { "type": "line", "who": "me", "de": "Bar, bitte. Hier sind zwanzig Euro.", "ar": "نقدًا من فضلك. تفضّلي عشرين يورو." },
+            { "type": "line", "who": "kasse", "de": "Danke. Und acht Euro einundvierzig zurück.", "ar": "شكرًا. والباقي 8,41 يورو." },
+            { "type": "narration", "ar": "20,00 € − 11,59 € = 8,41 €. الباقي صحيح! تضعه في جيبك لتعيده إلى لينا." }
+          ] },
+          { "ar": "بالبطاقة البنكية الخاصة بي", "de": "Mit Karte, bitte.", "then": [
+            { "type": "line", "who": "me", "de": "Mit Karte, bitte.", "ar": "بالبطاقة من فضلك." },
+            { "type": "line", "who": "kasse", "de": "Gern. Bitte die Karte hier an das Gerät halten.", "ar": "بكل سرور. ضع البطاقة هنا قرب الجهاز من فضلك." },
+            { "type": "narration", "ar": "بيب! تمّ الدفع. ستعطي لينا الإيصال، وهي تعيد لك المال لاحقًا." }
+          ] }
+        ] },
+        { "type": "choice", "id": "m3a1_c21", "skill": "dialogue",
+          "npc": { "who": "kasse", "de": "Möchten Sie den Kassenbon?", "ar": "هل تريد الإيصال؟" },
+          "prompt": "تريد الإيصال لتريه للينا. ماذا تقول؟",
+          "options": [
+            { "de": "Ja, bitte.", "correct": true },
+            { "de": "Ja, gern. Danke!", "correct": true },
+            { "de": "Bar, bitte.", "why": "لقد دفعت بالفعل. السؤال الآن عن الإيصال (Kassenbon)." },
+            { "de": "Nein, ich habe keine Tüte.", "why": "السؤال عن الإيصال وليس عن الكيس، وقد اشتريت كيسًا." }
+          ],
+          "reply": { "who": "kasse", "de": "Bitte schön. Schönen Tag noch!", "ar": "تفضّل. يومًا سعيدًا!" },
+          "hint": "der Kassenbon = الإيصال. هل تريده؟",
+          "explain": "Kassenbon (أو Bon / Quittung) = الإيصال. من المفيد أن تأخذه لتراجع الأسعار." },
+        { "type": "line", "who": "me", "de": "Danke, Ihnen auch! Tschüss!", "ar": "شكرًا، ولكِ أيضًا! إلى اللقاء!" }
+      ]
+    },
+    {
+      "id": "zuhause",
+      "title": { "de": "Zurück in der WG", "ar": "العودة إلى الشقة" },
+      "steps": [
+        { "type": "narration", "ar": "تعود إلى الشقة وتضع كل شيء في الثلاجة. بعد قليل يرنّ الهاتف: مكالمة فيديو من لينا!" },
+        { "type": "line", "who": "lina", "de": "Hallo {name}! Bist du zu Hause? Hast du alles?", "ar": "مرحبًا يا {name}! هل أنت في البيت؟ هل اشتريت كل شيء؟" },
+        { "type": "line", "who": "me", "de": "Ja, fast alles!", "ar": "نعم، تقريبًا كل شيء!" },
+        { "type": "choice", "id": "m3a1_c22", "skill": "dialogue", "final": true,
+          "npc": { "who": "lina", "de": "Super! Und was kostet alles zusammen? Und das Brot?", "ar": "رائع! وكم كلّف كل شيء معًا؟ والخبز؟" },
+          "prompt": "أجب لينا بالمعلومات الصحيحة من رحلة التسوّق.",
+          "options": [
+            { "de": "Alles kostet 11,59 €. Das Brot ist aus, aber ich habe sechs Brötchen.", "correct": true },
+            { "de": "Alles kostet 12,88 €. Das Brot ist aus, aber ich habe sechs Brötchen.", "why": "12,88 € كان المجموع الخطأ قبل التصحيح. بعد التصحيح أصبح 11,59 €." },
+            { "de": "Alles kostet 11,59 €. Hier ist ein Brot.", "why": "الخبز كان قد نفد (ausverkauft)، واشتريت خبزًا صغيرًا (Brötchen) بدلًا منه." },
+            { "de": "Alles kostet 11,59 €. Ich habe zwei Packungen Reis.", "why": "معك علبة أرز واحدة فقط — وهذا بالضبط الخطأ الذي صحّحته عند الصندوق!" }
+          ],
+          "reply": { "who": "lina", "de": "Perfekt! Brötchen sind super. Danke schön, {name}! 😊", "ar": "ممتاز! الخبز الصغير رائع. شكرًا جزيلًا يا {name}! 😊" },
+          "hint": "تذكّر المجموع بعد التصحيح، وماذا حدث عند رف الخبز.",
+          "explain": "المجموع الصحيح 11,59 € بعد حذف علبة الأرز الزائدة، والخبز نفد فاشتريت ست قطع Brötchen. لقد جمعت الأسعار والكميات والحوار معًا!" }
+      ]
+    }
+  ]
+}

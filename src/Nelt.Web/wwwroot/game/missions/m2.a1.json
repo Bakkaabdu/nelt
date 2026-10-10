@@ -1,0 +1,499 @@
+{
+  "id": "m2",
+  "level": "A1",
+  "title": { "de": "Eine Fahrkarte nach München", "ar": "تذكرة إلى ميونخ" },
+  "place": "Berlin Hauptbahnhof",
+  "intro": "وصلتَ بالقطار الإقليمي من مطار BER إلى محطة برلين المركزية (Berlin Hauptbahnhof). المحطة ضخمة: زجاج وسلالم متحركة وقطارات في عدة طوابق. صديقتك لينا تنتظرك في ميونخ، وعليك الآن أن تشتري تذكرة وتجد القطار الصحيح وحدك.",
+  "objective": "اشترِ تذكرة إلى ميونخ (München Hbf)، واعرف السعر ووقت المغادرة والوصول والرصيف، ثم اركب قطار ICE الصحيح.",
+  "outro": "أحسنت! أنت الآن في قطار ICE المتجه إلى ميونخ، وتجلس في مقعدك بجانب النافذة. بعد أربع ساعات تقريبًا ستصل إلى ميونخ، ولينا تنتظرك هناك. غدًا صباحًا تبدأ مغامرة جديدة: التسوق في السوبرماركت!",
+  "cast": {
+    "demir": { "name": "Herr Demir", "role": "موظف في المحطة", "avatar": "👷" },
+    "jonas": { "name": "Jonas", "role": "شاب في المحطة", "avatar": "🧑‍🎓" },
+    "schulz": { "name": "Frau Schulz", "role": "موظفة شباك التذاكر", "avatar": "👩‍💼" },
+    "becker": { "name": "Frau Becker", "role": "مسافرة لطيفة", "avatar": "👵" },
+    "krause": { "name": "Frau Krause", "role": "مراقِبة التذاكر في القطار", "avatar": "👩‍✈️" }
+  },
+  "vocab": [
+    { "de": "der Hauptbahnhof (Hbf)", "ar": "محطة القطارات المركزية" },
+    { "de": "die Fahrkarte", "ar": "تذكرة السفر" },
+    { "de": "das Ticket", "ar": "التذكرة" },
+    { "de": "der Fahrkartenautomat", "ar": "آلة بيع التذاكر" },
+    { "de": "das Reisezentrum", "ar": "مركز السفر (مكتب بيع التذاكر)" },
+    { "de": "der Schalter", "ar": "الشباك (شباك الخدمة)" },
+    { "de": "der Zug", "ar": "القطار" },
+    { "de": "der ICE", "ar": "القطار السريع بين المدن" },
+    { "de": "das Gleis", "ar": "الرصيف / السكة" },
+    { "de": "der Wagen", "ar": "العربة (في القطار)" },
+    { "de": "der Platz", "ar": "المقعد / المكان" },
+    { "de": "das Fenster", "ar": "النافذة" },
+    { "de": "die Abfahrt", "ar": "المغادرة" },
+    { "de": "die Ankunft", "ar": "الوصول" },
+    { "de": "ab", "ar": "يغادر في (على اللوحات)" },
+    { "de": "an", "ar": "يصل في (على اللوحات)" },
+    { "de": "die Dauer", "ar": "المدة" },
+    { "de": "umsteigen", "ar": "يغيّر القطار" },
+    { "de": "direkt", "ar": "مباشر / مباشرةً" },
+    { "de": "der Preis", "ar": "السعر" },
+    { "de": "billig", "ar": "رخيص" },
+    { "de": "bar", "ar": "نقدًا (كاش)" },
+    { "de": "die Karte", "ar": "البطاقة (المصرفية)" },
+    { "de": "das Bargeld", "ar": "النقود / الكاش" },
+    { "de": "die einfache Fahrt", "ar": "رحلة ذهاب فقط" },
+    { "de": "hin und zurück", "ar": "ذهاب وعودة" },
+    { "de": "die zweite Klasse", "ar": "الدرجة الثانية" },
+    { "de": "die Durchsage", "ar": "الإعلان الصوتي" },
+    { "de": "heute", "ar": "اليوم" },
+    { "de": "der Eingang", "ar": "المدخل" }
+  ],
+  "expressions": [
+    { "de": "Wo kann ich eine Fahrkarte kaufen?", "ar": "أين يمكنني شراء تذكرة؟", "use": "عندما تبحث عن مكان بيع التذاكر في المحطة.", "example": "Entschuldigung, wo kann ich hier Wasser kaufen?", "exampleAr": "عفوًا، أين يمكنني شراء الماء هنا؟" },
+    { "de": "Eine Fahrkarte nach …, bitte.", "ar": "تذكرة إلى …، من فضلك.", "use": "عند شباك التذاكر لتطلب تذكرة إلى مدينة معيّنة.", "example": "Eine Fahrkarte nach Hamburg, bitte.", "exampleAr": "تذكرة إلى هامبورغ، من فضلك." },
+    { "de": "Was kostet …?", "ar": "كم سعر …؟", "use": "لتسأل عن سعر أي شيء: تذكرة أو قهوة أو غير ذلك.", "example": "Was kostet ein Kaffee?", "exampleAr": "كم سعر القهوة؟" },
+    { "de": "Von welchem Gleis fährt der Zug?", "ar": "من أي رصيف يغادر القطار؟", "use": "لتعرف الرصيف الذي يغادر منه قطارك.", "example": "Von welchem Gleis fährt der Zug nach Hamburg?", "exampleAr": "من أي رصيف يغادر القطار إلى هامبورغ؟" },
+    { "de": "Fährt dieser Zug nach …?", "ar": "هل يذهب هذا القطار إلى …؟", "use": "لتتأكد قبل الركوب أن القطار يذهب إلى وجهتك.", "example": "Fährt dieser Zug nach Leipzig?", "exampleAr": "هل يذهب هذا القطار إلى لايبزيغ؟" },
+    { "de": "Können Sie bitte langsamer sprechen?", "ar": "هل يمكنك أن تتكلم ببطء أكثر من فضلك؟", "use": "عندما يتكلم شخص بسرعة ولا تفهمه.", "example": "Entschuldigung, können Sie bitte langsamer sprechen? Ich lerne Deutsch.", "exampleAr": "عفوًا، هل يمكنك التكلم ببطء أكثر؟ أنا أتعلم الألمانية." },
+    { "de": "Bar, bitte. / Mit Karte, bitte.", "ar": "نقدًا من فضلك. / بالبطاقة من فضلك.", "use": "عندما يسألك البائع كيف ستدفع.", "example": "Zahlen Sie bar oder mit Karte? – Mit Karte, bitte.", "exampleAr": "هل تدفع نقدًا أم بالبطاقة؟ – بالبطاقة من فضلك." },
+    { "de": "Entschuldigung, das ist mein Platz.", "ar": "عفوًا، هذا مقعدي.", "use": "عندما يجلس شخص آخر في المقعد المحجوز لك.", "example": "Entschuldigung, das ist mein Platz im Kino.", "exampleAr": "عفوًا، هذا مقعدي في السينما." },
+    { "de": "Wie bitte?", "ar": "عفوًا؟ ماذا قلت؟", "use": "عندما لم تسمع أو لم تفهم الجملة.", "example": "Wie bitte? Gleis drei oder Gleis sieben?", "exampleAr": "عفوًا؟ الرصيف ثلاثة أم الرصيف سبعة؟" }
+  ],
+  "summary": [
+    "تعرف أين تشتري التذكرة: آلة التذاكر (Fahrkartenautomat) أو مركز السفر (Reisezentrum).",
+    "تفهم أسئلة آلة التذاكر: Nach؟ وEinfache Fahrt أو Hin- und Rückfahrt.",
+    "تقرأ قائمة الرحلات: ab / an / Dauer / Umstiege / Preis، وتعرف الفرق بين رحلة مباشرة ورحلة مع تغيير القطار.",
+    "تطلب تذكرة وتسأل عن السعر: Eine Fahrkarte nach München, bitte. / Was kostet die Fahrkarte?",
+    "تفهم الأسعار والأوقات بالألمانية: 79,90 € و14:36 Uhr.",
+    "تقرأ التذكرة ولوحة المغادرة: Zug، Gleis، Wagen، Platz.",
+    "تفهم إعلانًا عن تغيير الرصيف وتسأل الناس لتتأكد: Fährt dieser Zug nach München?",
+    "تستخدم عبارات النجاة: Entschuldigung، Können Sie bitte langsamer sprechen?، Danke schön."
+  ],
+  "scenes": [
+    {
+      "id": "hauptbahnhof",
+      "title": { "de": "Ankunft am Hauptbahnhof", "ar": "الوصول إلى المحطة المركزية" },
+      "steps": [
+        { "type": "narration", "ar": "يتوقف القطار الإقليمي. تنزل مع حقيبتك وتنظر حولك: المحطة كبيرة جدًا، وفيها قطارات فوق وتحت. فجأة يهتز هاتفك… رسالة من لينا!" },
+        { "type": "doc", "kind": "message", "title": "Lina 💬", "lines": [
+          "Hallo {name}! 👋",
+          "Bist du am Hauptbahnhof?",
+          "Kauf bitte eine Fahrkarte nach München.",
+          "Der ICE fährt direkt. Er braucht ca. 4 Stunden.",
+          "Ich warte in München am Hauptbahnhof. 🙂"
+        ], "ar": "مرحبًا {name}! 👋 هل أنت في المحطة المركزية؟ اشترِ من فضلك تذكرة إلى ميونخ. قطار ICE يذهب مباشرة، ويحتاج حوالي 4 ساعات. أنا أنتظرك في ميونخ في المحطة المركزية. 🙂" },
+        { "type": "choice", "id": "c1", "skill": "reading",
+          "prompt": "اقرأ رسالة لينا. ماذا يجب أن تفعل الآن؟",
+          "options": [
+            { "ar": "أشتري تذكرة قطار إلى ميونخ.", "correct": true },
+            { "ar": "أنتظر لينا هنا في برلين.", "why": "لينا كتبت: Ich warte in München — أي أنها تنتظرك في ميونخ، لا في برلين." },
+            { "ar": "آخذ سيارة أجرة إلى ميونخ.", "why": "الرسالة تتحدث عن Fahrkarte (تذكرة) وعن ICE (قطار)، وليس عن سيارة أجرة." },
+            { "ar": "أشتري تذكرة طائرة إلى ميونخ.", "why": "لينا تقصد القطار: Der ICE fährt direkt." }
+          ],
+          "hint": "ابحث في الرسالة عن الفعل Kauf… وعن كلمة Fahrkarte.",
+          "explain": "Kauf bitte eine Fahrkarte nach München = اشترِ من فضلك تذكرة إلى ميونخ. Fahrkarte تعني تذكرة السفر." },
+        { "type": "narration", "ar": "ترفع رأسك وترى لافتات كثيرة. أين تُباع التذاكر؟" },
+        { "type": "doc", "kind": "sign", "title": "Berlin Hauptbahnhof", "lines": [
+          "↑ Reisezentrum",
+          "← Fahrkartenautomaten",
+          "↓ Gleis 1–8",
+          "↑ Gleis 11–16",
+          "→ Toiletten",
+          "→ Ausgang Europaplatz"
+        ], "ar": "↑ مركز السفر (بيع التذاكر) — ← آلات بيع التذاكر — ↓ الأرصفة 1 إلى 8 — ↑ الأرصفة 11 إلى 16 — → دورات المياه — → المخرج إلى ساحة Europaplatz" },
+        { "type": "learn", "de": "Wo kann ich eine Fahrkarte kaufen?", "ar": "أين يمكنني شراء تذكرة؟", "use": "سؤال مفيد جدًا في أي محطة. ابدأ دائمًا بـ Entschuldigung لتكون مهذبًا.", "example": "Entschuldigung, wo kann ich hier Wasser kaufen?", "exampleAr": "عفوًا، أين يمكنني شراء الماء هنا؟" },
+        { "type": "find", "id": "c2", "skill": "vocab",
+          "prompt": "أين يمكنك شراء تذكرة قطار؟ اختر كل الأماكن المناسبة.",
+          "clue": "Lina: „Kauf bitte eine Fahrkarte nach München.“",
+          "items": [
+            { "de": "das Reisezentrum", "emoji": "🏢", "ar": "مركز السفر" },
+            { "de": "der Fahrkartenautomat", "emoji": "🖥️", "ar": "آلة التذاكر" },
+            { "de": "die Toilette", "emoji": "🚻", "ar": "دورة المياه" },
+            { "de": "die Bäckerei", "emoji": "🥨", "ar": "المخبز" },
+            { "de": "das Schließfach", "emoji": "🔐", "ar": "خزانة الأمتعة" },
+            { "de": "der Ausgang", "emoji": "🚪", "ar": "المخرج" }
+          ],
+          "targets": ["das Reisezentrum", "der Fahrkartenautomat"],
+          "hint": "كلمة Fahrkarte موجودة داخل اسم أحدهما. والآخر مركز كبير للسفر.",
+          "explain": "تشتري التذكرة من آلة التذاكر (der Fahrkartenautomat = Fahrkarte + Automat) أو من مركز السفر (das Reisezentrum)." },
+        { "type": "narration", "ar": "يقترب منك موظف من المحطة يلبس سترة حمراء." },
+        { "type": "choice", "id": "c3", "skill": "dialogue",
+          "npc": { "who": "demir", "de": "Hallo! Kann ich Ihnen helfen?", "ar": "مرحبًا! هل يمكنني مساعدتك؟" },
+          "prompt": "اختر الرد المناسب.",
+          "options": [
+            { "de": "Ja, bitte. Wo ist der Fahrkartenautomat?", "correct": true },
+            { "de": "Entschuldigung, wo kann ich eine Fahrkarte kaufen?", "correct": true },
+            { "de": "Ich komme aus München.", "why": "أنت لست من ميونخ، وهذه الجملة لا تطلب أي مساعدة. أنت تريد أن تعرف أين تشتري التذكرة." },
+            { "de": "Ja, ich habe Hunger.", "why": "„أنا جائع“ لا تناسب الموقف؛ مشكلتك الآن هي شراء تذكرة." }
+          ],
+          "reply": { "who": "demir", "de": "Die Automaten sind hier links. Das Reisezentrum ist da hinten.", "ar": "الآلات هنا على اليسار. ومركز السفر هناك في الخلف." },
+          "hint": "الموظف يعرض المساعدة. اقبلها واسأل بـ Wo …?",
+          "explain": "Wo ist …? وWo kann ich … kaufen? سؤالان مهذبان ومباشران لتعرف مكان بيع التذاكر." },
+        { "type": "line", "who": "me", "de": "Danke schön!", "ar": "شكرًا جزيلًا!" },
+        { "type": "line", "who": "demir", "de": "Bitte schön! Gute Reise!", "ar": "عفوًا! رحلة سعيدة!" }
+      ]
+    },
+    {
+      "id": "automat",
+      "title": { "de": "Am Fahrkartenautomaten", "ar": "أمام آلة التذاكر" },
+      "steps": [
+        { "type": "narration", "ar": "تقف أمام آلة التذاكر. الشاشة كبيرة، وكل شيء بالألمانية. تلمس الشاشة…" },
+        { "type": "doc", "kind": "screen", "title": "Fahrkartenautomat", "lines": [
+          "Fahrkarte kaufen",
+          "Von: Berlin Hbf",
+          "Nach: __________",
+          "[ Weiter ▶ ]"
+        ], "ar": "شراء تذكرة — من: برلين المحطة المركزية — إلى: ______ — [ متابعة ▶ ]" },
+        { "type": "write", "id": "c4", "skill": "writing",
+          "prompt": "الآلة تسأل: Nach …؟ اكتب بالألمانية اسم المدينة التي تسافر إليها.",
+          "answers": ["München", "München Hbf", "München Hauptbahnhof", "nach München"],
+          "hint": "انظر إلى رسالة لينا: Kauf bitte eine Fahrkarte nach M…",
+          "explain": "München هو الاسم الألماني لمدينة ميونخ. Von = من، Nach = إلى. ويمكنك أن تكتب ue بدل ü: Muenchen." },
+        { "type": "choice", "id": "c5", "skill": "reading",
+          "doc": { "kind": "screen", "title": "Fahrkartenautomat", "lines": [
+            "Berlin Hbf → München Hbf",
+            "1 Erwachsener | 2. Klasse",
+            "Bitte wählen:",
+            "▢ Einfache Fahrt",
+            "▢ Hin- und Rückfahrt",
+            "▢ Abbrechen"
+          ], "ar": "برلين ← ميونخ — شخص بالغ واحد | الدرجة الثانية — اختر من فضلك: ذهاب فقط / ذهاب وعودة / إلغاء" },
+          "prompt": "ستبقى في ميونخ عند لينا ولن تعود اليوم إلى برلين. ماذا تختار؟",
+          "options": [
+            { "de": "Einfache Fahrt", "correct": true },
+            { "de": "Hin- und Rückfahrt", "why": "Hin- und Rückfahrt تعني ذهابًا وعودة. أنت لن ترجع إلى برلين، فستدفع أكثر بلا فائدة." },
+            { "de": "Abbrechen", "why": "Abbrechen تعني إلغاء، وستبدأ من جديد." }
+          ],
+          "hint": "hin = ذهاب، zurück / Rückfahrt = عودة. ماذا تحتاج أنت؟",
+          "explain": "Einfache Fahrt = رحلة ذهاب فقط. هذا ما تحتاجه لأنك ستبقى في ميونخ." },
+        { "type": "grammar", "title": "من … إلى …: von / nach / in", "body": "للسفر من مدينة إلى أخرى نقول: **von** + مدينة البداية و**nach** + مدينة الوصول. وإذا كنت داخل المدينة نقول **in**. انتبه: **aus** تعني أنك من هذا البلد أو المدينة أصلًا (Ich komme aus …).", "examples": [
+          { "de": "Ich fahre von Berlin nach München.", "ar": "أسافر من برلين إلى ميونخ." },
+          { "de": "Lina wohnt in München.", "ar": "لينا تسكن في ميونخ." },
+          { "de": "Ich komme {fromCountry}.", "ar": "أنا من {countryAr}." }
+        ] },
+        { "type": "narration", "ar": "تضغط على Einfache Fahrt. الآن تعرض الآلة قائمة رحلات بكلمات قصيرة. قبل أن تقرأها، تعلّم هذه الكلمات." },
+        { "type": "match", "id": "c6", "skill": "vocab",
+          "prompt": "طابق كلمات قائمة الرحلات مع معناها.",
+          "pairs": [
+            ["ab", "يغادر في"],
+            ["an", "يصل في"],
+            ["die Dauer", "المدة"],
+            ["umsteigen", "يغيّر القطار"],
+            ["der Preis", "السعر"]
+          ],
+          "hint": "ab وan عكس بعضهما. وكلمة Preis تشبه كلمة price بالإنجليزية.",
+          "explain": "على شاشات القطار: ab 14:36 = يغادر الساعة 14:36، وan 18:41 = يصل الساعة 18:41. Umstiege = عدد مرات تغيير القطار." },
+        { "type": "choice", "id": "c7", "skill": "reading",
+          "doc": { "kind": "screen", "title": "Verbindungen: Berlin Hbf → München Hbf", "lines": [
+            "Ab | An | Dauer | Umstiege | Preis",
+            "13:52 | 18:47 | 4:55 h | 1 (Erfurt) | 49,90 €",
+            "14:36 | 18:41 | 4:05 h | 0 | 79,90 €",
+            "15:10 | 20:22 | 5:12 h | 2 (Erfurt, Nürnberg) | 45,90 €"
+          ], "ar": "الرحلات: برلين ← ميونخ. يغادر | يصل | المدة | عدد التغييرات | السعر" },
+          "prompt": "لينا قالت: „Der ICE fährt direkt.“ أي رحلة مباشرة، بدون تغيير القطار؟",
+          "options": [
+            { "de": "13:52 Uhr", "why": "هذه الرحلة فيها تغيير واحد في Erfurt (Umstiege: 1)." },
+            { "de": "14:36 Uhr", "correct": true },
+            { "de": "15:10 Uhr", "why": "هذه الرحلة فيها تغييران: في Erfurt وفي Nürnberg (Umstiege: 2)." }
+          ],
+          "hint": "ابحث عن الرقم 0 في عمود Umstiege.",
+          "explain": "رحلة 14:36 فيها 0 Umstiege، أي أنها مباشرة (direkt). وهي أيضًا الأسرع: 4:05 ساعات." },
+        { "type": "narration", "ar": "تختار رحلة 14:36. تظهر رسالة جديدة على الشاشة…" },
+        { "type": "doc", "kind": "screen", "title": "Fahrkartenautomat", "lines": [
+          "Zu zahlen: 79,90 €",
+          "Nur Kartenzahlung – kein Bargeld",
+          "Bitte Karte einstecken."
+        ], "ar": "المبلغ المطلوب: 79,90 € — الدفع بالبطاقة فقط، لا نقود — أدخل البطاقة من فضلك." },
+        { "type": "narration", "ar": "تُدخل بطاقتك المصرفية من بلدك… «Karte nicht akzeptiert» — البطاقة غير مقبولة! معك نقود باليورو فقط، والآلة لا تقبل النقود. ماذا الآن؟ يقف خلفك شاب يحمل حقيبة ظهر." },
+        { "type": "line", "who": "jonas", "de": "Hallo! Alles okay?", "ar": "مرحبًا! هل كل شيء بخير؟" },
+        { "type": "line", "who": "me", "de": "Entschuldigung, ich verstehe den Automaten nicht.", "ar": "عفوًا، لا أفهم هذه الآلة." },
+        { "type": "listen", "id": "c8", "skill": "listening",
+          "audio": "Der Automat nimmt kein Bargeld. Gehen Sie zum Reisezentrum. Es ist da hinten, neben dem Eingang.",
+          "audioAr": "الآلة لا تأخذ النقود. اذهب إلى مركز السفر. إنه هناك في الخلف، بجانب المدخل.",
+          "prompt": "استمع إلى الشاب. بماذا ينصحك؟",
+          "options": [
+            { "ar": "أن أذهب إلى مركز السفر بجانب المدخل.", "correct": true },
+            { "ar": "أن أذهب مباشرة إلى الرصيف 7.", "why": "الشاب لم يذكر أي رصيف (Gleis). قال: Gehen Sie zum Reisezentrum." },
+            { "ar": "أن أنتظر قليلًا لأن الآلة ستعمل بعد دقائق.", "why": "لم يقل إن الآلة معطلة، بل قال إنها لا تأخذ النقود: kein Bargeld." },
+            { "ar": "أن أجرّب البطاقة مرة أخرى.", "why": "لم يتحدث عن البطاقة. نصحك بالذهاب إلى Reisezentrum." }
+          ],
+          "hint": "انتبه إلى الكلمة بعد Gehen Sie zum …",
+          "explain": "Gehen Sie zum Reisezentrum = اذهب إلى مركز السفر. هناك يمكنك أن تدفع نقدًا. neben dem Eingang = بجانب المدخل." },
+        { "type": "line", "who": "me", "de": "Danke schön!", "ar": "شكرًا جزيلًا!" },
+        { "type": "line", "who": "jonas", "de": "Bitte schön! Viel Glück!", "ar": "عفوًا! بالتوفيق!" }
+      ]
+    },
+    {
+      "id": "reisezentrum",
+      "title": { "de": "Im Reisezentrum", "ar": "في مركز السفر" },
+      "steps": [
+        { "type": "narration", "ar": "تدخل مركز السفر. هناك آلة صغيرة للأرقام، وشاشة فوق الشبابيك." },
+        { "type": "doc", "kind": "sign", "title": "Reisezentrum", "lines": [
+          "Bitte ziehen Sie eine Nummer.",
+          "Ihre Nummer: 247"
+        ], "ar": "من فضلك اسحب رقمًا. — رقمك: 247" },
+        { "type": "narration", "ar": "تنتظر بضع دقائق. ثم تسمع صوتًا من مكبر الصوت…" },
+        { "type": "listen", "id": "c9", "skill": "numbers",
+          "audio": "Die Nummer zweihundertsiebenundvierzig, bitte zum Schalter fünf.",
+          "audioAr": "الرقم مئتان وسبعة وأربعون، إلى الشباك رقم خمسة من فضلك.",
+          "prompt": "هذا رقمك! إلى أي شباك تذهب؟",
+          "options": [
+            { "de": "Schalter 5", "correct": true },
+            { "de": "Schalter 7", "why": "سمعت sieben (7) داخل الرقم 247 فقط. الشباك هو fünf." },
+            { "de": "Schalter 2", "why": "zwei (2) جزء من الرقم 247، وليس رقم الشباك." },
+            { "de": "Schalter 4", "why": "vier (4) جزء من الرقم 247 (siebenundvierzig). الشباك بعد كلمة Schalter." }
+          ],
+          "hint": "الرقم الأول طويل (رقمك). استمع إلى الكلمة بعد zum Schalter.",
+          "explain": "zweihundertsiebenundvierzig = 247، وهو رقمك. zum Schalter fünf = إلى الشباك 5. في الألمانية نقول الآحاد قبل العشرات: sieben-und-vierzig = 47." },
+        { "type": "line", "who": "schulz", "de": "Guten Tag!", "ar": "مرحبًا!" },
+        { "type": "line", "who": "me", "de": "Guten Tag!", "ar": "مرحبًا!" },
+        { "type": "choice", "id": "c10", "skill": "dialogue",
+          "npc": { "who": "schulz", "de": "Wohin möchten Sie fahren?", "ar": "إلى أين تريد أن تسافر؟" },
+          "prompt": "اختر الرد المناسب للموظفة.",
+          "options": [
+            { "de": "Nach München, bitte.", "correct": true },
+            { "de": "Eine Fahrkarte nach München, bitte.", "correct": true },
+            { "de": "Aus München.", "why": "aus تعني «من». الموظفة سألت Wohin = إلى أين، فالجواب يكون بـ nach." },
+            { "de": "Ich bin in Berlin.", "why": "الموظفة تعرف أنك في برلين. هي تسأل عن وجهتك: Wohin?" }
+          ],
+          "hint": "Wohin = إلى أين؟ تذكّر: von Berlin nach …",
+          "explain": "على سؤال Wohin? نجيب بـ nach + المدينة. وجملة Eine Fahrkarte nach …, bitte هي الطريقة الكلاسيكية لطلب تذكرة." },
+        { "type": "line", "who": "schulz", "de": "Nach München, alles klar. Möchten Sie heute fahren, mit dem ICE, direkt oder mit Umsteigen, erste oder zweite Klasse?", "ar": "إلى ميونخ، حسنًا. هل تريد السفر اليوم، بقطار ICE، مباشرة أم مع تغيير القطار، الدرجة الأولى أم الثانية؟" },
+        { "type": "narration", "ar": "الموظفة تتكلم بسرعة كبيرة! فهمت فقط «München» و«ICE»… لا بأس، يمكنك أن تطلب منها أن تتكلم ببطء." },
+        { "type": "write", "id": "c11", "skill": "writing",
+          "prompt": "اكتب بالألمانية: هل يمكنكِ أن تتكلمي ببطء أكثر من فضلك؟",
+          "answers": [
+            "Können Sie bitte langsamer sprechen",
+            "Können Sie langsamer sprechen bitte",
+            "Können Sie langsamer sprechen",
+            "Bitte langsamer",
+            "Langsamer bitte",
+            "Sprechen Sie bitte langsamer",
+            "Bitte sprechen Sie langsamer",
+            "Könnten Sie bitte langsamer sprechen",
+            "Entschuldigung können Sie bitte langsamer sprechen",
+            "Wie bitte Können Sie bitte langsamer sprechen",
+            "Entschuldigung, können Sie langsamer sprechen",
+            "Können Sie bitte etwas langsamer sprechen",
+            "Können Sie etwas langsamer sprechen",
+            "Bitte langsamer sprechen"
+          ],
+          "hint": "تعلّمت هذه الجملة في المطار: Können Sie bitte … sprechen? (langsam = بطيء، langsamer = أبطأ)",
+          "explain": "Können Sie bitte langsamer sprechen? جملة مهذبة جدًا. الفعل können في المكان الأول لأنه سؤال، والفعل sprechen في آخر الجملة." },
+        { "type": "line", "who": "schulz", "de": "Natürlich! Entschuldigung. Fahren … Sie … heute?", "ar": "طبعًا! آسفة. هل … تسافر … اليوم؟" },
+        { "type": "line", "who": "me", "de": "Ja, heute.", "ar": "نعم، اليوم." },
+        { "type": "line", "who": "schulz", "de": "Erste oder zweite Klasse?", "ar": "الدرجة الأولى أم الثانية؟" },
+        { "type": "line", "who": "me", "de": "Zweite Klasse, bitte.", "ar": "الدرجة الثانية، من فضلك." },
+        { "type": "line", "who": "schulz", "de": "Gut. Es gibt zwei Züge: um 13:52 Uhr und um 14:36 Uhr. Der Zug um 13:52 Uhr ist billiger. Aber Sie müssen in Erfurt umsteigen. Der ICE um 14:36 Uhr fährt direkt.", "ar": "جيد. هناك قطاران: الساعة 13:52 والساعة 14:36. قطار 13:52 أرخص، لكن يجب أن تغيّر القطار في إرفورت. قطار ICE الساعة 14:36 يذهب مباشرة." },
+        { "type": "learn", "de": "Was kostet …?", "ar": "كم سعر …؟", "use": "أهم سؤال عند الشراء. بعده تأتي الشيء الذي تسأل عن سعره.", "example": "Was kostet ein Kaffee?", "exampleAr": "كم سعر القهوة؟" },
+        { "type": "build", "id": "c12", "skill": "grammar",
+          "prompt": "رتّب الكلمات لتسأل: كم سعر التذكرة؟",
+          "tiles": ["Was", "kostet", "die", "Fahrkarte", "?", "kostest", "der", "Wo"],
+          "answers": [["Was", "kostet", "die", "Fahrkarte", "?"]],
+          "hint": "ابدأ بأداة السؤال Was، ثم الفعل، ثم die Fahrkarte.",
+          "explain": "Was kostet die Fahrkarte? — في السؤال يأتي الفعل (kostet) في المكان الثاني بعد أداة السؤال. Fahrkarte مؤنثة: die Fahrkarte." },
+        { "type": "line", "who": "schulz", "de": "Um 13:52 Uhr kostet die Fahrkarte 49,90 Euro. Um 14:36 Uhr kostet sie 79,90 Euro.", "ar": "في رحلة 13:52 سعر التذكرة 49,90 يورو. وفي رحلة 14:36 سعرها 79,90 يورو." },
+        { "type": "decision", "prompt": "أي قطار تختار؟", "options": [
+          { "ar": "القطار الأرخص في 13:52 (مع تغيير في إرفورت)", "de": "Den Zug um 13:52 Uhr, bitte.", "then": [
+            { "type": "line", "who": "me", "de": "Den Zug um 13:52 Uhr, bitte.", "ar": "قطار الساعة 13:52 من فضلك." },
+            { "type": "line", "who": "schulz", "de": "Um 13:52 Uhr? Es ist schon 13:48 Uhr! Der Zug fährt in vier Minuten.", "ar": "الساعة 13:52؟ الساعة الآن 13:48! القطار يغادر بعد أربع دقائق." },
+            { "type": "narration", "ar": "تنظر إلى الساعة الكبيرة على الحائط… مستحيل أن تصل في أربع دقائق مع حقيبتك! السعر الرخيص لا ينفع إذا فاتك القطار." },
+            { "type": "line", "who": "me", "de": "Oh! Dann den ICE um 14:36 Uhr, bitte.", "ar": "أوه! إذن قطار ICE الساعة 14:36 من فضلك." },
+            { "type": "line", "who": "schulz", "de": "Gute Idee. Der ICE ist direkt und schnell.", "ar": "فكرة جيدة. قطار ICE مباشر وسريع." }
+          ] },
+          { "ar": "قطار ICE المباشر في 14:36", "de": "Den ICE um 14:36 Uhr, bitte.", "then": [
+            { "type": "line", "who": "me", "de": "Den ICE um 14:36 Uhr, bitte. Direkt ist gut.", "ar": "قطار ICE الساعة 14:36 من فضلك. المباشر أفضل." },
+            { "type": "line", "who": "schulz", "de": "Gute Wahl! Kein Umsteigen, kein Stress.", "ar": "اختيار جيد! بلا تغيير قطار وبلا توتر." }
+          ] }
+        ] },
+        { "type": "listen", "id": "c13", "skill": "numbers",
+          "audio": "Also: einmal München Hauptbahnhof, zweite Klasse. Das macht neunundsiebzig Euro neunzig. Zahlen Sie bar oder mit Karte?",
+          "audioAr": "إذن: تذكرة واحدة إلى محطة ميونخ المركزية، الدرجة الثانية. المبلغ تسعة وسبعون يورو وتسعون سنتًا. هل تدفع نقدًا أم بالبطاقة؟",
+          "prompt": "استمع إلى الموظفة. كم المبلغ، وماذا تسألك؟",
+          "options": [
+            { "ar": "79,90 € — وتسألني: نقدًا أم بالبطاقة؟", "correct": true },
+            { "ar": "97,90 € — وتسألني: نقدًا أم بالبطاقة؟", "why": "neunundsiebzig = 79 (تسعة و-سبعون). في الألمانية تأتي الآحاد أولًا: neun-und-siebzig." },
+            { "ar": "79,90 € — وتسألني: هل أريد مقعدًا بجانب النافذة؟", "why": "السؤال كان: Zahlen Sie bar oder mit Karte? أي عن طريقة الدفع، لا عن المقعد." },
+            { "ar": "19,90 € — وتسألني: الدرجة الأولى أم الثانية؟", "why": "المبلغ neunundsiebzig = 79، والدرجة الثانية اختيرت بالفعل (zweite Klasse)." }
+          ],
+          "hint": "neun = 9، siebzig = 70. والسؤال الأخير فيه bar و Karte.",
+          "explain": "Das macht 79,90 Euro = المبلغ 79,90 يورو. Zahlen Sie bar oder mit Karte? = هل تدفع نقدًا أم بالبطاقة؟" },
+        { "type": "fill", "id": "c14", "skill": "grammar",
+          "sentence": "Ich ___ bar, bitte.",
+          "ar": "سأدفع نقدًا، من فضلك.",
+          "options": ["zahle", "zahlst", "zahlt", "zahlen"],
+          "answers": ["zahle"],
+          "hint": "مع ich ينتهي الفعل غالبًا بـ ‎-e: ich spreche، ich komme …",
+          "explain": "ich zahle — مع ich نضيف ‎-e إلى جذر الفعل. zahlst مع du، وzahlt مع er/sie، وzahlen مع wir/Sie." },
+        { "type": "narration", "ar": "تعطي الموظفة ورقة 100 يورو." },
+        { "type": "line", "who": "schulz", "de": "Und 20,10 Euro zurück. Hier ist Ihre Fahrkarte. Ihr Platz ist im Wagen 7. Gute Reise!", "ar": "وهذا الباقي: 20,10 يورو. هذه تذكرتك. مقعدك في العربة 7. رحلة سعيدة!" },
+        { "type": "line", "who": "me", "de": "Danke schön! Auf Wiedersehen!", "ar": "شكرًا جزيلًا! إلى اللقاء!" }
+      ]
+    },
+    {
+      "id": "fahrkarte",
+      "title": { "de": "Die Fahrkarte und die Anzeigetafel", "ar": "التذكرة ولوحة المغادرة" },
+      "steps": [
+        { "type": "narration", "ar": "معك الآن تذكرة حقيقية! تقرأها بهدوء قبل أن تبحث عن القطار." },
+        { "type": "doc", "kind": "ticket", "title": "Fahrkarte", "lines": [
+          "FAHRKARTE | 2. Klasse | 1 Erwachsener",
+          "Fr., 09.10.2026",
+          "Berlin Hbf → München Hbf",
+          "ICE 1007 | ab 14:36 | an 18:41",
+          "Wagen 7 | Platz 45 | Fenster",
+          "Preis: 79,90 € (bar)"
+        ], "ar": "تذكرة | الدرجة الثانية | شخص بالغ واحد — الجمعة 09.10.2026 — من برلين إلى ميونخ — قطار ICE 1007 | يغادر 14:36 | يصل 18:41 — العربة 7 | المقعد 45 | بجانب النافذة — السعر: 79,90 € (نقدًا)" },
+        { "type": "choice", "id": "c15", "skill": "reading",
+          "prompt": "اقرأ التذكرة. متى تصل إلى ميونخ؟",
+          "options": [
+            { "de": "Um 18:41 Uhr", "correct": true },
+            { "de": "Um 14:36 Uhr", "why": "14:36 هو وقت المغادرة من برلين (ab)، وليس وقت الوصول." },
+            { "de": "Um 4:05 Uhr", "why": "4:05 كانت مدة الرحلة (Dauer) على شاشة الآلة، وليست ساعة الوصول." },
+            { "de": "Um 7 Uhr", "why": "7 هو رقم العربة (Wagen 7)." }
+          ],
+          "hint": "ابحث عن الكلمة an في التذكرة.",
+          "explain": "an 18:41 = يصل الساعة 18:41. وab 14:36 = يغادر الساعة 14:36." },
+        { "type": "doc", "kind": "message", "title": "Lina 💬", "lines": [
+          "Hast du eine Fahrkarte? 🎫",
+          "Wann kommst du in München an?"
+        ], "ar": "هل معك تذكرة؟ 🎫 متى تصل إلى ميونخ؟" },
+        { "type": "write", "id": "c16", "skill": "writing", "bonus": true,
+          "prompt": "ردّ على لينا بالألمانية: متى تصل؟ (اكتب الساعة كما في التذكرة)",
+          "answers": [
+            "Um 18:41 Uhr",
+            "Um 18:41",
+            "18:41 Uhr",
+            "18:41",
+            "Ja, um 18:41 Uhr",
+            "Ich komme um 18:41 Uhr an",
+            "Ich komme um 18:41 an",
+            "Ja, ich komme um 18:41 Uhr an",
+            "Ich komme um 18:41 Uhr in München an",
+            "Um achtzehn Uhr einundvierzig",
+            "Ich komme um achtzehn Uhr einundvierzig an",
+            "Ich bin um 18:41 Uhr in München",
+            "Um 18:41 Uhr bin ich in München",
+            "Ich bin um 18:41 in München",
+            "Um 18:41 Uhr in München",
+            "Ich komme um 18:41 in München an"
+          ],
+          "hint": "استعمل um + الساعة + Uhr. مثل: Um 9:15 Uhr.",
+          "explain": "Um 18:41 Uhr = في الساعة 18:41. وبجملة كاملة: Ich komme um 18:41 Uhr an — الجزء an يذهب إلى آخر الجملة." },
+        { "type": "doc", "kind": "message", "title": "Lina 💬", "lines": [
+          "Super! 🎉 Ich bin um 18:41 Uhr am Gleis.",
+          "Bis später!"
+        ], "ar": "رائع! 🎉 سأكون على الرصيف الساعة 18:41. أراك لاحقًا!" },
+        { "type": "grammar", "title": "الساعة بالألمانية", "body": "في المحطات تُكتب الساعة بنظام 24 ساعة: **14:36 Uhr** نقرؤها: vierzehn Uhr sechsunddreißig. نقول **um** + الساعة للإجابة عن «متى؟». على اللوحات: **ab** = يغادر، **an** = يصل.", "examples": [
+          { "de": "Der Zug fährt um 14:36 Uhr.", "ar": "القطار يغادر الساعة 14:36." },
+          { "de": "Ich komme um 18:41 Uhr an.", "ar": "أصل الساعة 18:41." },
+          { "de": "Wann fährt der Zug? – Um halb drei.", "ar": "متى يغادر القطار؟ – الساعة الثانية والنصف." }
+        ] },
+        { "type": "narration", "ar": "التذكرة لا تذكر رقم الرصيف. تبحث عن لوحة المغادرة الكبيرة (Abfahrt)." },
+        { "type": "learn", "de": "Von welchem Gleis fährt der Zug?", "ar": "من أي رصيف يغادر القطار؟", "use": "عندما لا تعرف الرصيف. يمكنك أن تضيف الوجهة: … der Zug nach München?", "example": "Von welchem Gleis fährt der Zug nach Hamburg?", "exampleAr": "من أي رصيف يغادر القطار إلى هامبورغ؟" },
+        { "type": "doc", "kind": "board", "title": "Abfahrt – Berlin Hbf", "lines": [
+          "Zeit | Zug | Nach | Gleis",
+          "14:21 | RE 1 | Magdeburg Hbf | 13",
+          "14:28 | ICE 802 | Hamburg Hbf | 14",
+          "14:36 | ICE 1007 | München Hbf | 7",
+          "14:44 | ICE 1543 | Frankfurt (Main) Hbf | 1",
+          "14:51 | FEX | Flughafen BER | 4"
+        ], "ar": "المغادرة – برلين المحطة المركزية. الوقت | القطار | الوجهة | الرصيف" },
+        { "type": "fill", "id": "c17", "skill": "reading",
+          "sentence": "Der ICE nach München fährt von Gleis ___.",
+          "ar": "قطار ICE إلى ميونخ يغادر من الرصيف ___.",
+          "options": ["7", "14", "1", "1007"],
+          "answers": ["7"],
+          "hint": "ابحث عن سطر München Hbf، ثم انظر إلى العمود الأخير Gleis.",
+          "explain": "في سطر ICE 1007 إلى München Hbf، الرصيف هو Gleis 7. الرقم 1007 هو رقم القطار، وليس الرصيف." }
+      ]
+    },
+    {
+      "id": "gleis",
+      "title": { "de": "Am Gleis – Achtung, Änderung!", "ar": "على الرصيف – انتبه، تغيير!" },
+      "steps": [
+        { "type": "narration", "ar": "تنزل بالسلم المتحرك إلى الرصيف 7. الساعة 14:20. الناس ينتظرون مع حقائبهم. فجأة يبدأ إعلان من مكبر الصوت…" },
+        { "type": "listen", "id": "c18", "skill": "listening",
+          "audio": "Achtung an Gleis 7! Der ICE 1007 nach München Hauptbahnhof, Abfahrt 14:36 Uhr, fährt heute von Gleis 3. Ich wiederhole: heute von Gleis 3.",
+          "audioAr": "انتباه على الرصيف 7! قطار ICE 1007 إلى محطة ميونخ المركزية، المغادرة 14:36، يغادر اليوم من الرصيف 3. أكرر: اليوم من الرصيف 3.",
+          "prompt": "استمع إلى الإعلان. ماذا تغيّر؟",
+          "options": [
+            { "ar": "القطار يغادر اليوم من الرصيف 3 بدلًا من الرصيف 7.", "correct": true },
+            { "ar": "القطار متأخر 3 دقائق.", "why": "لم يذكر الإعلان أي تأخير. الرقم 3 هو رقم الرصيف: von Gleis 3." },
+            { "ar": "القطار لا يذهب اليوم إلى ميونخ.", "why": "الإعلان قال: nach München Hauptbahnhof. الوجهة لم تتغير." },
+            { "ar": "القطار يغادر الساعة 15:36.", "why": "وقت المغادرة نفسه: Abfahrt 14:36 Uhr. الذي تغيّر هو الرصيف." }
+          ],
+          "hint": "استمع إلى ما يأتي بعد كلمة heute … وكلمة Ich wiederhole تعني «أكرر».",
+          "explain": "fährt heute von Gleis 3 = يغادر اليوم من الرصيف 3. تغيير الرصيف يحدث كثيرًا في ألمانيا، فاستمع دائمًا إلى الإعلانات!" },
+        { "type": "narration", "ar": "كثير من الناس يحملون حقائبهم ويمشون. لكنك لست متأكدًا تمامًا. بجانبك تقف سيدة كبيرة في السن مع حقيبة حمراء." },
+        { "type": "choice", "id": "c19", "skill": "dialogue",
+          "prompt": "تريد أن تتأكد. ماذا تقول للسيدة؟",
+          "options": [
+            { "de": "Entschuldigung, fährt der Zug nach München jetzt von Gleis 3?", "correct": true },
+            { "de": "Entschuldigung, wo ist Gleis 3?", "correct": true },
+            { "de": "Entschuldigung, wo ist München?", "why": "أنت لا تسأل عن مكان مدينة ميونخ، بل عن القطار أو الرصيف." },
+            { "de": "Ich bin Gleis 3.", "why": "هذه الجملة تعني «أنا الرصيف 3»، وهي غير منطقية." }
+          ],
+          "reply": { "who": "becker", "de": "Gleis 3, ja. Das ist da drüben. Ich fahre auch nach München. Kommen Sie mit!", "ar": "الرصيف 3، نعم. إنه هناك في الجهة المقابلة. أنا أيضًا مسافرة إلى ميونخ. تعال معي!" },
+          "hint": "ابدأ بـ Entschuldigung، واسأل عن القطار أو عن الرصيف الجديد.",
+          "explain": "يمكنك أن تتأكد بسؤال بنعم/لا (Fährt der Zug …?) أو بسؤال عن المكان (Wo ist Gleis 3?). الاثنان مفيدان هنا." },
+        { "type": "decision", "prompt": "بقيت عشر دقائق تقريبًا. ماذا تفعل؟", "options": [
+          { "ar": "أشتري قهوة أولًا من الكشك", "de": "Erst einen Kaffee!", "then": [
+            { "type": "line", "who": "me", "de": "Ich möchte zuerst einen Kaffee.", "ar": "أريد قهوة أولًا." },
+            { "type": "line", "who": "becker", "de": "Kaffee? Es gibt Kaffee im Zug! Kommen Sie, schnell!", "ar": "قهوة؟ هناك قهوة في القطار! تعال بسرعة!" },
+            { "type": "narration", "ar": "تبتسم وتتبع السيدة. فكرة جيدة: لا داعي للمخاطرة، والقهوة موجودة في القطار." }
+          ] },
+          { "ar": "أذهب فورًا مع السيدة إلى الرصيف 3", "de": "Ich komme mit!", "then": [
+            { "type": "line", "who": "me", "de": "Danke! Ich komme mit.", "ar": "شكرًا! سآتي معك." },
+            { "type": "line", "who": "becker", "de": "Sehr gut. Gleis 3 ist hier rechts.", "ar": "جيد جدًا. الرصيف 3 هنا على اليمين." },
+            { "type": "narration", "ar": "تصلان إلى الرصيف 3 قبل القطار بخمس دقائق. ممتاز!" }
+          ] }
+        ] },
+        { "type": "narration", "ar": "يدخل قطار ICE أبيض طويل إلى الرصيف 3. على الشاشة: ICE 1007 – München Hbf. تبحث عن العربة 7 وتصعد. لكن… في المقعد 45 يجلس شاب. إنه الشاب نفسه من آلة التذاكر!" },
+        { "type": "build", "id": "c20", "skill": "grammar", "bonus": true,
+          "prompt": "قل له بأدب: عفوًا، هذا مقعدي.",
+          "tiles": ["Entschuldigung", ",", "das", "ist", "mein", "Platz", ".", "meine", "sind"],
+          "answers": [["Entschuldigung", ",", "das", "ist", "mein", "Platz", "."]],
+          "hint": "ابدأ بالكلمة المهذبة التي تعرفها جيدًا. Platz مذكر (der Platz).",
+          "explain": "Entschuldigung, das ist mein Platz. — der Platz مذكر، لذلك نقول mein Platz (وليس meine). ومع das نستعمل ist." },
+        { "type": "line", "who": "jonas", "de": "Oh, Sie sind das! Entschuldigung! Ich habe Platz 46. Hier, bitte.", "ar": "أوه، هذا أنت! آسف! مقعدي رقم 46. تفضل." },
+        { "type": "line", "who": "me", "de": "Kein Problem! Danke.", "ar": "لا مشكلة! شكرًا." },
+        { "type": "narration", "ar": "السيدة Becker تجلس في المقعد المقابل لك وتبتسم. يتحرك القطار، وبعد قليل تأتي موظفة القطار." },
+        { "type": "line", "who": "krause", "de": "Guten Tag! Die Fahrkarten, bitte!", "ar": "مرحبًا! التذاكر من فضلكم!" },
+        { "type": "write", "id": "c21", "skill": "writing",
+          "prompt": "تعطيها تذكرتك. اكتب ردًا قصيرًا ومهذبًا بالألمانية (مثل: تفضلي).",
+          "answers": [
+            "Bitte",
+            "Bitte schön",
+            "Bitte sehr",
+            "Hier bitte",
+            "Hier bitte schön",
+            "Hier ist meine Fahrkarte",
+            "Hier ist meine Fahrkarte bitte",
+            "Hier ist mein Ticket",
+            "Guten Tag hier bitte",
+            "Guten Tag bitte schön",
+            "Guten Tag hier ist meine Fahrkarte",
+            "Hier bitte sehr",
+            "Bitte, hier ist meine Fahrkarte",
+            "Hier ist meine Fahrkarte, bitte schön"
+          ],
+          "hint": "عندما تعطي شيئًا لشخص تقول Bitte … أو Hier, …",
+          "explain": "Bitte schön / Hier, bitte = تفضّل/تفضّلي. وHier ist meine Fahrkarte = هذه تذكرتي (die Fahrkarte مؤنثة ← meine)." },
+        { "type": "line", "who": "krause", "de": "Danke. München Hauptbahnhof, Wagen 7, Platz 45. Alles richtig. Gute Fahrt!", "ar": "شكرًا. محطة ميونخ المركزية، العربة 7، المقعد 45. كل شيء صحيح. رحلة سعيدة!" },
+        { "type": "doc", "kind": "message", "title": "Lina 💬", "lines": [
+          "Bist du im Zug? 🚄",
+          "Wann bist du in München?"
+        ], "ar": "هل أنت في القطار؟ 🚄 متى تكون في ميونخ؟" },
+        { "type": "choice", "id": "c22", "skill": "dialogue", "final": true,
+          "prompt": "اختر الرد الصحيح والكامل للينا.",
+          "options": [
+            { "de": "Ja! Ich bin im ICE 1007. Ich komme um 18:41 Uhr an.", "correct": true },
+            { "de": "Ja, ich bin im Zug. Wagen 7, Platz 45. Ankunft: 18:41 Uhr.", "correct": true },
+            { "de": "Nein, ich bin am Flughafen BER.", "why": "أنت لست في المطار، بل في القطار إلى ميونخ." },
+            { "de": "Ja! Ich komme um 14:36 Uhr an.", "why": "14:36 هو وقت المغادرة من برلين. الوصول إلى ميونخ الساعة 18:41." },
+            { "de": "Ja, ich bin im Zug. Ich komme um 18:41 Uhr ab.", "why": "الفعل الصحيح للوصول هو ankommen: Ich komme … an. أما ab فتعني المغادرة على اللوحات." }
+          ],
+          "reply": { "who": "becker", "de": "Alles gut? Jetzt haben wir vier Stunden Zeit. Möchten Sie einen Keks?", "ar": "كل شيء بخير؟ الآن أمامنا أربع ساعات. هل تريد بسكويتة؟" },
+          "hint": "تذكّر: رقم القطار، والعربة، ووقت الوصول (an) في التذكرة.",
+          "explain": "الرد الصحيح يذكر أنك في القطار ووقت الوصول الصحيح 18:41. Ich komme um … an = أصل الساعة …" }
+      ]
+    }
+  ]
+}
