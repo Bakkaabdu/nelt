@@ -46,8 +46,8 @@ jobs:
       - name: Test
         run: dotnet test Nelt.slnx -c Release --no-build --logger "trx;LogFilePrefix=results" --results-directory TestResults
 
-      - name: Report failed tests
-        if: failure()
+      - name: Report test results
+        if: always()
         run: |
           python3 - <<'PY'
           import glob, xml.etree.ElementTree as ET
@@ -62,7 +62,9 @@ jobs:
                   msg = " ".join(msg.split())[:900]
                   print(f"::error title={r.get('testName')[:200]}::{msg}")
                   n += 1
-          print(f"{n} failed test(s)")
+          for f in glob.glob("TestResults/**/*.trx", recursive=True):
+              c = ET.parse(f).getroot().find(".//t:Counters", ns)
+              print(f"::notice title={f.split('/')[-1]}::total={c.get('total')} passed={c.get('passed')} failed={c.get('failed')}")
           PY
 
       - uses: actions/upload-artifact@v4
